@@ -17,10 +17,61 @@
 <h4>電腦輔助設計室與協同設計室行事曆</h4>
 <p><a href="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;src=yen%40gm.nfu.edu.tw&amp;ctz=Asia%2FTaipei">全頁檢視</a></p>
 <p><iframe height="600" src="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;src=yen%40gm.nfu.edu.tw&amp;ctz=Asia%2FTaipei" width="800"></iframe></p><h2>評分</h2>
-<p>學生自評</p>
-<p>分組互評</p>
-<p>老師評分</p>
-<h1>Project</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
+根據評分表單中的 自評分數, 互評得分, 教師評分, 計算學員課程成績
+'''
+ 
+def diff(分數1, 分數2):
+    return abs(分數1 - 分數2)
+     
+def getHigh(分數1, 分數2):
+    if  分數1 &gt; 分數2:
+        return 分數1
+    else:
+        return 分數2
+
+def getLow(分數1, 分數2):
+    if  分數1 &lt; 分數2:
+        return 分數1
+    else:
+        return 分數2
+ 
+def 分組評分(自評分數, 教師評分):
+    return getLow(自評分數, 教師評分)
+    if diff(自評分數, 教師評分) &gt; 5:
+        return getLow(自評分數, 教師評分)
+    else:
+        return int(自評分數*0.4 + 教師評分*0.6)
+     
+def 全班比分(互評得分, 分組評分):
+    if diff(互評得分, 分組評分) &lt; 5:
+        學員成績 = getHigh(互評得分, 分組評分)
+    else:
+        學員成績 = int(互評得分*0.4 + 分組評分*0.6)
+    return 學員成績
+ 
+def 學員成績(自評分數, 互評得分, 教師評分):
+    學員課程成績 = 全班比分(互評得分, 分組評分(自評分數, 教師評分))
+    return 學員課程成績
+    
+for i in range(10):
+    self_score = 50 + i*5
+    for j in range(10):
+        peer_score = 50 + j*5
+        for k in range(10):
+            teacher_score = 50 + k*5
+            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre>
+<p><br/><br/></p><h2>討論區</h2>
+<p><a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a> </p><h1>Solvespace</h1>
+<p>Geometric Constraint Solver:</p>
+<p style="padding-left: 30px;"><a href="http://adventures.michaelfbryan.com/posts/constraints-part-1-expressions/">http://adventures.michaelfbryan.com/posts/constraints-part-1-expressions/</a></p>
+<p style="padding-left: 30px;"><a href="http://adventures.michaelfbryan.com/posts/constraints-part-1-expressions/">http://adventures.michaelfbryan.com/posts/constraints-part-1-expressions/</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/protractr">https://github.com/mdecourse/protractr</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/rgov/shape_solver">https://github.com/rgov/shape_solver</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/rgov/shape_solver">https://github.com/rgov/shape_solver</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/sketchflat-internals.pdf">sketchflat-internals.pdf</a></p>
+<p>Parametric Dimension:</p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/solvespace-w-var-dimension">https://github.com/mdecourse/solvespace-w-var-dimension</a> </p><h1>Project</h1>
 <p>各班分為四組, 每一組所完成的<a href="https://github.com/CoppeliaRobotics/models">虛擬機電資系統</a>所屬零組件, 必須分別利用 <a href="https://www.onshape.com/">Onshape</a>, <a href="https://blogs.sw.siemens.com/nx-design/">NX</a>12 與 <a href="https://www.solidworks.com/">Solidworks</a> 2017 建立後, 轉檔進入 <a href="https://www.coppeliarobotics.com/">CoppeliaSim </a>虛擬環境中, 並以部署在 <a href="https://www.heroku.com/">Heroku </a>中的網際 <a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">Python Remote API</a> 程式與 <a href="https://flutter.dev/">Flutter </a>手機程式進行控制.</p>
 <p>各分組的 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 系統模擬可在電腦輔助設計室中執行, 或以工作站室中每班配置的兩台 Ubuntu 20.04 主機中執行.</p>
 <h4>技術分組</h4>
@@ -31,16 +82,16 @@
 <li>將 <a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">Python Remote API</a> 轉為 <a href="https://flask.palletsprojects.com">Flask</a> 網際程式, 並部署於 <a href="https://www.heroku.com/">Heroku</a></li>
 <li>利用 <a href="https://flutter.dev/">Flutter</a> 建立手機 APP, 送出網際訊號與 <a href="https://www.heroku.com/">Heroku</a> 上的 Remote API 互動</li>
 <li>各組員利用 <a href="https://www.authorea.com/">Authorea</a> 編寫個人與分組的 pdf 格式期末報告</li>
-</ol>
-<h2>Onshape</h2>
+</ol><h2>Onshape</h2>
 <p><a href="https://github.com/mdecourse/V-Rep">https://github.com/mdecourse/V-Rep</a></p>
 <p><a href="https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g1/">https://mdekmol.github.io/cd2019a-task1-2019cda_t1_g1/</a></p>
 <p><a href="https://github.com/scrum-1/scrum_cadp_final/issues">https://github.com/scrum-1/scrum_cadp_final/issues</a></p>
 <p><a href="https://github.com/mdecourse/cadp2018/issues/17">https://github.com/mdecourse/cadp2018/issues/17</a></p>
 <p><a href="https://405232491.gitbooks.io/gitbook_week3/content/week10.html">https://405232491.gitbooks.io/gitbook_week3/content/week10.html</a> </p>
 <p></p><h2>PyRep</h2>
-<p><a href="https://github.com/mdecourse/site-40623128">https://github.com/mdecourse/site-40623128</a> </p>
-<p><a href="https://github.com/mdecourse/site-40623130">https://github.com/mdecourse/site-40623130</a> </p>
+<p><a href="https://github.com/mdecourse/site-40623128">https://github.com/mdecourse/site-40623128</a></p>
+<p><a href="https://github.com/mdecourse/site-40623130">https://github.com/mdecourse/site-40623130</a></p>
+<p><a href="https://github.com/mdecourse/site-40623224">https://github.com/mdecourse/site-40623224</a> </p>
 <p><a href="https://github.com/mdecourse/vrep-volleyball">https://github.com/mdecourse/vrep-volleyball</a></p>
 <p><a href="https://github.com/mdecourse/V-REP-YouBot-Demo">https://github.com/mdecourse/V-REP-YouBot-Demo</a></p>
 <p><a href="https://github.com/mdecourse/PyRep">https://github.com/mdecourse/PyRep</a></p>
