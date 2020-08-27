@@ -1,14 +1,22 @@
 <h1>About</h1>
-<p style="padding-left: 30px;"></p>
 <p>這裡是國立虎尾科技大學機械設計工程系大二的電腦輔助設計實習課程網頁.</p>
+<h4>何謂電腦輔助(機械)設計實習?</h4>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<p>設計是一種安排, 而且應該是竭盡全力, 希望達到盡善盡美的一種安排.</p>
+<p>機械是一種器物, 而且是各零組件精巧配置運行下, 可以達成特定任務, 發揮設計功能的一種器物.</p>
+<p>電腦其實只擅長兩件事, 能夠高速計算, 並且儲存各階段計算所得到的結果.</p>
+<p>實習包括實驗與練習, 實驗是實際體驗, 而練習則是透過重複操作進行學習.</p>
+<p>所以該如定義電腦輔助設計實習?</p>
 <h4>課程設計理念</h4>
 <p style="padding-left: 30px;">我們為何需要自行設法建構電腦輔助設計系統或系統中的關鍵工具? (為何不直接使用封閉套件, 然後將電腦輔助設計當作電腦輔助繪圖課程來上就好?)</p>
 <p style="padding-left: 30px;">我們為何需要利用雲端系統長期保存自己的學習與設計歷程? (為何不直接採用網路硬碟, 把每天的進度檔案用個別目錄分別儲存就好?)</p>
 <p style="padding-left: 30px;">我們為何要用程式方法與最佳化設計提升產品開發流程的效能? (為何不直接利用人工的方式進行產品重複設計的資料修改就好?反正台灣薪資低, 人工很好用?)</p>
 <p style="padding-left: 30px;">我們為何需要能在任何一台電腦上迅速完成電腦輔助設計工作項目? (為何不直接利用安裝在單一操作系統中的套件就好, 為何要使用全雲端 <a href="https://www.onshape.com/">Onshape</a>?)</p>
 <p style="padding-left: 30px;">我們為何需要使用 SSL 提交推送近端的設計改版內容? (為何不直接在其他協同組員的面前輸入自己的帳號與密碼就好? 只是上上課為何還需要注重資料保全?)</p>
+<p style="padding-left: 30px;">我們為何要將電腦輔助設計室中的電腦網路協定設定為純 IPv6? 然後再負責安裝維護多台 IPv6 與 IPv4 雙協定的代理伺服器, 讓使用者可以連線至目前只支援 IPv4 的服務? (為什麼不直接使用 NAT? 讓 64 台電腦透過一個 IPv4 網址對外連線?)</p>
+<p style="padding-left: 30px;">我們為何要自行編寫電子郵件寄送程式, 在成績繳交之前通知個別學員? (而不使用制式封閉源的成績公告系統? 或者乾脆將整班課程紙本學期成績單貼在教師研究室門上就好?)</p>
 <p>電腦輔助設計牽涉如何利用計算機系統相關技術, 以協助產品設計的創建，修改，分析和最佳化.</p>
-<p>產品設計的創建牽涉利用參數式繪圖套件建立 3D 零件與組立, 而設計修改可以採人工或程式方法進行, 至於本課程所牽涉的設計分析僅止於將機電系統輸入 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 進行 Kinematic 與 Dynamic 分析模擬.</p>
+<p>產品設計的創建牽涉利用參數式繪圖套件建立 3D 零件與組立, 而設計修改可以採人工或程式方法進行, 至於本課程所牽涉的設計分析僅止於將機電系統輸入 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 進行 <a href="https://www.coppeliarobotics.com/helpFiles/en/inverseKinematicsTutorial.htm">Kinematic</a> 與 <a href="https://www.coppeliarobotics.com/helpFiles/en/designingDynamicSimulations.htm">Dynamic</a> 分析模擬.</p>
 <p>從 3D 零組件的創建並轉進 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a>, 若能採程式方法配合參數化尺寸與組態修改, 並且將資料改版過程採用 Git (<a href="https://github.com/">Github</a>) 或 <a href="https://fossil-scm.org/">Fossil SCM</a> 進行分散式版次管理, 或者更近一步設法搭建網際系統以提高設計效能, 將可在分組團隊中採取最佳化同步設計.</p>
 <h4>課程使用工具</h4>
 <p>CAD2020 將在 <a href="https://kaggle.com">https://kaggle.com</a>, <a href="https://colab.research.google.com">https://colab.research.google.com</a> 以及可攜程式系統上編寫與 <a href="https://flask.palletsprojects.com">Flask</a> 網際程式, 目的是利用 <a href="https://www.onshape.com/">Onshape</a>, <a href="https://blogs.sw.siemens.com/nx-design/">NX</a>12, <a href="https://www.solidworks.com/">Solidworks</a> 2017 與 <a href="https://www.autodesk.com/products/inventor/">AutoDesk Inventor</a> 2019 設計機電資整合系統所需的零組件後, 可結合 <a href="https://flutter.dev">Flutter </a>手機程式與網際 <a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">Python Remote API</a> 程式控制 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 環境中的<a href="https://github.com/CoppeliaRobotics/models">虛擬系統</a>.</p>
