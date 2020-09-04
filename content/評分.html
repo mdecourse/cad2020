@@ -134,51 +134,68 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='討論區.html'>Next</a> >> 討論區<br /><h1>評分</h1>
+<p>本課程的評分標準:</p>
+<ol>
+<li>從未遲到者得 10%</li>
+<li>從未缺席且從未無正當理由離席超過 15 分鐘者得 20%</li>
+<li>從未缺交各週作業且從未抄襲他人作業且從未不當引用網路資料者得 30%</li>
+<li>作業與報告內容充實, 每一項課程內容都拍攝具參考價值之教學影片者得 20%</li>
+<li>完成具體且創新之課程內容改進項目, 並能積極協助組員解決各種難題者得 10%</li>
+<li>個人之倉儲內容, 網頁, 網誌與簡報內容均令人嘆為觀止者得 10%</li>
+</ol>
+<p>根據上述課程評分標準, 由組員之自評成績決定課程期中成績, 視為本課程之學員期望成績, 期中考後, 則依據各週之組員自評成績, 組員互評成績與教師評分成績, 按照下列流程計算學員之學期成績.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
 根據評分表單中的 自評分數, 互評得分, 教師評分, 計算學員課程成績
 '''
- 
+# diff 函式傳回兩輸入分數的絕對差值 
 def diff(分數1, 分數2):
     return abs(分數1 - 分數2)
      
+# getHigh函式傳回兩分數中較高者
 def getHigh(分數1, 分數2):
     if  分數1 &gt; 分數2:
         return 分數1
     else:
         return 分數2
 
+# getLow 函式傳回兩分數中較低者
 def getLow(分數1, 分數2):
     if  分數1 &lt; 分數2:
         return 分數1
     else:
         return 分數2
- 
+
+# 分組評分函式取自評與教師評分比較, 若差距大於 5 分取其低者
+# 否則依自評 40%, 教師 60% 計算
 def 分組評分(自評分數, 教師評分):
     return getLow(自評分數, 教師評分)
     if diff(自評分數, 教師評分) &gt; 5:
         return getLow(自評分數, 教師評分)
     else:
         return int(自評分數*0.4 + 教師評分*0.6)
-     
+
+# 全班比分函式取互評與分組評分比較, 若差距小於 5 分取其高者
+# 否則依互評得分 40%, 分組評分 60% 計算     
 def 全班比分(互評得分, 分組評分):
     if diff(互評得分, 分組評分) &lt; 5:
         學員成績 = getHigh(互評得分, 分組評分)
     else:
         學員成績 = int(互評得分*0.4 + 分組評分*0.6)
     return 學員成績
- 
+
+# 學員之學期成績依照上述分組評分與全班比分函式計算 
 def 學員成績(自評分數, 互評得分, 教師評分):
     學員課程成績 = 全班比分(互評得分, 分組評分(自評分數, 教師評分))
     return 學員課程成績
-    
+
+# 利用迴圈從 50 起每次增量 5 分, 分別列出各評分組合下的成績計算結果    
 for i in range(10):
     self_score = 50 + i*5
     for j in range(10):
         peer_score = 50 + j*5
         for k in range(10):
             teacher_score = 50 + k*5
-            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre>
-<p><br/><br/></p><br />About << <a href='About.html'>Previous</a> <a href='討論區.html'>Next</a> >> 討論區</div>
+            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre><br />About << <a href='About.html'>Previous</a> <a href='討論區.html'>Next</a> >> 討論區</div>
         
     <!-- footer -->
       <div class="container">
