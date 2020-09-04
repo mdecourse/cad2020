@@ -36,51 +36,68 @@
 <h4>電腦輔助設計室與協同設計室行事曆</h4>
 <p><a href="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;src=yen%40gm.nfu.edu.tw&amp;ctz=Asia%2FTaipei">全頁檢視</a></p>
 <p><iframe height="600" src="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;src=yen%40gm.nfu.edu.tw&amp;ctz=Asia%2FTaipei" width="800"></iframe></p><h2>評分</h2>
+<p>本課程的評分標準:</p>
+<ol>
+<li>從未遲到者得 10%</li>
+<li>從未缺席且從未無正當理由離席超過 15 分鐘者得 20%</li>
+<li>從未缺交各週作業且從未抄襲他人作業且從未不當引用網路資料者得 30%</li>
+<li>作業與報告內容充實, 每一項課程內容都拍攝具參考價值之教學影片者得 20%</li>
+<li>完成具體且創新之課程內容改進項目, 並能積極協助組員解決各種難題者得 10%</li>
+<li>個人之倉儲內容, 網頁, 網誌與簡報內容均令人嘆為觀止者得 10%</li>
+</ol>
+<p>根據上述課程評分標準, 由組員之自評成績決定課程期中成績, 視為本課程之學員期望成績, 期中考後, 則依據各週之組員自評成績, 組員互評成績與教師評分成績, 按照下列流程計算學員之學期成績.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
 根據評分表單中的 自評分數, 互評得分, 教師評分, 計算學員課程成績
 '''
- 
+# diff 函式傳回兩輸入分數的絕對差值 
 def diff(分數1, 分數2):
     return abs(分數1 - 分數2)
      
+# getHigh函式傳回兩分數中較高者
 def getHigh(分數1, 分數2):
     if  分數1 &gt; 分數2:
         return 分數1
     else:
         return 分數2
 
+# getLow 函式傳回兩分數中較低者
 def getLow(分數1, 分數2):
     if  分數1 &lt; 分數2:
         return 分數1
     else:
         return 分數2
- 
+
+# 分組評分函式取自評與教師評分比較, 若差距大於 5 分取其低者
+# 否則依自評 40%, 教師 60% 計算
 def 分組評分(自評分數, 教師評分):
     return getLow(自評分數, 教師評分)
     if diff(自評分數, 教師評分) &gt; 5:
         return getLow(自評分數, 教師評分)
     else:
         return int(自評分數*0.4 + 教師評分*0.6)
-     
+
+# 全班比分函式取互評與分組評分比較, 若差距小於 5 分取其高者
+# 否則依互評得分 40%, 分組評分 60% 計算     
 def 全班比分(互評得分, 分組評分):
     if diff(互評得分, 分組評分) &lt; 5:
         學員成績 = getHigh(互評得分, 分組評分)
     else:
         學員成績 = int(互評得分*0.4 + 分組評分*0.6)
     return 學員成績
- 
+
+# 學員之學期成績依照上述分組評分與全班比分函式計算 
 def 學員成績(自評分數, 互評得分, 教師評分):
     學員課程成績 = 全班比分(互評得分, 分組評分(自評分數, 教師評分))
     return 學員課程成績
-    
+
+# 利用迴圈從 50 起每次增量 5 分, 分別列出各評分組合下的成績計算結果    
 for i in range(10):
     self_score = 50 + i*5
     for j in range(10):
         peer_score = 50 + j*5
         for k in range(10):
             teacher_score = 50 + k*5
-            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre>
-<p><br/><br/></p><h2>討論區</h2>
+            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre><h2>討論區</h2>
 <p><a href="https://gitter.im/mdecourse/cad2020">https://gitter.im/mdecourse/cad2020</a> </p><h2>分組</h2>
 <h4>修課人員名單:</h4>
 <p>四技二甲電腦輔助設計實習:</p>
@@ -119,12 +136,13 @@ for i in range(10):
 <p style="padding-left: 30px;">可以參考大一的課程內容: <a href="http://mde.tw/cp2020/content/W2.html">http://mde.tw/cp2020/content/W2.html</a></p>
 <p>W1 準備在個人的電腦, 筆電或電腦輔助設計室中的電腦 (每班按照學號使用固定電腦, 若電腦故障則必須在一週內負責告知助教, 並將電腦第三磁區複製回原始狀態, 若電腦硬體故障則需回報給助教設法請廠商進行維護, 期間則至使用最後一列備用電腦) 製作合用的可攜程式系統.</p>
 <h4>NX 高端電腦輔助機械設計套件</h4>
-<p style="padding-left: 30px;">登入 @gm 帳號, <a href="https://drive.google.com/file/d/1tiuq-KGeoCNA63IEkEWhGzSTFgdQUVM_/view?usp=sharing">下載 NX12 可攜版</a></p>
+<p style="padding-left: 30px;">登入 @gm 帳號, <a href="https://drive.google.com/file/d/1tiuq-KGeoCNA63IEkEWhGzSTFgdQUVM_/view?usp=sharing">下載 NX12 可攜版</a> (949MB)</p>
 <h4>Solidworks 中端電腦輔助機械設計套件</h4>
-<p style="padding-left: 30px;"><span>登入 @gm 帳號, </span><a href="https://drive.google.com/file/d/1KPpXzumzBIvMCovZdBYh0s468uFO277k/view">下載 SolidWorks 2017 SP2 安裝光碟</a></p>
+<p style="padding-left: 30px;"><span>登入 @gm 帳號, </span><a href="https://drive.google.com/file/d/1KPpXzumzBIvMCovZdBYh0s468uFO277k/view">下載 SolidWorks 2017 SP2 安裝光碟</a> (12GB)</p>
 <p style="padding-left: 60px;"><a href="/downloads/solidworks_basics.pdf">Solidworks basics.pdf</a></p>
-<p style="padding-left: 60px;"><a href="/downloads/Solidworks 零件繪圖練習1.pdf"></a></p>
-<p style="padding-left: 60px;">登入 @gm 帳號, <a href="https://drive.google.com/file/d/1eQ_mp5aeVmsILjHH8-bAy9sfnX3bANKr/view?usp=sharing">下載 2020 Mastering Solidworks 電子書</a></p>
+<p style="padding-left: 60px;"><a href="/downloads/SolidWorks_Tutorial08_BearingPuller_English_08_LR.pdf">SolidWorks_Tutorial08_BearingPuller_English_08_LR.pdf</a></p>
+<p style="padding-left: 60px;"><a href="https://pypi.org/project/pySW/">https://pypi.org/project/pySW/</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/thunderbirdtr/SWPyMacros">https://github.com/thunderbirdtr/SWPyMacros</a></p>
 <h4><span>AutoDesk Inventor 與 Fusion 360 中端電腦輔助機械設計套件</span></h4>
 <p><span>以下連結必須在校園網路、使用學校代理主機或 <a href="https://nfucc.nfu.edu.tw/zh/download/download-network/ssl-vpn">vpn</a> 模式下才可下載</span></p>
 <p style="padding-left: 30px;"><a href="https://software.nfu.edu.tw/Autodesk/autodesk.iso">AutoDesk PDSU</a><span> (Product Design Suite Ultimate edition) 包含:</span><br/><br/><span>Autodesk Inventor Professional</span><br/><span>AutoCAD Mechanical</span><br/><span>AutoCAD Electrical</span><br/><span>AutoCAD</span><br/><span>Navisworks Simulate</span><br/><span>AutoCAD Raster Design</span><br/><span>Autodesk Recap</span><br/><span>Autodesk Vault Basic</span><br/><span>Autodesk Fusion 360</span><br/><span>Navisworks Manage</span><br/><br/><a href="https://software.nfu.edu.tw/files/AUTODESK%E5%AE%89%E8%A3%9D%E6%95%99%E5%AD%B8.pdf">AutoDesk 安裝教學.pdf</a></p>
@@ -184,9 +202,8 @@ for i in range(10):
 <p style="padding-left: 30px;"><a href="https://github.com/mdecourse/cadp2018/issues/17">https://github.com/mdecourse/cadp2018/issues/17</a></p>
 <p><a href="https://405232491.gitbooks.io/gitbook_week3/content/week10.html">https://405232491.gitbooks.io/gitbook_week3/content/week10.html</a></p>
 <p></p><h3>Solidworks</h3>
-<p>下載 Solidworks 2017 安裝檔案</p>
-<p>Mastering SolidWorks</p>
-<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-3-030-38901-7">https://link.springer.com/book/10.1007/978-3-030-38901-7</a></p>
+<p><a href="https://drive.google.com/file/d/1KPpXzumzBIvMCovZdBYh0s468uFO277k/view">下載 Solidworks 2017 安裝檔案</a></p>
+<p></p>
 <p></p><h3>Inventor</h3>
 <p><a href="https://software.nfu.edu.tw/files/AUTODESK%E5%AE%89%E8%A3%9D%E6%95%99%E5%AD%B8.pdf">AutoDesk Inventor 安裝教學</a></p>
 <p>Learn Autodesk Inventor 2018 Basics</p>
