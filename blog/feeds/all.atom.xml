@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2020 電腦輔助設計實習</title><link href="https://mdecourse.github.io/cad2020/blog/" rel="alternate"></link><link href="https://mdecourse.github.io/cad2020/blog/feeds/all.atom.xml" rel="self"></link><id>https://mdecourse.github.io/cad2020/blog/</id><updated>2020-09-19T11:00:00+08:00</updated><entry><title>2020 Fall CAD 課程</title><link href="https://mdecourse.github.io/cad2020/blog/2020-Fall-Intro-to-computer-aided-design.html" rel="alternate"></link><published>2020-09-19T11:00:00+08:00</published><updated>2020-09-19T11:00:00+08:00</updated><author><name>yen</name></author><id>tag:mdecourse.github.io,2020-09-19:/cad2020/blog/2020-Fall-Intro-to-computer-aided-design.html</id><summary type="html">&lt;p&gt;2020 Fall 電腦輔助設計實習的教學主要介紹 NX12, SolidWorks, Onshape, Solvespace, CoppeliaSim, Python 以及 Dart 在機械設計流程中的應用.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2020 Fall 電腦輔助設計實習的教學主要介紹 NX12, SolidWorks, Onshape, Solvespace, CoppeliaSim, Python 以及 Dart 在機械設計流程中的應用.&lt;/p&gt;
+
+
+&lt;h2&gt;電腦輔助機械設計套件&lt;/h2&gt;
+&lt;p&gt;本課程主要介紹教育版本的中端與高端電腦輔助機械設計套件的使用, 以及在機電產品開發過程所牽涉的動態模擬, 並且過程希望透過計算機程式方法進行輔助, 尤其希望利用自己架設或雲端公用主機所提供的服務進行整合應用.&lt;/p&gt;
+&lt;p&gt;SolidWorks 雖然是目前在全球中小企業最廣為使用的電腦輔助機械設計套件, 但其基本的設計流程仍須依賴集中式的產品資料管理系統或產品生命週期管理系統協同配置. 相較於純雲端的 Onshape 以及近端與雲端 Hybride 的 Fusion 360. 或可將 Solidworks 視為純油車, 而 Onshape 為 Tesla 等級的純電車, 而 Fusion 360 則是油電混用的 Hybride 車系.&lt;/p&gt;
+&lt;p&gt;未來當然是以純電車為主, 油電混用是過渡產品, 而純油車則會逐漸沒落, 但可以確定的是, 純油車的生命週期仍然會持續好幾十年以上.&lt;/p&gt;
+&lt;p&gt;儘管趨勢如此, 本課程仍希望學員能夠逐步了解傳統 MCAD (Mechanical Computer Aide Design) 套件的特性與侷限 (包括 SolidWorks, NX12, Inventor, Solvespace), 並以相同的心態使用純雲端或 Hybride 系統, 無論未來產品開發環境如何變化, 都能有效因應.&lt;/p&gt;
+&lt;h2&gt;網際 Python 程式&lt;/h2&gt;
+&lt;p&gt;WebGL 加上 Javascript, 已經可以在網際環境的前端, 將傳統的 MCAD 功能全數透過電腦, 平板或手機中的瀏覽器上展現, 至於網際的後端在本電腦輔助設計實習課程將採用 Python ＋Flask 建構.&lt;/p&gt;
+&lt;p&gt;本課程所有資料的儲存大多數時間都在近端電腦上製作, 並利用 git 將版本推送到 Github 與 Gitlab, 且近端的工具大多採可攜的方式製作, 並能在 Windows 10, Ubuntu 20.04 以及 Mac Catalina 操作系統中使用.&lt;/p&gt;
+&lt;p&gt;以下將利用 &lt;a href="https://ark.intel.com/content/www/us/en/ark/products/37212/intel-pentium-processor-e5200-2m-cache-2-50-ghz-800-mhz-fsb.html"&gt;E5200&lt;/a&gt; 雙核電腦主機配置 Ubuntu 20.04 下的 Nginx + uwsgi Virtual Host 設定. 主要目的是利用一組 IPv6 網址配置多個 Domain Name Servers, 所使用的網際內容管理為 &lt;a href="https://github.com/mdecourse/cmsimde.git"&gt;CMSiMDE&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;靜態 &lt;a href="https://github.com/mdecourse/cmsimde.git"&gt;CMSiMDE&lt;/a&gt; 網頁&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/mdecourse/cmsimde.git"&gt;CMSiMDE&lt;/a&gt; 可提供使用者建立靜態與動態網頁. 在此的靜態網頁可以直接利用 &lt;a href="http://nginx.org/"&gt;Nginx&lt;/a&gt; 進行伺服.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nginx.org/"&gt;Nginx&lt;/a&gt; 的安裝, 可以採用 sudo apt install nginx 完成, 其設定檔案位於 /etc/nginx/sites-available/default.&lt;/p&gt;
+&lt;p&gt;為了在同一個 IPv6 網址上配置兩台網際伺服器, 首先必須先在 DNS 伺服器中將同一個 IPv6 address 以 AAAA 設定分別綁定至 server1.your.domain 與 server2.your.domain.&lt;/p&gt;
+&lt;p&gt;接下來就可以利用下列 default 設定檔案完成 Nginx 靜態網頁的配置.&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+# sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout localhost.key -out localhost.crt
+
+# for server1.your.domain
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+        root /home/user/server1_site;   
+
+    index index.html index.htm;
+
+    server_name server1.your.domain;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+# for https://server1.your.domain:9443
+server {
+    listen 9443 ssl;
+    listen [::]:9443 ssl;
+    server_name server1.your.domain;
+
+    location /static {
+        alias /home/user/server1_site/cmsimde/static/;
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass  127.0.0.1:8080;
+    }
+
+    ssl_certificate /home/user/localhost.crt;
+    ssl_certificate_key /home/user/localhost.key;
+    #ssl_certificate /etc/letsencrypt/live/server1.your.domain/fullchain.pem;
+    #ssl_certificate_key /etc/letsencrypt/live/server1.your.domain/privkey.pem;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_prefer_server_ciphers on;
+    try_files $uri $uri/ =404;
+}
+
+# for server2.your.domain
+server {
+    listen 80;
+    listen [::]:80;
+
+        root /home/user/server2_site;   
+    index index.html index.htm;
+
+    server_name server2.your.domain;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+# for https://server2.your.domain:9443
+
+server {
+    listen 9443 ssl;
+    listen [::]:9443 ssl;
+    server_name server2.your.domain;
+
+    location /static {
+        alias /home/user/server2_site/cmsimde/static/;
+    }
+
+    location / {
+        # include uwsgi_params 
+        include uwsgi_params;
+    # use localhost 8081 port 
+        uwsgi_pass  127.0.0.1:8081;
+    }
+
+    ssl_certificate /home/user/localhost.crt;
+    ssl_certificate_key /home/user/localhost.key;
+    #ssl_certificate /etc/letsencrypt/live/server2.your.domain/fullchain.pem;
+    #ssl_certificate_key /etc/letsencrypt/live/server2.your.domain/privkey.pem;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_prefer_server_ciphers on;
+    try_files $uri $uri/ =404;
+}
+&lt;/pre&gt;
+
+&lt;h2&gt;uwsgi 模組安裝&lt;/h2&gt;
+&lt;pre class="brush: jscript"&gt;
+// 安裝 pip3
+sudo apt install python3-pip
+// 安裝 python 編譯開發系統
+sudo apt install build-essential python3-dev
+// 安裝 uwsgi 模組
+sudo pip3 install uwsgi
+// 安裝 nginx 伺服套件與 uwsgi python3 plugin 程式庫
+sudo apt install nginx uwsgi-plugin-python3
+&lt;/pre&gt;
+
+&lt;p&gt;/home/user/uwsgi_ini/server1.ini&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+[uwsgi]
+socket = :8080
+uid = user
+gid = user
+plugins-dir = /usr/lib/uwsgi/plugins/
+plugin = python3
+master = true
+process = 4
+threads = 2
+chdir = /home/user/server1_site/cmsimde
+wsgi-file = /home/user/server1_site/cmsimde/wsgi.py
+&lt;/pre&gt;
+
+&lt;p&gt;/home/user/uwsgi_ini/server2.ini&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+[uwsgi]
+socket = :8081
+uid = user
+gid = user
+plugins-dir = /usr/lib/uwsgi/plugins/
+plugin = python3
+master = true
+process = 4
+threads = 2
+chdir = /home/user/server2_site/cmsimde
+wsgi-file = /home/user/server2_site/cmsimde/wsgi.py
+&lt;/pre&gt;
+
+&lt;p&gt;/etc/systemd/system/cmsimde.service&lt;/p&gt;
+&lt;pre class="brush: jscript"&gt;
+[Unit]
+Description=uWSGI to serve CMSiMDE
+After=network.target
+
+[Service]
+User=user_account
+Group=user_account
+WorkingDirectory=/home/user/uwsgi_ini
+ExecStart=/usr/local/bin/uwsgi --emperor /home/user/uwsgi_ini
+
+[Install]
+WantedBy=multi-user.target
+&lt;/pre&gt;
+
+&lt;p&gt;接著將 cmsimde 服務設為隨系統開機啟動:&lt;/p&gt;
+&lt;p&gt;sudo systemctl enable cmsimde&lt;/p&gt;
+&lt;p&gt;若要取消 cmsimde 服務隨系統開機啟動:&lt;/p&gt;
+&lt;p&gt;sudo systemctl disable cmsimde&lt;/p&gt;
+&lt;p&gt;手動啟動 cmsimde.service 服務&lt;/p&gt;
+&lt;p&gt;sudo systemctl start cmsimde&lt;/p&gt;
+&lt;p&gt;手動停止 cmsimde.service 服務&lt;/p&gt;
+&lt;p&gt;sudo systemctl stop cmsimde&lt;/p&gt;
+&lt;p&gt;其他資料編寫中......&lt;/p&gt;
+&lt;p&gt;Python 可以用來開發單機版的視窗程式套件 Pyslvs-UI&lt;/p&gt;
+&lt;p&gt;Python 可以用來開發網際版的內容管理系統 CMSiMDE&lt;/p&gt;
+&lt;p&gt;Python 可以用來控制 CoppeliaSim 與 Webots 虛擬環境中的機電系統&lt;/p&gt;
+&lt;p&gt;Python 可以用於機器學習 Keras, Pytorch&lt;/p&gt;
+&lt;h2&gt;機電資模擬軟體&lt;/h2&gt;
+&lt;p&gt;Flutter 可以用來開發跨 Apple 與 Android 手機與平板上的 Apps&lt;/p&gt;</content><category term="Misc"></category><category term="2020FallCAD"></category></entry></feed>
