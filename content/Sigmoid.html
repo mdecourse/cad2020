@@ -135,8 +135,9 @@ img.add_border {
         </header>
     <div id="tipue_search_content">設計分析 << <a href='設計分析.html'>Previous</a> <a href='設計最佳化.html'>Next</a> >> 設計最佳化<br /><h1>Sigmoid</h1>
 <p>A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve. A common example of a sigmoid function is the logistic function defined by the formula:</p>
-<p>Sigmoid Function:</p>
-<p>${ \huge S (x) = \frac{\mathrm{1}} {\mathrm{1} + e^{-x} } = \frac{e^x} {e^x +\mathrm{1}} } $</p>
+<p><a href="https://en.wikipedia.org/wiki/Logistic_function">Logistic Function</a>(邏輯函式):</p>
+<p>${ \large S(x) = \frac{\mathrm{1}} {\mathrm{1} + e^{-x} } = \huge \frac{e^x} {e^x +\mathrm{1}} } $</p>
+<p>${\large \begin{align} \dfrac{d}{dx} S(x) &amp;= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] \\ &amp;= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} \\ &amp;= -(1 + e^{-x})^{-2}(-e^{-x}) \\ &amp;= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= S(x) \cdot (1 - S(x)) \end{align}}$</p>
 <p>已知從<a href="https://gist.github.com/Will-777/ad278c345639d24efb9d4cd275addbd2">這裡</a>可以利用 Python 加上 Matplotlib 畫出 Sigmoid function, 程式如下:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#import section
 from matplotlib import pylab
@@ -182,7 +183,7 @@ plt.ylabel('Y Axis')
 
 # create the graph
 plt.show()</pre>
-<p>以下可以直接利用 Javascript 或 <a href="https://brython.info/">Brython</a> 以 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Html5 Canvas</a> 直接在網頁中繪出 Sigmoid 函式圖?</p>
+<p>以下可以直接利用 Javascript 或 <a href="https://brython.info/">Brython</a> 以 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Html5 Canvas</a> 直接在網頁中繪出 Logistic 函式圖?</p>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 /* This file implements a simple plotting library described in https://pavpanchekha.com/blog/plotting-d3.org */
