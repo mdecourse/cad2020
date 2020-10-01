@@ -343,10 +343,24 @@ for i in range(10):
 <h3>Sigmoid</h3>
 <p>A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve. A common example of a sigmoid function is the logistic function defined by the formula:</p>
 <p><a href="https://en.wikipedia.org/wiki/Logistic_function">Logistic Function</a>(邏輯函式):</p>
-<p>${ \large S(x) = \frac{\mathrm{1}} {\mathrm{1} + e^{-x} } = \huge \frac{e^x} {e^x +\mathrm{1}} } $</p>
+<p>${ \large S(x) = \LARGE \frac{\mathrm{1}} {\mathrm{1} + e^{-x}}} $</p>
 <p>${\large \begin{align} \dfrac{d}{dx} S(x) &amp;= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] \\ &amp;= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} \\ &amp;= -(1 + e^{-x})^{-2}(-e^{-x}) \\ &amp;= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= S(x) \cdot (1 - S(x)) \end{align}}$</p>
-<p>另外一種對 Logistic function 微分的推導法:<br/> 因為 ${\large f(x)=\dfrac{1}{S(x)} = 1+e^{-x} }$ <br/> 先對左邊的表示式微分可以得到:<br/> ${\large f'(x) = \frac{d}{dx} \biggl( \frac{1}{S(x)} \biggr) = -\frac{S'(x)}{S(x)^2} }$ <br/> 接著再對右邊的表示式微分可以得到: <br/> ${\large f'(x) = \frac{d}{dx} \bigl( 1+e^{-x} \bigr) = -e^{-x} = 1-f(x) = 1 - \frac{1}{S(x)} = \frac{S(x)-1}{S(x)} }$<br/>最後再將兩個式子合併整理一下, 就可以得到:</p>
+<p>另外一種對 Logistic function 微分的推導法:<br/> 因為 ${\Large f(x)=\dfrac{1}{S(x)} = 1+e^{-x} }$ <br/> 先對左邊的表示式微分可以得到:<br/> ${\Large f'(x) = \frac{d}{dx} \biggl( \frac{1}{S(x)} \biggr) = -\frac{S'(x)}{S(x)^2} }$ <br/> 接著再對右邊的表示式微分可以得到: <br/> ${\Large f'(x) = \frac{d}{dx} \bigl( 1+e^{-x} \bigr) = -e^{-x} = 1-f(x) = 1 - \frac{1}{S(x)} = \frac{S(x)-1}{S(x)} }$<br/>最後再將兩個式子合併整理一下, 就可以得到:</p>
 <p>${\large S'(x) = \dfrac{d}{dx} S(x) = S(x) \cdot (1 - S(x))}$</p>
+<p>假如使用 sympy 以符號式運算求 Logistic function 的微分式:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sympy
+
+x = sympy.Symbol('x')
+
+def f(x):
+    return 1/(1+sympy.exp(-x))
+
+def d(x):
+    return sympy.diff(f(x), x)
+
+print(d(x))
+
+# d(x) = exp(-x)/(1 + exp(-x))**2</pre>
 <p>已知從<a href="https://gist.github.com/Will-777/ad278c345639d24efb9d4cd275addbd2">這裡</a>可以利用 Python 加上 Matplotlib 畫出 Logistic function, 程式如下:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#import section
 from matplotlib import pylab
@@ -392,6 +406,24 @@ plt.ylabel('Y Axis')
 
 # create the graph
 plt.show()</pre>
+<p><img alt="" height="340" src="/images/sigmoid_logical_function_plot.png" width="400"/></p>
+<p>利用 matplotlib 畫出上述手動推導與 Sympy 推導的 Logistic 函式與微分式圖:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import matplotlib.pyplot as plt
+import numpy as np
+
+def sigmoid(x):
+    s=1/(1+np.exp(-x))
+    #ds=s*(1-s)  
+    ds = np.exp(-x)/(1 + np.exp(-x))**2
+    return s,ds
+
+x=np.arange(-6,6,0.01)
+
+plt.plot(x,sigmoid(x)[0], color="#307EC7", linewidth=3, label="sigmoid")
+plt.plot(x,sigmoid(x)[1], color="#9621E2", linewidth=3, label="derivative")
+plt.legend(loc="center right", frameon=False)
+plt.show()</pre>
+<p><img alt="" height="340" src="/images/logical_function_and_derivative.png" width="400"/></p>
 <p>以下可以直接利用 Javascript 或 <a href="https://brython.info/">Brython</a> 以 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Html5 Canvas</a> 直接在網頁中繪出 Logistic 函式圖?</p>
 <p><!-- 啟用 LaTeX equations 編輯 -->
 <script>
