@@ -342,10 +342,12 @@ for i in range(10):
 <p style="padding-left: 60px;">Apple 為何不自己製造手機?</p>
 <h3>Sigmoid</h3>
 <p>A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve. A common example of a sigmoid function is the logistic function defined by the formula:</p>
-<p><a href="https://en.wikipedia.org/wiki/Logistic_function">Logistic Function</a>:</p>
+<p><a href="https://en.wikipedia.org/wiki/Logistic_function">Logistic Function</a>(邏輯函式):</p>
 <p>${ \large S(x) = \frac{\mathrm{1}} {\mathrm{1} + e^{-x} } = \huge \frac{e^x} {e^x +\mathrm{1}} } $</p>
 <p>${\large \begin{align} \dfrac{d}{dx} S(x) &amp;= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] \\ &amp;= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} \\ &amp;= -(1 + e^{-x})^{-2}(-e^{-x}) \\ &amp;= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= S(x) \cdot (1 - S(x)) \end{align}}$</p>
-<p>已知從<a href="https://gist.github.com/Will-777/ad278c345639d24efb9d4cd275addbd2">這裡</a>可以利用 Python 加上 Matplotlib 畫出 Sigmoid function, 程式如下:</p>
+<p>另外一種對 Logistic function 微分的推導法:<br/> 因為 ${\large f(x)=\dfrac{1}{S(x)} = 1+e^{-x} }$ <br/> 先對左邊的表示式微分可以得到:<br/> ${\large f'(x) = \frac{d}{dx} \biggl( \frac{1}{S(x)} \biggr) = -\frac{S'(x)}{S(x)^2} , }$ <br/> 接著再對右邊的表示式微分可以得到: <br/> ${\large f'(x) = \frac{d}{dx} \bigl( 1+e^{-x} \bigr) = -e^{-x} = 1-f(x) = 1 - \frac{1}{S(x)} = \frac{S(x)-1}{S(x)} }$<br/>最後再將兩個式子合併整理一下, 就可以得到:</p>
+<p>${\large S'(x) = \dfrac{d}{dx} S(x) = S(x) \cdot (1 - S(x))}$</p>
+<p>已知從<a href="https://gist.github.com/Will-777/ad278c345639d24efb9d4cd275addbd2">這裡</a>可以利用 Python 加上 Matplotlib 畫出 Logistic function, 程式如下:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#import section
 from matplotlib import pylab
 import pylab as plt
@@ -390,160 +392,16 @@ plt.ylabel('Y Axis')
 
 # create the graph
 plt.show()</pre>
-<p>以下可以直接利用 Javascript 或 <a href="https://brython.info/">Brython</a> 以 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Html5 Canvas</a> 直接在網頁中繪出 Sigmoid 函式圖?</p>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
-/* This file implements a simple plotting library described in https://pavpanchekha.com/blog/plotting-d3.org */
-/* Copyright (c) 2014 Pavel Panchekha. This code is under the MIT license.*/
-
-function function_pts(x, y, pts, t0, t1, ds) {
-    if (Math.abs(t0 - t1) < 1e-5) return;
-    var x1 = x(t1), y1 = y(t1);
-    var x0 = pts[pts.length - 1][0], y0 = pts[pts.length - 1][1];
-    if ((x1 - x0)*(x1 - x0) + (y1 - y0)*(y1 - y0) > ds*ds) {
-        function_pts(x, y, pts, t0, (t0 + t1)/2, ds);
-        function_pts(x, y, pts, (t0 + t1)/2, t1, ds);
-    } else {
-        pts.push([x1, y1]);
-    }
-}
-
-function Chart(width, height, margin) {
-    this.width = width || svg.width;
-    this.height = height || svg.height;
-    this.margin = margin || 2;
-
-    var a = d3.selectAll("script");
-    var script = a[0][a[0].length - 1];
-    this.svg = d3.select(script.parentNode).append("svg");
-    this.svg.attr("width", width).attr("height", height);
-    
-    this.x = undefined;
-    this.y = undefined;
-    
-    this.plots = [];
-    this.fo = undefined;
-    this.mode = "plot";
-}
-
-Chart.prototype._make_scale = function(pts) {
-    if (this.x && this.y) return;
-    
-    this.x = d3.scale.linear()
-        .domain([d3.min(pts, Function.get(0)),
-                 d3.max(pts, Function.get(0))])
-        .range([this.margin, this.width - this.margin]);
-    this.y = d3.scale.linear()
-        .domain([d3.min(pts, Function.get(1)),
-                 d3.max(pts, Function.get(1))])
-        .range([this.height - this.margin, this.margin]);
-}
-
-Function.prototype.to = function(i) {
-    var f = this;
-    return function (p) {return f(p[i])};
-}
-
-Function.get = function(i) {return (function(x) {return x[i]})};
-Function.id = function(x) {return x};
-
-Chart.prototype.plot = function(x, y, t) {
-    var dt = (t[1] - t[0]) / t[2];
-    var ts = d3.range(t[0], t[1] + dt, dt);
-    var t0 = ts.shift();
-  
-    var pts = [[x(t0), y(t0)]];
-    for (var i = 1; i < ts.length; i++) {
-        t1 = ts[i];
-        function_pts(x, y, pts, t0, t1, dt * Math.sqrt(2));
-        t0 = t1;
-    }
-
-    this._make_scale(pts);
-    
-    var line = d3.svg.line().x(this.x.to(0)).y(this.y.to(1));
-    return this.svg.append("path").attr("d", line(pts));
-}
-
-Chart.prototype._make_button = function() {
-    if (this.fo) {
-        var fo = this.fo[0][0].parentNode;
-        fo.parentNode.appendChild(fo);
-    } else {
-        var that = this;
-        this.fo = this.svg.append("foreignObject")
-            .attr("width", this.width).attr("height", this.height)
-            .append("xhtml:div");
-        this.fo.append("button").text("Show Source")
-            .on("click", function(d, i) {that._toggle_mode()});
-    }
-}
-
-Chart.prototype._toggle_mode = function() {
-    if (this.mode == "plot") {
-        this.mode = "source";
-        this.fo.select("button").text("Show Plot");
-        this.svg.selectAll("path").style("display", "none");
-        this.fo.selectAll("table").style("display", "block");
-    } else {
-        this.mode = "plot";
-        this.fo.select("button").text("Show Source");
-        this.svg.selectAll("path").style("display", "inherit");
-        this.fo.selectAll("table").style("display", "none");
-    }
-}
-
-Chart.prototype._push_plot = function(vars, range) {
-    this._make_button();
-
-    var t = this.fo.append("table").attr("class", "plot");
-    var a_fn = undefined;
-    for (var name in vars) {
-        var tr = t.append("tr");
-        a_fn = (""+vars[name]).match(/^function ([\w_]+)\s*\(([\w_]*)\)\s\{\s*(?:with\s*\(Math\)\s*\{\s*)?((?:\n|.)*?)(?:\s*\}){1,2}$/);
-        tr.append("th").text(name)
-        tr.append("td").text(a_fn[3]);
-    }
-    var h = t.insert("thead", "*").append("td").attr("colspan", 2);
-    h.append("em").text(a_fn[1] + "(" + a_fn[2] + ")")
-    h.append("span").text(" from " + d3.round(range[0], 2)
-                          + " to " + d3.round(range[1], 2));
-    
-}
-
-Chart.prototype.cartesian = function(y, t) {
-    var line = this.plot(Function.id, y, t);
-    this._push_plot({y: y}, t);
-    return line;
-}
-
-Chart.prototype.polar = function(r, t) {
-    var line = this.plot(function(o) {return r(o) * Math.cos(o)},
-                         function(o) {return r(o) * Math.sin(o)}, t);
-    this._push_plot({r: r}, t);
-    return line;
-}
-
-Chart.prototype.parametric = function(x, y, t) {
-    var line = this.plot(x, y, t);
-    this.push_plot({x: x, y: y}, t);
-    return line;
-}
-</script>
-<script>
-var chart = new Chart(460, 250);
-
-function sigmoid(t) { with (Math) { return 1 / (1 + exp(-2*t)); } }
-chart.cartesian(sigmoid, [-5, 5, 100]);
-</script>
+<p>以下可以直接利用 Javascript 或 <a href="https://brython.info/">Brython</a> 以 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Html5 Canvas</a> 直接在網頁中繪出 Logistic 函式圖?</p>
 <p><!-- 啟用 LaTeX equations 編輯 -->
 <script>
 MathJax = {
-    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    tex: {inlineMath: [['$', '$']]}
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-</p><h2>設計最佳化</h2><h1>Solvespace</h1>
+</p>
+<p><a href="https://math.stackexchange.com/questions/78575/derivative-of-sigmoid-function-sigma-x-frac11e-x">參考資料</a></p><h2>設計最佳化</h2><h1>Solvespace</h1>
 <p>假如機電產品的零組件能夠直接在網際架構中, 採參數化設計, 並直接將零組件轉為 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 模型, 並且直接在網際環境中進行控制系統設計分析與模擬, 將可提升電腦輔助產品設計效能.</p>
 <p style="padding-left: 30px;">網際 Solvespace Demo: <a href="https://files.whitequark.org/SolveSpace/solvespace.html">https://files.whitequark.org/SolveSpace/solvespace.html</a></p>
 <p style="padding-left: 30px;">網際 Webots: <a href="https://robotbenchmark.net/">https://robotbenchmark.net/</a></p>
