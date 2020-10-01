@@ -15,7 +15,7 @@
 <p style="padding-left: 30px;">我們為何需要使用 SSL 提交推送近端的設計改版內容? (為何不直接在其他協同組員的面前輸入自己的帳號與密碼就好? 只是上上課為何還需要注重資料保全?)</p>
 <p style="padding-left: 30px;">我們為何要將電腦輔助設計室中的電腦網路協定設定為純 IPv6? 然後再負責安裝維護多台 IPv6 與 IPv4 雙協定的代理伺服器, 讓使用者可以連線至目前只支援 IPv4 的服務? (為什麼不直接使用 NAT? 讓 64 台電腦透過一個 IPv4 網址對外連線?)</p>
 <p style="padding-left: 30px;">我們為何要自行編寫電子郵件寄送程式, 在成績繳交之前通知個別學員? (而不使用制式封閉源的成績公告系統? 或者乾脆將整班課程紙本學期成績單貼在教師研究室門上就好?)</p>
-<p>電腦輔助設計牽涉如何利用計算機系統相關技術, 以協助產品設計的快速創建，修改，分析和最佳化, 其目的在建構出精確的新產品數位模型.</p>
+<p>電腦輔助設計牽涉如何利用計算機系統相關技術, 以協助產品設計的多元探索, 快速創建, 便捷修改, 合理分析和最佳化, 其目的在建構出精確的新產品數位模型.</p>
 <p>產品設計的創建牽涉利用參數式繪圖套件建立 3D 零件與組立, 而設計修改可以採人工或程式方法進行, 至於本課程所牽涉的設計分析僅止於將機電系統輸入 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 進行 <a href="https://www.coppeliarobotics.com/helpFiles/en/inverseKinematicsTutorial.htm">Kinematic</a> 與 <a href="https://www.coppeliarobotics.com/helpFiles/en/designingDynamicSimulations.htm">Dynamic</a> 分析模擬.</p>
 <p>從 3D 零組件的創建並轉進 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a>, 若能採程式方法配合參數化尺寸與組態修改, 並且將資料改版過程採用 Git (<a href="https://github.com/">Github</a>) 或 <a href="https://fossil-scm.org/">Fossil SCM</a> 進行分散式版次管理, 或者更近一步設法搭建網際系統以提高設計效能, 將可在分組團隊中採取最佳化同步設計.</p>
 <h4>課程使用工具</h4>
@@ -339,7 +339,210 @@ for i in range(10):
 <p style="padding-left: 30px;">電腦輔助工程分析</p>
 <p style="padding-left: 60px;">Apple 設計手機過程需要進行工程分析嗎?</p>
 <p style="padding-left: 30px;">電腦輔助製造</p>
-<p style="padding-left: 60px;">Apple 為何不自己製造手機?</p><h2>設計最佳化</h2><h1>Solvespace</h1>
+<p style="padding-left: 60px;">Apple 為何不自己製造手機?</p>
+<h3>Sigmoid</h3>
+<p>A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve. A common example of a sigmoid function is the logistic function defined by the formula:</p>
+<p>Sigmoid Function:</p>
+<p>${ \huge S (x) = \frac{\mathrm{1}} {\mathrm{1} + e^{-x} } = \frac{e^x} {e^x +\mathrm{1}} } $</p>
+<p>已知從<a href="https://gist.github.com/Will-777/ad278c345639d24efb9d4cd275addbd2">這裡</a>可以利用 Python 加上 Matplotlib 畫出 Sigmoid function, 程式如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#import section
+from matplotlib import pylab
+import pylab as plt
+import numpy as np
+
+#sigmoid = lambda x: 1 / (1 + np.exp(-x))
+def sigmoid(x):
+    return (1 / (1 + np.exp(-x)))
+
+# generate an Array with value ???
+# linespace generate an array from start and stop value
+# with requested number of elements. Example 10 elements or 100 elements.
+# 
+x = plt.linspace(-10,10,10)
+y = plt.linspace(-10,10,100)
+
+# prepare the plot, associate the color r(ed) or b(lue) and the label 
+plt.plot(x, sigmoid(x), 'r', label='linspace(-10,10,10)')
+plt.plot(y, sigmoid(y), 'b', label='linspace(-10,10,100)')
+
+# Draw the grid line in background.
+plt.grid()
+
+# Title &amp; Subtitle
+plt.title('Sigmoid Function')
+plt.suptitle('Sigmoid')
+
+# place the legen boc in bottom right of the graph
+plt.legend(loc='lower right')
+
+# write the Sigmoid formula
+plt.text(4, 0.8, r'$\sigma(x)=\frac{1}{1+e^{-x}}$', fontsize=15)
+
+#resize the X and Y axes
+plt.gca().xaxis.set_major_locator(plt.MultipleLocator(1))
+plt.gca().yaxis.set_major_locator(plt.MultipleLocator(0.1))
+ 
+
+# plt.plot(x)
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+
+# create the graph
+plt.show()</pre>
+<p>以下可以直接利用 Javascript 或 Brython 以 Canvas 直接在網頁中繪出 Sigmoid 函式圖?</p>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+/* This file implements a simple plotting library described in https://pavpanchekha.com/blog/plotting-d3.org */
+/* Copyright (c) 2014 Pavel Panchekha. This code is under the MIT license.*/
+
+function function_pts(x, y, pts, t0, t1, ds) {
+    if (Math.abs(t0 - t1) < 1e-5) return;
+    var x1 = x(t1), y1 = y(t1);
+    var x0 = pts[pts.length - 1][0], y0 = pts[pts.length - 1][1];
+    if ((x1 - x0)*(x1 - x0) + (y1 - y0)*(y1 - y0) > ds*ds) {
+        function_pts(x, y, pts, t0, (t0 + t1)/2, ds);
+        function_pts(x, y, pts, (t0 + t1)/2, t1, ds);
+    } else {
+        pts.push([x1, y1]);
+    }
+}
+
+function Chart(width, height, margin) {
+    this.width = width || svg.width;
+    this.height = height || svg.height;
+    this.margin = margin || 2;
+
+    var a = d3.selectAll("script");
+    var script = a[0][a[0].length - 1];
+    this.svg = d3.select(script.parentNode).append("svg");
+    this.svg.attr("width", width).attr("height", height);
+    
+    this.x = undefined;
+    this.y = undefined;
+    
+    this.plots = [];
+    this.fo = undefined;
+    this.mode = "plot";
+}
+
+Chart.prototype._make_scale = function(pts) {
+    if (this.x && this.y) return;
+    
+    this.x = d3.scale.linear()
+        .domain([d3.min(pts, Function.get(0)),
+                 d3.max(pts, Function.get(0))])
+        .range([this.margin, this.width - this.margin]);
+    this.y = d3.scale.linear()
+        .domain([d3.min(pts, Function.get(1)),
+                 d3.max(pts, Function.get(1))])
+        .range([this.height - this.margin, this.margin]);
+}
+
+Function.prototype.to = function(i) {
+    var f = this;
+    return function (p) {return f(p[i])};
+}
+
+Function.get = function(i) {return (function(x) {return x[i]})};
+Function.id = function(x) {return x};
+
+Chart.prototype.plot = function(x, y, t) {
+    var dt = (t[1] - t[0]) / t[2];
+    var ts = d3.range(t[0], t[1] + dt, dt);
+    var t0 = ts.shift();
+  
+    var pts = [[x(t0), y(t0)]];
+    for (var i = 1; i < ts.length; i++) {
+        t1 = ts[i];
+        function_pts(x, y, pts, t0, t1, dt * Math.sqrt(2));
+        t0 = t1;
+    }
+
+    this._make_scale(pts);
+    
+    var line = d3.svg.line().x(this.x.to(0)).y(this.y.to(1));
+    return this.svg.append("path").attr("d", line(pts));
+}
+
+Chart.prototype._make_button = function() {
+    if (this.fo) {
+        var fo = this.fo[0][0].parentNode;
+        fo.parentNode.appendChild(fo);
+    } else {
+        var that = this;
+        this.fo = this.svg.append("foreignObject")
+            .attr("width", this.width).attr("height", this.height)
+            .append("xhtml:div");
+        this.fo.append("button").text("Show Source")
+            .on("click", function(d, i) {that._toggle_mode()});
+    }
+}
+
+Chart.prototype._toggle_mode = function() {
+    if (this.mode == "plot") {
+        this.mode = "source";
+        this.fo.select("button").text("Show Plot");
+        this.svg.selectAll("path").style("display", "none");
+        this.fo.selectAll("table").style("display", "block");
+    } else {
+        this.mode = "plot";
+        this.fo.select("button").text("Show Source");
+        this.svg.selectAll("path").style("display", "inherit");
+        this.fo.selectAll("table").style("display", "none");
+    }
+}
+
+Chart.prototype._push_plot = function(vars, range) {
+    this._make_button();
+
+    var t = this.fo.append("table").attr("class", "plot");
+    var a_fn = undefined;
+    for (var name in vars) {
+        var tr = t.append("tr");
+        a_fn = (""+vars[name]).match(/^function ([\w_]+)\s*\(([\w_]*)\)\s\{\s*(?:with\s*\(Math\)\s*\{\s*)?((?:\n|.)*?)(?:\s*\}){1,2}$/);
+        tr.append("th").text(name)
+        tr.append("td").text(a_fn[3]);
+    }
+    var h = t.insert("thead", "*").append("td").attr("colspan", 2);
+    h.append("em").text(a_fn[1] + "(" + a_fn[2] + ")")
+    h.append("span").text(" from " + d3.round(range[0], 2)
+                          + " to " + d3.round(range[1], 2));
+    
+}
+
+Chart.prototype.cartesian = function(y, t) {
+    var line = this.plot(Function.id, y, t);
+    this._push_plot({y: y}, t);
+    return line;
+}
+
+Chart.prototype.polar = function(r, t) {
+    var line = this.plot(function(o) {return r(o) * Math.cos(o)},
+                         function(o) {return r(o) * Math.sin(o)}, t);
+    this._push_plot({r: r}, t);
+    return line;
+}
+
+Chart.prototype.parametric = function(x, y, t) {
+    var line = this.plot(x, y, t);
+    this.push_plot({x: x, y: y}, t);
+    return line;
+}
+</script>
+<script>
+var chart = new Chart(460, 250);
+
+function sigmoid(t) { with (Math) { return 1 / (1 + exp(-2*t)); } }
+chart.cartesian(sigmoid, [-5, 5, 100]);
+</script>
+<p><!-- 啟用 LaTeX equations 編輯 -->
+<script>
+MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</p><h2>設計最佳化</h2><h1>Solvespace</h1>
 <p>假如機電產品的零組件能夠直接在網際架構中, 採參數化設計, 並直接將零組件轉為 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 模型, 並且直接在網際環境中進行控制系統設計分析與模擬, 將可提升電腦輔助產品設計效能.</p>
 <p style="padding-left: 30px;">網際 Solvespace Demo: <a href="https://files.whitequark.org/SolveSpace/solvespace.html">https://files.whitequark.org/SolveSpace/solvespace.html</a></p>
 <p style="padding-left: 30px;">網際 Webots: <a href="https://robotbenchmark.net/">https://robotbenchmark.net/</a></p>
