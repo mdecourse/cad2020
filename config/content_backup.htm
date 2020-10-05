@@ -239,6 +239,8 @@ for i in range(10):
 <p style="padding-left: 30px;"><a href="/downloads/introduction_to_vrep.pdf">Introduction to V-rep.pdf</a></p>
 <p style="padding-left: 30px;">登入 @gm<span> </span><a href="https://drive.google.com/file/d/1itKaIPSdIRZQ-qiLkUpxEPOLzSpP3eNY/view?usp=sharing">下載 Heroku cli 可攜.7z</a>, 解開壓縮檔案後, 在 start.bat 中將 Heroku bin 設定指令搜尋路徑, 重新啟動後, 以 heroku version 確定指令可以正常執行後, heroku login 成功後, 登入帳號密碼會存入 home/_netrc 中. 之後便可直接透過 heroku cli 指令直接對遠端主機下命令.</p>
 <p><a href="/downloads/web_vrep2">web_vrep2.7z</a> (Flask 網際程式控制 CoppeliaSim 中的二輪車)</p>
+<p><a href="https://www.coppeliarobotics.com/helpFiles/">https://www.coppeliarobotics.com/helpFiles/</a> </p>
+<p><a href="https://www.twblogs.net/u/5d3f8d75bd9eee51fbf9311d">https://www.twblogs.net/u/5d3f8d75bd9eee51fbf9311d</a> </p>
 <p><a href="https://github.com/mdecourse/good_robot">https://github.com/mdecourse/good_robot</a> </p>
 <p><a href="https://github.com/mdecourse/BaxterHello_V-REP">https://github.com/mdecourse/BaxterHello_V-REP</a> </p>
 <p><a href="https://github.com/mdecourse/v-rep-robotics">https://github.com/mdecourse/v-rep-robotics</a> </p>
@@ -304,10 +306,668 @@ for i in range(10):
 <p>Learn Autodesk Inventor 2018 Basics</p>
 <p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-3225-5">https://link.springer.com/book/10.1007/978-1-4842-3225-5</a></p>
 <h3>NX</h3>
-<p>下載 NX 12 可攜版本</p>
+<p>請直接使用電腦輔助設計室中的 NX12 套件.</p>
 <p><br/>NX 12 for advanced users - in a nutshell (德文版)</p>
 <p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-3-658-24773-7">https://link.springer.com/book/10.1007/978-3-658-24773-7</a></p>
-<p></p><h2>設計修改</h2>
+<p><a href="https://drive.google.com/file/d/1r_CAvvMjmvprksCgglYU72SbD9MxMb3h/view?usp=sharing">NX 12 for Engineering Design.pdf</a> (@gm users only)</p>
+<h4>NXOpen</h4>
+<p style="padding-left: 30px;">NX12 支援 Python 3.6.1</p>
+<p style="padding-left: 30px;"><a href="/downloads/nxopen_getting_started_v12.pdf">nxopen_getting_started_v12.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/Debug_NXOpen_Python_with_NX12_and_Eclipse_PyDev.pdf">Debug_NXOpen_Python_with_NX12_and_Eclipse_PyDev.pdf</a></p>
+<p style="padding-left: 30px;"><a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html">https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html</a></p>
+<p style="padding-left: 30px;"><a href="http://nxjournaling.com/">http://nxjournaling.com/</a></p>
+<p style="padding-left: 30px;"><a href="https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fwww.eng-tips.com%2F+nxopen+python">eng-tips.com about NXOpen and Python</a></p>
+<p style="padding-left: 30px;"><a href="https://docs.plm.automation.siemens.com/tdoc/nx/12/nx_api/#uid:xid862706">run_journal 指令</a>可以直接執行外部的 NXOpen Python Journal 程式</p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/UCf8RG-st34" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/-5c1hRNXSco" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/ZMR8yDGrx_4" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/C1jQc4Pjb4c" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/jgewt4VixvA" width="560"></iframe></p>
+<h4>環境變數</h4>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">REM nx use python 3.6.1
+REM Python 位於 Y:\NX12\NXBIN\python
+set PYTHONPATH=y:\py373;Y:\NX12\NXBIN\python
+set UGII_PYTHON_HOME=y:\py373;Y:\NX12\NXBIN\python
+set UGII_PYTHON_LIBRARY_DIR=y:\py373
+set UGII_PYTHONPATH=y:\py373;y:\py373\dlls;y:\py373\libs;y:\py373\lib;y:\py373\lib\site-packages
+set UGII_PYTHON_DLL=python37.dll
+set TCL_LIBRARY=y:\py373\tcl\tcl8.6</pre>
+<h4>NXOpen Python Remote</h4>
+<p style="padding-left: 30px;"><a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/NXOpen.RemoteUtilities.html">https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/NXOpen.RemoteUtilities.html</a></p>
+<p style="padding-left: 30px;">.Net 相關範例: Y:\NX12\UGOPEN\SampleNXOpenApplications\.NET\RemotingExample</p>
+<p>File -&gt; Preferences -&gt; User Interface -&gt; Tools - &gt; Journal 可以將 Journal Language 設為 Python.</p>
+<p>Menu -&gt; Tools -&gt; Journal 可以選擇錄製 Journal File.</p>
+<p>利用 Menu -&gt; Tools -&gt; Journal 可以選擇 play 所錄製的 .py Journal File, 點選 Play 後, 選擇所要執行的 .py Journal 檔案後, 按下 Run 執行.</p>
+<p>利用  NXOpen API Python 程式建立 Cube:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># NX 12.0.2.9
+
+#
+import math
+import NXOpen
+import NXOpen.Annotations
+import NXOpen.Features
+import NXOpen.GeometricUtilities
+import NXOpen.Preferences
+
+def main() : 
+
+    theUI = NXOpen.UI.GetUI()
+    theMsgBox = theUI.NXMessageBox
+    theMsgBox.Show("簡要說明", NXOpen.NXMessageBox.DialogType.Information,"以下流程將建立一個簡單的長方體")
+
+    theSession  = NXOpen.Session.GetSession()
+
+    # 以下利用 ListingWindow 列出相關資訊, 可用於程式除錯
+    theLw = theSession.ListingWindow
+    # 開啟 console 將資料印出
+    theLw.Open()
+    theLw.WriteLine("theSession 變數目前為: "+str(theSession))
+
+    workPart = theSession.Parts.Work
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Sketch...
+    # ----------------------------------------------
+    markId1 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Start")
+    
+    sketchInPlaceBuilder1 = workPart.Sketches.CreateSketchInPlaceBuilder2(NXOpen.Sketch.Null)
+    
+    origin1 = NXOpen.Point3d(0.0, 0.0, 0.0)
+    normal1 = NXOpen.Vector3d(0.0, 0.0, 1.0)
+    plane1 = workPart.Planes.CreatePlane(origin1, normal1, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    sketchInPlaceBuilder1.PlaneReference = plane1
+    
+    unit1 = workPart.UnitCollection.FindObject("MilliMeter")
+    
+    sketchAlongPathBuilder1 = workPart.Sketches.CreateSketchAlongPathBuilder(NXOpen.Sketch.Null)
+
+    datumAxis1 = workPart.Datums.FindObject("DATUM_CSYS(0) X axis")
+    direction1 = workPart.Directions.CreateDirection(datumAxis1, NXOpen.Sense.Forward, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    datumPlane1 = workPart.Datums.FindObject("DATUM_CSYS(0) XY plane")
+    datumCsys1 = workPart.Features.FindObject("DATUM_CSYS(0)")
+    point1 = datumCsys1.FindObject("POINT 1")
+    xform1 = workPart.Xforms.CreateXformByPlaneXDirPoint(datumPlane1, direction1, point1, NXOpen.SmartObject.UpdateOption.WithinModeling, 0.625, False, False)
+    
+    cartesianCoordinateSystem1 = workPart.CoordinateSystems.CreateCoordinateSystem(xform1, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    sketchInPlaceBuilder1.Csystem = cartesianCoordinateSystem1
+
+    origin3 = NXOpen.Point3d(0.0, 0.0, 0.0)
+    normal3 = NXOpen.Vector3d(0.0, 0.0, 1.0)
+    plane3 = workPart.Planes.CreatePlane(origin3, normal3, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    plane3.SetMethod(NXOpen.PlaneTypes.MethodType.Coincident)
+    
+    geom2 = [NXOpen.NXObject.Null] * 1 
+    geom2[0] = datumPlane1
+    plane3.SetGeometry(geom2)
+    
+    plane3.SetAlternate(NXOpen.PlaneTypes.AlternateType.One)
+    
+    plane3.Evaluate()
+
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Sketch Curve-&gt;Rectangle...
+    # ----------------------------------------------
+
+    markId3 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Create Sketch")
+
+    nXObject1 = sketchInPlaceBuilder1.Commit()
+    
+    sketch1 = nXObject1
+    feature1 = sketch1.Feature
+    
+    sketch1.Activate(NXOpen.Sketch.ViewReorient.TrueValue)
+    
+    theSession.DeleteUndoMark(markId3, None)
+    
+    theSession.SetUndoMarkName(markId1, "Create Sketch")
+    
+    sketchInPlaceBuilder1.Destroy()
+    
+    sketchAlongPathBuilder1.Destroy()
+        
+    plane3.DestroyPlane()
+    
+    markId5 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Profile short list")
+    
+    markId6 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Create Rectangle")
+    
+    theSession.SetUndoMarkVisibility(markId6, "Create Rectangle", NXOpen.Session.MarkVisibility.Visible)
+    
+    # ----------------------------------------------
+    # Creating rectangle using By 2 Points method 
+    # ----------------------------------------------
+    startPoint1 = NXOpen.Point3d(-52.0, 42.0, 0.0)
+    endPoint1 = NXOpen.Point3d(44.0, 42.0, 0.0)
+    line1 = workPart.Curves.CreateLine(startPoint1, endPoint1)
+    
+    startPoint2 = NXOpen.Point3d(44.0, 42.0, 0.0)
+    endPoint2 = NXOpen.Point3d(44.0, -42.0, 0.0)
+    line2 = workPart.Curves.CreateLine(startPoint2, endPoint2)
+    
+    startPoint3 = NXOpen.Point3d(44.0, -42.0, 0.0)
+    endPoint3 = NXOpen.Point3d(-52.0, -42.0, 0.0)
+    line3 = workPart.Curves.CreateLine(startPoint3, endPoint3)
+    
+    startPoint4 = NXOpen.Point3d(-52.0, -42.0, 0.0)
+    endPoint4 = NXOpen.Point3d(-52.0, 42.0, 0.0)
+    line4 = workPart.Curves.CreateLine(startPoint4, endPoint4)
+    
+    theSession.ActiveSketch.AddGeometry(line1, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+    
+    theSession.ActiveSketch.AddGeometry(line2, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+    
+    theSession.ActiveSketch.AddGeometry(line3, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+    
+    theSession.ActiveSketch.AddGeometry(line4, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+
+    theSession.ActiveSketch.Update()
+    
+    theSession.Preferences.Sketch.AutoDimensionsToArcCenter = True
+    
+    geoms1 = [NXOpen.SmartObject.Null] * 4 
+    geoms1[0] = line1
+    geoms1[1] = line2
+    geoms1[2] = line3
+    geoms1[3] = line4
+    theSession.ActiveSketch.UpdateConstraintDisplay(geoms1)
+    # ----------------------------------------------
+    #   Menu: File-&gt;Finish Sketch
+    # ----------------------------------------------
+    sketch2 = theSession.ActiveSketch
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Design Feature-&gt;Extrude...
+    # ----------------------------------------------
+    markId8 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Start")
+    
+    extrudeBuilder1 = workPart.Features.CreateExtrudeBuilder(NXOpen.Features.Feature.Null)
+    
+    section1 = workPart.Sections.CreateSection(0.0094999999999999998, 0.01, 0.5)
+    
+    extrudeBuilder1.Section = section1
+    
+    extrudeBuilder1.AllowSelfIntersectingSection(True)
+    
+    unit2 = extrudeBuilder1.Draft.FrontDraftAngle.Units
+  
+    features1 = [NXOpen.Features.Feature.Null] * 1 
+    sketchFeature1 = feature1
+    features1[0] = sketchFeature1
+    curveFeatureRule1 = workPart.ScRuleFactory.CreateRuleCurveFeature(features1)
+    
+    section1.AllowSelfIntersection(True)
+    
+    rules1 = [None] * 1 
+    rules1[0] = curveFeatureRule1
+    helpPoint1 = NXOpen.Point3d(-52.0, 18.603986789941445, 3.5527136788005009e-15)
+    section1.AddToSection(rules1, line4, NXOpen.NXObject.Null, NXOpen.NXObject.Null, helpPoint1, NXOpen.Section.Mode.Create, False)
+
+    direction2 = workPart.Directions.CreateDirection(sketch2, NXOpen.Sense.Forward, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    extrudeBuilder1.Direction = direction2
+    
+    extrudeBuilder1.Limits.EndExtend.Value.RightHandSide = "50"
+
+    extrudeBuilder1.ParentFeatureInternal = False
+    
+    feature2 = extrudeBuilder1.CommitFeature()
+
+    # ----------------------------------------------
+    #   Menu: Tools-&gt;Journal-&gt;Stop Recording
+    # ----------------------------------------------
+    
+if __name__ == '__main__':
+    main()</pre>
+<h4>bounding_box.py</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import NXOpen
+import NXOpen.UF
+
+theSession = NXOpen.Session.GetSession()
+theLw = theSession.ListingWindow
+theUI = NXOpen.UI.GetUI()
+theUfSession = NXOpen.UF.UFSession.GetUFSession()
+
+def main(*args): 
+
+    workPart = theSession.Parts.BaseWork
+
+    bodies = workPart.Bodies
+
+    for body in bodies:
+
+        (min_corner, directions, distances) = theUfSession.ModlGeneral.AskBoundingBoxExact(body.Tag, 0)
+
+        theLw.Open()
+        theLw.WriteLine("Bounding box for " + body.JournalIdentifier)
+
+        theLw.WriteLine("  Min Corner: ")
+        theLw.WriteLine("    X: " + str(min_corner[0]))
+        theLw.WriteLine("    Y: " + str(min_corner[1]))
+        theLw.WriteLine("    Z: " + str(min_corner[2]))
+
+        theLw.WriteLine("  Direction Vectors: ")
+        theLw.WriteLine("    X: (" + str(directions[0][0]) + ", " + str(directions[0][1]) + ", " + str(directions[0][2]) + ")")
+        theLw.WriteLine("    Y: (" + str(directions[1][0]) + ", " + str(directions[1][1]) + ", " + str(directions[1][2]) + ")")
+        theLw.WriteLine("    Z: (" + str(directions[2][0]) + ", " + str(directions[2][1]) + ", " + str(directions[2][2]) + ")")
+
+        theLw.WriteLine("  Distances: ")
+        theLw.WriteLine("    X: " + str(distances[0]))
+        theLw.WriteLine("    Y: " + str(distances[1]))
+        theLw.WriteLine("    Z: " + str(distances[2]))
+
+        theLw.WriteLine("")
+
+# Main program.
+
+if __name__ == "__main__":
+    main()
+</pre>
+<p>上述 NXOpen Python Journal 程式必須在 NX12 GUI 模式下執行, 若需要直接透過 Non-GUI 的模式執行 NXOpen Python Journal 程式, 則必須提供程式執行對應檔案, 並在執行完成後將結果存檔.</p>
+<p>下列程式, 可以在隨身 NX12 程式可執行的環境中, 提供空白的 newPart.prt 檔案, 然後在命令列透過 run_journal create_cube.py, 建立所需的 cube.prt 立方體檔案.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># NX 12.0.2.9
+# 提供空檔案 newPart.prt
+# 利用 run_journal journal_newpart.py 以 Non-GUI 的模式執行 NX12, 將可直接建立 cube.prt
+
+#
+import math
+import NXOpen
+import NXOpen.Annotations
+import NXOpen.Features
+import NXOpen.GeometricUtilities
+import NXOpen.Preferences
+import NXOpen.UF
+
+def main() : 
+    
+    theUI = NXOpen.UI.GetUI()
+    theMsgBox = theUI.NXMessageBox
+    theMsgBox.Show("簡要說明", NXOpen.NXMessageBox.DialogType.Information,"以下流程將建立一個簡單的長方體")
+    
+    theSession  = NXOpen.Session.GetSession()#try to open new part file to edit (different than assemblyFile)
+    NXFile = 'C:/python_journal/newPart.prt'
+    #use class method to open new session/workPart
+    basepart1, partLoadStatus1 = theSession.Parts.OpenBaseDisplay(NXFile)
+    partLoadStatus1.Dispose()
+    workPart    = theSession.Parts.Work
+    displayPart = theSession.Parts.Display
+
+    # 以下利用 ListingWindow 列出相關資訊, 可用於程式除錯
+    theLw = theSession.ListingWindow
+    # 開啟 console 將資料印出
+    theLw.Open()
+    theLw.WriteLine("theSession 變數目前為: "+str(theSession))
+    
+    # 若直接在 NX12 中執行
+    #workPart = theSession.Parts.Work
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Sketch...
+    # ----------------------------------------------
+    markId1 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Start")
+    
+    sketchInPlaceBuilder1 = workPart.Sketches.CreateSketchInPlaceBuilder2(NXOpen.Sketch.Null)
+    
+    origin1 = NXOpen.Point3d(0.0, 0.0, 0.0)
+    normal1 = NXOpen.Vector3d(0.0, 0.0, 1.0)
+    plane1 = workPart.Planes.CreatePlane(origin1, normal1, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    sketchInPlaceBuilder1.PlaneReference = plane1
+    
+    unit1 = workPart.UnitCollection.FindObject("MilliMeter")
+    
+    sketchAlongPathBuilder1 = workPart.Sketches.CreateSketchAlongPathBuilder(NXOpen.Sketch.Null)
+
+    datumAxis1 = workPart.Datums.FindObject("DATUM_CSYS(0) X axis")
+    direction1 = workPart.Directions.CreateDirection(datumAxis1, NXOpen.Sense.Forward, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    datumPlane1 = workPart.Datums.FindObject("DATUM_CSYS(0) XY plane")
+    datumCsys1 = workPart.Features.FindObject("DATUM_CSYS(0)")
+    point1 = datumCsys1.FindObject("POINT 1")
+    xform1 = workPart.Xforms.CreateXformByPlaneXDirPoint(datumPlane1, direction1, point1, NXOpen.SmartObject.UpdateOption.WithinModeling, 0.625, False, False)
+    
+    cartesianCoordinateSystem1 = workPart.CoordinateSystems.CreateCoordinateSystem(xform1, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    sketchInPlaceBuilder1.Csystem = cartesianCoordinateSystem1
+
+    origin3 = NXOpen.Point3d(0.0, 0.0, 0.0)
+    normal3 = NXOpen.Vector3d(0.0, 0.0, 1.0)
+    plane3 = workPart.Planes.CreatePlane(origin3, normal3, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    plane3.SetMethod(NXOpen.PlaneTypes.MethodType.Coincident)
+    
+    geom2 = [NXOpen.NXObject.Null] * 1 
+    geom2[0] = datumPlane1
+    plane3.SetGeometry(geom2)
+    
+    plane3.SetAlternate(NXOpen.PlaneTypes.AlternateType.One)
+    
+    plane3.Evaluate()
+
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Sketch Curve-&gt;Rectangle...
+    # ----------------------------------------------
+
+    markId3 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Create Sketch")
+
+    nXObject1 = sketchInPlaceBuilder1.Commit()
+    
+    sketch1 = nXObject1
+    feature1 = sketch1.Feature
+    
+    sketch1.Activate(NXOpen.Sketch.ViewReorient.TrueValue)
+    
+    theSession.DeleteUndoMark(markId3, None)
+    
+    theSession.SetUndoMarkName(markId1, "Create Sketch")
+    
+    sketchInPlaceBuilder1.Destroy()
+    
+    sketchAlongPathBuilder1.Destroy()
+        
+    plane3.DestroyPlane()
+    
+    markId5 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Profile short list")
+    
+    markId6 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Create Rectangle")
+    
+    theSession.SetUndoMarkVisibility(markId6, "Create Rectangle", NXOpen.Session.MarkVisibility.Visible)
+    
+    # ----------------------------------------------
+    # Creating rectangle using By 2 Points method 
+    # ----------------------------------------------
+    startPoint1 = NXOpen.Point3d(-52.0, 42.0, 0.0)
+    endPoint1 = NXOpen.Point3d(44.0, 42.0, 0.0)
+    line1 = workPart.Curves.CreateLine(startPoint1, endPoint1)
+    
+    startPoint2 = NXOpen.Point3d(44.0, 42.0, 0.0)
+    endPoint2 = NXOpen.Point3d(44.0, -42.0, 0.0)
+    line2 = workPart.Curves.CreateLine(startPoint2, endPoint2)
+    
+    startPoint3 = NXOpen.Point3d(44.0, -42.0, 0.0)
+    endPoint3 = NXOpen.Point3d(-52.0, -42.0, 0.0)
+    line3 = workPart.Curves.CreateLine(startPoint3, endPoint3)
+    
+    startPoint4 = NXOpen.Point3d(-52.0, -42.0, 0.0)
+    endPoint4 = NXOpen.Point3d(-52.0, 42.0, 0.0)
+    line4 = workPart.Curves.CreateLine(startPoint4, endPoint4)
+    
+    theSession.ActiveSketch.AddGeometry(line1, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+    
+    theSession.ActiveSketch.AddGeometry(line2, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+    
+    theSession.ActiveSketch.AddGeometry(line3, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+    
+    theSession.ActiveSketch.AddGeometry(line4, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+
+    theSession.ActiveSketch.Update()
+    
+    theSession.Preferences.Sketch.AutoDimensionsToArcCenter = True
+    
+    geoms1 = [NXOpen.SmartObject.Null] * 4 
+    geoms1[0] = line1
+    geoms1[1] = line2
+    geoms1[2] = line3
+    geoms1[3] = line4
+    theSession.ActiveSketch.UpdateConstraintDisplay(geoms1)
+    # ----------------------------------------------
+    #   Menu: File-&gt;Finish Sketch
+    # ----------------------------------------------
+    sketch2 = theSession.ActiveSketch
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Design Feature-&gt;Extrude...
+    # ----------------------------------------------
+    markId8 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Start")
+    
+    extrudeBuilder1 = workPart.Features.CreateExtrudeBuilder(NXOpen.Features.Feature.Null)
+    
+    section1 = workPart.Sections.CreateSection(0.0094999999999999998, 0.01, 0.5)
+    
+    extrudeBuilder1.Section = section1
+    
+    extrudeBuilder1.AllowSelfIntersectingSection(True)
+    
+    unit2 = extrudeBuilder1.Draft.FrontDraftAngle.Units
+  
+    features1 = [NXOpen.Features.Feature.Null] * 1 
+    sketchFeature1 = feature1
+    features1[0] = sketchFeature1
+    curveFeatureRule1 = workPart.ScRuleFactory.CreateRuleCurveFeature(features1)
+    
+    section1.AllowSelfIntersection(True)
+    
+    rules1 = [None] * 1 
+    rules1[0] = curveFeatureRule1
+    helpPoint1 = NXOpen.Point3d(-52.0, 18.603986789941445, 3.5527136788005009e-15)
+    section1.AddToSection(rules1, line4, NXOpen.NXObject.Null, NXOpen.NXObject.Null, helpPoint1, NXOpen.Section.Mode.Create, False)
+
+    direction2 = workPart.Directions.CreateDirection(sketch2, NXOpen.Sense.Forward, NXOpen.SmartObject.UpdateOption.WithinModeling)
+    
+    extrudeBuilder1.Direction = direction2
+    
+    extrudeBuilder1.Limits.EndExtend.Value.RightHandSide = "50"
+
+    extrudeBuilder1.ParentFeatureInternal = False
+    
+    feature2 = extrudeBuilder1.CommitFeature()
+    # 將 basepart1 存檔
+    newNXFile = 'C:/python_journal/cube.prt'
+    basepart1.SaveAs(newNXFile)
+
+    # ----------------------------------------------
+    #   Menu: Tools-&gt;Journal-&gt;Stop Recording
+    # ----------------------------------------------
+    
+if __name__ == '__main__':
+    main()
+</pre>
+<p>假如希望利用 <a href="https://mde.tw/cp2019">https://mde.tw/cp2019</a> 中的 Dart 網際或 Flutter 手機程式與伺服器中的 NXOpen Python API 程式互動, 可以利用 Flask 網際程式結合下列 Python API 程式碼, 透過手機介面輸入零組件設計參數, 所完成的零組件則以 STL 或 WRL 格式輸出, 進一步轉入 Webots 執行動態模擬.</p>
+<p><a href="http://cd03.kmol.info/NXOpen.UI.html#NXOpen.UI">NXOpen.UI</a></p>
+<p><a href="http://cd03.kmol.info/NXOpen.NXMessageBox.html?highlight=messagebox#NXOpen.NXMessageBox">NXMessageBox</a></p>
+<p><a href="http://cd03.kmol.info/NXOpen.Session.html?highlight=session#NXOpen.Session">NXOpen.Session</a></p>
+<p><a href="http://cd03.kmol.info/NXOpen.Point3d.html?highlight=point3d#NXOpen.Point3d">NXOpen.Point3d</a></p>
+<p><a href="http://cd03.kmol.info/NXOpen.Features.FeatureCollection.html?highlight=createextrudebuilder#nxopen-features-featurecollection-createextrudebuilder">CreateExtrudeBuilder</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># NX 12.0.2.9
+# 提供空檔案 newPart.prt
+# 利用 run_journal journal_newpart.py 以 Non-GUI 的模式執行 NX12, 將可直接建立 cube.prt
+ 
+#
+import math
+import NXOpen
+import NXOpen.Annotations
+import NXOpen.Features
+import NXOpen.GeometricUtilities
+import NXOpen.Preferences
+import NXOpen.UF
+ 
+def main() : 
+     
+    theUI = NXOpen.UI.GetUI()
+    theMsgBox = theUI.NXMessageBox
+    theMsgBox.Show("簡要說明", NXOpen.NXMessageBox.DialogType.Information,"以下流程將建立一個簡單的長方體")
+     
+    theSession  = NXOpen.Session.GetSession()#try to open new part file to edit (different than assemblyFile)
+    NXFile = 'y:/newPart.prt'
+    #use class method to open new session/workPart
+    basepart1, partLoadStatus1 = theSession.Parts.OpenBaseDisplay(NXFile)
+    partLoadStatus1.Dispose()
+    workPart    = theSession.Parts.Work
+    displayPart = theSession.Parts.Display
+ 
+    # 以下利用 ListingWindow 列出相關資訊, 可用於程式除錯
+    theLw = theSession.ListingWindow
+    # 開啟 console 將資料印出
+    theLw.Open()
+    theLw.WriteLine("theSession 變數目前為: "+str(theSession))
+     
+    # 若直接在 NX12 中執行
+    #workPart = theSession.Parts.Work
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Sketch...
+    # ----------------------------------------------
+    markId1 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Start")
+     
+    sketchInPlaceBuilder1 = workPart.Sketches.CreateSketchInPlaceBuilder2(NXOpen.Sketch.Null)
+     
+    origin1 = NXOpen.Point3d(0.0, 0.0, 0.0)
+    normal1 = NXOpen.Vector3d(0.0, 0.0, 1.0)
+    plane1 = workPart.Planes.CreatePlane(origin1, normal1, NXOpen.SmartObject.UpdateOption.WithinModeling)
+     
+    sketchInPlaceBuilder1.PlaneReference = plane1
+     
+    unit1 = workPart.UnitCollection.FindObject("MilliMeter")
+     
+    sketchAlongPathBuilder1 = workPart.Sketches.CreateSketchAlongPathBuilder(NXOpen.Sketch.Null)
+ 
+    datumAxis1 = workPart.Datums.FindObject("DATUM_CSYS(0) X axis")
+    direction1 = workPart.Directions.CreateDirection(datumAxis1, NXOpen.Sense.Forward, NXOpen.SmartObject.UpdateOption.WithinModeling)
+     
+    datumPlane1 = workPart.Datums.FindObject("DATUM_CSYS(0) XY plane")
+    datumCsys1 = workPart.Features.FindObject("DATUM_CSYS(0)")
+    point1 = datumCsys1.FindObject("POINT 1")
+    xform1 = workPart.Xforms.CreateXformByPlaneXDirPoint(datumPlane1, direction1, point1, NXOpen.SmartObject.UpdateOption.WithinModeling, 0.625, False, False)
+     
+    cartesianCoordinateSystem1 = workPart.CoordinateSystems.CreateCoordinateSystem(xform1, NXOpen.SmartObject.UpdateOption.WithinModeling)
+     
+    sketchInPlaceBuilder1.Csystem = cartesianCoordinateSystem1
+ 
+    origin3 = NXOpen.Point3d(0.0, 0.0, 0.0)
+    normal3 = NXOpen.Vector3d(0.0, 0.0, 1.0)
+    plane3 = workPart.Planes.CreatePlane(origin3, normal3, NXOpen.SmartObject.UpdateOption.WithinModeling)
+     
+    plane3.SetMethod(NXOpen.PlaneTypes.MethodType.Coincident)
+     
+    geom2 = [NXOpen.NXObject.Null] * 1
+    geom2[0] = datumPlane1
+    plane3.SetGeometry(geom2)
+     
+    plane3.SetAlternate(NXOpen.PlaneTypes.AlternateType.One)
+     
+    plane3.Evaluate()
+ 
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Sketch Curve-&gt;Rectangle...
+    # ----------------------------------------------
+ 
+    markId3 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Create Sketch")
+ 
+    nXObject1 = sketchInPlaceBuilder1.Commit()
+     
+    sketch1 = nXObject1
+    feature1 = sketch1.Feature
+     
+    sketch1.Activate(NXOpen.Sketch.ViewReorient.TrueValue)
+     
+    theSession.DeleteUndoMark(markId3, None)
+     
+    theSession.SetUndoMarkName(markId1, "Create Sketch")
+     
+    sketchInPlaceBuilder1.Destroy()
+     
+    sketchAlongPathBuilder1.Destroy()
+         
+    plane3.DestroyPlane()
+     
+    markId5 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Profile short list")
+     
+    markId6 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Invisible, "Create Rectangle")
+     
+    theSession.SetUndoMarkVisibility(markId6, "Create Rectangle", NXOpen.Session.MarkVisibility.Visible)
+     
+    # ----------------------------------------------
+    # Creating rectangle using By 2 Points method 
+    # ----------------------------------------------
+    startPoint1 = NXOpen.Point3d(-52.0, 42.0, 0.0)
+    endPoint1 = NXOpen.Point3d(44.0, 42.0, 0.0)
+    line1 = workPart.Curves.CreateLine(startPoint1, endPoint1)
+     
+    startPoint2 = NXOpen.Point3d(44.0, 42.0, 0.0)
+    endPoint2 = NXOpen.Point3d(44.0, -42.0, 0.0)
+    line2 = workPart.Curves.CreateLine(startPoint2, endPoint2)
+     
+    startPoint3 = NXOpen.Point3d(44.0, -42.0, 0.0)
+    endPoint3 = NXOpen.Point3d(-52.0, -42.0, 0.0)
+    line3 = workPart.Curves.CreateLine(startPoint3, endPoint3)
+     
+    startPoint4 = NXOpen.Point3d(-52.0, -42.0, 0.0)
+    endPoint4 = NXOpen.Point3d(-52.0, 42.0, 0.0)
+    line4 = workPart.Curves.CreateLine(startPoint4, endPoint4)
+     
+    theSession.ActiveSketch.AddGeometry(line1, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+     
+    theSession.ActiveSketch.AddGeometry(line2, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+     
+    theSession.ActiveSketch.AddGeometry(line3, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+     
+    theSession.ActiveSketch.AddGeometry(line4, NXOpen.Sketch.InferConstraintsOption.InferNoConstraints)
+ 
+    theSession.ActiveSketch.Update()
+     
+    theSession.Preferences.Sketch.AutoDimensionsToArcCenter = True
+     
+    geoms1 = [NXOpen.SmartObject.Null] * 4
+    geoms1[0] = line1
+    geoms1[1] = line2
+    geoms1[2] = line3
+    geoms1[3] = line4
+    theSession.ActiveSketch.UpdateConstraintDisplay(geoms1)
+    # ----------------------------------------------
+    #   Menu: File-&gt;Finish Sketch
+    # ----------------------------------------------
+    sketch2 = theSession.ActiveSketch
+    # ----------------------------------------------
+    #   Menu: Insert-&gt;Design Feature-&gt;Extrude...
+    # ----------------------------------------------
+    markId8 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Start")
+     
+    extrudeBuilder1 = workPart.Features.CreateExtrudeBuilder(NXOpen.Features.Feature.Null)
+     
+    section1 = workPart.Sections.CreateSection(0.0094999999999999998, 0.01, 0.5)
+     
+    extrudeBuilder1.Section = section1
+     
+    extrudeBuilder1.AllowSelfIntersectingSection(True)
+     
+    unit2 = extrudeBuilder1.Draft.FrontDraftAngle.Units
+   
+    features1 = [NXOpen.Features.Feature.Null] * 1
+    sketchFeature1 = feature1
+    features1[0] = sketchFeature1
+    curveFeatureRule1 = workPart.ScRuleFactory.CreateRuleCurveFeature(features1)
+     
+    section1.AllowSelfIntersection(True)
+     
+    rules1 = [None] * 1
+    rules1[0] = curveFeatureRule1
+    helpPoint1 = NXOpen.Point3d(-52.0, 18.603986789941445, 3.5527136788005009e-15)
+    section1.AddToSection(rules1, line4, NXOpen.NXObject.Null, NXOpen.NXObject.Null, helpPoint1, NXOpen.Section.Mode.Create, False)
+ 
+    direction2 = workPart.Directions.CreateDirection(sketch2, NXOpen.Sense.Forward, NXOpen.SmartObject.UpdateOption.WithinModeling)
+     
+    extrudeBuilder1.Direction = direction2
+     
+    extrudeBuilder1.Limits.EndExtend.Value.RightHandSide = "50"
+ 
+    extrudeBuilder1.ParentFeatureInternal = False
+     
+    feature2 = extrudeBuilder1.CommitFeature()
+    # 將 basepart1 存檔
+    #newNXFile = 'y:/cube.prt'
+    #basepart1.SaveAs(newNXFile)
+    # 將零件檔案存為 wrl 格式
+    theUFSession = NXOpen.UF.UFSession.GetUFSession()
+    UF_STD_OUTPUT_VRML_2 = 8
+    theUFSession.Std.CreateVrmlFile("y:/cube.wrl", 1.0, UF_STD_OUTPUT_VRML_2)
+    print("已經將零件轉為 wrl 檔案")
+    # ----------------------------------------------
+    #   Menu: Tools-&gt;Journal-&gt;Stop Recording
+    # ----------------------------------------------
+     
+if __name__ == '__main__':
+    main()</pre>
+<h4>參考資料</h4>
+<p>NXOpen VB 轉為 Python:</p>
+<p style="padding-left: 30px;"><a href="https://community.sw.siemens.com/s/question/0D54O000061xRnYSAU/convert-vb-to-python">https://community.sw.siemens.com/s/question/0D54O000061xRnYSAU/convert-vb-to-python</a></p><h2>設計修改</h2>
 <p>產品設計在何種情況下需要修改?</p>
 <p>由誰修改?</p>
 <p>如何修改?</p>
@@ -348,7 +1008,7 @@ for i in range(10):
 <p><a href="https://en.wikipedia.org/wiki/Logistic_function">Logistic Function</a>(邏輯函式):</p>
 <p>${ \large S(x) = \LARGE \frac{\mathrm{1}} {\mathrm{1} + e^{-x}}} $</p>
 <p>${\large \begin{align} \dfrac{d}{dx} S(x) &amp;= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] \\ &amp;= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} \\ &amp;= -(1 + e^{-x})^{-2}(-e^{-x}) \\ &amp;= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= S(x) \cdot (1 - S(x)) \end{align}}$</p>
-<p>另外一種對 Logistic function 微分的推導法:<br/> 因為 ${\Large f(x)=\dfrac{1}{S(x)} = 1+e^{-x} }$ <br/> 先對左邊的表示式微分可以得到:<br/> ${\Large f'(x) = \frac{d}{dx} \biggl( \frac{1}{S(x)} \biggr) = -\frac{S'(x)}{S(x)^2} }$ <br/> 接著再對右邊的表示式微分可以得到: <br/> ${\Large f'(x) = \frac{d}{dx} \bigl( 1+e^{-x} \bigr) = -e^{-x} = 1-f(x) = 1 - \frac{1}{S(x)} = \frac{S(x)-1}{S(x)} }$<br/>最後再將兩個式子合併整理一下, 就可以得到:</p>
+<p>另外一種對 Logistic function 微分的推導法:<br/> 因為 ${\Large f(x)=\dfrac{1}{S(x)} = 1+e^{-x} }$ <br/> 先對左邊的表示式微分可以得到:<br/> ${\Large f'(x) = \frac{d}{dx} \biggl( \frac{1}{S(x)} \biggr) = -\frac{S'(x)}{S(x)^2} }$ <br> 接著再對右邊的表示式微分可以得到: <br/> ${\Large f'(x) = \frac{d}{dx} \bigl( 1+e^{-x} \bigr) = -e^{-x} = 1-f(x) = 1 - \frac{1}{S(x)} = \frac{S(x)-1}{S(x)} }$<br/>最後再將兩個式子合併整理一下, 就可以得到:</br></p>
 <p>${\large S'(x) = \dfrac{d}{dx} S(x) = S(x) \cdot (1 - S(x))}$</p>
 <p>假如使用 sympy 以符號式運算求 Logistic function 的微分式:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sympy
