@@ -140,8 +140,45 @@ img.add_border {
 <p><a href="https://drive.google.com/file/d/1r_CAvvMjmvprksCgglYU72SbD9MxMb3h/view?usp=sharing">NX 12 for Engineering Design.pdf</a> (@gm users only)</p>
 <h4>NXOpen</h4>
 <p style="padding-left: 30px;">NX12 支援 Python 3.6.1</p>
+<p style="padding-left: 30px;">將 Journal 操作錄製由內建 vb 轉為 python:</p>
+<p style="padding-left: 60px;">Menu -&gt; Preferences -&gt; User Interface -&gt; Tools -&gt; Journal </p>
+<p style="padding-left: 60px;">Journal Language 選擇 Python</p>
+<p style="padding-left: 30px;">Menu -&gt; Tools -&gt; Journal -&gt; Record</p>
+<p style="padding-left: 30px;">Menu -&gt; Tools -&gt; Journal -&gt; Play</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># hello_nxopen.py
+# 導入 NXOpen
+import NXOpen
+
+def main():
+    # 取得目前開啟的工作階段
+    theSession = NXOpen.Session.GetSession()
+    # 建立 ListingWindow
+    listWin= theSession.ListingWindow
+    # 開啟所建立的 ListingWindow
+    listWin.Open()
+    # 在 ListingWindow 中寫入字串
+    listWin.WriteLine("Hello, NXOpen")
+
+if __name__ == "__main__":
+    main()</pre>
+<p style="padding-left: 30px;">Pass variable through run_journal.bat</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sys
+import NXOpen
+import NXOpen.UF
+
+
+def main(arg):
+    """Takes a string argument, and shows it in a message box."""
+    uf_session = NXOpen.UF.UFSession.GetUFSession()
+    message = "The following arguments were passed to my journal:" + arg
+    uf_session.Ui.DisplayMessage(message, 1)
+if __name__ == '__main__':
+
+    main(sys.argv[1]) </pre>
 <p style="padding-left: 30px;"><a href="./../downloads/nxopen_getting_started_v12.pdf">nxopen_getting_started_v12.pdf</a></p>
 <p style="padding-left: 30px;"><a href="./../downloads/Debug_NXOpen_Python_with_NX12_and_Eclipse_PyDev.pdf">Debug_NXOpen_Python_with_NX12_and_Eclipse_PyDev.pdf</a></p>
+<p style="padding-left: 30px;"><a href="./../downloads/Web Based Customized Design.pdf">Web Based Customized Design.pdf</a></p>
+<p style="padding-left: 30px;"><a href="./../downloads/Simcenter_NXOpen_python_ex.7z">Simcenter_NXOpen_python_ex.7z</a></p>
 <p style="padding-left: 30px;"><a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html">https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html</a></p>
 <p style="padding-left: 30px;"><a href="http://nxjournaling.com/">http://nxjournaling.com/</a></p>
 <p style="padding-left: 30px;"><a href="https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fwww.eng-tips.com%2F+nxopen+python">eng-tips.com about NXOpen and Python</a></p>

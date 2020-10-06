@@ -312,26 +312,132 @@ for i in range(10):
 <p><a href="https://drive.google.com/file/d/1r_CAvvMjmvprksCgglYU72SbD9MxMb3h/view?usp=sharing">NX 12 for Engineering Design.pdf</a> (@gm users only)</p>
 <h4>NXOpen</h4>
 <p style="padding-left: 30px;">NX12 支援 Python 3.6.1</p>
+<p style="padding-left: 30px;">將 Journal 操作錄製由內建 vb 轉為 python:</p>
+<p style="padding-left: 60px;">Menu -&gt; Preferences -&gt; User Interface -&gt; Tools -&gt; Journal </p>
+<p style="padding-left: 60px;">Journal Language 選擇 Python</p>
+<p style="padding-left: 30px;">Menu -&gt; Tools -&gt; Journal -&gt; Record</p>
+<p style="padding-left: 30px;">Menu -&gt; Tools -&gt; Journal -&gt; Play</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># hello_nxopen.py
+# 導入 NXOpen
+import NXOpen
+
+def main():
+    # 取得目前開啟的工作階段
+    theSession = NXOpen.Session.GetSession()
+    # 建立 ListingWindow
+    listWin= theSession.ListingWindow
+    # 開啟所建立的 ListingWindow
+    listWin.Open()
+    # 在 ListingWindow 中寫入字串
+    listWin.WriteLine("Hello, NXOpen")
+
+if __name__ == "__main__":
+    main()</pre>
 <p style="padding-left: 30px;"><a href="/downloads/nxopen_getting_started_v12.pdf">nxopen_getting_started_v12.pdf</a></p>
 <p style="padding-left: 30px;"><a href="/downloads/Debug_NXOpen_Python_with_NX12_and_Eclipse_PyDev.pdf">Debug_NXOpen_Python_with_NX12_and_Eclipse_PyDev.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/Web Based Customized Design.pdf">Web Based Customized Design.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/Simcenter_NXOpen_python_ex.7z">Simcenter_NXOpen_python_ex.7z</a></p>
 <p style="padding-left: 30px;"><a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html">https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html</a></p>
 <p style="padding-left: 30px;"><a href="http://nxjournaling.com/">http://nxjournaling.com/</a></p>
 <p style="padding-left: 30px;"><a href="https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fwww.eng-tips.com%2F+nxopen+python">eng-tips.com about NXOpen and Python</a></p>
-<p style="padding-left: 30px;"><a href="https://docs.plm.automation.siemens.com/tdoc/nx/12/nx_api/#uid:xid862706">run_journal 指令</a>可以直接執行外部的 NXOpen Python Journal 程式</p>
+<p style="padding-left: 30px;">run_journal 指令可以直接執行外部的 NXOpen Python Journal 程式</p>
+<p style="padding-left: 60px;">NX Open for Python batch programs are standalone Python journals that you can run from the operating system, outside of NX. batch applications in NX Open Python are Python journal files.</p>
+<p style="padding-left: 60px;"><br/>Running a batch application</p>
+<p style="padding-left: 60px;">An NX Open journal file can be replayed directly from a command line using the run_journal application.</p>
+<p style="padding-left: 60px;"><br/>run_journal application</p>
+<p style="padding-left: 60px;">The run_journal application is a standalone executable that runs NX Open Python journals in the correct environment, which allows it to pick up Python extension modules from the NX installation when they are not in the same directory as the journal file itself.</p>
+<p style="padding-left: 60px;">An example of the command:</p>
+<p style="padding-left: 90px;">run_journal &lt;journal file&gt; &lt;arguments&gt;</p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/UCf8RG-st34" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/-5c1hRNXSco" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/ZMR8yDGrx_4" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/C1jQc4Pjb4c" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/jgewt4VixvA" width="560"></iframe></p>
 <h4>環境變數</h4>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">REM nx use python 3.6.1
-REM Python 位於 Y:\NX12\NXBIN\python
-set PYTHONPATH=y:\py373;Y:\NX12\NXBIN\python
-set UGII_PYTHON_HOME=y:\py373;Y:\NX12\NXBIN\python
-set UGII_PYTHON_LIBRARY_DIR=y:\py373
-set UGII_PYTHONPATH=y:\py373;y:\py373\dlls;y:\py373\libs;y:\py373\lib;y:\py373\lib\site-packages
-set UGII_PYTHON_DLL=python37.dll
-set TCL_LIBRARY=y:\py373\tcl\tcl8.6</pre>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">@echo off
+set Disk=y
+subst %Disk%: "data"
+
+%Disk%:
+
+set HomePath=%Disk%:\home
+set HomeDrive=%Disk%:\home
+set Home=%Disk%:\home
+set USERPROFILE=%Disk%:\home
+
+REM 將系統 Python 程式的 io 設為 utf-8
+set PYTHONIOENCODING="utf-8"
+
+set PYTHONPATH=%Disk%:\Python36\DLLs;%Disk%:\Python36\Lib;%Disk%:\Python36\Lib\site-packages;C:\nx12_portable\data\nx12\NXBIN\Python;
+set PYTHONHOME=%Disk%:\Python36
+
+REM for putty
+set GIT_SSH=%Disk%:\putty\plink.exe
+
+REM 設定跟 Python 有關的命令搜尋路徑
+set path_python=%Disk%:\Python36;%Disk%:\Python36\Scripts;
+REM for portable git
+set path_git=%Disk%:\Portablegit\bin;
+
+path=%Disk%:;%path_python%;%path_git%;
+
+REM #####################################
+REM for NX 12.0.2
+REM #####################################
+
+REM set UGII_BASE_DIR=C:\Siemens\NX12.0
+set UGII_BASE_DIR=C:\nx12_portable\data\nx12
+set TMP_DIR=%Disk%:\tmp
+REM set NX_CUSTOM_USER_SETTINGS_LOCATION=2
+REM set UGII_ROUTING_KIT_UNITS=metric
+set UGII_USER_PROFILE_DIR=%Disk%:\home
+set START_DIR=%TMP_DIR%
+set UGII_TMP_DIR=%TMP_DIR%
+REM set NX_CUSTOM_VERSION=NX120 Revision C
+REM ugii_env.dat
+REM set UGII_ENV_FILE=%NX_CUSTOM_LIB%\%NX_NUMBER%env.dat
+
+set UGII_USER_DIR=%Disk%:\tmp
+set UGII_GROUP_DIR=%Disk%:\tmp
+set UGII_SITE_DIR=%Disk%:\tmp
+
+set UGII_BASE_DIR_CUSTOM=%UGII_BASE_DIR%
+set SPLM_LICENSE_SERVER=28000@192.168.56.2
+set UGII_LANG=english
+REM root directory is important for command startup
+set UGII_ROOT_DIR=%UGII_BASE_DIR%\ugii
+
+REM for NXOpen
+set UGII_LIB_DIR=%UGII_BASE_DIR%\ugii
+set UGII_PYTHON_HOME=%Disk%:\Python36;C:\nx12_portable\data\nx12\NXBIN\Python;
+set UGII_PYTHON_DLL=python36.dll
+set UGII_PYTHON_LIBRARY_DIR=%PYTHONHOME%
+set UGII_PYTHONPATH=%UGII_PYTHON_HOME%;%Disk%:\Python36\DLLs;%Disk%:\Python36\Lib;%Disk%:\Python36\libs;%Disk%:\Python36\Lib\site-packages;%UGII_BASE_DIR%\NXBIN\python;
+set TCL_LIBRARY=%UGII_PYTHON_HOME%\tcl\tcl8.6
+
+
+set UGS_LICENSE_BUNDLE=ACD11,ACD10
+REM set NX_BUNDLES=ACD11,ACD10
+set UGII_TEMPLATE_DIR=%UGII_ROOT_DIR%\templates
+set ugpath=%UGII_BASE_DIR%\nxbin;%UGII_BASE_DIR%\ugii
+REM set UGII_JAVA_HOME=C:\Siemens\jre1.8.0_211
+REM set UGII_JVM_LIBRARY_DIR=C:\Siemens\jre1.8.0_211\bin\server
+REM set CLASSPATH=C:\Siemens\jre1.8.0_211\lib;C:\Siemens\NX12.0\NXBIN
+
+REM add ugpath into path
+path=%ugpath%;%path%;
+
+start /MIN cmd.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+
+start /MIN %Disk%:\wScite\SciTE.exe
+start /MIN %Disk%:\wScite\SciTE.exe
+
+start %UGII_BASE_DIR%\ugii\ugraf.exe -nx
+
+Exit</pre>
 <h4>NXOpen Python Remote</h4>
 <p style="padding-left: 30px;"><a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/NXOpen.RemoteUtilities.html">https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/NXOpen.RemoteUtilities.html</a></p>
 <p style="padding-left: 30px;">.Net 相關範例: Y:\NX12\UGOPEN\SampleNXOpenApplications\.NET\RemotingExample</p>
@@ -1008,7 +1114,7 @@ if __name__ == '__main__':
 <p><a href="https://en.wikipedia.org/wiki/Logistic_function">Logistic Function</a>(邏輯函式):</p>
 <p>${ \large S(x) = \LARGE \frac{\mathrm{1}} {\mathrm{1} + e^{-x}}} $</p>
 <p>${\large \begin{align} \dfrac{d}{dx} S(x) &amp;= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] \\ &amp;= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} \\ &amp;= -(1 + e^{-x})^{-2}(-e^{-x}) \\ &amp;= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= S(x) \cdot (1 - S(x)) \end{align}}$</p>
-<p>另外一種對 Logistic function 微分的推導法:<br/> 因為 ${\Large f(x)=\dfrac{1}{S(x)} = 1+e^{-x} }$ <br/> 先對左邊的表示式微分可以得到:<br/> ${\Large f'(x) = \frac{d}{dx} \biggl( \frac{1}{S(x)} \biggr) = -\frac{S'(x)}{S(x)^2} }$ <br> 接著再對右邊的表示式微分可以得到: <br/> ${\Large f'(x) = \frac{d}{dx} \bigl( 1+e^{-x} \bigr) = -e^{-x} = 1-f(x) = 1 - \frac{1}{S(x)} = \frac{S(x)-1}{S(x)} }$<br/>最後再將兩個式子合併整理一下, 就可以得到:</br></p>
+<p>另外一種對 Logistic function 微分的推導法:<br/> 因為 ${\Large f(x)=\dfrac{1}{S(x)} = 1+e^{-x} }$ <br/> 先對左邊的表示式微分可以得到:<br/> ${\Large f'(x) = \frac{d}{dx} \biggl( \frac{1}{S(x)} \biggr) = -\frac{S'(x)}{S(x)^2} }$ <br/> 接著再對右邊的表示式微分可以得到: <br/> ${\Large f'(x) = \frac{d}{dx} \bigl( 1+e^{-x} \bigr) = -e^{-x} = 1-f(x) = 1 - \frac{1}{S(x)} = \frac{S(x)-1}{S(x)} }$<br/>最後再將兩個式子合併整理一下, 就可以得到:</p>
 <p>${\large S'(x) = \dfrac{d}{dx} S(x) = S(x) \cdot (1 - S(x))}$</p>
 <p>假如使用 sympy 以符號式運算求 Logistic function 的微分式:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sympy
