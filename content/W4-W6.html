@@ -137,7 +137,27 @@ img.add_border {
 <p><span>利用</span><span><span> </span></span><a href="https://www.debugmode.com/wink/">Wink3</a><span><span> </span>建立電腦操作流程導引影片. 下載</span><span><span> </span></span><a href="https://drive.google.com/file/d/1JI4i_gtMiMbALBZhiGVqqe9VM4cHt8U7/view?usp=sharing">Wink3.7z</a></p>
 <p><a href="./../downloads/NX_for_Mechanical_Design.pdf">NX_for_Mechanical_Design.pdf</a></p>
 <p>登入 @gm 擷取 <a href="https://drive.google.com/drive/folders/1XToLcxBbWmdClSDMmbCj6oDjhec5kQM_?usp=sharing">NX Tutorial Video</a></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/cL8RSB-dvxU" width="560"></iframe></p>
+<p style="padding-left: 30px;">說明之後的版本都將稱為 NX 不會有 NX13</p>
+<p style="padding-left: 30px;">之後每個月都會有更新, 每半年會有一個大更新, 類似 Windows 10</p>
+<p style="padding-left: 30px;">當採特定 Schema 大更新之後所建立的零組件將無法用先前的舊版本開啟</p>
+<p style="padding-left: 30px;">零組件可以透過 nx12\NXBIN\part_security.exe 設定密碼保護</p>
+<p style="padding-left: 60px;">part_security -encrypt -p=test safe.txt safe.psf</p>
+<p style="padding-left: 90px;">將 safe.txt 以 test 密碼保護存為 safe.psf</p>
+<p style="padding-left: 60px;">part_security -genkeys -public=NX_public.key -private=NX_private.key</p>
+<p style="padding-left: 90px;">建立公鑰與私鑰</p>
+<p style="padding-left: 60px;">part_security -recover -private=NX_private.key -part=model1.part</p>
+<p style="padding-left: 30px;">利用新版 NX 開啟舊零組件後, 可以使用 renew feature 重建特徵</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/_RVVpawiWzY" width="560"></iframe></p>
+<p style="padding-left: 30px;">N12 功能介紹:</p>
+<p style="padding-left: 60px;">Variable offset face</p>
+<p style="padding-left: 60px;">Combine</p>
+<p style="padding-left: 60px;">Flattening and Forming</p>
+<p style="padding-left: 60px;">Latitce enhancements</p>
+<p style="padding-left: 60px;">Delete child features enhancements</p>
+<p style="padding-left: 60px;">Analyze pocket/Blend pocket enhancements</p>
+<p style="padding-left: 60px;">Sheet metal Tab/Flange enhancements</p>
+<p style="padding-left: 60px;">Layout/Animation Designer</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/l9Lq3D4AMAQ" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/0ZITvDSfKac" width="560"></iframe></p>
 <p><a href="https://github.com/mdecourse/Siemens-NXOpen-API">https://github.com/mdecourse/Siemens-NXOpen-API</a> </p>
@@ -145,6 +165,9 @@ img.add_border {
 <p style="padding-left: 30px;"><a href="https://github.com/williamhunter/topy">https://github.com/williamhunter/topy</a> </p>
 <p style="padding-left: 30px;"><a href="https://github.com/ISosnovik/top">https://github.com/ISosnovik/top</a> </p>
 <p style="padding-left: 30px;"><a href="https://github.com/zfergus/topopt">https://github.com/zfergus/topopt</a> </p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/8_qayHIfn-I" width="560"></iframe></p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/Siemens-NXOpen-API">https://github.com/mdecourse/Siemens-NXOpen-API</a> </p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/HSZ0kjAF-NU" width="560"></iframe></p>
 <p><a href="./../downloads/Synthesis and Analysis of a Novel Linkage Mechanism with the Helical Motion of the End-Effector.pdf">Synthesis and Analysis of a Novel Linkage Mechanism with the Helical Motion of the End-Effector.pdf</a></p>
 <p><a href="./../downloads/The A-Design Invention Machine.pdf">The A-Design Invention Machine.pdf</a></p>
 <p style="padding-left: 30px;"><a href="https://github.com/mdecourse/BondGraphTools">https://github.com/mdecourse/BondGraphTools</a></p>
@@ -174,7 +197,90 @@ img.add_border {
 <p><a href="https://github.com/mdecourse/arm-suction-sim">https://github.com/mdecourse/arm-suction-sim</a> </p>
 <p><a href="https://github.com/mdecourse/mc907-mobile-robotics">https://github.com/mdecourse/mc907-mobile-robotics</a> </p>
 <p><a href="https://github.com/mdecourse/vrep-example">https://github.com/mdecourse/vrep-example</a> (C++)</p>
-<p></p><br />W3 << <a href='W3.html'>Previous</a> <a href='Engineering.html'>Next</a> >> Engineering</div>
+<h4>FreeCAD: </h4>
+<p style="padding-left: 30px;">登入 @gm 後<a href="https://drive.google.com/file/d/1-4B06Dm6qW8w8Cz-3h7t2pf3dOctqgD9/view?usp=sharing">下載 FreeCAD_0.18.4_portable.7z</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/FreeCAD/FreeCAD">https://github.com/FreeCAD/FreeCAD</a> </p>
+<p style="padding-left: 30px;">參考: <a href="https://github.com/mdecourse/wcms2018/issues/9">https://github.com/mdecourse/wcms2018/issues/9</a> </p>
+<p style="padding-left: 30px;"><a href="https://gist.github.com/EvoYash">https://gist.github.com/EvoYash</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/Retr3d">https://github.com/mdecourse/Retr3d</a> (需要更新為 Python3 與 FreeCAD 0.18.4 相容)</p>
+<p style="padding-left: 30px;"><a href="https://python.hotexamples.com/examples/-/FreeCAD/-/python-freecad-class-examples.html">其他參考程式</a></p>
+<p style="padding-left: 30px;">開啟 Freecad, File -&gt; New 開啟一個空檔案, 之後以下拉式功能表 View -&gt; Panels -&gt; Python Console 開啟程式輸入視窗, 然後在 Python Console 區貼入下列程式碼後按下 Enter, 可以在工作視窗中建立一個實體模型, 同時按下滑鼠中鍵與右鍵可以旋轉視窗畫面:</p>
+<p style="padding-left: 30px;">Desk:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD, Part, PartGui
+from FreeCAD import Base
+
+ac_doc = FreeCAD.ActiveDocument
+
+def make_box(name,length,width,height,base_vector,base_rotation):
+    ac_doc = FreeCAD.ActiveDocument
+    ac_doc.addObject("Part::Box",name)
+    getattr(ac_doc, name).Length = length
+    getattr(ac_doc, name).Width = width
+    getattr(ac_doc, name).Height= height
+    getattr(ac_doc, name).Placement=Base.Placement(Base.Vector(base_vector[0],base_vector[1],base_vector[2]),Base.Rotation(base_rotation[0],base_rotation[1],base_rotation[2],base_rotation[3]))
+
+def make_cylinder(name,radius,height,base_vector,base_rotation):
+    ac_doc = FreeCAD.ActiveDocument
+    ac_doc.addObject("Part::Cylinder",name)
+    getattr(ac_doc, name).Radius = radius
+    getattr(ac_doc, name).Height= height
+    getattr(ac_doc, name).Placement=Base.Placement(Base.Vector(base_vector[0],base_vector[1],base_vector[2]),Base.Rotation(base_rotation[0],base_rotation[1],base_rotation[2],base_rotation[3]))
+
+make_box("Cube",100,100,10,[0,0,1],[0.00,0.00,0.00,1.00])
+
+make_cylinder("cylinder",2,100,[3,3,-90],[0.00,0.00,0.00,1.00])
+
+make_cylinder("cylinder1",2,100,[97,97,-90],[0.00,0.00,0.00,1.00])
+
+make_cylinder("cylinder2",2,100,[3,97,-90],[0.00,0.00,0.00,1.00])
+
+make_cylinder("cylinder3",2,100,[97,3,-90],[0.00,0.00,0.00,1.00])
+
+FreeCAD.Gui.SendMsgToActiveView("ViewFit")
+FreeCAD.Gui.activeDocument().activeView().viewAxometric()</pre>
+<p style="padding-left: 30px;">Helix Gear:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import Part, FreeCAD, PartGui, FreeCADGui
+import InvoluteGearFeature
+from fcgear import involute, fcgear
+from math import pi, tan
+
+numTeeth = 20
+height = 20 #mm
+module = 3.5 #mm
+pressureAngle = 25.0 # degrees
+helixAngle = 25 # degrees
+highPrecision = False
+
+# First, draw an involute gear profile
+w = fcgear.FCWireBuilder()
+involute.CreateExternalGear(w, module, numTeeth, pressureAngle, highPrecision)
+invBaseWire = Part.Wire([o.toShape() for o in w.wire])
+
+# Make a helix to serve as the rotation vector
+helix = App.ActiveDocument.addObject("Part::Helix", "Helix")
+helix.Pitch = numTeeth * pi * module / tan(helixAngle * pi / 180.0)
+helix.Height = height
+helix.LocalCoord = 1 # 0 = "right handed", 1 = "Left Handed"
+helix.Style = 1
+
+# Path for axis of gear
+centralEdge = Part.makeLine((0, 0, 0), (0, 0, height))
+centralWire = Part.Wire([centralEdge])
+
+# Extrude+twist to make helix
+shell = Part.BRepOffsetAPI.MakePipeShell(centralWire)
+shell.setAuxiliarySpine(helix.Shape, True, False)
+shell.add(invBaseWire)
+shell.build()
+shell.makeSolid()
+
+# Add gear to document
+rotorObject = App.ActiveDocument.addObject("Part::Feature", "Helical Spur Gear")
+rotorObject.Shape = shell.shape()
+
+# Cleanup - TODO: Don't call addObject to make the helix in the first place
+App.ActiveDocument.removeObject(helix.Name)</pre>
+<p style="padding-left: 30px;"></p><br />W3 << <a href='W3.html'>Previous</a> <a href='Engineering.html'>Next</a> >> Engineering</div>
         
     <!-- footer -->
       <div class="container">
