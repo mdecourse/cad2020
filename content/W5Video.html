@@ -1,0 +1,219 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CAD2020 Intro To Computer Aided Design</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CAD2020 電腦輔助設計實習</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CAD2020 電腦輔助設計實習</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='評分.html'>評分</a><li><a href='討論區.html'>討論區</a><li><a href='分組.html'>分組</a><li><a href='Python.html'>Python</a></li></ul><li class='has-children'><a href='Open Tech.html'>Open Tech</a><ul class='dropdown'><li class='has-children'><a href='Mechatronics.html'>Mechatronics</a><ul class='dropdown'><li><a href='PICsimlab.html'>PICsimlab</a><li><a href='UnoArduSim.html'>UnoArduSim</a></li></ul><li><a href='Cyber Tech.html'>Cyber Tech</a><li><a href='E-vehicle.html'>E-vehicle</a><li><a href='Composite Tech.html'>Composite Tech</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='Video.html'>Video</a><ul class='dropdown'><li><a href='W1Video.html'>W1Video</a><li><a href='W2Video.html'>W2Video</a><li><a href='W4Video.html'>W4Video</a><li><a href='W5Video.html'>W5Video</a></li></ul><li class='has-children'><a href='W1.html'>W1</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a></li></ul><li><a href='W2.html'>W2</a><li><a href='W3.html'>W3</a><li class='has-children'><a href='W4-W6.html'>W4-W6</a><ul class='dropdown'><li><a href='Engineering.html'>Engineering</a></li></ul><li class='has-children'><a href='W7-W9.html'>W7-W9</a><ul class='dropdown'><li><a href='HW2.html'>HW2</a></li></ul><li><a href='W10-W14.html'>W10-W14</a><li><a href='W15-W18.html'>W15-W18</a></li></ul><li class='has-children'><a href='CAD.html'>CAD</a><ul class='dropdown'><li class='has-children'><a href='設計創建.html'>設計創建</a><ul class='dropdown'><li><a href='Onshape.html'>Onshape</a><li><a href='Solidworks.html'>Solidworks</a><li><a href='Inventor.html'>Inventor</a><li><a href='NX.html'>NX</a></li></ul><li><a href='設計修改.html'>設計修改</a><li class='has-children'><a href='設計分析.html'>設計分析</a><ul class='dropdown'><li><a href='Sigmoid.html'>Sigmoid</a></li></ul><li><a href='設計最佳化.html'>設計最佳化</a></li></ul><li><a href='Solvespace.html'>Solvespace</a><li class='has-children'><a href='Projects.html'>Projects</a><ul class='dropdown'><li class='has-children'><a href='Robot.html'>Robot</a><ul class='dropdown'><li><a href='PyRep.html'>PyRep</a></li></ul><li class='has-children'><a href='Web.html'>Web</a><ul class='dropdown'><li><a href='Flutter-Flask.html'>Flutter-Flask</a></li></ul><li class='has-children'><a href='Glowscript.html'>Glowscript</a><ul class='dropdown'><li><a href='Rapydscript.html'>Rapydscript</a><li><a href='Atoms.html'>Atoms</a><li><a href='Samples.html'>Samples</a><li><a href='RLearning.html'>RLearning</a></li></ul><li><a href='Featurescript.html'>Featurescript</a><li class='has-children'><a href='Machine Learning.html'>Machine Learning</a><ul class='dropdown'><li><a href='Pytorch.html'>Pytorch</a><li><a href='Keras.html'>Keras</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">W4Video << <a href='W4Video.html'>Previous</a> <a href='W1.html'>Next</a> >> W1<br /><h1>W5Video</h1>
+<p><a href="https://drive.google.com/file/d/1F3sC-NkCaeXxLfrw9nEkVlkiWOH7GHOm/view?usp=sharing">9aw5_github_account_and_nx_license.mp4</a></p>
+<p style="padding-left: 30px;">說明如何利用程式方法修改 <a href="http://mde.tw/cad2020/content/W3.html">W3 頁面</a>中的學員連結資料</p>
+<p style="padding-left: 30px;">電腦輔助設計流程必須思考如何以程式因應設計流程中的改變</p>
+<p style="padding-left: 30px;">Python 程式提供 <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">bs4</a> 模組, 可以用來解讀網頁內容, 從中解讀出相關資料</p>
+<p style="padding-left: 30px;">後續將利用零件參數的排列組合變化產生零件, 並設法利用 API 程式取出與零件有關的資料</p>
+<p style="padding-left: 30px;">繪製零件之前必須要在操作影片拍攝之前, 列出所使用的套件與 kernel 版本</p>
+<p style="padding-left: 30px;">展示 <a href="https://github.com/solvespace/solvespace">Solvespace</a> 程式的編譯過程</p>
+<p><a href="https://drive.google.com/file/d/1Q9MZaM3SFb6fFzrYd2mXoWOtRXhsL7-a/view?usp=sharing">10aw5_python_correct_2a_w3_grouping_data.mp4</a></p>
+<p style="padding-left: 30px;"><span>說明如何利用程式方法修改 </span><a href="http://mde.tw/cad2020/content/W3.html">W3 頁面</a><span>中的學員連結資料</span></p>
+<p><a href="https://drive.google.com/file/d/1mmP5yMDNSqo5XPd8GVlZ9DtmDLldpBzC/view?usp=sharing">11aw5_nxopen_journal_bring_up_HW2.mp4</a></p>
+<p style="padding-left: 30px;">透過 Menu -&gt; Preferences -&gt; User Interface -&gt; Tools -&gt; Journal</p>
+<p style="padding-left: 30px;">NX 可以透過 <a href="https://docs.plm.automation.siemens.com/tdoc/nx/12/nx_api/#uid:index">NXOpen</a> 進行 API 程式開發</p>
+<p style="padding-left: 30px;">Solidworks 可以透過 <a href="https://pypi.org/project/pySW/">PySW</a> 執行 API 程式</p>
+<p><a href="https://drive.google.com/file/d/1rF4ptsvA_dpLw1_9cjTg7OjcqGIjCmpd/view?usp=sharing">12bw5_kaggle_and_nx_onlin_offline_python.mp4</a></p>
+<p style="padding-left: 30px;"><span>說明如何利用程式方法修改 </span><a href="http://mde.tw/cad2020/content/W3.html">W3 頁面</a><span>中的學員連結資料</span></p>
+<p style="padding-left: 30px;"><span>說明如何透過 Menu -&gt; Preferences -&gt; User Interface -&gt; Tools -&gt; Journal 使用 Python 錄製</span></p>
+<p style="padding-left: 30px;"><a href="http://nxjournaling.com/">http://nxjournaling.com/</a> 參考 (<a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/NXOpen.UF.Disp.html">NXOpen Python</a>)</p>
+<p style="padding-left: 30px;">展示利用 run_journal.exe 執行 <a href="https://raw.githubusercontent.com/mdecourse/cad2020/master/downloads/nx12/cube_offline.py">cube_offline.py</a></p>
+<p style="padding-left: 30px;">NX 可以透過 Menu -&gt; Help -&gt; About NX -&gt; System Information 看到版本為 12.0.2.9 Parasolid 為 30.1 版</p>
+<p><a href="https://drive.google.com/file/d/1TvkSOMRAUaGE4xL2b_5xOb4xbm8O_pi0/view?usp=sharing">13bw5_fix_wrong_cmsimde_submodule.mp4</a></p>
+<p style="padding-left: 30px;">說明如何修正 cmsimde 子模組無法連結的問題, 將有問題的子模組刪除後, 重新建立 cmsimde 子模組</p>
+<p style="padding-left: 30px;">參考: <a href="https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule">https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule</a> </p>
+<p>To remove a submodule you need to:</p>
+<ol>
+<li>Delete the relevant section from the .gitmodules file.</li>
+<li>Stage the .gitmodules changes:<br/>    git add .gitmodules</li>
+<li>Delete the relevant section from .git/config.</li>
+<li>Remove the submodule files from the working tree and index:<br/>    git rm --cached path_to_submodule (no trailing slash).</li>
+<li>Remove the submodule's .git directory:<br/>    rm -rf .git/modules/path_to_submodule</li>
+<li>Commit the changes:<br/>    git commit -m "Removed submodule &lt;name&gt;"</li>
+<li>Delete the now untracked submodule files:<br/>    rm -rf path_to_submodule</li>
+</ol>
+<p style="padding-left: 30px;"></p><br />W4Video << <a href='W4Video.html'>Previous</a> <a href='W1.html'>Next</a> >> W1</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
