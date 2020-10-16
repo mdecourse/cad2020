@@ -1,6 +1,4 @@
 # NX 12.0.2.9
-# 提供空檔案 newPart.prt
-# 利用 run_journal cube_offline.py 以 Non-GUI 的模式執行 NX12, 將可直接建立 cube.prt
  
 #
 import math
@@ -9,30 +7,22 @@ import NXOpen.Annotations
 import NXOpen.Features
 import NXOpen.GeometricUtilities
 import NXOpen.Preferences
-import NXOpen.UF
  
 def main() : 
-     
+ 
     theUI = NXOpen.UI.GetUI()
     theMsgBox = theUI.NXMessageBox
     theMsgBox.Show("簡要說明", NXOpen.NXMessageBox.DialogType.Information,"以下流程將建立一個簡單的長方體")
-     
-    theSession  = NXOpen.Session.GetSession()#try to open new part file to edit (different than assemblyFile)
-    NXFile = 'y:/tmp/cad2020/downloads/nx12/model1.prt'
-    #use class method to open new session/workPart
-    basepart1, partLoadStatus1 = theSession.Parts.OpenBaseDisplay(NXFile)
-    partLoadStatus1.Dispose()
-    workPart    = theSession.Parts.Work
-    displayPart = theSession.Parts.Display
+ 
+    theSession  = NXOpen.Session.GetSession()
  
     # 以下利用 ListingWindow 列出相關資訊, 可用於程式除錯
     theLw = theSession.ListingWindow
     # 開啟 console 將資料印出
     theLw.Open()
     theLw.WriteLine("theSession 變數目前為: "+str(theSession))
-     
-    # 若直接在 NX12 中執行
-    #workPart = theSession.Parts.Work
+ 
+    workPart = theSession.Parts.Work
     # ----------------------------------------------
     #   Menu: Insert->Sketch...
     # ----------------------------------------------
@@ -182,9 +172,6 @@ def main() :
     extrudeBuilder1.ParentFeatureInternal = False
      
     feature2 = extrudeBuilder1.CommitFeature()
-    # 將 basepart1 存檔
-    newNXFile = 'y:/tmp/cad2020/downloads/nx12/cube_generated_offline.prt'
-    basepart1.SaveAs(newNXFile)
  
     # ----------------------------------------------
     #   Menu: Tools->Journal->Stop Recording
