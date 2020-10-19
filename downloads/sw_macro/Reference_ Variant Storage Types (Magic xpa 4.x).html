@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0097)https://magic.secure.force.com/PublicKnowledge/articles/bl_Reference/Variant-Storage-Types-xpa-4x -->
+<html class="  ext-strict"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/stub.js.下載" type="text/javascript"></script><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/3_3_3.Finalorg.ajax4jsf.javascript.AjaxScript" type="text/javascript"></script><link class="component" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/eAFzNbn668Lel7cBFaAFmg__" rel="stylesheet" type="text/css"><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/functions.js.下載" type="text/javascript"></script><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/main.js.下載" type="text/javascript"></script><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/en_US.js.下載" type="text/javascript"></script><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/desktopAjax.js.下載" type="text/javascript"></script><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/picklist4.js.下載" type="text/javascript"></script><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/ext.js.下載" type="text/javascript"></script><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/Knowledge.js.下載" type="text/javascript"></script><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/zen-componentsCompatible.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/elements.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/common.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/dStandard.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/dCustom0.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/dCustom1.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/extended.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/setup.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/KnowledgeSite.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/ext-all-notheme.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/ExtCSS-SFDC.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/knowledge.css" rel="stylesheet" type="text/css"><link class="user" href="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/knowledgeHome.css" rel="stylesheet" type="text/css"><script>(function(UITheme) {
+    UITheme.getUITheme = function() { 
+        return UserContext.uiTheme;
+    };
+}(window.UITheme = window.UITheme || {}));</script><title>Reference: Variant Storage Types (Magic xpa 4.x)</title></head><body class="   ext-webkit ext-chrome"><span id="j_id0:SiteTemplate:j_id2"><img src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/magicHeaderCombined" alt="Salesforce" height="120" title="Magic" width="565"></span><span id="j_id0:SiteTemplate:j_id5"><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id9"></span><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13"><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id55" class="articleRendererHeader"><script> if(!window.sfdcPage) { window.sfdcPage = new ApexDetailPage(); }UserContext.initialize({"ampm":["AM","PM"],"isAccessibleMode":false,"salesforceURL":"https://magic.secure.force.com?refURL=http%3A%2F%2Fmagic.secure.force.com%2FPublicKnowledge%2Farticles%2Fbl_Reference%2FVariant-Storage-Types-xpa-4x","dateFormat":"M/d/yyyy","language":"en_US","locale":"en_US","dateTimeFormat":"M/d/yyyy h:mm a","labelLastModified":"1602965298000","today":"10/19/2020 4:48 PM","userPreferences":[{"index":112,"name":"HideInlineEditSplash","value":false},{"index":114,"name":"OverrideTaskSendNotification","value":false},{"index":115,"name":"DefaultTaskSendNotification","value":false},{"index":119,"name":"HideUserLayoutStdFieldInfo","value":false},{"index":116,"name":"HideRPPWarning","value":false},{"index":87,"name":"HideInlineSchedulingSplash","value":false},{"index":88,"name":"HideCRUCNotification","value":false},{"index":89,"name":"HideNewPLESplash","value":false},{"index":90,"name":"HideNewPLEWarnIE6","value":false},{"index":122,"name":"HideOverrideSharingMessage","value":false},{"index":91,"name":"HideProfileILEWarn","value":false},{"index":93,"name":"HideProfileElvVideo","value":false},{"index":97,"name":"ShowPicklistEditSplash","value":false},{"index":92,"name":"HideDataCategorySplash","value":false},{"index":128,"name":"ShowDealView","value":false},{"index":129,"name":"HideDealViewGuidedTour","value":false},{"index":132,"name":"HideKnowledgeFirstTimeSetupMsg","value":false},{"index":104,"name":"DefaultOffEntityPermsMsg","value":false},{"index":135,"name":"HideNewCsnSplash","value":false},{"index":101,"name":"HideBrowserWarning","value":false},{"index":139,"name":"HideDashboardBuilderGuidedTour","value":false},{"index":140,"name":"HideSchedulingGuidedTour","value":false},{"index":180,"name":"HideReportBuilderGuidedTour","value":false},{"index":183,"name":"HideAssociationQueueCallout","value":false},{"index":194,"name":"HideQTEBanner","value":false},{"index":270,"name":"HideIDEGuidedTour","value":false},{"index":282,"name":"HideQueryToolGuidedTour","value":false},{"index":196,"name":"HideCSIGuidedTour","value":false},{"index":271,"name":"HideFewmetGuidedTour","value":false},{"index":272,"name":"HideEditorGuidedTour","value":false},{"index":205,"name":"HideApexTestGuidedTour","value":false},{"index":206,"name":"HideSetupProfileHeaderTour","value":false},{"index":207,"name":"HideSetupProfileObjectsAndTabsTour","value":false},{"index":213,"name":"DefaultOffArticleTypeEntityPermMsg","value":false},{"index":214,"name":"HideSelfInfluenceGetStarted","value":false},{"index":215,"name":"HideOtherInfluenceGetStarted","value":false},{"index":216,"name":"HideFeedToggleGuidedTour","value":false},{"index":268,"name":"ShowChatterTab178GuidedTour","value":false},{"index":275,"name":"HidePeopleTabDeprecationMsg","value":false},{"index":276,"name":"HideGroupTabDeprecationMsg","value":false},{"index":224,"name":"HideUnifiedSearchGuidedTour","value":false},{"index":226,"name":"ShowDevContextMenu","value":false},{"index":227,"name":"HideWhatRecommenderForActivityQueues","value":false},{"index":228,"name":"HideLiveAgentFirstTimeSetupMsg","value":false},{"index":232,"name":"HideGroupAllowsGuestsMsgOnMemberWidget","value":false},{"index":233,"name":"HideGroupAllowsGuestsMsg","value":false},{"index":234,"name":"HideWhatAreGuestsMsg","value":false},{"index":235,"name":"HideNowAllowGuestsMsg","value":false},{"index":236,"name":"HideSocialAccountsAndContactsGuidedTour","value":false},{"index":237,"name":"HideAnalyticsHomeGuidedTour","value":false},{"index":238,"name":"ShowQuickCreateGuidedTour","value":false},{"index":245,"name":"HideFilePageGuidedTour","value":false},{"index":250,"name":"HideForecastingGuidedTour","value":false},{"index":251,"name":"HideBucketFieldGuide","value":false},{"index":263,"name":"HideSmartSearchCallOut","value":false},{"index":273,"name":"ShowForecastingQuotaAttainment","value":false},{"index":280,"name":"HideForecastingQuotaColumn","value":false},{"index":301,"name":"HideManyWhoGuidedTour","value":false},{"index":298,"name":"HideFileSyncBannerMsg","value":false},{"index":299,"name":"HideTestConsoleGuidedTour","value":false},{"index":302,"name":"HideManyWhoInlineEditTip","value":false},{"index":303,"name":"HideSetupV2WelcomeMessage","value":false},{"index":312,"name":"ForecastingShowQuantity","value":false},{"index":313,"name":"HideDataImporterIntroMsg","value":false},{"index":314,"name":"HideEnvironmentHubLightbox","value":false},{"index":316,"name":"HideSetupV2GuidedTour","value":false},{"index":317,"name":"HideFileSyncMobileDownloadDialog","value":false},{"index":322,"name":"HideEnhancedProfileHelpBubble","value":false},{"index":328,"name":"ForecastingHideZeroRows","value":false},{"index":330,"name":"HideEmbeddedComponentsFeatureCallout","value":false},{"index":341,"name":"HideDedupeMatchResultCallout","value":false},{"index":340,"name":"HideS1BrowserUI","value":false},{"index":346,"name":"HideS1Banner","value":false},{"index":358,"name":"HideEmailVerificationAlert","value":false},{"index":354,"name":"HideLearningPathModal","value":false},{"index":359,"name":"HideAtMentionsHelpBubble","value":false},{"index":368,"name":"LightningExperiencePreferred","value":false},{"index":373,"name":"PreviewLightning","value":false}],"networkId":"","uiTheme":"Theme3","uiSkin":"Theme3","userName":"public_knowledge@magic.force.com","userId":"005D00000046nhA","isCurrentlySysAdminSU":false,"renderMode":"RETRO","startOfWeek":"1","vfDomainPattern":"(?:[^.]+).um1.visual.force.com","auraDomain":"um1.lightning.force.com","orgPreferences":[{"index":257,"name":"TabOrganizer","value":true},{"index":113,"name":"GroupTasks","value":true}],"siteUrlPrefix":"/PublicKnowledge","isDefaultNetwork":true,"timeFormat":"h:mm a"});
+</script><div class="bPageTitle"><div class="ptBody secondaryPalette brandSecondaryBrd"><div class="content"><img src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/s.gif" class="pageTitleIcon" title="" alt=""><h1 class="pageType noSecondHeader">Variant Storage Types (Magic xpa 4.x)</h1><div class="blank"></div></div><div class="links"><a href="javascript:openPopupFocus(&#39;/PublicKnowledge/articles/bl_Reference/Variant-Storage-Types-xpa-4x/p&#39;, &#39;PrintableView&#39;, 800, 600, &#39;width=800,height=600,resizable=yes,toolbar=no,status=no,scrollbars=yes,menubar=yes,directories=no,location=no,dependant=no&#39;, false, false);" title="Printable View (New Window)"><span class="configLinks">Printable View</span></a></div></div></div></div><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id250" class="bPageTitle"><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id251" class="ptBreadcrumb">
+                «&nbsp;<a href="javascript:history.back()">Go Back</a></div></div><div class="apexp"><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257" class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette"><script>function twistSection(elem, sectionId) {
+   var parentDiv = elem;
+   var twisty = elem;
+   while (parentDiv.tagName != 'DIV') { parentDiv = parentDiv.parentNode; }
+   if (elem.tagName === 'DIV' && elem.attributes['data-twistyimgid'] !== undefined) {
+      twisty = document.getElementById(elem.attributes['data-twistyimgid'].value);
+   }
+   var div = parentDiv.nextSibling; 
+   var elemWasOn = false; 
+   if (div.style.display != 'none') { 
+       div.style.display = 'none'; 
+       twisty.className ='showListButton';
+       twisty.alt = 'Show Section - '+twisty.name;
+      elem.title = twisty.alt;
+       elemWasOn = true; 
+   } else {
+       div.style.display = 'block'; 
+       twisty.className = 'hideListButton';
+       twisty.alt = 'Hide Section - '+twisty.name;
+      elem.title = twisty.alt;
+   } 
+  return !elemWasOn;
+}
+var registeredSections = new Array();
+function registerTwistableSection(headerId, mainTableId) {
+   var obj = new Object();
+   obj.headerId = headerId;
+   obj.mainTableId = mainTableId;
+   registeredSections[registeredSections.length] = obj;
+}
+function twistAllSections(on) {
+   for (var i = 0; i < registeredSections.length; i++) {
+      var obj = registeredSections[i];
+      var img;
+      img = document.getElementById('img_' + obj.headerId);
+    if (on && 'showListButton' == img.className) {
+         twistSection(img, obj.headerId, obj.mainTableId);
+     } else if (!on && 'hideListButton' == img.className) {
+         twistSection(img, obj.headerId, obj.mainTableId);
+       }
+   }
+}
+function toggleSection(headerId, on){
+    var sectionHead = document.getElementById('head_'+headerId+'_j_id0_SiteTemplate_j_id5_j_id6_j_id13_j_id14_j_id257');
+    var body = sectionHead.nextSibling;
+    var disp = on ? 'block' : 'none';
+    sectionHead.style.display = disp;
+    body.style.display = disp;
+}
+function registerTwistableSections_j_id0_SiteTemplate_j_id5_j_id6_j_id13_j_id14_j_id257() {
+registerTwistableSection('j_id0_SiteTemplate_j_id5_j_id6_j_id13_j_id14_j_id257_j_id259_j_id260', 'j_id0_SiteTemplate_j_id5_j_id6_j_id13_j_id14_j_id257');
+}
+registerTwistableSections_j_id0_SiteTemplate_j_id5_j_id6_j_id13_j_id14_j_id257();
+</script><div class="pbHeader"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Information</h2></td><td>&nbsp;</td></tr></tbody></table></div><div class="pbBody">
+                    <div class="knowledgeTOCRenderer-body"><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:0:j_id260"><div class="pbSubsection"><table class="detailList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th class="labelCol vfLabelColTextWrap  first  last " scope="row">Created By</th><td class="data2Col  first  last "><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:0:j_id260:j_id261">Knowledge Migration User</span></td></tr></tbody></table></div></div><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:1:j_id260"><div class="pbSubsection"><table class="detailList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th class="labelCol vfLabelColTextWrap  first  last " scope="row">Approval Process Status</th><td class="data2Col  first  last "><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:1:j_id260:j_id261">Published</span></td></tr></tbody></table></div></div><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:2:j_id260"><div class="pbSubsection"><table class="detailList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th class="labelCol vfLabelColTextWrap  first  last " scope="row">Objective</th><td class="data2Col  first  last "><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:2:j_id260:j_id261"></span></td></tr></tbody></table></div></div><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:3:j_id260"><div class="pbSubsection"><table class="detailList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th class="labelCol vfLabelColTextWrap  first  last " scope="row">Description</th><td class="data2Col  first  last "><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:3:j_id260:j_id261"><table class="htmlDetailElementTable" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><div class="sfdc_richtext" id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:3:j_id260:j_id261j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:3:j_id260:j_id261_00ND0000005rAjf_div"><div id="header"></div>
+
+<h1>Variant Storage Types (Magic xpa 4.x)</h1>
+<p class="Header">Table 1 – Basic Types</p>
+<p class="Body-Text">The following table shows the VARTYPE values that indicate valid Variant types.</p>
+<table style="" cellspacing="0" width="100%"><tbody><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Table-Header">VARTYPE value</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Table-Header">Enumeration Symbol</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Table-Header">Description</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Table-Header">Range (for numbers)</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">0</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_EMPTY</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">No value specified</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">1</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_NULL</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">SQL-style Null</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">2</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_I2</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Signed 2-byte integer</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table">–32,768 to 32,767</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">3</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_I4</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Signed 4-byte integer</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table">–2,147,483,648 to 2,147,483,647</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">4</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_R4</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Signed 4-byte real</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table">1.1E -38 to 3.4E +38<br>(7 digits)</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">5</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_R8</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Signed 8-byte real</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table">2.2E -308 to 1.7 E +308<br>(15 digits)</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">6</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_CY</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Currency</p>
+<p class="Text-in-a-table"> </p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">7</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_DATE</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Date</p>
+<p class="Text-in-a-table"> </p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">8</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_BSTR</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Automation string</p>
+<p class="Text-in-a-table"> </p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">9</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_DISPATCH</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">A pointer to an object that implements <b>IDispatch</b></p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">10</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_ERROR</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">SCODE</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">11</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_BOOL</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Boolean</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">12</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_VARIANT</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table"> </p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">13</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_UNKNOWN</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">A pointer to an object that implements <b>IUnknown</b></p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">14</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_DECIMAL</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Decimal</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">16</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_I1</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">1-byte character</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table">–128 to 127</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">17</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_UI1</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Unsigned 1-byte character</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table">0 to 255</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">18</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_UI2</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Unsigned 2-byte integer</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table">0 to 65,535</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">19</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_UI4</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Unsigned 4-byte integer</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table">0 to 4,294,967,295</p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">22</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_INT</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Signed machine integer</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">23</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_UINT</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">Unsigned machine integer</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr><tr><td colspan="1" rowspan="1" style="" width="102">
+<p class="Text-in-a-table">36</p>
+</td><td colspan="1" rowspan="1" style="" width="141">
+<p class="Text-in-a-table">VT_RECORD</p>
+</td><td colspan="1" rowspan="1" style="" width="170">
+<p class="Text-in-a-table">User defined type</p>
+</td><td colspan="1" rowspan="1" style="" width="182">
+<p class="Text-in-a-table"> </p>
+</td></tr></tbody></table>
+
+<p class="Body-Text"><span style="font-weight: bold;">Example:</span><br>The 3 value represents a signed 4-byte integer value, which is indicated by VT_I4,</p>
+<p class="Header">Table 2 – Arrays and References</p>
+<p class="Body-Text">The following values are used for Bit-Wise Logical OR operations. These values should be used in addition to the values in Table 1. They are not valid alone.</p>
+<table style="height: 63px;" cellspacing="0" width="600"><colgroup><col style="width: 22.8%;"><col style="width: 26.494%;"><col style="width: 50.706%;"></colgroup><tbody><tr style=""><td colspan="1" rowspan="1" style="">
+<p class="Table-Header">VARTYPE Value</p>
+</td><td colspan="1" rowspan="1" style="">
+<p class="Table-Header">Enumeration Symbol</p>
+</td><td colspan="1" rowspan="1" style="">
+<p class="Table-Header">Description</p>
+</td></tr><tr style=""><td colspan="1" rowspan="1" style="">
+<p class="Text-in-a-table">8192</p>
+</td><td colspan="1" rowspan="1" style="">
+<p class="Text-in-a-table">VT_ARRAY</p>
+</td><td colspan="1" rowspan="1" style="">
+<p class="Text-in-a-table">An array of data type</p>
+</td></tr><tr style=""><td colspan="1" rowspan="1" style="">
+<p class="Text-in-a-table">16384</p>
+</td><td colspan="1" rowspan="1" style="">
+<p class="Text-in-a-table">VT_BYREF</p>
+</td><td colspan="1" rowspan="1" style="">
+<p class="Text-in-a-table">A reference to data type</p>
+</td></tr></tbody></table>
+<p class="Body-Text"><span style="font-weight: bold;"><br>Note:</span><br>The symbol | is used in the documentation to indicate a Bit-Wise Logical OR operation and is common when indicating variants, such as VT_I2|VT_BYREF. When you use the values from Table 2, you should use the arithmetical ADD operation, instead of the symbol |.</p>
+<p class="Header">Example for Array</p>
+<p class="Body-Text"><span style="text-decoration: none;">8195 represents an array that is a signed 4-byte integer,<br>indicated by VT_I4|VT_ARRAY (8195 is a result of 3 + 8192).</span></p>
+<p class="Header">Example for “By Reference”</p>
+<p class="Body-Text">16387 represents a reference that is a signed 4-byte integer,<br>indicated by VT_I4|VT_BYREF (16387 is a result of 3 + 16384).</p>
+<p class="Header">List of Exceptions</p>
+<ol><li class="p-How-to">
+<p class="How-to">VT_VARIANT cannot be used alone and must be used with a value from Table 2.</p>
+</li><li class="p-How-to">
+<p class="How-to">The following combinations are not valid:</p>
+</li></ol>
+<p class="BULTIN"><span style="">o</span><span style="">       </span>VT_NULL | VT_BYREF</p>
+<p class="BULTIN"><span style="">o</span><span style="">       </span>VT_EMPTY | VT_BYREF</p>
+<p class="BULTIN"><span style="">o</span><span style="">       </span> VT_NULL | VT_ARRAY</p>
+<p class="BULTIN"><span style="">o</span><span style="">       </span> VT_EMPTY | VT_ARRAY</p></div></td></tr>
+</tbody></table><script>j_id0__SiteTemplate__j_id5__j_id6__j_id13__j_id14__j_id257__j_id259__3__j_id260__j_id261 = window.onload; window.onload=function() { if (j_id0__SiteTemplate__j_id5__j_id6__j_id13__j_id14__j_id257__j_id259__3__j_id260__j_id261!= null) j_id0__SiteTemplate__j_id5__j_id6__j_id13__j_id14__j_id257__j_id259__3__j_id260__j_id261();};</script></span></td></tr></tbody></table></div></div><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:4:j_id260"><div class="pbSubsection"><table class="detailList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th class="labelCol vfLabelColTextWrap  first  last " scope="row">Reference</th><td class="data2Col  first  last "><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:4:j_id260:j_id261"></span></td></tr></tbody></table></div></div><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:5:j_id260"><div class="pbSubsection"><table class="detailList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th class="labelCol vfLabelColTextWrap  first  last " scope="row">Attachment</th><td class="data2Col  first  last "><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:5:j_id260:j_id261">&nbsp;</span></td></tr></tbody></table></div></div><div id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:6:j_id260"><div class="pbSubsection"><table class="detailList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th class="labelCol vfLabelColTextWrap  first  last " scope="row">Attachment</th><td class="data2Col  first  last "><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id257:j_id259:6:j_id260:j_id261">&nbsp;</span></td></tr></tbody></table></div></div>
+                    </div></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div></div><span id="j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:j_id263" style="display: none;"></span>
+        
+        <script>
+
+            DesktopContext.pageTitle = "Reference: Variant Storage Types (Magic xpa 4.x)";
+            document.title = "Reference: Variant Storage Types (Magic xpa 4.x)";
+            var isModal = false;
+
+            Ext.onReady(function() {
+                if (!isModal){
+                    var propertiesPanel = Ext.query('*[id=j_id0:SiteTemplate:j_id5:j_id6:j_id13:j_id14:articleRendererToolbar] *[id $= :extPanel]')[0];
+                    if (false) {
+                        var renderer = new TOCDetailRenderer({elemId:"knowledgeTOCRenderer", height:-110, contentId:'knowledgeTOCRendererContent'});
+                        if (propertiesPanel) {
+                            Ext.ComponentMgr.get(propertiesPanel.id).addListener('beforeExpand', function() {
+                               renderer.height = -190;
+                               renderer.resize();
+                            });
+                            Ext.ComponentMgr.get(propertiesPanel.id).addListener('collapse', function() {
+                               renderer.height = -110;
+                               renderer.resize();
+                            });
+                        }
+                        new TOCSectionSelector({menuId:'menu', contentId:'knowledgeTOCRendererContent'});
+                    }
+
+                    ArticleRenderer.registerArticleLinksForConsole();
+                }
+                else{
+                     Sfdc.onReady(function(){window.addEventListener("beforeunload", function(){
+                        if(window.parent.Sfdc.get('ChatterDeflectionModal')){
+                            Sfdc.Dom.hideByVisibility(window.parent.Sfdc.get('ChatterDeflectionModal'));
+                            }
+                         });
+                     });
+                }
+            });
+        </script></span></span>
+    <hr><span id="j_id0:SiteTemplate:j_id511"><span id="j_id0:SiteTemplate:j_id511:j_id512:j_id513">
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="./Reference_ Variant Storage Types (Magic xpa 4.x)_files/ga.js.下載" type="text/javascript"></script>
+    <script>
+    try {
+          var pageTracker = _gat._getTracker("UA-63105979-1");
+
+          pageTracker._setCookiePath("/PublicKnowledge");
+        pageTracker._trackPageview();
+     }
+     catch(err) {
+     }
+    </script></span></span></body></html>

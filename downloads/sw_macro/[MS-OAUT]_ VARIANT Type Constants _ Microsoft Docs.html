@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<!-- saved from url=(0125)https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f?redirectedfrom=MSDN -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-light" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="[MS-OAUT]: VARIANT Type Constants">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f">
+			<meta property="og:description" content="The VARENUM enumeration constants are used in the discriminant field, vt, of the VARIANT type specified in section 2.2.29.2. When present, the">
+		<meta property="og:image" content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png">
+		<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+
+	<meta name="author" content="openspecs-office">
+<meta name="depot_name" content="MSDN.openspecswindows">
+<meta name="description" content="The VARENUM enumeration constants are used in the discriminant field, vt, of the VARIANT type specified in section 2.2.29.2. When present, the">
+<meta name="document_id" content="9a3d3257-f7dd-275f-d8de-5ddacddd3900">
+<meta name="document_version_independent_id" content="5c3116df-9dc5-676f-fd48-b6c826e5311c">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/open_specs_windows/blob/2149fcbe9e3768016880cd0f4b1a01b9cb7dde64/documentation/windows_protocols/MS-OAUT/3fe7db9f-5803-4dc4-9d14-5425d3f5461f.md">
+<meta name="locale" content="en-us">
+<meta name="ms.author" content="cindyle">
+<meta name="ms.prod" content="openspecs-windows">
+<meta name="ms.topic" content="conceptual">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/open_specs_windows/blob/live/documentation/windows_protocols/MS-OAUT/3fe7db9f-5803-4dc4-9d14-5425d3f5461f.md">
+<meta name="protocol_rendering" content="true">
+<meta name="ROBOTS" content="INDEX, FOLLOW">
+<meta name="search.ms_docsetname" content="openspecswindows">
+<meta name="search.ms_product" content="MSDN">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="site_name" content="Docs">
+<meta name="topic" content="conceptual">
+<meta name="uhfHeaderId" content="MSDocsHeader-OpenSpecs">
+<meta name="updated_at" content="2019-02-14 08:13 PM">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="toc.json">
+<meta name="word_count" content="1173">
+
+
+	<meta name="scope" content="OpenSpecs">
+<link href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f" rel="canonical">
+	<title>[MS-OAUT]: VARIANT Type Constants | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/99eeb2de.site-ltr.css">
+
+	<link rel="stylesheet" href="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/55917fe3.conceptual.css">
+
+
+	<script async="" defer="" crossorigin="anonymous" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/lux.js.下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/analytics.js.下載"></script><script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/open_specs_windows/blob/live/documentation/windows_protocols/MS-OAUT/3fe7db9f-5803-4dc4-9d14-5425d3f5461f.md',
+			extendBreadcrumb: false,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasBookmark: true,
+			hasShare: true
+		},
+		functions:{}
+	};
+	</script>
+	<script nomodule="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/bluebird.min.js.下載" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"></script>
+	<script nomodule="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/fetch.umd.min.js.下載" integrity="sha384-EQIXrC5K2+7X8nGgLkB995I0/6jfAvvyG1ieZ+WYGxgJHFMD/alsG9fSDWvzb5Y1" crossorigin="anonymous"></script>
+	<script nomodule="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/template.min.js.下載" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"></script>
+	<script nomodule="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/url.min.js.下載" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"></script>
+	<script src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/ac698d33.index-polyfills.js.下載"></script>
+		<script src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/3e45a6b2.index-docs.js.下載"></script><style></style><script src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/jsll-4.js.下載" async="" defer=""></script><script src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/wcp-consent.js.下載" async="" defer=""></script>
+<script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js.下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(1).下載"></script><style type="text/css" media="print">.usabilla_live_button_container { display: none; }</style><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(2).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(3).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(4).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(5).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(6).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(7).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(8).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(9).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(10).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(11).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(12).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(13).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(14).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(15).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(16).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(17).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(18).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(19).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(20).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(21).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(22).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(23).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(24).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(25).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(26).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(27).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(28).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(29).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(30).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(31).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(32).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(33).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(34).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(35).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(36).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(37).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(38).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(39).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(40).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(41).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(42).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(43).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(44).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(45).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(46).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(47).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(48).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(49).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(50).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(51).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(52).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(53).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(54).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(55).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(56).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(57).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(58).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(59).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(60).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(61).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(62).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(63).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(64).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(65).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(66).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(67).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(68).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(69).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(70).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(71).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(72).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(73).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(74).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(75).下載"></script><script async="" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/t.js(76).下載"></script><script async="" src="https://web.vortex.data.microsoft.com/collect/v1/t.js?ver=%272.1%27&amp;name=%27Ms.Webi.PageAction%27&amp;time=%272020-10-19T16%3A55%3A47.467Z%27&amp;os=%27Windows%27&amp;appId=%27JS%3ADocs%27&amp;-ver=%271.0%27&amp;-impressionGuid=%27816df37a-e076-4f75-9333-e10f0e07f497%27&amp;-pageName=%279a3d3257-f7dd-275f-d8de-5ddacddd3900%27&amp;-uri=%27https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fopenspecs%2Fwindows_protocols%2Fms-oaut%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f%3Fredirectedfrom%3DMSDN%27&amp;-pageTags=%27%7B%22author%22%3A%22openspecs-office%22%2C%22depotname%22%3A%22MSDN.openspecswindows%22%2C%22document_version_independent_id%22%3A%225c3116df-9dc5-676f-fd48-b6c826e5311c%22%2C%22gitcommit%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fopen_specs_windows%2Fblob%2F2149fcbe9e3768016880cd0f4b1a01b9cb7dde64%2Fdocumentation%2Fwindows_protocols%2FMS-OAUT%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f.md%22%2C%22pgauth%22%3A%22cindyle%22%2C%22product%22%3A%22openspecs-windows%22%2C%22pgtop%22%3A%22conceptual%22%2C%22giturl%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fopen_specs_windows%2Fblob%2Flive%2Fdocumentation%2Fwindows_protocols%2FMS-OAUT%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f.md%22%2C%22publishtime%22%3A%222019-02-14%2008%3A13%20PM%22%2C%22contentlocale%22%3A%22en-us%22%2C%22highContrast%22%3A%22false%22%2C%22metaTags%22%3A%7B%7D%7D%27&amp;-contentVer=%272.0%27&amp;-market=%27en-us%27&amp;-pageType=%27conceptual%27&amp;-actionType=%27O%27&amp;-behavior=300&amp;-content=%27%5B%7B%22event%22%3A%22page-visibility-changed%22%2C%22value%22%3A%22hidden%22%7D%5D%27&amp;*baseType=%27Ms.Content.PageAction%27&amp;*timeToAction=2766098&amp;*cookieEnabled=true&amp;*isJs=true&amp;*title=%27%5BMS-OAUT%5D%3A%20VARIANT%20Type%20Constants%20%7C%20Microsoft%20Docs%27&amp;*isLoggedIn=false&amp;*isManual=true&amp;*referrerUri=%27http%3A%2F%2Fjoshuaredstone.blogspot.com%2F%27&amp;ext-javascript-ver=%271.1%27&amp;ext-javascript-libVer=%274.3.3%27&amp;ext-javascript-domain=%27docs.microsoft.com%27&amp;ext-javascript-msfpc=%27GUID%3D3a17f176c1ec4bcdb926c370717800ff%26HASH%3D3a17%26LV%3D202009%26V%3D4%26LU%3D1600653883634%27&amp;ext-javascript-userConsent=true&amp;ext-user-localId=%27t%3A18030AF26E8D6B7C2CC205B56F106A9F%27&amp;$mscomCookies=false"></script><script async="" src="https://web.vortex.data.microsoft.com/collect/v1/t.js?ver=%272.1%27&amp;name=%27Ms.Webi.PageAction%27&amp;time=%272020-10-19T16%3A55%3A48.515Z%27&amp;os=%27Windows%27&amp;appId=%27JS%3ADocs%27&amp;-ver=%271.0%27&amp;-impressionGuid=%27816df37a-e076-4f75-9333-e10f0e07f497%27&amp;-pageName=%279a3d3257-f7dd-275f-d8de-5ddacddd3900%27&amp;-uri=%27https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fopenspecs%2Fwindows_protocols%2Fms-oaut%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f%3Fredirectedfrom%3DMSDN%27&amp;-pageTags=%27%7B%22author%22%3A%22openspecs-office%22%2C%22depotname%22%3A%22MSDN.openspecswindows%22%2C%22document_version_independent_id%22%3A%225c3116df-9dc5-676f-fd48-b6c826e5311c%22%2C%22gitcommit%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fopen_specs_windows%2Fblob%2F2149fcbe9e3768016880cd0f4b1a01b9cb7dde64%2Fdocumentation%2Fwindows_protocols%2FMS-OAUT%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f.md%22%2C%22pgauth%22%3A%22cindyle%22%2C%22product%22%3A%22openspecs-windows%22%2C%22pgtop%22%3A%22conceptual%22%2C%22giturl%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fopen_specs_windows%2Fblob%2Flive%2Fdocumentation%2Fwindows_protocols%2FMS-OAUT%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f.md%22%2C%22publishtime%22%3A%222019-02-14%2008%3A13%20PM%22%2C%22contentlocale%22%3A%22en-us%22%2C%22highContrast%22%3A%22false%22%2C%22metaTags%22%3A%7B%7D%7D%27&amp;-contentVer=%272.0%27&amp;-market=%27en-us%27&amp;-pageType=%27conceptual%27&amp;-actionType=%27O%27&amp;-behavior=300&amp;-content=%27%5B%7B%22event%22%3A%22page-focus-changed%22%2C%22value%22%3A%22blur%22%7D%5D%27&amp;*baseType=%27Ms.Content.PageAction%27&amp;*timeToAction=2767146&amp;*cookieEnabled=true&amp;*isJs=true&amp;*title=%27%5BMS-OAUT%5D%3A%20VARIANT%20Type%20Constants%20%7C%20Microsoft%20Docs%27&amp;*isLoggedIn=false&amp;*isManual=true&amp;*referrerUri=%27http%3A%2F%2Fjoshuaredstone.blogspot.com%2F%27&amp;ext-javascript-ver=%271.1%27&amp;ext-javascript-libVer=%274.3.3%27&amp;ext-javascript-domain=%27docs.microsoft.com%27&amp;ext-javascript-msfpc=%27GUID%3D3a17f176c1ec4bcdb926c370717800ff%26HASH%3D3a17%26LV%3D202009%26V%3D4%26LU%3D1600653883634%27&amp;ext-javascript-userConsent=true&amp;ext-user-localId=%27t%3A18030AF26E8D6B7C2CC205B56F106A9F%27&amp;$mscomCookies=false"></script></head>
+
+<body lang="en-us" dir="ltr"><div style="display: none;" id="lightningjs-usabilla_live"><div><iframe frameborder="0" id="lightningjs-frame-usabilla_live" src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/saved_resource.html"></iframe></div></div>
+<div class="header-holder has-default-focus">
+	<a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f?redirectedfrom=MSDN#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Skip to main content</a>
+	<div hidden="" id="cookie-consent-holder"></div>
+	<!-- liquid-tag banners global -->
+	<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!----> <div class="nav-bar"><!---->  <div class="nav-bar-brand">
+		<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+			<div class="nav-bar-logo" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope">
+				<svg xmlns="http://www.w3.org/2000/svg" width="108" height="23" viewBox="72 72 337 74" preserveAspectRatio="xMidYMin slice">
+					<g data-name="MS-symbol">
+						<clippath id="a">
+							<path transform="matrix(1 0 0 -1 0 216)" d="M0 216h482V0H0z"></path>
+						</clippath>
+						<g clip-path="url(#a)">
+							<path class="has-fill-current-color has-text-subtle" d="M394.942 104.59h-10.858v25.003h-7.38V104.59h-5.182v-5.965h5.182v-4.308c0-3.254 1.06-5.92 3.178-7.998 2.12-2.079 4.835-3.118 8.15-3.118.882 0 1.666.045 2.35.135a9.37 9.37 0 011.806.407v6.296c-.24-.14-.663-.31-1.265-.512-.603-.2-1.296-.3-2.078-.3-1.528 0-2.702.476-3.526 1.43-.824.954-1.235 2.365-1.235 4.232v3.736h10.858v-6.959l7.321-2.229v9.188h7.381v5.965h-7.38v14.49c0 1.91.345 3.254 1.038 4.037.693.783 1.782 1.175 3.27 1.175.42 0 .927-.1 1.52-.3a7.178 7.178 0 001.552-.724v6.025c-.463.261-1.23.502-2.305.723a15.742 15.742 0 01-3.178.331c-3.073 0-5.378-.817-6.914-2.455-1.537-1.637-2.305-4.102-2.305-7.396zm-48.407 9.73c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.45-2.545-6.04-2.545-2.67 0-4.745.888-6.22 2.666-1.477 1.777-2.215 4.313-2.215 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.892-2.993 6.91-4.489 12.05-4.489 4.841 0 8.621 1.441 11.343 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.447 9.018-4.338 11.99-2.892 2.973-6.829 4.458-11.81 4.458-4.8 0-8.61-1.41-11.432-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-16.417-7.802c0 1.045.331 1.863.994 2.456.662.592 2.128 1.34 4.398 2.243 2.912 1.166 4.956 2.476 6.131 3.932 1.175 1.456 1.762 3.22 1.762 5.287 0 2.912-1.12 5.252-3.359 7.02-2.24 1.767-5.267 2.65-9.083 2.65-1.285 0-2.706-.155-4.263-.467-1.556-.31-2.877-.707-3.96-1.19v-7.169a17.945 17.945 0 004.277 2.198c1.526.543 2.911.814 4.157.814 1.647 0 2.862-.23 3.645-.693.784-.46 1.175-1.235 1.175-2.319 0-1.005-.406-1.853-1.22-2.546-.813-.693-2.355-1.492-4.624-2.395-2.69-1.125-4.599-2.39-5.724-3.796-1.125-1.406-1.687-3.193-1.687-5.362 0-2.792 1.11-5.086 3.33-6.884 2.217-1.797 5.095-2.696 8.63-2.696 1.084 0 2.3.12 3.645.361 1.346.242 2.47.553 3.374.934v6.93c-.964-.644-2.089-1.195-3.374-1.658-1.286-.462-2.56-.693-3.826-.693-1.386 0-2.465.271-3.238.813-.774.543-1.16 1.286-1.16 2.23m-35.066 7.562c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.449-2.545-6.039-2.545-2.672 0-4.745.888-6.222 2.666-1.476 1.777-2.214 4.313-2.214 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.893-2.993 6.91-4.489 12.051-4.489 4.84 0 8.621 1.441 11.342 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.446 9.018-4.338 11.99-2.892 2.973-6.828 4.458-11.809 4.458-4.8 0-8.61-1.41-11.433-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-3.136-16.448c.582 0 1.105.041 1.567.121.462.08.853.18 1.175.301v7.38c-.382-.28-.939-.546-1.672-.798-.733-.25-1.622-.376-2.666-.376-1.788 0-3.299.753-4.534 2.26-1.235 1.505-1.853 3.825-1.853 6.958v15.635h-7.29V98.624h7.29v4.88h.12c.663-1.687 1.667-3.007 3.013-3.96 1.346-.954 2.962-1.432 4.85-1.432m-27.956 26.18c1.084 0 2.28-.25 3.585-.754a15.06 15.06 0 003.615-1.988v6.778c-1.165.663-2.485 1.165-3.962 1.506-1.475.342-3.098.512-4.865.512-4.559 0-8.265-1.44-11.116-4.323-2.852-2.88-4.278-6.562-4.278-11.04 0-4.98 1.456-9.083 4.37-12.307 2.91-3.224 7.037-4.835 12.38-4.835 1.366 0 2.746.176 4.143.527 1.395.352 2.504.758 3.328 1.22v6.99c-1.125-.824-2.274-1.462-3.45-1.914a9.966 9.966 0 00-3.599-.678c-2.872 0-5.192.934-6.959 2.802-1.768 1.868-2.652 4.388-2.652 7.562 0 3.132.85 5.573 2.546 7.32 1.697 1.748 4.002 2.621 6.914 2.621m-22.112 5.302h-7.29V98.624h7.29zm-8.044-39.916c0-1.205.437-2.214 1.311-3.028.874-.813 1.913-1.22 3.118-1.22 1.285 0 2.35.417 3.193 1.25.844.834 1.266 1.833 1.266 2.998 0 1.185-.432 2.18-1.296 2.982-.864.804-1.918 1.205-3.163 1.205-1.246 0-2.295-.406-3.148-1.219-.854-.815-1.28-1.803-1.28-2.968m-6.274-3.284v43.2h-7.5v-33.86h-.12l-13.408 33.86h-4.97l-13.738-33.86h-.09v33.86h-6.929v-43.2h10.755l12.412 32.024h.18l13.105-32.024z"></path>
+							<path d="M106.214 106.214H71.996V71.996h34.218z" fill="#f25022"></path>
+							<path d="M143.993 106.214h-34.218V71.996h34.218z" fill="#7fba00"></path>
+							<path d="M106.214 143.993H71.996v-34.218h34.218z" fill="#00a4ef"></path>
+							<path d="M143.993 143.993h-34.218v-34.218h34.218z" fill="#ffb900"></path>
+						</g>
+					</g>
+				</svg>
+			</div>
+		</a>
+	</div> 
+			
+		<div class="nav-bar-item is-hidden-tablet">
+			<div class="nav-bar-menu">
+				<button class="nav-bar-button is-title" title="Global navigation" aria-expanded="false">
+					<span class="nav-bar-menu-title"><!---->Documentation<!----></span>
+					<div class="nav-bar-burger">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span class="nav-bar-burger-label"><!---->Global navigation<!----></span>
+					</div>
+				</button>
+			</div>
+		</div>
+	
+			
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category">
+			<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/en-us/">
+				<span><!---->Docs<!----></span>
+			</a>
+		</li>
+	
+				<!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline is-active" href="https://docs.microsoft.com/en-us/">
+					<span><!---->Documentation<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/learn/">
+					<span><!---->Learn<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/answers/products/">
+					<span><!---->Q&amp;A<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/samples/browse/">
+					<span><!---->Code Samples<!----></span>
+				</a>
+		  </li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-208">
+			<span><!---->More<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-208" aria-label="More">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/"><!---->Documentation<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/learn/"><!---->Learn<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/answers/products/"><!---->Q&amp;A<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/samples/browse/"><!---->Code Samples<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+			<span class="nav-bar-spacer"></span>
+			
+		<div class="nav-bar-search " id="ax-209" hidden="">
+			
+		<form class="nav-bar-search-form" method="GET" name="searchForm" role="search" id="searchForm" aria-label="Search" aria-expanded="false" action="https://docs.microsoft.com/en-us/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!----> <div class="control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input   is-small" type="search" name="terms" aria-expanded="false" aria-owns="ax-210-listbox" aria-activedescendant="" aria-label="Search" placeholder="Search">
+
+				<span aria-hidden="true" class="icon is-small is-left" hidden="">
+					<span class="has-text-primary docon docon-undefined"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-210-listbox" aria-label="site-search-input-suggestions" hidden="">
+				
+			</ul><!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value="OpenSpecs">
+			
+			
+		</form>
+	
+		</div>
+		
+					<div class="nav-bar-search">
+						<!-- hidden when the width drops to tablet -->
+						
+		<form class="nav-bar-search-form" method="GET" name="searchForm" role="search" id="searchFormDesktop" aria-label="Search" aria-expanded="false" action="https://docs.microsoft.com/en-us/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!----> <div class="control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-211" class="autocomplete-input input control has-icons-left  is-small" type="search" name="terms" aria-expanded="false" aria-owns="ax-212-listbox" aria-activedescendant="" aria-label="Search" placeholder="Search">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-search"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-212-listbox" aria-label="ax-211-suggestions" hidden="">
+				
+			</ul><!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value="OpenSpecs">
+			
+			
+		</form>
+	
+					</div>
+			  
+		<div class="nav-bar-search " hidden="">
+			<div class="nav-bar-search-form-expander">
+				<button id="form-expander" class="nav-bar-button has-hover-underline " title="Search" aria-expanded="false" aria-controls="ax-209">
+					
+		<span class="is-visually-hidden-mobile"><!---->Search<!----></span>
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-search"></span>
+		</span>
+	
+				</button>
+			</div>
+		</div>
+	
+			
+		<div class="nav-bar-profile">
+			
+		<a class="docs-sign-in auth-status-determined not-authenticated" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f?redirectedfrom=MSDN#"> Sign in </a>
+	 
+		<div class="dropdown has-caret auth-status-determined authenticated">
+			<button class="dropdown-trigger button-reset" aria-controls="user-menu" aria-expanded="false" aria-label="Your Account">
+				<figure class="image is-36x36">
+					<img class="has-body-background-medium is-rounded" alt="" data-profile-property="avatarUrl">
+				</figure>
+			</button>
+			<div class="dropdown-menu box has-flex-justify-content-start has-body-background" id="user-menu" role="menu">
+				<div class="media is-user-dir">
+					<div class="media-left">
+						<figure class="image is-48x48" aria-hidden="true">
+							<img class="has-body-background-medium is-rounded" aria-labelledby="displayName" data-profile-property="avatarUrl">
+						</figure>
+					</div>
+					<div class="media-content">
+						<p class="title is-size-large">
+							<span id="displayName" class="is-inline-truncated has-max-width-200" data-profile-property="displayName"></span>
+						</p>
+						<p class="subtitle is-size-small has-margin-bottom-none">
+							<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+						</p>
+					</div>
+				</div>
+				<ul class="has-padding-top-small has-padding-bottom-medium">
+					<li class="has-padding-top-extra-small has-padding-bottom-extra-small">
+						<a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl"><!---->Profile<!----></a>
+					</li>
+					<li class="has-padding-top-extra-small has-padding-bottom-extra-small">
+						<a href="https://docs.microsoft.com/profile" data-profile-property="bookmarksUrl"><!---->Bookmarks<!----></a>
+					</li>
+					<li class="has-padding-top-extra-small has-padding-bottom-extra-small">
+						<a href="https://docs.microsoft.com/profile" data-profile-property="collectionsUrl"><!---->Collections<!----></a>
+					</li>
+					<li class="has-padding-top-extra-small">
+						<a href="https://docs.microsoft.com/profile" data-profile-property="challengesUrl"><!---->Challenges<!----></a>
+					</li>
+				</ul>
+				<div class="has-border-top has-padding-top-medium">
+					<a class="docs-sign-out" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f?redirectedfrom=MSDN#"><!---->Sign out<!----></a>
+				</div>
+			</div>
+		</div>
+	
+		</div>
+	
+		 <!----></div> <div class="nav-bar has-border-top is-hidden-mobile"><!----> 
+		<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/openspecs/main/ms-openspeclp/3589baea-5b22-48f2-9d43-f5bea4960ddb">
+			<span>
+				Open Specifications
+				
+			</span>
+		</a>
+	 
+		
+		<nav class="nav-bar-nav" role="navigation" aria-label="Site">
+			<ul class="nav-bar-nav-list">
+				
+				<!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-213">
+			<span><!---->Specifications<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-213" aria-label="Specifications">
+			<!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-214">
+			<span><!---->Exchange Server<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-214" aria-label="Exchange Server">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/exchange_standards/ms-oxstandlp/de2c147d-83de-49ac-bd3e-815e2dd691fd"><!---->Exchange Server and Outlook Standards Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxprotlp/30c90a39-9adf-472b-8b5b-03c282304a83"><!---->Exchange Server Protocol Documents<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-215">
+			<span><!---->Internet Explorer<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-215" aria-label="Internet Explorer">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/ie_standards/ms-iestandlp/8aea05e3-8c1e-4a9a-9614-31f71e679457"><!---->Internet Explorer Standards Support Documentation<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-216">
+			<span><!---->Office<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-216" aria-label="Office">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/microsoft_general_purpose_programming_languages/ms-proglanglp/a0fa63f3-19ba-4525-a22f-f0ab65dc015d"><!---->Microsoft General Purpose Programming Languages<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/office_file_formats/ms-offfflp/8aea05e3-8c1e-4a9a-9614-31f71e679456"><!---->Office File Formats<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/office_protocols/ms-offprotlp/5859f0f1-a929-475b-9b23-554994675456"><!---->Office Protocols<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/office_standards/ms-offstandlp/d5784a8b-7070-466b-befa-b7bf3724c6f0"><!---->Word, Excel and PowerPoint Standards Support<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-217">
+			<span><!---->SharePoint<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-217" aria-label="SharePoint">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/sharepoint_protocols/MS-SPPROTLP/8a50af28-2b50-43d8-9c5a-3e520255ef7e"><!---->SharePoint Products and Technologies Protocols Overview<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-218">
+			<span><!---->SQL Server<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-218" aria-label="SQL Server">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/odata_standards/ms-sqlodstandlp/89584d21-315b-4ae7-8a4d-cf1e8dc6e8de"><!---->OData Standards Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/sql_data_portability/ms-sqlportlp/f0ff9248-7365-4de7-bf69-63269c0c6776"><!---->SQL Server Data Portability<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/sql_server_protocols/ms-sqlprotlp/f16558b2-4561-45be-89c9-6f9114514c97"><!---->SQL Server Protocols<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/sql_standards/MS-SQLSTANDLP/89fb00b1-4b9e-4296-92ce-a2b3f7ca01d2"><!---->SQL Server Standards Support<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-219">
+			<span><!---->Windows<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-219" aria-label="Windows">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/MS-WINPROTLP/92b33e19-6fff-496b-86c3-d168206f9845"><!---->Windows Protocols<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/wordpad_standards_support/MS-WINWPSTANDLP/6cb7c35f-d50e-4dd6-96c0-5656398c8d39"><!---->Windows WordPad Standards Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/microsoft_domain_specific_languages/MS-MSDLLP/69a08c4f-e943-4729-be0d-1b33d4ad967e"><!---->Microsoft Domain-Specific Languages<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/51a0d3ff-9f77-464c-b83f-2de08ed28134">
+					<span><!---->Dev Center<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://interopevents.com/?target=newtab">
+					<span><!---->Events<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/a859bab5-e1b5-481c-9b73-4ce93efc0a06?branch=master">
+					<span><!---->Test<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/a7729059-1a2f-4698-a995-c0c011df2580">
+					<span><!---->Support<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/44355844-d37d-4ec6-bee1-6b6cda79f722">
+					<span><!---->Programs<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/13571077-e344-4e6f-a477-369894979798">
+					<span><!---->Patents<!----></span>
+				</a>
+		  </li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-220">
+			<span><!---->Blog<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-220" aria-label="Blog">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/blog/ms-offintbloglp/61fc0f77-b3e6-4b4f-aea9-ce472fa98835"><!---->Office Interoperability Developer Blog<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/blog/ms-sqlintbloglp/4fac6802-34cf-4f7a-ab52-cb34d48913b3"><!---->SQL Interoperability Developer Blog<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/blog/ms-winintbloglp/68ab5fe5-08a1-4426-af41-9a20380624a6"><!---->Windows Interoperability Developer Blog<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-221">
+			<span><!---->More<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-221" aria-label="More">
+			<!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-222">
+			<span><!---->Specifications<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-222" aria-label="Specifications">
+			<!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-223">
+			<span><!---->Exchange Server<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-223" aria-label="Exchange Server">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/exchange_standards/ms-oxstandlp/de2c147d-83de-49ac-bd3e-815e2dd691fd"><!---->Exchange Server and Outlook Standards Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxprotlp/30c90a39-9adf-472b-8b5b-03c282304a83"><!---->Exchange Server Protocol Documents<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-224">
+			<span><!---->Internet Explorer<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-224" aria-label="Internet Explorer">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/ie_standards/ms-iestandlp/8aea05e3-8c1e-4a9a-9614-31f71e679457"><!---->Internet Explorer Standards Support Documentation<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-225">
+			<span><!---->Office<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-225" aria-label="Office">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/microsoft_general_purpose_programming_languages/ms-proglanglp/a0fa63f3-19ba-4525-a22f-f0ab65dc015d"><!---->Microsoft General Purpose Programming Languages<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/office_file_formats/ms-offfflp/8aea05e3-8c1e-4a9a-9614-31f71e679456"><!---->Office File Formats<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/office_protocols/ms-offprotlp/5859f0f1-a929-475b-9b23-554994675456"><!---->Office Protocols<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/office_standards/ms-offstandlp/d5784a8b-7070-466b-befa-b7bf3724c6f0"><!---->Word, Excel and PowerPoint Standards Support<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-226">
+			<span><!---->SharePoint<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-226" aria-label="SharePoint">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/sharepoint_protocols/MS-SPPROTLP/8a50af28-2b50-43d8-9c5a-3e520255ef7e"><!---->SharePoint Products and Technologies Protocols Overview<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-227">
+			<span><!---->SQL Server<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-227" aria-label="SQL Server">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/odata_standards/ms-sqlodstandlp/89584d21-315b-4ae7-8a4d-cf1e8dc6e8de"><!---->OData Standards Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/sql_data_portability/ms-sqlportlp/f0ff9248-7365-4de7-bf69-63269c0c6776"><!---->SQL Server Data Portability<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/sql_server_protocols/ms-sqlprotlp/f16558b2-4561-45be-89c9-6f9114514c97"><!---->SQL Server Protocols<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/sql_standards/MS-SQLSTANDLP/89fb00b1-4b9e-4296-92ce-a2b3f7ca01d2"><!---->SQL Server Standards Support<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-228">
+			<span><!---->Windows<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-228" aria-label="Windows">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/MS-WINPROTLP/92b33e19-6fff-496b-86c3-d168206f9845"><!---->Windows Protocols<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/wordpad_standards_support/MS-WINWPSTANDLP/6cb7c35f-d50e-4dd6-96c0-5656398c8d39"><!---->Windows WordPad Standards Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/microsoft_domain_specific_languages/MS-MSDLLP/69a08c4f-e943-4729-be0d-1b33d4ad967e"><!---->Microsoft Domain-Specific Languages<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/51a0d3ff-9f77-464c-b83f-2de08ed28134"><!---->Dev Center<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://interopevents.com/?target=newtab"><!---->Events<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/a859bab5-e1b5-481c-9b73-4ce93efc0a06?branch=master"><!---->Test<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/a7729059-1a2f-4698-a995-c0c011df2580"><!---->Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/44355844-d37d-4ec6-bee1-6b6cda79f722"><!---->Programs<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/13571077-e344-4e6f-a477-369894979798"><!---->Patents<!----></a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-229">
+			<span><!---->Blog<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-229" aria-label="Blog">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/blog/ms-offintbloglp/61fc0f77-b3e6-4b4f-aea9-ce472fa98835"><!---->Office Interoperability Developer Blog<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/blog/ms-sqlintbloglp/4fac6802-34cf-4f7a-ab52-cb34d48913b3"><!---->SQL Interoperability Developer Blog<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/en-us/openspecs/blog/ms-winintbloglp/68ab5fe5-08a1-4426-af41-9a20380624a6"><!---->Windows Interoperability Developer Blog<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		 
+	 <!----></div> <!----></header>	</div>
+
+				<div class="content-header uhf-container has-padding has-default-focus has-border-bottom-none" data-bi-name="content-header">
+				<nav class="has-padding-none has-padding-left-medium-tablet has-padding-right-medium-tablet has-padding-left-none-uhf-tablet has-padding-left-none-uhf-tablet has-padding-none-desktop has-flex-grow" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+					<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+			<!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/en-us/">
+								<span itemprop="name"> Docs </span>
+						  </a>
+					<meta itemprop="position" content="1">
+				</li><!---->
+		<!----></ul>
+				</nav>
+			<div class="content-header-controls">
+				<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+					<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+					<span class="contents-expand-title">Contents</span>
+				</button>
+				<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+					<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+					<span>Exit focus mode</span>
+				</button>
+			</div>
+			<div class="has-padding-none-tablet has-padding-medium is-size-small is-flex-touch has-flex-justify-content-space-between-touch has-flex-grow">
+				<ul class="is-hidden-mobile action-list has-flex-justify-content-start has-flex-justify-content-end-tablet is-flex is-flex-row has-flex-wrap has-flex-grow is-unstyled">
+					<li>
+						<button type="button" class="bookmark button is-text has-inner-focus is-small is-icon-only-touch" data-list-type="bookmarks" data-bi-name="bookmark" title="Add bookmark for [MS-OAUT]: VARIANT Type Constants | Microsoft Docs" aria-pressed="false">
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-single-bookmark"></span>
+							</span>
+							<span class="bookmark-status is-visually-hidden-touch is-hidden-portrait">Bookmark</span>
+						</button>
+					</li>
+							<li id="contenteditbtn" hidden="">
+								<a href="https://github.com/MicrosoftDocs/open_specs_windows/blob/live/documentation/windows_protocols/MS-OAUT/3fe7db9f-5803-4dc4-9d14-5425d3f5461f.md" class="button is-text has-inner-focus is-icon-only-touch is-small" title="Edit This Document" data-bi-name="edit">
+								<span class="icon" aria-hidden="true">
+									<span class="docon docon-edit-outline"></span>
+								</span>
+								<span class="is-visually-hidden-touch is-hidden-portrait">Edit</span>
+							</a>
+						</li>
+					<li>
+<div class="sharing dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-sharing"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Share</span>
+	</button>
+	<div class="dropdown-menu has-padding-small" id="sharing-menu">
+		<ul data-bi-name="share-links">
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fopenspecs%2Fwindows_protocols%2Fms-oaut%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Dtwitter&amp;text=%5BMS-OAUT%5D%3A%20VARIANT%20Type%20Constants%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fopenspecs%2Fwindows_protocols%2Fms-oaut%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Dtwitter">
+					<span class="icon">
+						<span class="docon docon-brand-twitter has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fopenspecs%2Fwindows_protocols%2Fms-oaut%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Dlinkedin">
+					<span class="icon">
+						<span class="docon docon-brand-linkedin has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fopenspecs%2Fwindows_protocols%2Fms-oaut%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Dfacebook">
+					<span class="icon">
+						<span class="docon docon-brand-facebook has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20%5BMS-OAUT%5D%3A%20VARIANT%20Type%20Constants%20%7C%20Microsoft%20Docs&amp;body=%5BMS-OAUT%5D%3A%20VARIANT%20Type%20Constants%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fopenspecs%2Fwindows_protocols%2Fms-oaut%2F3fe7db9f-5803-4dc4-9d14-5425d3f5461f%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Demail">
+					<span class="icon">
+						<span class="docon docon-mail-message-fill has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Email</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>					</li>
+				</ul>
+				<button type="button" class="has-border contents-button button is-small is-text is-hidden-tablet has-inner-focus" aria-label="Contents" data-bi-name="contents-expand">
+					<span class="icon">
+						<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+					</span>
+					<span class="contents-expand-title">Table of contents</span>
+				</button>
+				<div class="is-invisible"></div>
+				<div class="is-hidden-tablet level-item is-flexible level-right">
+					<button type="button" class="page-actions-button button is-small is-text is-hidden-tablet has-inner-focus has-border is-full-height  has-margin-left-small" aria-label="Page Actions" data-bi-name="pageactions">
+						<span class="icon">
+							<span class="docon docon-more-vertical" aria-hidden="true"></span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+		<!-- liquid-tag banners sectional -->
+	</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Primary" data-bi-name="left toc" style="width: 283.75px; top: 24px; bottom: 96.5px;"><form action="javascript:" role="search" aria-label="Search" class="has-margin-bottom-small"><label class="visually-hidden" for="ax-206">Search</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!----> <div class="control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-206" class="autocomplete-input input control has-icons-left is-full-width is-small" type="text" aria-expanded="false" aria-owns="ax-207-listbox" aria-activedescendant="" placeholder="Filter by title">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-filter-settings"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-207-listbox" aria-label="ax-206-suggestions" hidden="">
+				
+			</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Table of contents" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="2" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/">Open Specifications</a></li><li class="tree-item is-expanded" aria-setsize="2" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Protocols</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/protocols/ms-protocolslp/9a3ae8a2-02e5-4d05-874a-b3551405d8f9">Protocols</a></li><li class="tree-item is-expanded" aria-setsize="2" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1_2-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Windows Protocols</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/MS-WINPROTLP/92b33e19-6fff-496b-86c3-d168206f9845">Windows Protocols</a></li><li class="tree-item is-expanded" aria-setsize="2" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Technical Documents</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/MS-WINPROTLP/e36c976a-6263-42a8-b119-7a3cc41ddd2a">Technical Documents</a></li><li class="tree-item is-expanded" aria-setsize="2" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>[MS-OAUT]: OLE Automation Protocol</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="11" aria-level="5" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/bbb05720-f724-45c7-8d17-f83c3d1a3961">[MS-OAUT]: OLE Automation Protocol</a></li><li class="tree-item" aria-setsize="11" aria-level="5" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_2-5" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>1 Introduction</span></li><li class="tree-item is-expanded" aria-setsize="11" aria-level="5" aria-posinset="3" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2 Messages</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="3" aria-level="6" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/ff283cc0-8a95-42ee-a42f-9934411932cc">2 Messages</a></li><li role="none"><a aria-setsize="3" aria-level="6" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/890e4e5a-3cbf-44e1-8d1e-c6221c6235af">2.1 Transport</a></li><li class="tree-item is-expanded" aria-setsize="3" aria-level="6" aria-posinset="3" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2 Common Data Types</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/0ccdeadd-9fa8-4c55-93fa-055d17906ae0">2.2 Common Data Types</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/25955917-9c7b-4153-9dd4-d229d77c3ede">2.2.1 BYTE</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/94ea3f27-ba29-45f3-a821-323f0a0c6d60">2.2.2 IID</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/b2c46afb-4717-4cbb-8828-d6e0ae743463">2.2.3 LPOLESTR</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/bbde795f-5398-42d8-9f59-3613da03c318">2.2.4 REFIID</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">2.2.5 REFGUID</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/ab4e997d-0d06-45f5-a2c8-378f56bff278">2.2.6 PSAFEARRAY, LPSAFEARRAY</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="8" role="treeitem" tabindex="0" class="tree-item is-leaf is-selected" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f" aria-current="page">2.2.7 VARIANT Type Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/8c78fede-6f6c-4822-a5f8-0fcbbc8d8242">2.2.8 SAFEARRAY Feature Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/f06ee3d2-a61f-4e0b-a929-9369d334ea33">2.2.9 ADVFEATUREFLAGS Advanced Feature Flags</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/2e3cc990-94f2-41e5-ae6f-cdd00414b776">2.2.10 CALLCONV Calling Convention Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/be8732b4-f8d9-4e6d-a946-311958d8173f">2.2.11 FUNCFLAGS Function Feature Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/a33ebe36-0f9d-4230-bcbc-466136f45e58">2.2.12 FUNCKIND Function Access Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="14" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/2743c240-4362-42bf-9482-a910ac1857f7">2.2.13 IMPLTYPEFLAGS Feature Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="15" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/a0d3598d-a3ee-4401-87fd-17a7031b0b9a">2.2.14 INVOKEKIND Function Invocation Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="16" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/4ca6f07b-f89f-469b-ba9e-81fda041c8ac">2.2.15 PARAMFLAGS Parameter Feature Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="17" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/155c66e2-ffe1-4f18-b849-f827ca989aa7">2.2.16 TYPEFLAGS Type Feature Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="18" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/78ccbd1c-d8ff-4301-9afc-df562372fb33">2.2.17 TYPEKIND Type Kind Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="19" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/8ec5cfa4-e710-446a-ab89-6715dece4aec">2.2.18 VARFLAGS Variable Feature Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="20" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/a0e9d463-51a2-49cc-8935-a65c9338d3df">2.2.19 VARKIND Variable Kind Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="21" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/08ca1c9a-5ac5-4630-aeaf-b09d495640b1">2.2.20 LIBFLAGS Type Library Feature Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="22" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/0d81289e-f0ef-474d-8e61-dedae9ea5a08">2.2.21 SYSKIND System Pointer Size Constants</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="23" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/a7d2404b-9934-4fcc-a69b-d396fb51141a">2.2.22 DESCKIND Name Description Constants</a></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="24" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_24-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.23 BSTR</span></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="25" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/5a2b34c4-d109-438e-9ec8-84816d8de40d">2.2.24 CURRENCY</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="26" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/35c9bf2d-b8e8-4d7d-a50f-367da0d99fce">2.2.25 DATE</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="27" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/b5493025-e447-4109-93a8-ac29c48d018d">2.2.26 DECIMAL</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="28" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/7b39eb24-9d39-498a-bcd8-75c38e5823d0">2.2.27 VARIANT_BOOL</a></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="29" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_29-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.28 User-Defined Data Types and BRECORD</span></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="30" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_30-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.29 VARIANT</span></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="31" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_31-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.30 SAFEARRAY</span></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="32" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/deb939df-ef4d-49c3-8467-7265669e89ed">2.2.31 RecordInfoData</a></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="33" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_33-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.32 DISPID</span></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="34" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/144b00dd-4c2f-4b35-a28f-c17f591b990c">2.2.33 DISPPARAMS</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="35" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/a7bb989f-5c55-49c7-98e1-24ab2593a9fa">2.2.34 EXCEPINFO</a></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="36" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_36-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.35 MEMBERID</span></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="37" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/ed6620b1-6b23-4fa1-99e6-781832999f93">2.2.36 HREFTYPE</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="38" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/95bb92a7-f783-477f-acbc-c947d754fa8b">2.2.37 TYPEDESC</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="39" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/2e06e2b6-054e-48b1-b867-ad1e87a7ebe2">2.2.38 ARRAYDESC</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="40" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/683c767d-2e8e-4d2f-8804-afeb3a73969a">2.2.39 PARAMDESCEX</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="41" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/a965ce8e-6c06-4d7c-ab30-2f14b1d8488a">2.2.40 PARAMDESC</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="42" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/e14ff3cf-034a-4884-a498-fc7586f7160c">2.2.41 ELEMDESC</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="43" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/d3349d25-e11d-4095-ba86-de3fda178c4e">2.2.42 FUNCDESC</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="44" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/ae7791d2-4399-4dff-b7c6-b0d4f3dce982">2.2.43 VARDESC</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="45" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/0ca10d08-61d2-4059-9109-7bbaf545715e">2.2.44 TYPEATTR</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="46" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/b568f4be-95e5-431b-bb3b-08dc56e9b224">2.2.45 TLIBATTR</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="47" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/02ca19b9-27cb-48ef-b2ca-7f105ba8f475">2.2.46 CUSTDATAITEM</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="48" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/b74500e2-3153-4cc6-bebf-9e11320f7bed">2.2.47 CUSTDATA</a></li><li role="none"><a aria-setsize="52" aria-level="7" aria-posinset="49" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/7d93a429-b652-4c77-9b63-d7a762521e4d">2.2.48 SCODE</a></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="50" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_50-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.49 IDL Syntax Extensions</span></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="51" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_51-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.50 String Handling</span></li><li class="tree-item" aria-setsize="52" aria-level="7" aria-posinset="52" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_3-5_3-6_52-7" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2.2.51 Automation Hash Values</span></li></ul></li></ul></li><li class="tree-item" aria-setsize="11" aria-level="5" aria-posinset="4" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_4-5" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>3 Protocol Details</span></li><li class="tree-item" aria-setsize="11" aria-level="5" aria-posinset="5" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_5-5" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>4 Protocol Examples</span></li><li class="tree-item" aria-setsize="11" aria-level="5" aria-posinset="6" role="treeitem" tabindex="-1" id="title-2-1_2-2_2-3_2-4_6-5" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>5 Security</span></li><li role="none"><a aria-setsize="11" aria-level="5" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/b37f57b1-ac27-4bdf-9cf0-5b8ecccb65af">6 Appendix A: Full IDL</a></li><li role="none"><a aria-setsize="11" aria-level="5" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/ae19ad63-7433-4568-88e9-f70e5593547d">7 Appendix B: Product Behavior</a></li><li role="none"><a aria-setsize="11" aria-level="5" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/2b2b5513-b36a-41b7-a114-e955f80332b3">8 Appendix C: Full ABNF</a></li><li role="none"><a aria-setsize="11" aria-level="5" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/d1f84f6f-256b-4836-aaee-029e939b4ebf">9 Change Tracking</a></li><li role="none"><a aria-setsize="11" aria-level="5" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/8c1b51b4-92cd-46df-9fdf-3df3ecfb0e97">10 Index</a></li></ul></li></ul></li></ul></li></ul></li></ul></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" lang="en-us" dir="ltr">
+
+
+
+						<h1 id="227-variant-type-constants">2.2.7 VARIANT Type Constants</h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+							<li>
+								<time class="" data-article-date="" aria-label="Article review date" datetime="2019-02-14T20:13:51.940Z" data-article-date-source="git">02/15/2019</time>
+							</li>
+								<li class="readingTime">5 minutes to read</li>
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline" hidden="">
+							<h3>In this article</h3>
+						</nav>
+
+						<!-- <content> -->
+							<p> </p>
+<p>The VARENUM enumeration constants are used in the
+discriminant field, <b>vt</b>, of the VARIANT type specified in section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/a6a540af-38ac-48be-bd40-92e2c01e9aa6" data-linktype="relative-path">2.2.29.2</a></span>.
+When present, the VT_BYREF flag MUST be in an OR relation with another value to
+specify the <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/5583e1b8-454c-4147-9f56-f72416a15bee#gt_969e6685-c90a-4da6-99be-1a25efb6d1cd" data-linktype="relative-path">byref argument</a></span> for
+the VARIANT. The VT_EMPTY and VT_NULL values MUST NOT be specified with the
+VT_BYREF bit flag.</p>
+<p>The following values are also used in the discriminant
+field, <b>vt</b>, of the <b>TYPEDESC</b> structure specified in section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/95bb92a7-f783-477f-acbc-c947d754fa8b" data-linktype="relative-path">2.2.37</a></span>.</p>
+<p>The meaning of each VARIANT type constant is specified as
+follows. The Context column specifies the context in which each constant is
+used. A constant MUST NOT be used in a VARIANT unless it is specified with a
+"V". A constant MUST NOT be used in a SAFEARRAY unless it is
+specified with an "S". A constant MUST NOT be used in a TYPEDESC
+unless it is specified with a "T".</p>
+<dl>
+<dd>
+<div><pre>&nbsp;typedef&nbsp; enum tagVARENUM
+&nbsp;{
+&nbsp;  VT_EMPTY = 0x0000,
+&nbsp;  VT_NULL = 0x0001,
+&nbsp;  VT_I2 = 0x0002,
+&nbsp;  VT_I4 = 0x0003,
+&nbsp;  VT_R4 = 0x0004,
+&nbsp;  VT_R8 = 0x0005,
+&nbsp;  VT_CY = 0x0006,
+&nbsp;  VT_DATE = 0x0007,
+&nbsp;  VT_BSTR = 0x0008,
+&nbsp;  VT_DISPATCH = 0x0009,
+&nbsp;  VT_ERROR = 0x000A,
+&nbsp;  VT_BOOL = 0x000B,
+&nbsp;  VT_VARIANT = 0x000C,
+&nbsp;  VT_UNKNOWN = 0x000D,
+&nbsp;  VT_DECIMAL = 0x000E,
+&nbsp;  VT_I1 = 0x0010,
+&nbsp;  VT_UI1 = 0x0011,
+&nbsp;  VT_UI2 = 0x0012,
+&nbsp;  VT_UI4 = 0x0013,
+&nbsp;  VT_I8 = 0x0014,
+&nbsp;  VT_UI8 = 0x0015,
+&nbsp;  VT_INT = 0x0016,
+&nbsp;  VT_UINT = 0x0017,
+&nbsp;  VT_VOID = 0x0018,
+&nbsp;  VT_HRESULT = 0x0019,
+&nbsp;  VT_PTR = 0x001A,
+&nbsp;  VT_SAFEARRAY = 0x001B,
+&nbsp;  VT_CARRAY = 0x001C,
+&nbsp;  VT_USERDEFINED = 0x001D,
+&nbsp;  VT_LPSTR = 0x001E,
+&nbsp;  VT_LPWSTR = 0x001F,
+&nbsp;  VT_RECORD = 0x0024,
+&nbsp;  VT_INT_PTR = 0x0025,
+&nbsp;  VT_UINT_PTR = 0x0026,
+&nbsp;  VT_ARRAY = 0x2000,
+&nbsp;  VT_BYREF = 0x4000
+&nbsp;} VARENUM;
+</pre></div>
+</dd></dl>
+<p><b>VT_EMPTY:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 1</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V</p>
+  </td>
+  <td>
+  <p>The type of the contained field is undefined. When
+  this flag is specified, the VARIANT MUST NOT contain a data field. The
+  VARIANT definition is specified in section 2.2.29.2.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_NULL:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 2</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V</p>
+  </td>
+  <td>
+  <p>The type of the contained field is NULL. When this
+  flag is specified, the VARIANT MUST NOT contain a data field. The VARIANT
+  definition is specified in section 2.2.29.2.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_I2:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 3</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 2-byte signed integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_I4:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 4</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 4-byte signed integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_R4:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 5</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 4-byte IEEE floating-point number.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_R8:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 6</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be an 8-byte IEEE floating-point number.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_CY:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 7</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be CURRENCY (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/5a2b34c4-d109-438e-9ec8-84816d8de40d" data-linktype="relative-path">2.2.24</a></span>).</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_DATE:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 8</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be DATE (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/35c9bf2d-b8e8-4d7d-a50f-367da0d99fce" data-linktype="relative-path">2.2.25</a></span>).</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_BSTR:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 9</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be BSTR (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/9c5a5ce4-ff5b-45ce-b915-ada381b34ac1" data-linktype="relative-path">2.2.23</a></span>).</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_DISPATCH:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 10</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a pointer to IDispatch (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/ac9c502b-ac1c-4202-8ad4-048ac98afcc9" data-linktype="relative-path">3.1.4</a></span>).</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_ERROR:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 11</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be HRESULT.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_BOOL:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 12</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be VARIANT_BOOL (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/7b39eb24-9d39-498a-bcd8-75c38e5823d0" data-linktype="relative-path">2.2.27</a></span>).</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_VARIANT:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 13</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be VARIANT (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/b2ee2b50-665e-43e6-a92c-8f2a29fd7add" data-linktype="relative-path">2.2.29</a></span>). It MUST
+  appear with the bit flag VT_BYREF.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_UNKNOWN:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 14</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a pointer to IUnknown.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_DECIMAL:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 15</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be DECIMAL (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/b5493025-e447-4109-93a8-ac29c48d018d" data-linktype="relative-path">2.2.26</a></span>).</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_I1:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 16</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 1-byte integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_UI1:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 17</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 1-byte unsigned integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_UI2:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 18</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 2-byte unsigned integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_UI4:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 19</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 4-byte unsigned integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_I8:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table"><caption class="visually-hidden">Table 20</caption>
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be an 8-byte signed integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_UI8:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be an 8-byte unsigned integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_INT:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 4-byte signed integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_UINT:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S, T</p>
+  </td>
+  <td>
+  <p>Either the specified type, or the type of the element
+  or contained field MUST be a 4-byte unsigned integer.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_VOID:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be void.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_HRESULT:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be HRESULT.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_PTR:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be a unique pointer, as
+  specified in <span><a href="https://go.microsoft.com/fwlink/?LinkId=89824" data-linktype="external">[C706]</a></span>
+  section 4.2.20.2.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_SAFEARRAY:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/04e72b3f-5731-4508-9bb4-de29fbd0f781" data-linktype="relative-path">SAFEARRAY (section 2.2.30)</a></span>.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_CARRAY:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be a fixed-size array.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_USERDEFINED:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be user defined.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_LPSTR:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be a NULL-terminated string,
+  as specified in [C706] section 14.3.4.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_LPWSTR:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be a zero-terminated string of
+  UNICODE characters, as specified in [C706], section 14.3.4.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_RECORD:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S</p>
+  </td>
+  <td>
+  <p>The type of the element or contained field MUST be a
+  BRECORD (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/ea064b3d-9fb3-4486-9992-4fe2463e83e8" data-linktype="relative-path">2.2.28.2</a></span>).</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_INT_PTR:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be either a 4-byte or an
+  8-byte signed integer. The size of the integer is platform specific and
+  determines the system pointer size value, as specified in section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/0d81289e-f0ef-474d-8e61-dedae9ea5a08" data-linktype="relative-path">2.2.21</a></span>.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_UINT_PTR:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>T</p>
+  </td>
+  <td>
+  <p>The specified type MUST be either a 4 byte or an 8
+  byte unsigned integer. The size of the integer is platform specific and
+  determines the system pointer size value, as specified in section 2.2.21.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_ARRAY:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S</p>
+  </td>
+  <td>
+  <p>The type of the element or contained field MUST be a
+  SAFEARRAY (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/2e87a537-9305-41c6-a88b-b79809b3703a" data-linktype="relative-path">2.2.30.10</a></span>).</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p><b>VT_BYREF:&nbsp; </b></p>
+<div class="table-scroll-wrapper"><table class="table protocol-table">
+ <thead>
+  <tr>
+   <th>
+   <p>Context</p>
+   </th>
+   <th>
+   <p>Description</p>
+   </th>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td>
+  <p>V, S</p>
+  </td>
+  <td>
+  <p>The type of the element or contained field MUST be a
+  pointer to one of the types listed in the previous rows of this table. If
+  present, this bit flag MUST appear in a VARIANT discriminant (see section <span><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/29ce0a4f-4786-49c9-a312-5522c1e9b44d" data-linktype="relative-path">2.2.28</a></span>)
+  with one of the previous flags.</p>
+  </td>
+ </tr>
+</tbody></table></div>
+<p> </p>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- page rating section -->
+								<div class="is-hidden-desktop has-border-top has-margin-top-large has-padding-top-small">
+									
+									
+<div class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small" data-bi-name="rating">
+    <div class="binary-rating">
+        <div class="binary-rating-buttons">
+            <h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Is this page helpful?</h3>
+            <div>
+                <button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Yes" data-bi-name="rating-yes" aria-expanded="false" data-bi-sat="1" aria-controls="rating-container-mobile">
+                    <span aria-hidden="true" class="icon docon docon-like"></span>
+                    <span>Yes</span>
+                </button>
+                <button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="No" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-controls="rating-container-mobile">
+                    <span aria-hidden="true" class="icon docon docon-dislike"></span>
+                    <span>No</span>
+                </button>
+            </div>
+        </div>
+        <form class="feedback-verbatim-form is-hidden" id="rating-container-mobile">
+            <div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-extra-small">
+                <label for="rating-textarea-mobile" class="visually-hidden">Any additional feedback?</label>
+                <textarea id="rating-textarea-mobile" rows="4" maxlength="999" placeholder="Any additional feedback?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+            </div>
+            <div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+                <button class="skip-rating button is-transparent has-text-primary is-small has-border-none" type="button">Skip</button>
+                <button class="submit-rating button is-primary is-small" data-bi-name="rating-verbatim" disabled="" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="thankyou-rating is-hidden" tabindex="-1">
+        <p>Thank you.</p>
+    </div>
+</div>								</div>
+						<!-- end page rating section -->
+
+
+						<!-- feedback section -->
+
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <div class="is-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link has-flex-shrink-none" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f?redirectedfrom=MSDN" data-bi-name="select-locale"><span class="icon docon docon-world is-size-large has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+		<div class="has-margin-left-medium has-margin-right-medium has-flex-shrink-none">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button is-transparent is-small is-icon-only-touch has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Light					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+    <ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog" data-bi-name="bloglink">Blog</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+			<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>© Microsoft 2020</li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div class="is-size-small right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+						<div id="affixed-right-container" class="doc-outline is-fixed is-vertically-scrollable" style="width: 151.047px; top: 24px; bottom: 96.5px;">
+								
+								
+<div class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small" data-bi-name="rating">
+    <div class="binary-rating">
+        <div class="binary-rating-buttons">
+            <h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Is this page helpful?</h3>
+            <div>
+                <button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Yes" data-bi-name="rating-yes" aria-expanded="false" data-bi-sat="1" aria-controls="rating-container-desktop">
+                    <span aria-hidden="true" class="icon docon docon-like"></span>
+                    <span>Yes</span>
+                </button>
+                <button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="No" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-controls="rating-container-desktop">
+                    <span aria-hidden="true" class="icon docon docon-dislike"></span>
+                    <span>No</span>
+                </button>
+            </div>
+        </div>
+        <form class="feedback-verbatim-form is-hidden" id="rating-container-desktop">
+            <div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-extra-small">
+                <label for="rating-textarea-desktop" class="visually-hidden">Any additional feedback?</label>
+                <textarea id="rating-textarea-desktop" rows="4" maxlength="999" placeholder="Any additional feedback?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+            </div>
+            <div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+                <button class="skip-rating button is-transparent has-text-primary is-small has-border-none" type="button">Skip</button>
+                <button class="submit-rating button is-primary is-small" data-bi-name="rating-verbatim" disabled="" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="thankyou-rating is-hidden" tabindex="-1">
+        <p>Thank you.</p>
+    </div>
+</div>							<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline" hidden="">
+								<h3>In this article</h3>
+							</nav>
+						</div>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <div class="is-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link has-flex-shrink-none" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/3fe7db9f-5803-4dc4-9d14-5425d3f5461f?redirectedfrom=MSDN" data-bi-name="select-locale"><span class="icon docon docon-world is-size-large has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+		<div class="has-margin-left-medium has-margin-right-medium has-flex-shrink-none">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button is-transparent is-small is-icon-only-touch has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Light					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+    <ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog" data-bi-name="bloglink">Blog</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+			<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>© Microsoft 2020</li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+	<span id="adobe-target-experiment-container" hidden=""></span>
+
+
+<div class="usabilla_live_button_container" role="button" tabindex="0" style="z-index: 99999990; right: 0px; top: 50%; margin-top: 0px; position: fixed; width: 0px; height: 0px; display: none;" aria-label="Usabilla Feedback Button"><iframe src="./[MS-OAUT]_ VARIANT Type Constants _ Microsoft Docs_files/saved_resource(1).html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" data-tags="right" title="Usabilla Feedback Button" style="width: 0px; height: 0px; margin: 0px; padding: 0px; border: 0px; overflow: hidden; z-index: 9998; position: absolute; left: 0px; top: 0px; box-shadow: 0px 0px 0px; background-color: transparent;"></iframe></div></body></html>
