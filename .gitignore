@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 
+# ignore SolidWorks temporary files
+~$*.SLDPRT
+~$*.SLDASM
+
 # C extensions
 *.so
 
