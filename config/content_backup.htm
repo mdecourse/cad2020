@@ -277,7 +277,16 @@ for i in range(10):
 <p style="padding-left: 30px;">4. 在產品開發過程, 初步的零組件設計完成後, 需不需要進行工程分析? 假如已知 <a href="https://github.com/Range-Software/range3">https://github.com/Range-Software/range3</a> 與 <a href="https://github.com/NGSolve/ngsolve">https://github.com/NGSolve/ngsolve</a> 等兩套開源 CAE, 我們可以設法分別編譯使用, 並嘗試將分析結果與 Ansys 及 Comsol 進行比較?</p><h3>HW1</h3>
 <p>請各分組分別利用 NX, Solidworks, Inventor, Onshape 與 Solvespace 建立下列的所有零件檔案, 並以表格列出各零件的體積.</p>
 <p style="padding-left: 30px;"><a href="/downloads/Solidworks 零件繪圖練習1.pdf">Solidworks 零件繪圖練習1.pdf</a></p>
-<p style="padding-left: 30px;"><a href="/downloads/Solidworks 零件繪圖練習2.pdf">Solidworks 零件繪圖練習2.pdf</a></p><h2>W2</h2>
+<p style="padding-left: 30px;"><a href="/downloads/Solidworks 零件繪圖練習2.pdf">Solidworks 零件繪圖練習2.pdf</a></p>
+<h3>HW1_API</h3>
+<p>1. 先確定圖檔與下載連結在動態網頁所需的 html 格式</p>
+<p><img alt="" class="add_border" src="/downloads/sw_macro/html/31_1.jpg" width="300"/></p>
+<p>上述圖檔的 html 為:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;img src="/downloads/sw_macro/html/31_1.jpg" alt="" width="300" &gt;</pre>
+<p>而下載零件的 anchor 為:</p>
+<p><a href="/downloads/sw_macro/block.SLDPRT">block.SLDPRT</a></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;a href="/downloads/sw_macro/block.SLDPRT"&gt;block.SLDPRT&lt;/a&gt;</pre>
+<p>2. 因此 Python API 程式在依據使用者尺寸輸入與重複迴圈繪圖次數後, 將可依據上述 img 與 anchor 格式, 產生以下所需的動態網頁內容. 更棒的結果是零件繪圖程式結束後, 會自動定位 config/content.htm 中的 HW1_API 頁面, 自動將零件下載, 等角視圖檔, 以及各零件的體積資料等插入既定的位置.</p><h2>W2</h2>
 <p>所有學員各自利用 @gm 電子郵箱建立<span> </span><a href="https://github.com/">Github</a>,<span> </span><a href="https://gitlab.com">Gitlab,</a><span> </span><a href="https://www.heroku.com/">Heroku</a>,<span> </span><a href="https://www.onshape.com/">Onshape</a><span> </span>與<span> </span><a href="https://www.authorea.com/">Authorea</a><span> </span>帳號</p>
 <p style="padding-left: 30px;">Github: 各學員在學號帳號下建立 cad2020 倉儲.</p>
 <p style="padding-left: 30px;">Gitlab: 各學員將 Github 倉儲 cad2020 同步至 Gitlab 同名倉儲.</p>
@@ -623,7 +632,9 @@ App.ActiveDocument.removeObject(helix.Name)</pre>
 <p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-3-658-24773-7">https://link.springer.com/book/10.1007/978-3-658-24773-7</a></p>
 <p><a href="https://drive.google.com/file/d/1r_CAvvMjmvprksCgglYU72SbD9MxMb3h/view?usp=sharing">NX 12 for Engineering Design.pdf</a> (@gm users only)</p>
 <p><a href="/downloads/SNAP_Getting_Started_v12.pdf">SNAP_Getting_Started_v12.pdf</a></p>
+<p><a href="https://www.nxjournaling.com/forum">https://www.nxjournaling.com/forum</a> </p>
 <h4>NXOpen</h4>
+<p></p>
 <p style="padding-left: 30px;">NX12 支援 Python 3.6.1</p>
 <p style="padding-left: 30px;">將 Journal 操作錄製由內建 vb 轉為 python:</p>
 <p style="padding-left: 60px;">Menu -&gt; Preferences -&gt; User Interface -&gt; Tools -&gt; Journal </p>

@@ -1,0 +1,418 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CAD2020 Intro To Computer Aided Design</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CAD2020 電腦輔助設計實習</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CAD2020 電腦輔助設計實習</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='評分.html'>評分</a><li><a href='討論區.html'>討論區</a><li><a href='分組.html'>分組</a><li><a href='Python.html'>Python</a></li></ul><li class='has-children'><a href='Open Tech.html'>Open Tech</a><ul class='dropdown'><li class='has-children'><a href='Mechatronics.html'>Mechatronics</a><ul class='dropdown'><li><a href='PICsimlab.html'>PICsimlab</a><li><a href='UnoArduSim.html'>UnoArduSim</a></li></ul><li><a href='Cyber Tech.html'>Cyber Tech</a><li><a href='E-vehicle.html'>E-vehicle</a><li><a href='Composite Tech.html'>Composite Tech</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='Video.html'>Video</a><ul class='dropdown'><li><a href='W1Video.html'>W1Video</a><li><a href='W2Video.html'>W2Video</a><li><a href='W4Video.html'>W4Video</a><li><a href='W5Video.html'>W5Video</a></li></ul><li class='has-children'><a href='W1.html'>W1</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a><li><a href='HW1_API.html'>HW1_API</a></li></ul><li><a href='W2.html'>W2</a><li><a href='W3.html'>W3</a><li class='has-children'><a href='W4-W6.html'>W4-W6</a><ul class='dropdown'><li><a href='Engineering.html'>Engineering</a></li></ul><li class='has-children'><a href='W7-W9.html'>W7-W9</a><ul class='dropdown'><li><a href='HW2.html'>HW2</a></li></ul><li><a href='W10-W14.html'>W10-W14</a><li><a href='W15-W18.html'>W15-W18</a></li></ul><li class='has-children'><a href='CAD.html'>CAD</a><ul class='dropdown'><li class='has-children'><a href='設計創建.html'>設計創建</a><ul class='dropdown'><li><a href='Onshape.html'>Onshape</a><li><a href='Solidworks.html'>Solidworks</a><li><a href='Inventor.html'>Inventor</a><li><a href='NX.html'>NX</a></li></ul><li><a href='設計修改.html'>設計修改</a><li class='has-children'><a href='設計分析.html'>設計分析</a><ul class='dropdown'><li><a href='Sigmoid.html'>Sigmoid</a></li></ul><li><a href='設計最佳化.html'>設計最佳化</a></li></ul><li><a href='Solvespace.html'>Solvespace</a><li class='has-children'><a href='Projects.html'>Projects</a><ul class='dropdown'><li class='has-children'><a href='Robot.html'>Robot</a><ul class='dropdown'><li><a href='PyRep.html'>PyRep</a></li></ul><li class='has-children'><a href='Web.html'>Web</a><ul class='dropdown'><li><a href='Flutter-Flask.html'>Flutter-Flask</a></li></ul><li class='has-children'><a href='Glowscript.html'>Glowscript</a><ul class='dropdown'><li><a href='Rapydscript.html'>Rapydscript</a><li><a href='Atoms.html'>Atoms</a><li><a href='Samples.html'>Samples</a><li><a href='RLearning.html'>RLearning</a></li></ul><li><a href='Featurescript.html'>Featurescript</a><li class='has-children'><a href='Machine Learning.html'>Machine Learning</a><ul class='dropdown'><li><a href='Pytorch.html'>Pytorch</a><li><a href='Keras.html'>Keras</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">HW1 << <a href='HW1.html'>Previous</a> <a href='W2.html'>Next</a> >> W2<br /><h1>HW1_API</h1>
+<p>1. 先確定圖檔與下載連結在動態網頁所需的 html 格式</p>
+<p><img alt="" class="add_border" src="./../downloads/sw_macro/html/31_1.jpg" width="300"/></p>
+<p>上述圖檔的 html 為:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;img src="./../downloads/sw_macro/html/31_1.jpg" alt="" width="300" &gt;</pre>
+<p>而下載零件的 anchor 為:</p>
+<p><a href="./../downloads/sw_macro/block.SLDPRT">block.SLDPRT</a></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;a href="./../downloads/sw_macro/block.SLDPRT"&gt;block.SLDPRT&lt;/a&gt;</pre>
+<p>2. 因此 Python API 程式在依據使用者尺寸輸入與重複迴圈繪圖次數後, 將可依據上述 img 與 anchor 格式, 產生以下所需的動態網頁內容. 更棒的結果是零件繪圖程式結束後, 會自動定位 config/content.htm 中的 HW1_API 頁面, 自動將零件下載, 等角視圖檔, 以及各零件的體積資料等插入既定的位置.</p>
+<p>3. 上述所完成的 html 表格如下:</p>
+<p></p>
+<p>以下零件採 SolidWorks 2017 SP 2.0 教育版繪製:<br/><br/></p>
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<th>Number</th>
+<th>Part</th>
+<th>Jpg</th>
+<th>Width</th>
+<th>Volume</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="./../downloads/sw_macro/html/31_1.SLDPRT">31_1.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_1.jpg" width="300"/></td>
+<td>2.0 mm</td>
+<td>49289.528 mm*3</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="./../downloads/sw_macro/html/31_2.SLDPRT">31_2.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_2.jpg" width="300"/></td>
+<td>4.0 mm</td>
+<td>50222.861 mm*3</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="./../downloads/sw_macro/html/31_3.SLDPRT">31_3.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_3.jpg" width="300"/></td>
+<td>6.0 mm</td>
+<td>51156.194 mm*3</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="./../downloads/sw_macro/html/31_4.SLDPRT">31_4.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_4.jpg" width="300"/></td>
+<td>8.0 mm</td>
+<td>52089.528 mm*3</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="./../downloads/sw_macro/html/31_5.SLDPRT">31_5.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_5.jpg" width="300"/></td>
+<td>10.0 mm</td>
+<td>53022.861 mm*3</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="./../downloads/sw_macro/html/31_6.SLDPRT">31_6.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_6.jpg" width="300"/></td>
+<td>12.0 mm</td>
+<td>53956.194 mm*3</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="./../downloads/sw_macro/html/31_7.SLDPRT">31_7.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_7.jpg" width="300"/></td>
+<td>14.0 mm</td>
+<td>54889.528 mm*3</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="./../downloads/sw_macro/html/31_8.SLDPRT">31_8.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_8.jpg" width="300"/></td>
+<td>16.0 mm</td>
+<td>55822.861 mm*3</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="./../downloads/sw_macro/html/31_9.SLDPRT">31_9.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_9.jpg" width="300"/></td>
+<td>18.0 mm</td>
+<td>56756.194 mm*3</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="./../downloads/sw_macro/html/31_10.SLDPRT">31_10.SLDPRT</a></td>
+<td><img src="./../downloads/sw_macro/html/31_10.jpg" width="300"/></td>
+<td>20.0 mm</td>
+<td>57689.528 mm*3</td>
+</tr>
+</tbody>
+</table>
+<p>產生零件與上列 html 的程式碼:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import pythoncom
+import win32com.client
+import win32api
+import os
+
+os.system("taskkill /IM sldworks.exe /F")
+os.system("taskkill /IM sldworks_fs.exe /F")
+
+'''
+About DispatchEx and Dispatch Methods:
+https://stackoverflow.com/questions/18648933/using-pywin32-what-is-the-difference-between-dispatch-and-dispatchex
+Source code:
+http://pywin32.hg.sourceforge.net/hgweb/pywin32/pywin32/file/0db1b26904d5/com/win32com/src/PyIDispatch.cpp
+Doc:
+https://docs.microsoft.com/en-us/dotnet/standard/native-interop/com-callable-wrapper
+
+IDispatch: Provides a mechanism for late binding to type.
+IDispatchEx:
+    Interface supplied by the runtime if the class implements IExpando. The IDispatchEx interface is an extension of the IDispatch interface that, unlike IDispatch, enables enumeration, addition, deletion, and case-sensitive calling of members.
+'''
+app = win32com.client.DispatchEx("SldWorks.Application")
+#app=win32com.client.Dispatch("SldWorks.Application")
+
+# define var to convert variables
+def var(type, value):
+    # type needs to be string
+    # use builtin getattr() to return pythoncom.type
+    pytype = getattr(pythoncom, type)
+    return win32com.client.VARIANT(pytype, value)
+
+# for two-type variable convert
+# is there any three-type variant?
+def var2(type1, type2, value):
+    pytype1 = getattr(pythoncom, type1)
+    pytype2 = getattr(pythoncom, type2)
+    return win32com.client.VARIANT(pytype1|pytype2, value)
+    
+def part(app, fileName, sketchName, dimName, newDim, newFileName):
+    arg1 = var("VT_I4", 1)
+    # GetMassProperties( ((3, 1), (16387, 3)))
+    #arg1 = win32com.client.VARIANT(pythoncom.VT_I4, 1)
+    arg2 = var("VT_I4", -1)
+
+    # 0. need the most important obj app
+    #app=win32com.client.Dispatch("SldWorks.Application")
+    # use relative directory to open part
+    # 1. open part file, need the path of the part file (need the file name)
+    #doc=app.OpenDoc(".\\block2.SLDPRT", 1)
+    doc=app.OpenDoc(os.path.join(os.getcwd(), fileName), 1)
+    # save part as binary stl
+    # can we save part as ASCII stl as well?
+    #doc.SaveAs2(".\\block2.stl", 0, True, False)
+    # the parameter VARIANT list for SelectByID2
+    # can we automate the VARIANT conversion?
+    # 2. use the sketch to select the SKETCH (need the sketch name)
+    #SelectByID2((8, 1), (8, 1), (5, 1), (5, 1), (5, 1), (11, 1), (3, 1), (9, 1), (3, 1))
+    #arg3 = var("VT_BSTR", "Sketch1")
+    arg3 = var("VT_BSTR", sketchName)
+    arg4 = var("VT_BSTR", "SKETCH")
+    arg4 = var("VT_BSTR", "SKETCH")
+    arg5 = var("VT_R8", 0)
+    arg6 = var("VT_R8", 0)
+    arg7 = var("VT_R8", 0)
+    arg8 = var("VT_BOOL", False)
+    arg9 = var("VT_I4", 0)
+    arg10 = var("VT_DISPATCH", None)
+    arg11 = var("VT_I4", 0)
+    # select Sketch1 first
+    status = doc.Extension.SelectByID2(arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+    # select DIMENSION to to modify
+    # 3. use the dimension name @ sketch name @ part file name
+    # to select the DI MENSION to modify
+    #arg12 = var("VT_BSTR", "Width@Sketch1@block2.SLDPRT")
+    arg12 = var("VT_BSTR", dimName+"@"+sketchName+"@"+fileName)
+    arg13 = var("VT_BSTR", "DIMENSION")
+    status = doc.Extension.SelectByID2(arg12, arg13, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+    #Dim swDimension As SldWorks.Dimension
+    # 4. to bring out the parameter to modify, need the dimension name and 
+    # sketch name
+    #swDimension = doc.Parameter("Width@Sketch1")
+    swDimension = doc.Parameter(dimName+"@"+sketchName)
+    # the dimension unit is in meter
+    # 5. need the new value of the parameter
+    #swDimension.SystemValue = 0.50
+    swDimension.SystemValue = newDim
+    # 6. do the final house keeping process, clear selection and rebuild the part
+    sel = doc.ClearSelection2 
+    sel = True
+    status = doc.EditRebuild()
+    arg31 = var("VT_I4", 1)
+    arg32 = var2("VT_I4", "VT_BYREF", 3)
+    # 7. get the volume of the new part
+    volumn = doc.Extension.GetMassProperties(arg31, arg32)
+    #print(volumn[3]*10E9, "mm*3")
+    # 8. save the new part (need the new part file name)
+    #doc.SaveAs2(".\\block3.SLDPRT", 0, True, False)
+    doc.SaveAs2(os.path.join(os.getcwd(), "html/" + newFileName + ".SLDPRT"), 0, True, False)
+    # save jpg of part
+    doc.EditRebuild()
+    arg33 = var("VT_BSTR", "Isometric")
+    doc.ShowNamedView(arg33)
+    doc.ViewZoomtofit2()
+    doc.SaveAs3(os.path.join(os.getcwd(), "html/" + newFileName + ".jpg"), 0, 0)
+    # mm*3
+    return str(round(volumn[3]*1E9, 3)) + " mm*3"
+html = "以下零件採 SolidWorks 2017 SP 2.0 教育版繪製:&lt;br /&gt;&lt;br /&gt;&lt;table border='1' cellpadding='5'&gt;&lt;tr&gt;&lt;th&gt;Number&lt;/th&gt;&lt;th&gt;Part&lt;/th&gt;&lt;th&gt;Jpg&lt;/th&gt;&lt;th&gt;Width&lt;/th&gt;&lt;th&gt;Volume&lt;/th&gt;&lt;/tr&gt;"
+index = 0
+for i in range(1, 11):
+    dim = i*0.002
+    blockVolume = part(app, "31_step.SLDPRT", "Sketch1", "Width", dim, "31_" + str(i))
+    print("31_" + str(i) + ".SLDPRT, dim= " + str(round(dim, 3)) +", volume= " + blockVolume)
+    index += 1
+    newFileName = "31_" + str(i)
+    html += '''&lt;tr&gt;
+    &lt;td&gt;''' + str(index) +'''&lt;/td&gt;
+    &lt;td&gt;&lt;a href="./../downloads/sw_macro/html/''' + newFileName + '''.SLDPRT"&gt;''' + newFileName + '''.SLDPRT&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;img width="300" src="./../downloads/sw_macro/html/''' + newFileName + '''.jpg"&gt;&lt;/img&gt;&lt;/td&gt;
+    &lt;td&gt;''' + str(round(dim*1000, 2)) + ''' mm &lt;/td&gt;
+    &lt;td&gt;''' + blockVolume + '''&lt;/td&gt;
+    &lt;/tr&gt;
+    '''
+html += "&lt;/table&gt;"
+# save part.html
+with open("./html/part.html", "w", encoding="utf-8") as f:
+     f.write(html)
+     
+'''
+for assembly
+        swModelDocExt.SelectByID2("", "EDGE", -0.439825991092107, 7.07350481263802E-02, 0.40982045578545, true, 2, null, 0);
+        swModelDocExt.SelectByID2("", "EDGE", -0.219003008311574, 0.073085842475507, 0.549481823985616, true, 4, null, 0);
+        swModelDocExt.SelectByID2("Part-3@AssemModel", "COMPONENT", 0, 0, 0, true, 1, null, 0);
+        swFeature = (Feature)swFeatureManager.FeatureLinearPattern2(3, 40 / 1000, 0, 0, false, true, "NULL", "NULL", false);
+        assemblyModel.ClearSelection2(true);
+'''
+os.system("taskkill /IM sldworks.exe /F")
+os.system("taskkill /IM sldworks_fs.exe /F")
+# now the SolidWorks is embedding
+</pre>
+<p></p><br />HW1 << <a href='HW1.html'>Previous</a> <a href='W2.html'>Next</a> >> W2</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

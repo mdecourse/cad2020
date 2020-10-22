@@ -113,15 +113,15 @@ for i in range(1, 11):
     newFileName = "31_" + str(i)
     html += '''<tr>
     <td>''' + str(index) +'''</td>
-    <td><a href="''' + newFileName + '''.SLDPRT">''' + newFileName + '''.SLDPRT</a></td>
-    <td><img width="300" src="''' + newFileName + '''.jpg"></img></td>
+    <td><a href="/downloads/sw_macro/html/''' + newFileName + '''.SLDPRT">''' + newFileName + '''.SLDPRT</a></td>
+    <td><img width="300" src="/downloads/sw_macro/html/''' + newFileName + '''.jpg"></img></td>
     <td>''' + str(round(dim*1000, 2)) + ''' mm </td>
     <td>''' + blockVolume + '''</td>
     </tr>
     '''
 html += "</table>"
 # save part.html
-with open("./html/part.html", "w") as f:
+with open("./html/part.html", "w", encoding="utf-8") as f:
      f.write(html)
      
 '''
