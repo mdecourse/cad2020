@@ -229,7 +229,13 @@ for i in range(10):
 <li>Commit the changes:<br/>    git commit -m "Removed submodule &lt;name&gt;"</li>
 <li>Delete the now untracked submodule files:<br/>    rm -rf path_to_submodule</li>
 </ol>
-<p style="padding-left: 30px;"></p><h2>W1</h2>
+<h3>W6Video</h3>
+<p><a href="https://drive.google.com/file/d/1mFs3v3pP0CYsyxlgRKaGqtisfAZR2605/view?usp=sharing">14aw6_solidworks_31_python_api_demo.mp4</a></p>
+<p style="padding-left: 30px;">說明如何利用 Python 3.8 透過 API 變更<a href="http://mde.tw/cad2020/content/HW1.html">練習1</a>中的第 31 個零件的特定尺寸.</p>
+<p><a href="https://drive.google.com/file/d/1JbWuaoP321VLS3wo7jcCKu_4MQJRreWQ/view?usp=sharing">15aw6_SWapi_generated_html.mp4</a></p>
+<p style="padding-left: 30px;">利用 Python 以 API 迴圈建立多個零件後, 同時產品展示零件下載, 零件等角視圖與體積的表列 html 檔案.</p>
+<p><a href="https://drive.google.com/file/d/1VtLP9lj73VNv2WAVBxhmOtmlhFj-4rI-/view?usp=sharing">16aw6_tcc_setup.mp4</a></p>
+<p style="padding-left: 30px;">說明如何在可攜程式環境中加入 Tiny C ANSI compiler 執行環境</p><h2>W1</h2>
 <p>Notice: </p>
 <p style="padding-left: 30px;">四設二乙將在 <span>2020-09-25 (週五) </span></p>
 <p style="padding-left: 30px;"><span>下午4:20 – 下午7:10 </span>補 10/2 中秋節連假課程時段</p>
@@ -425,7 +431,6 @@ def part(app, fileName, sketchName, dimName, newDim, newFileName):
     #arg3 = var("VT_BSTR", "Sketch1")
     arg3 = var("VT_BSTR", sketchName)
     arg4 = var("VT_BSTR", "SKETCH")
-    arg4 = var("VT_BSTR", "SKETCH")
     arg5 = var("VT_R8", 0)
     arg6 = var("VT_R8", 0)
     arg7 = var("VT_R8", 0)
@@ -437,7 +442,7 @@ def part(app, fileName, sketchName, dimName, newDim, newFileName):
     status = doc.Extension.SelectByID2(arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
     # select DIMENSION to to modify
     # 3. use the dimension name @ sketch name @ part file name
-    # to select the DI MENSION to modify
+    # to select the DIMENSION to modify
     #arg12 = var("VT_BSTR", "Width@Sketch1@block2.SLDPRT")
     arg12 = var("VT_BSTR", dimName+"@"+sketchName+"@"+fileName)
     arg13 = var("VT_BSTR", "DIMENSION")
@@ -459,7 +464,7 @@ def part(app, fileName, sketchName, dimName, newDim, newFileName):
     arg32 = var2("VT_I4", "VT_BYREF", 3)
     # 7. get the volume of the new part
     volumn = doc.Extension.GetMassProperties(arg31, arg32)
-    #print(volumn[3]*10E9, "mm*3")
+    #print(volumn[3]*1E9, "mm*3")
     # 8. save the new part (need the new part file name)
     #doc.SaveAs2(".\\block3.SLDPRT", 0, True, False)
     doc.SaveAs2(os.path.join(os.getcwd(), "html/" + newFileName + ".SLDPRT"), 0, True, False)
