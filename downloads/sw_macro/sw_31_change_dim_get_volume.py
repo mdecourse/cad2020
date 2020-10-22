@@ -2,10 +2,10 @@ import pythoncom
 import win32com.client
 import win32api
 import os
-
+'''
 os.system("taskkill /IM sldworks.exe /F")
 os.system("taskkill /IM sldworks_fs.exe /F")
-
+'''
 '''
 About DispatchEx and Dispatch Methods:
 https://stackoverflow.com/questions/18648933/using-pywin32-what-is-the-difference-between-dispatch-and-dispatchex
@@ -123,6 +123,9 @@ html += "</table>"
 with open("./html/part.html", "w", encoding="utf-8") as f:
      f.write(html)
      
+
+app.ExitApp()
+
 '''
 for assembly
         swModelDocExt.SelectByID2("", "EDGE", -0.439825991092107, 7.07350481263802E-02, 0.40982045578545, true, 2, null, 0);
@@ -131,6 +134,8 @@ for assembly
         swFeature = (Feature)swFeatureManager.FeatureLinearPattern2(3, 40 / 1000, 0, 0, false, true, "NULL", "NULL", false);
         assemblyModel.ClearSelection2(true);
 '''
+'''
 os.system("taskkill /IM sldworks.exe /F")
 os.system("taskkill /IM sldworks_fs.exe /F")
 # now the SolidWorks is embedding
+'''
