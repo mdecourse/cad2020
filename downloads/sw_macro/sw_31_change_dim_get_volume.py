@@ -57,7 +57,6 @@ def part(app, fileName, sketchName, dimName, newDim, newFileName):
     #arg3 = var("VT_BSTR", "Sketch1")
     arg3 = var("VT_BSTR", sketchName)
     arg4 = var("VT_BSTR", "SKETCH")
-    arg4 = var("VT_BSTR", "SKETCH")
     arg5 = var("VT_R8", 0)
     arg6 = var("VT_R8", 0)
     arg7 = var("VT_R8", 0)
@@ -69,7 +68,7 @@ def part(app, fileName, sketchName, dimName, newDim, newFileName):
     status = doc.Extension.SelectByID2(arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
     # select DIMENSION to to modify
     # 3. use the dimension name @ sketch name @ part file name
-    # to select the DI MENSION to modify
+    # to select the DIMENSION to modify
     #arg12 = var("VT_BSTR", "Width@Sketch1@block2.SLDPRT")
     arg12 = var("VT_BSTR", dimName+"@"+sketchName+"@"+fileName)
     arg13 = var("VT_BSTR", "DIMENSION")
@@ -91,7 +90,7 @@ def part(app, fileName, sketchName, dimName, newDim, newFileName):
     arg32 = var2("VT_I4", "VT_BYREF", 3)
     # 7. get the volume of the new part
     volumn = doc.Extension.GetMassProperties(arg31, arg32)
-    #print(volumn[3]*10E9, "mm*3")
+    #print(volumn[3]*1E9, "mm*3")
     # 8. save the new part (need the new part file name)
     #doc.SaveAs2(".\\block3.SLDPRT", 0, True, False)
     doc.SaveAs2(os.path.join(os.getcwd(), "html/" + newFileName + ".SLDPRT"), 0, True, False)
