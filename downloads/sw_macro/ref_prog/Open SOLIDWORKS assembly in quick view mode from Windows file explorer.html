@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<!-- saved from url=(0090)https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.codestack.net/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="CodeStack | SOLIDWORKS API, PDM API, C#, VB.NET Examples and Tutorials - Feed" href="https://www.codestack.net/feed.xml">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+    
+    
+    <title>Open SOLIDWORKS assembly in quick view mode from Windows file explorer</title>
+<meta name="generator" content="Docify">
+<meta name="description" content="Tool to open SOLIDWORKS assembly or drawing in quick view (large design review) mode from the context menu in Windows file explorer">
+<link rel="canonical" href="https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/">
+    <meta property="og:title" content="Open SOLIDWORKS assembly in quick view mode from Windows file explorer">
+    <meta property="og:locale" content="en">
+    <meta property="og:description" content="Tool to open SOLIDWORKS assembly or drawing in quick view (large design review) mode from the context menu in Windows file explorer">
+    <meta property="og:url" content="https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/">
+    <meta property="og:site_name" content="CodeStack">
+    <meta property="og:image" content="https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/open-in-quick-view.png">
+    <meta name="twitter:card" content="Tool to open SOLIDWORKS assembly or drawing in quick view (large design review) mode from the context menu in Windows file explorer">
+    <meta name="twitter:site" content="https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/">
+    <meta name="twitter:title" content="Open SOLIDWORKS assembly in quick view mode from Windows file explorer">
+    <meta name="twitter:description" content="Tool to open SOLIDWORKS assembly or drawing in quick view (large design review) mode from the context menu in Windows file explorer">
+    <meta name="twitter:image" content="https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/open-in-quick-view.png">
+    <script type="text/javascript" async="" src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/analytics.js.download"></script><script type="application/ld+json">
+        {"url":"https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/","description":"Tool to open SOLIDWORKS assembly or drawing in quick view (large design review) mode from the context menu in Windows file explorer","headline":"Library of SOLIDWORKS API, SOLIDWORKS PDM API, VBA and Desktop code examples, applications macros and tutorials.","image":"https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/open-in-quick-view.png","@type":"WebPage","@context":"http://schema.org"}
+    </script>
+
+    
+
+
+
+
+
+
+    <script async="" src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-122106766-1');
+</script>
+
+    <link rel="stylesheet" type="text/css" href="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/cookieconsent.min.css">
+<script src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/cookieconsent.min.js.download"></script>
+<script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+        layout: 'policies-layout',
+        layouts: {
+            'policies-layout': '<div class="policies-layout" style="margin-right:10px;content-alignment: center;">This website uses cookies to ensure you get the best experience on our website. By using our website you agree on the following <a href="/cookies-policy/">Cookie Policy</a>, <a href="/privacy-policy/">Privacy Policy</a>, and <a href="/terms-of-use">Terms Of Use</a></div>\{\{compliance\}\}',
+        },
+        palette: {
+            popup: {
+            background: "#efefef",
+            text: "#404040"
+            },
+            button: {
+            background: "#8ec760",
+            text: "#ffffff"
+            }
+        },
+        position: "bottom",
+        content: {
+            message: 'Message!',
+            dismiss: "Agree"
+        }
+    })});
+</script>
+
+
+
+<script src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/clipboard.min.js.download"></script>
+
+<script src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/main.min.js.download"></script><link rel="stylesheet" type="text/css" href="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/main.min.css"><style></style></head>
+<body><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-block cc-bottom cc-color-override-1827372716 " style=""><!--googleoff: all--><div class="policies-layout" style="margin-right:10px;content-alignment: center;">This website uses cookies to ensure you get the best experience on our website. By using our website you agree on the following <a href="https://www.codestack.net/cookies-policy/">Cookie Policy</a>, <a href="https://www.codestack.net/privacy-policy/">Privacy Policy</a>, and <a href="https://www.codestack.net/terms-of-use">Terms Of Use</a></div><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Agree</a></div><!--googleon: all--></div>
+    <div class="layout">
+    <div class="layout-header"><div class="header">
+    <div class="header-icon"><a href="https://www.codestack.net/"><img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/logo.svg" width="75px" alt="CodeStack"></a></div>
+    <div class="header-menu" style="justify-self: end">
+<ul class="menu sub-menu-item-container" id="top-menu">
+    <a class="menu-icon" onclick="OpenMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </a>
+    <li class="menu-item active">
+<a>SOLIDWORKS▾</a>
+<ul class="sub-menu-item-container">
+<li class="menu-item active">
+<a href="https://www.codestack.net/solidworks-api/">API &amp; MACROS</a>
+</li>
+<li class="menu-item not-active">
+<a href="https://www.codestack.net/solidworks-pdm-api/">PDM PROFESSIONAL (EPDM) API</a>
+</li>
+<li class="menu-item not-active">
+<a href="https://www.codestack.net/solidworks-document-manager-api/">DOCUMENT MANAGER API</a>
+</li>
+<li class="menu-item not-active">
+<a href="https://www.codestack.net/edrawings-api/">EDRAWINGS API</a>
+</li>
+<li class="menu-item not-active">
+<a href="https://www.codestack.net/solidworks-tools/">'GOODIES'</a>
+</li>
+
+</ul>
+</li>
+<li class="menu-item not-active">
+<a>PROGRAMMING▾</a>
+<ul class="sub-menu-item-container">
+<li class="menu-item not-active">
+<a href="https://www.codestack.net/visual-basic/">VISUAL BASIC</a>
+</li>
+
+</ul>
+</li>
+<li class="menu-item not-active">
+<a>LABS▾</a>
+<ul class="sub-menu-item-container">
+<li class="menu-item not-active">
+<a href="https://www.codestack.net/labs/solidworks/">SOLIDWORKS</a>
+</li>
+
+</ul>
+</li>
+<li class="menu-item not-active">
+<a>WEB▾</a>
+<ul class="sub-menu-item-container">
+<li class="menu-item not-active">
+<a href="https://www.codestack.net/angular/">ANGULAR</a>
+</li>
+
+</ul>
+</li>
+<li class="menu-item not-active">
+<a>ADMINISTRATION▾</a>
+<ul class="sub-menu-item-container">
+<li class="menu-item not-active">
+<a href="https://www.codestack.net/hosting/">HOSTING</a>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</div>
+</div>
+<hr>
+<div style="width: 200px;margin-left:auto; margin-right:0;">
+<form action="https://www.codestack.net/search/">
+    <div class="tipue_search_group">
+        <input type="image" src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/search.svg" class="tipue_search_button" width="18px" border="0" alt="Submit">
+        <div style="overflow: hidden;padding-right: .5em;">
+            <input type="text" name="q" id="tipue_search_input" placeholder="Search" pattern=".{3,}" title="At least 3 characters" required="">
+        </div>
+    </div>
+</form>
+</div>
+</div>
+    <div class="layout-toc">
+        <button type="button" id="collapsible-toc">▾Table Of Content</button>
+        <div id="toc-placeholder">
+<div class="toc">
+    <div id="toc">
+        <a href="https://www.codestack.net/solidworks-api/" class="toc-entry ">Welcome</a>
+    <ul style="margin: 0px" class="toc-container collapse in">
+        <li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n1Span, n1);">
+<span class="expbutton" id="n1Span">▾</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/" class="toc-entry">Getting Started</a>
+</div></li>
+<ul id="n1" class="toc-container collapse in">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n2Span, n2);">
+<span class="expbutton" id="n2Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/api-object-model/" class="toc-entry">API Object Model</a>
+</div></li>
+<ul id="n2" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/api-object-model/class-diagram/" class="toc-entry">Class Diagram Relationship</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/api-object-model/accessors/" class="toc-entry">Accessors</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/api-object-model/i-api-versions/" class="toc-entry">I-Versions Of Methods And Interfaces</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/api-object-model/naming-convention/" class="toc-entry">Naming Convention</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n3Span, n3);">
+<span class="expbutton" id="n3Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/macros/" class="toc-entry">Macros</a>
+</div></li>
+<ul id="n3" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/macros/types/" class="toc-entry">Macros Types</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/macros/recording/" class="toc-entry">Recording Macros</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/macros/create-vsta/" class="toc-entry">Create And Run VSTA Macro</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/macros/edit/" class="toc-entry">Edit Macros</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/macros/macro-buttons/" class="toc-entry">Creating Macro Buttons</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/macros/run/" class="toc-entry">Run Macros</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/macros/run-macro-on-solidworks-start/" class="toc-entry">Run Macro On SOLIDWORKS Start</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n4Span, n4);">
+<span class="expbutton" id="n4Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/add-ins/" class="toc-entry">Add-Ins</a>
+</div></li>
+<ul id="n4" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/add-ins/csharp/" class="toc-entry">Creating C# Add-In For SOLIDWORKS</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/add-ins/vbnet/" class="toc-entry">Creating VB.NET Add-In For SOLIDWORKS</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n5Span, n5);">
+<span class="expbutton" id="n5Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/stand-alone/" class="toc-entry">Stand-Alone Application</a>
+</div></li>
+<ul id="n5" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/stand-alone/connect-csharp/" class="toc-entry">Create C# Stand-Alone Application for SOLIDWORKS</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/stand-alone/connect-vbnet/" class="toc-entry">Create VB.NET Stand-Alone Application for SOLIDWORKS</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/stand-alone/connect-cpp/" class="toc-entry">Create C++ Stand-Alone Application for SOLIDWORKS</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/stand-alone/start-background/" class="toc-entry">Start In Background</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n6Span, n6);">
+<span class="expbutton" id="n6Span">▾</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/" class="toc-entry">Scripts</a>
+</div></li>
+<ul id="n6" class="toc-container collapse in">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n7Span, n7);">
+<span class="expbutton" id="n7Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/java-script/" class="toc-entry">Java Script</a>
+</div></li>
+<ul id="n7" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/java-script/html-feature-tree/" class="toc-entry">Render Feature Tree In HTML Page</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n8Span, n8);">
+<span class="expbutton" id="n8Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/power-shell/" class="toc-entry">PowerShell</a>
+</div></li>
+<ul id="n8" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/power-shell/export-file/" class="toc-entry">Export Files</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/power-shell/model-generator/" class="toc-entry">Model Generator</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n9Span, n9);">
+<span class="expbutton" id="n9Span">▾</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/" class="toc-entry">vbScript</a>
+</div></li>
+<ul id="n9" class="toc-container collapse in">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/get-mass-properties/" class="toc-entry">Get Mass Properties</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/" class="toc-entry active">Open Document In Quick View Mode From File Explorer</a>
+</div></li>
+
+</ul>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n10Span, n10);">
+<span class="expbutton" id="n10Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/inter-process-communication/" class="toc-entry">Inter-Process Communication</a>
+</div></li>
+<ul id="n10" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n11Span, n11);">
+<span class="expbutton" id="n11Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/inter-process-communication/invoke-add-in-functions/" class="toc-entry">Invoke Function Of Add-in</a>
+</div></li>
+<ul id="n11" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/inter-process-communication/invoke-add-in-functions/via-add-in-object/" class="toc-entry">Via Add-in Object</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/inter-process-communication/invoke-add-in-functions/via-rot/" class="toc-entry">Via Running Objects Table (ROT)</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/inter-process-communication/invoke-add-in-functions/in-process-invoking/" class="toc-entry">In-Process Invoking From Out-Of-Process Applications</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n12Span, n12);">
+<span class="expbutton" id="n12Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/inter-process-communication/pass-parameters-to-vba-macro/" class="toc-entry">Pass Parameters To VBA Macro</a>
+</div></li>
+<ul id="n12" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/inter-process-communication/pass-parameters-to-vba-macro/via-clipboard/" class="toc-entry">Via Clipboard</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/getting-started/inter-process-communication/pass-parameters-to-vba-macro/via-swb-macro/" class="toc-entry">Via SWBasic Macro</a>
+</div></li>
+
+</ul>
+
+</ul>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n13Span, n13);">
+<span class="expbutton" id="n13Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/" class="toc-entry">Document</a>
+</div></li>
+<ul id="n13" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n14Span, n14);">
+<span class="expbutton" id="n14Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/" class="toc-entry">Assembly</a>
+</div></li>
+<ul id="n14" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n15Span, n15);">
+<span class="expbutton" id="n15Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/" class="toc-entry">Components</a>
+</div></li>
+<ul id="n15" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/add/" class="toc-entry">Add Components To Assembly</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/advanced-selection/" class="toc-entry">Advanced Selections</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/apply-presentation-transform-from-csv/" class="toc-entry">Load Components Presentation Transforms From CSV File</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/batch-modify-parameters/" class="toc-entry">Modify Configuration Parameters For Multiple Components</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/break-external-references/" class="toc-entry">Break All External References For Components</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/copy-path/" class="toc-entry">Copy Component Path</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/count-all-selected-components/" class="toc-entry">Count All Selected Components</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/export-positions/" class="toc-entry">Export Components Positions</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/fix-float/" class="toc-entry">Fix/Float In This Or All Configurations</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/get-by-name/" class="toc-entry">Get Component By Name</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/get-cog/" class="toc-entry">Get Center Of Gravity</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/get-instance-id/" class="toc-entry">Get Instance Id Of Component</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/get-visible/" class="toc-entry">Get And Select Visible Components Only</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/insert-position/" class="toc-entry">Insert And Position Components In A Grid</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/lightweight-get-model-doc/" class="toc-entry">Get Model Doc From Lightweight Component</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/move-to-folder/" class="toc-entry">Move To Folder</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/name-to-component-reference/" class="toc-entry">Copy Component Name To Component Reference</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/open-in-position/" class="toc-entry">Open Components In Positions</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/pattern-seed-configuration-properties/" class="toc-entry">Change Configuration Specific Properties For Component In Pattern</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/permutation/" class="toc-entry">Components Configurations Permutation</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/purge-configurations/" class="toc-entry">Purge Components Configurations</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/rename/" class="toc-entry">Renaming Components</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/replace/" class="toc-entry">Replace Components</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/rotation-transform-align/" class="toc-entry">Aligning Component With Rotation Transformation</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/run-rotation-animation/" class="toc-entry">Run Rotation Animation For The Component</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/select-suppressed/" class="toc-entry">Select All Suppressed Components</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/set-solving/" class="toc-entry">Set Components Solving (Rigid or Flexible)</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/show-selected-assembly-component-window-folder/" class="toc-entry">Show Selected Assembly Component In The Window Folder</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/show-with-dependents/" class="toc-entry">Show All Components (Show With Dependents)</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/traversing-tree/" class="toc-entry">Traversing The Components Tree</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/components/where-used/" class="toc-entry">Find Where Used</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n16Span, n16);">
+<span class="expbutton" id="n16Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/mates/" class="toc-entry">Mates</a>
+</div></li>
+<ul id="n16" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/mates/add-mate-between-coordinate-systems/" class="toc-entry">Add Mate Between Coordinate Systems</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/mates/force-mate/" class="toc-entry">Run Force Mate Command</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/mates/move-suppressed-to-folder/" class="toc-entry">Move Suppressed Mates Into A Folder</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/compose-flat-bom/" class="toc-entry">Compose Flat Bill Of Materials (BOM)</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/context/" class="toc-entry">Assembly Context</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/assembly/display-assembly-visualization-page/" class="toc-entry">Display Assembly Visualization Page</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n17Span, n17);">
+<span class="expbutton" id="n17Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/" class="toc-entry">Drawing</a>
+</div></li>
+<ul id="n17" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/bom-tables-update-referenced-configuration/" class="toc-entry">Update Referenced Configuration From BOM Tables</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/change-layer-selected-drawing-objects/" class="toc-entry">Change Layer For Selected Objects In Drawing</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/clear-revision-table-new-revision/" class="toc-entry">Clear Revision Table And Add New Revision</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/copy-drawing-paths/" class="toc-entry">Copy File Path Of All Assembly Component Drawings</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/copy-view-properties/" class="toc-entry">Copy Drawing View Properties</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/draw-border-on-layer/" class="toc-entry">Draw Border On Layer</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/drawing-view-sketch/" class="toc-entry">Create Sketch Segments In Drawing View</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/export-dimensions/" class="toc-entry">Export Dimensions Information</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/export-sheet-metal-views/" class="toc-entry">Export Flat Patterns</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/get-all-visible-components/" class="toc-entry">Get All Visible Components</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/get-view-bodies/" class="toc-entry">Get Bodies And Materials From Drawing View</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/get-view-bodies-mass/" class="toc-entry">Get Mass From Drawing View</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/insert-bom-balloons/" class="toc-entry">Insert BOM Balloons</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/lock-sheet-format/" class="toc-entry">Lock Sheet Format</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/rename-sheet-metal-views/" class="toc-entry">Rename Flat Pattern Views With Cut-List Names</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/rename-sheets-custom-properties-values/" class="toc-entry">Rename Drawing Sheets With Custom Properties Values</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/sheet-context-sketch/" class="toc-entry">Draw Sketch Segments In Sheet</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/view-dimension-drawing-entities/" class="toc-entry">Dimension Visible Entities</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/view-dimension-model-entities/" class="toc-entry">Dimension Named Model Entities</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/drawing/views-size-based-scale/" class="toc-entry">Scale Views Based On Geometry Size</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n18Span, n18);">
+<span class="expbutton" id="n18Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/model-view/" class="toc-entry">Model Views</a>
+</div></li>
+<ul id="n18" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/model-view/compare-model-views/" class="toc-entry">Compare Model Views</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/model-view/transform-pan-view/" class="toc-entry">Pan Model View</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n19Span, n19);">
+<span class="expbutton" id="n19Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/" class="toc-entry">Features Manager</a>
+</div></li>
+<ul id="n19" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/activate-tabs/" class="toc-entry">Activate Feature Manager Tab</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/catch-new-feature-creation-event/" class="toc-entry">Catch New Feature Creation Event</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/contrours-surface-loft/" class="toc-entry">Create Surface Loft Feature Via Contours</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/create-feature-configurations/" class="toc-entry">Suppress Features In New Configurations</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/create-loft/" class="toc-entry">Create Loft Feature</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/defeature-part/" class="toc-entry">Defeature Part</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/delete-feature-folder-all-children/" class="toc-entry">Delete Feature Folder With All Children Features</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/find-features/" class="toc-entry">Find Features</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/get-boss-extrude-selection/" class="toc-entry">Extract Selection From Boss-Extrude Feature</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/get-feature-type-name/" class="toc-entry">Get Features Type Name</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/hide-features/" class="toc-entry">Hide Features In The Tree</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/identify-feature/" class="toc-entry">Identify Feature Definition And Specific Type</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/modify-axis-definition/" class="toc-entry">Modify Axis Definition</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/modify-feature-definition-in-context/" class="toc-entry">Edit Feature In The Context Of The Assembly</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/move-copy-body-mate/" class="toc-entry">Add Move-Copy Body Feature With Mate</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/rename-features-by-type-name/" class="toc-entry">Rename Features Based On Type Names</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/rename-features-sequentially/" class="toc-entry">Rename All Features Sequentially</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/reveal-hidden-features/" class="toc-entry">Reveal Hidden Features</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/run-command-sync/" class="toc-entry">Run Command Synchronously</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/show-all-comments/" class="toc-entry">Show All Comments Text</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/toggle-show-comment-indicator/" class="toc-entry">Toggle Show Comment Indicator option</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/traverse-feature-nodes/" class="toc-entry">Traverse Feature Nodes</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/features-manager/update-curve/" class="toc-entry">Update XYZ Curve From File</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n20Span, n20);">
+<span class="expbutton" id="n20Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/" class="toc-entry">Selection</a>
+</div></li>
+<ul id="n20" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/api-only-selection/" class="toc-entry">Selecting Objects For API Only</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/drawing-view-entities/" class="toc-entry">Selecting Entities In Drawing View</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/select-all-sketch-elements/" class="toc-entry">Select All Sketch Elements</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/select-by-id/" class="toc-entry">Selecting Objects By Name And Coordinates</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/select-component-by-name/" class="toc-entry">Select Component By Name</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/select-features-by-type/" class="toc-entry">Select Features By Type</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/select-named-entity/" class="toc-entry">Select Named Entity</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/select-objects/" class="toc-entry">Select Any SOLIDWORKS Objects In A Batch</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/select-standard-plane/" class="toc-entry">Select Standard Plane By Type</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/selection/wait-for-selection/" class="toc-entry">Wait For User Selection</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n21Span, n21);">
+<span class="expbutton" id="n21Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/" class="toc-entry">Sketch</a>
+</div></li>
+<ul id="n21" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/align-line-along-axis/" class="toc-entry">Align Line Along Axis</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/convert-arc-to-circle/" class="toc-entry">Convert Arc To Circle</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/csv-create-spline/" class="toc-entry">Create Spline From CSV</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/csv-import-points/" class="toc-entry">Import Points Cloud From CSV File Into Sketch</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/export-dxf-dwg/" class="toc-entry">Export Sketch To DXF/DWG</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/export-point-coordinates/" class="toc-entry">Export Sketch Coordinates</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/get-selected-sketch-segments-info/" class="toc-entry">Get Selected Sketch Segments Info</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/get-sketch-segments-total-length/" class="toc-entry">Get Total Length Of Sketch Segments</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/hide-all-sketches/" class="toc-entry">Hide All Sketches</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/merge-sketches/" class="toc-entry">Merge Sketches</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/select-equal-arcs/" class="toc-entry">Select Equal Arcs</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sketch/transform/" class="toc-entry">Understanding Sketch Transforms</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n22Span, n22);">
+<span class="expbutton" id="n22Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/dimensions/" class="toc-entry">Dimensions</a>
+</div></li>
+<ul id="n22" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/dimensions/add-bend-lines/" class="toc-entry">Add Dimensions To Bend Lines</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/dimensions/add-equation/" class="toc-entry">Add Equation To Dimension</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/dimensions/add-smart-dimension-between-two-segments/" class="toc-entry">Add Smart Dimension Between Two Segments</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/dimensions/create-average-dimension-values-configuration/" class="toc-entry">Create Configuration With Average Dimension Values</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/dimensions/names-find-replace-text/" class="toc-entry">Find-Replace Text In Dimension Names</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/dimensions/traverse-all/" class="toc-entry">Traverse All Dimensions</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n23Span, n23);">
+<span class="expbutton" id="n23Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tables/" class="toc-entry">Tables</a>
+</div></li>
+<ul id="n23" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tables/export-table-csv/" class="toc-entry">Export Table To CSV</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tables/find-tables-by-type/" class="toc-entry">Find Tables By Type</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tables/modify-holes-table-holes-location-precision/" class="toc-entry">Modify Holes Table Holes Location Precision</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tables/read-table-content-into-array/" class="toc-entry">Read Table Content Into Array</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tables/rename-table-annotation/" class="toc-entry">Rename Table Annotation</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tables/write-excel-table-into-general-table/" class="toc-entry">Write Data From Excel Table Into General Table</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n24Span, n24);">
+<span class="expbutton" id="n24Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/notes/" class="toc-entry">Notes</a>
+</div></li>
+<ul id="n24" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/notes/increment-revision/" class="toc-entry">Increment The Numeric Value In The Note</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/notes/tag-selected-note/" class="toc-entry">Add Tag To Selected Note</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n25Span, n25);">
+<span class="expbutton" id="n25Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sheet-metal/" class="toc-entry">Sheet Metal</a>
+</div></li>
+<ul id="n25" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sheet-metal/export-assembly-components/" class="toc-entry">Export Flat Patterns From Assembly Components</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sheet-metal/export-dxf-dwg/" class="toc-entry">Export Flat Pattern From Part</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sheet-metal/get-body-flat-pattern/" class="toc-entry">Get Cut List Item From Flat Pattern</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sheet-metal/rename-flat-patterns/" class="toc-entry">Rename Flat Pattern After Cut-Lists</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/sheet-metal/sketched-bend-feature-sketch-lines/" class="toc-entry">Get Sketch Lines For Sheet Metal Sketched Bend Feature</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n26Span, n26);">
+<span class="expbutton" id="n26Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/cut-lists/" class="toc-entry">Cut-Lists</a>
+</div></li>
+<ul id="n26" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/cut-lists/copy-custom-properties/" class="toc-entry">Copy Cut-List Custom Properties To Model</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/cut-lists/exclude-selected-bodies/" class="toc-entry">Exclude Selected Bodies From Cut-Lists</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/cut-lists/rename-cut-list-items/" class="toc-entry">Rename Cut List Features</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n27Span, n27);">
+<span class="expbutton" id="n27Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/appearance/" class="toc-entry">Appearance</a>
+</div></li>
+<ul id="n27" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/appearance/remove-color/" class="toc-entry">Remove All Colors From Part</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n28Span, n28);">
+<span class="expbutton" id="n28Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tracking-objects/" class="toc-entry">Tracking Objects</a>
+</div></li>
+<ul id="n28" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tracking-objects/internal-ids/" class="toc-entry">Internal IDs</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tracking-objects/names/" class="toc-entry">Object Names</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tracking-objects/persist-references/" class="toc-entry">Persistent Reference Id</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/tracking-objects/tracking-ids/" class="toc-entry">Tracking IDs</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n29Span, n29);">
+<span class="expbutton" id="n29Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/macro-feature/" class="toc-entry">Macro Feature</a>
+</div></li>
+<ul id="n29" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/macro-feature/add-watermark/" class="toc-entry">Add Watermark Feature</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/macro-feature/general-table-link-excel/" class="toc-entry">Link And Auto Update General Table To Excel</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/macro-feature/geometry/" class="toc-entry">Generate Box Geometry</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/macro-feature/link-cut-list-properties/" class="toc-entry">Link Cut-List Custom Properties To File Custom Properties</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/macro-feature/model-load-watcher/" class="toc-entry">Automatically Run Macro On Model Load</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/macro-feature/multi-extrude/" class="toc-entry">Create MultiBoss-Extrude Macro Feature</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/macro-feature/run-macro-on-rebuild/" class="toc-entry">Automatically Run Macro On Rebuild</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n30Span, n30);">
+<span class="expbutton" id="n30Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/document/materials/" class="toc-entry">Materials</a>
+</div></li>
+<ul id="n30" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/materials/change-apply-appearance/" class="toc-entry">Change Apply Appearance Option In Material</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/materials/copy-custom-property/" class="toc-entry">Copy Custom Property From Material To Model</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/materials/show-edit-material-dialog/" class="toc-entry">Show Edit Material Dialog</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/auto-part-number-title/" class="toc-entry">Set Title To Next Part Number</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/block-model-editing/" class="toc-entry">Block Model Editing</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/change-global-variable-value/" class="toc-entry">Change Value Of Global Variable</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/configuration-reviewer/" class="toc-entry">Configurations And Sheets Reviewer</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/delete-model-equations/" class="toc-entry">Delete All Equations</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/file-close-event/" class="toc-entry">Handle Pre and Post Close Notification</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/set-bom-quantity-unit-of-measure-property/" class="toc-entry">Set BOM Quantity (Unit Of Measure) Property In The Model</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/set-new-file-name/" class="toc-entry">Assign New File Name</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/suspend-graphics-update/" class="toc-entry">Suspend Graphics Update</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/suspend-rebuild/" class="toc-entry">Suspend Rebuild Operation</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/document/upgrade-cosmetic-threads/" class="toc-entry">Upgrade Cosmetic Threads</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n31Span, n31);">
+<span class="expbutton" id="n31Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/application/" class="toc-entry">Application</a>
+</div></li>
+<ul id="n31" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n32Span, n32);">
+<span class="expbutton" id="n32Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/application/add-ins/" class="toc-entry">Add-ins</a>
+</div></li>
+<ul id="n32" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/add-ins/load-unload/" class="toc-entry">Load/Unload Add-In</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/convert-to-fraction-inches/" class="toc-entry">Convert Meters To Fraction Inches</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n33Span, n33);">
+<span class="expbutton" id="n33Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/application/documents/" class="toc-entry">Documents</a>
+</div></li>
+<ul id="n33" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/documents/active-document-type/" class="toc-entry">Determine The Type Of Active Document</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/documents/bring-document-foreground/" class="toc-entry">Bring Document Foreground (Activate Document)</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/documents/handle-document-load/" class="toc-entry">Run Macro On Document Load</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/documents/handle-document-save/" class="toc-entry">Run Macro On Document Save</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/documents/handle-new-document/" class="toc-entry">Run Macro On New Document Creation</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/documents/save-all-silently/" class="toc-entry">Save All Documents Silently</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n34Span, n34);">
+<span class="expbutton" id="n34Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/application/frame/" class="toc-entry">Frame</a>
+</div></li>
+<ul id="n34" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/frame/capture-commands/" class="toc-entry">Capture SOLIDWORKS Commands</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/frame/close-all-documents-except-active/" class="toc-entry">Close All Documents Except Active</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/frame/long-command-completion-notifier/" class="toc-entry">Notify Long Running Command Completion</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/frame/run-macros-group/" class="toc-entry">Run Group Of Macros</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/frame/run-xpress-products/" class="toc-entry">Run Xpress Products</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/application/frame/user-progress-bar/" class="toc-entry">User Progress Bar</a>
+</div></li>
+
+</ul>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n35Span, n35);">
+<span class="expbutton" id="n35Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/" class="toc-entry">Data Storage</a>
+</div></li>
+<ul id="n35" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n36Span, n36);">
+<span class="expbutton" id="n36Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/attributes/" class="toc-entry">Attributes</a>
+</div></li>
+<ul id="n36" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/attributes/add-parameters-components/" class="toc-entry">Add Attributes With Parameters To Components And Read Values</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/attributes/create-invisible/" class="toc-entry">Create Invisible Attribute</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/attributes/select-associated-components/" class="toc-entry">Select The Components Associated With Attributes On Select</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n37Span, n37);">
+<span class="expbutton" id="n37Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/" class="toc-entry">Custom Properties</a>
+</div></li>
+<ul id="n37" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/copy-file-specific-to-configuration/" class="toc-entry">Copy File Specific Custom Properties To Configuration Properties</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/handle-events/" class="toc-entry">Handle Modification Events</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/read-all-properties/" class="toc-entry">Read All Properties</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/read-component-cutlist/" class="toc-entry">Read Component Cut-List Properties</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/read-summary-information/" class="toc-entry">Read Summary Information</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/rename-configurations-based-custom-property/" class="toc-entry">Rename Configurations Based On Custom Property</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/sort/" class="toc-entry">Sort Custom Properties</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/write-all-properties/" class="toc-entry">Write All Properties</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/custom-properties/write-summary-information/" class="toc-entry">Write Summary Information</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n38Span, n38);">
+<span class="expbutton" id="n38Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/third-party/" class="toc-entry">3rd Party Storage And Store</a>
+</div></li>
+<ul id="n38" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/third-party/custom-properties-revisions/" class="toc-entry">Save Custom Properties Revisions</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/third-party/embed-file/" class="toc-entry">Embed File In Third Party Store</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/data-storage/third-party/tree-structure-serialization/" class="toc-entry">Third Party Store Tree Serialization</a>
+</div></li>
+
+</ul>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n39Span, n39);">
+<span class="expbutton" id="n39Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/" class="toc-entry">Geometry</a>
+</div></li>
+<ul id="n39" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n40Span, n40);">
+<span class="expbutton" id="n40Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/primitives/" class="toc-entry">Primitives</a>
+</div></li>
+<ul id="n40" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/primitives/create-box-body/" class="toc-entry">Create Box Body</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/primitives/create-cylindrical-surface/" class="toc-entry">Create Temp Cylindrical Sheet Body</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/primitives/create-elliptical-sweep/" class="toc-entry">Create Elliptical Swept Temp Body</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/primitives/create-extruded-slot/" class="toc-entry">Create Extruded Slot Temp Body</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/primitives/create-spherical-surface/" class="toc-entry">Create Temp Spherical Sheet Body</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/primitives/create-toroidal-surface/" class="toc-entry">Create Temp Toroidal Sheet Body</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n41Span, n41);">
+<span class="expbutton" id="n41Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/transformation/" class="toc-entry">Transformation</a>
+</div></li>
+<ul id="n41" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/transformation/assembly-component-transformation/" class="toc-entry">Component Transformation In The Assembly</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/transformation/circular-pattern-data-rotational-transformation/" class="toc-entry">Create A Rotational Transformation Based On Circular Pattern Data</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/transformation/get-coordinate-system-transform/" class="toc-entry">Get Coordinate System Transformation</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/transformation/vector-normal-to-screen-view/" class="toc-entry">Create Vector Normal To Screen View</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/bodies-diff/" class="toc-entry">Part Geometry Diff</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/body-extreme-points/" class="toc-entry">Get Extreme Points On Body</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/body-rotate-animation/" class="toc-entry">Create Body Rotation Animation</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/create-bspline-curve/" class="toc-entry">Create B-Spline Curve</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/create-selectable-bounding-box/" class="toc-entry">Create Selectable Bounding Box</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/cylindrical-face-type/" class="toc-entry">Get Type Of Cylindrical Face</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/determine-hole-boss/" class="toc-entry">Determine If The Selected Face Is Hole Or Boss</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/face-iso-curves/" class="toc-entry">Create ISO Curves For Face</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/fill-hole/" class="toc-entry">Fill Hole</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/get-bounding-cylinder/" class="toc-entry">Get Body Bounding Cylinder</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/get-bspline-parameters/" class="toc-entry">Get B-Spline Parameters</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/get-face-center-parameters/" class="toc-entry">Get Face Center Parameters</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/offset-planar-wire-body/" class="toc-entry">Offset Planar Wire Body</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/precise-bounding-box/" class="toc-entry">Create Precise Bounding Box</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/read-body-from-file/" class="toc-entry">Read Body From File</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/reconstruct-spherical-surface/" class="toc-entry">Reconstruct Spherical Surface</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/save-body-to-file/" class="toc-entry">Save Body To File</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/selected-edge-create-sketch-points/" class="toc-entry">Create Sketch Points On Selected Edge</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/sheet-body-geometry-type/" class="toc-entry">Get The Sheet Body Geometry Type</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/slice-body/" class="toc-entry">Slice Body By Sections</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/split-body-by-faces/" class="toc-entry">Split Body By Faces</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/store-restore-body/" class="toc-entry">Store And Restore Body</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/surface-curve-intersection/" class="toc-entry">Find Intersection Points Between Surface And Curve</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/geometry/untrim-surface/" class="toc-entry">Create Untrimmed Surface</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n42Span, n42);">
+<span class="expbutton" id="n42Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/" class="toc-entry">Adornment</a>
+</div></li>
+<ul id="n42" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n43Span, n43);">
+<span class="expbutton" id="n43Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/callouts/" class="toc-entry">Callouts</a>
+</div></li>
+<ul id="n43" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/callouts/circular-edges-display-callouts/" class="toc-entry">Display Callouts With Diameters For All Selected Circular Edges</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/callouts/multiple-rows-callout/" class="toc-entry">Create Multiple Rows Callout</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n44Span, n44);">
+<span class="expbutton" id="n44Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/ole-objects/" class="toc-entry">OLE Objects</a>
+</div></li>
+<ul id="n44" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/ole-objects/move-design-table/" class="toc-entry">Move Design Table OLE Object</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n45Span, n45);">
+<span class="expbutton" id="n45Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/opengl/" class="toc-entry">OpenGL</a>
+</div></li>
+<ul id="n45" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/opengl/box-grid-transparency/" class="toc-entry">Render Box Grid With Transparency</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/opengl/display-mode-tetrahedron/" class="toc-entry">Render Tetrahedron And Handle View Display Modes</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/adornment/opengl/vbo-xaml-importer/" class="toc-entry">Import XAML File And Render Using VBO</a>
+</div></li>
+
+</ul>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n46Span, n46);">
+<span class="expbutton" id="n46Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/import-export/" class="toc-entry">Import/Export</a>
+</div></li>
+<ul id="n46" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/import-export/dwg-export-cleanup/" class="toc-entry">Export Flat Pattern With Cleanup</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/import-export/export-bodies/" class="toc-entry">Export Selected Bodies</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/import-export/export-ifc/" class="toc-entry">Export To IFC (2x3 and 4)</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/import-export/export-multi-formats/" class="toc-entry">Export To Multiple Formats</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/import-export/export-sheets-pdf/" class="toc-entry">Export Sheets To PDF</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/import-export/export-stl/" class="toc-entry">Export Part Or Component To STL</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n47Span, n47);">
+<span class="expbutton" id="n47Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/options/" class="toc-entry">Options</a>
+</div></li>
+<ul id="n47" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n48Span, n48);">
+<span class="expbutton" id="n48Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/options/application/" class="toc-entry">Application Options</a>
+</div></li>
+<ul id="n48" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/options/application/system-page-setup/" class="toc-entry">Change System Page Setup Options</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n49Span, n49);">
+<span class="expbutton" id="n49Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/options/document/" class="toc-entry">Document Options</a>
+</div></li>
+<ul id="n49" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/options/document/extract-all-options/" class="toc-entry">Export All Document Options To Excel</a>
+</div></li>
+
+</ul>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n50Span, n50);">
+<span class="expbutton" id="n50Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/deployment/" class="toc-entry">Deployment</a>
+</div></li>
+<ul id="n50" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n51Span, n51);">
+<span class="expbutton" id="n51Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/deployment/installer/" class="toc-entry">Installer</a>
+</div></li>
+<ul id="n51" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/deployment/installer/vsi/" class="toc-entry">Visual Studio Installer (VSI)</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/deployment/installer/wix/" class="toc-entry">Windows Installer XML (WiX)</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/deployment/manual/" class="toc-entry">Manual</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n52Span, n52);">
+<span class="expbutton" id="n52Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/motion-study/" class="toc-entry">Motion Study</a>
+</div></li>
+<ul id="n52" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/motion-study/animate-configurations/" class="toc-entry">Animate Configurations</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n53Span, n53);">
+<span class="expbutton" id="n53Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/" class="toc-entry">Troubleshooting</a>
+</div></li>
+<ul id="n53" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n54Span, n54);">
+<span class="expbutton" id="n54Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/addins/" class="toc-entry">Add-Ins Troubleshooting: Issues And Resolutions</a>
+</div></li>
+<ul id="n54" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/addins/sdk-installation/" class="toc-entry">Project templates are not shown in Visual Studio after the installation of SDK</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/addins/shared-library-conflict/" class="toc-entry">Add-ins which are using shared libraries cannot work together</a>
+</div></li>
+
+</ul>
+<li>
+<div class="tree-toc-node pointer" onclick="javascript:toggle(n55Span, n55);">
+<span class="expbutton" id="n55Span">▸</span>
+<span class="section"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/" class="toc-entry">Macros Troubleshooting: Issues And Resolutions</a>
+</div></li>
+<ul id="n55" class="toc-container collapse ">
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/32-windows-api-functions-incorrect-use/" class="toc-entry">Incorrect Use Of 32-bit Versions Of Windows API Functions</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/assembly-drawing-lightweight-components/" class="toc-entry">Lightweight Components In Assembly Or Drawing</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/connect-database-excel-error/" class="toc-entry">Failed to Connect To Database or Excel</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/create-sketch-segments-error/" class="toc-entry">Failed to Create Sketch Segments</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/future-version-apis/" class="toc-entry">Macro Is Using Future Version APIs</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/macro-multiple-entry-points/" class="toc-entry">Multiple Entry Points In The Macro</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/merged-macro-error/" class="toc-entry">Merged Macro Does Not Work</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/missing-com-component/" class="toc-entry">Missing COM Component</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/missing-solidworks-type-library-references/" class="toc-entry">Missing SOLIDWORKS Type Library References</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/model-title-inconsistency-displaying-extension/" class="toc-entry">Model Title Inconsistency Displaying Extension</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/preconditions-not-met/" class="toc-entry">Macro Preconditions Are Not Met</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/run-vsta-macro-error/" class="toc-entry">Failed to Run VSTA (C# or VB.NET) Macro</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/selection-inconsistency/" class="toc-entry">Selections are inconsistent in the macro</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/swb-macro-error/" class="toc-entry">SWBasic (*.swb) macro error</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/too-long-macro-path/" class="toc-entry">Too Long Macro Path</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/too-long-vba-macro-line/" class="toc-entry">Too Long VBA Macro Line</a>
+</div></li>
+<li>
+<div class="tree-toc-node pointer">
+<span class="article"></span>
+<a href="https://www.codestack.net/solidworks-api/troubleshooting/macros/vsta-invalid-namespace/" class="toc-entry">Invalid Namespace In VSTA (C# or VB.NET) Macro</a>
+</div></li>
+
+</ul>
+
+</ul>
+
+    </ul>
+</div>
+
+</div></div>
+    </div>
+    <script src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/solidworks-api.js.download" async=""></script>
+    <div class="layout-main">
+        <article class="post">
+            <header>
+                <h1 class="page-title">Open SOLIDWORKS assembly in quick view mode from Windows file explorer</h1>
+                <div style="text-align: right; vertical-align: middle">
+                        <a href="https://github.com/xarial/codestack/tree/master/solidworks-api/getting-started/scripts/vbscript/open-quick-view/index.md" class="edit-link-url">
+        <img width="24" height="24" class="edit-link-icon" alt="Edit Article" src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/edit-icon.svg"><span class="edit-link-text">Edit Article</span>
+    </a>
+
+                </div>
+                <div class="social-share-list">
+    <i>Share</i>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/" onclick="window.open(this.href, &#39;pop-up&#39;, &#39;left=20,top=20,width=900,height=500,toolbar=1,resizable=0&#39;); return false;" title="Share on LinkedIn">
+            <svg alt="Share on LinkedIn" class="social-share-link" fill="#0077B5" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="/_assets/images/social-share.svg#linkedin"></use>
+            </svg>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/" onclick="window.open(this.href, &#39;pop-up&#39;, &#39;left=20,top=20,width=900,height=500,toolbar=1,resizable=0&#39;); return false;" title="Share on Facebook" target="_blank">
+            <svg alt="Share on Facebook" class="social-share-link" fill="#1877F2">
+                <use xlink:href="/_assets/images/social-share.svg#facebook"></use>
+            </svg>
+        </a>
+        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/" onclick="window.open(this.href, &#39;pop-up&#39;, &#39;left=20,top=20,width=900,height=500,toolbar=1,resizable=0&#39;); return false;" title="Share on Pinterest" target="_blank">
+            <svg alt="Share on Pinterest" class="social-share-link" fill="#BD081C">
+                <use xlink:href="/_assets/images/social-share.svg#pinterest"></use>
+            </svg>
+        </a>
+        <a href="http://www.reddit.com/submit?url=https://www.codestack.net/solidworks-api/getting-started/scripts/vbscript/open-quick-view/" onclick="window.open(this.href, &#39;pop-up&#39;, &#39;left=20,top=20,width=900,height=500,toolbar=1,resizable=0&#39;); return false;" title="Share on Reddit" target="_blank">
+            <svg alt="Share on Reddit" class="social-share-link" fill="#FF4500">
+                <use xlink:href="/_assets/images/social-share.svg#reddit"></use>
+            </svg>
+        </a>
+</div>
+            </header>
+            <div>
+                <a href="https://www.codestack.net/solidworks-tools">More 'Goodies'</a>
+<hr>
+<br>
+<p></p><figure>
+   <a href="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/large-design-review-open.png" imageanchor="1">
+   <img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/large-design-review-open.png" width="450" alt="Opening large design review form SOLIDWORKS" class="responsive">
+   <figcaption>Opening large design review form SOLIDWORKS</figcaption>
+   </a>
+</figure><p></p>
+<p>SOLIDWORKS enables an option to open large assemblies or drawing in <a href="https://help.solidworks.com/2018/English/SolidWorks/sldworks/HIDD_DIALOG_LDR_WARNING.htm">Large Design Review</a> mode (aka Quick View). This allows to only load visual information of assembly and drawing and significantly improves the performance (large assembly usually opens in just few seconds instead minutes or even hours). Individual components can be later loaded on demand.</p>
+<p></p><figure>
+   <a href="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/large-design-review.png" imageanchor="1">
+   <img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/large-design-review.png" width="650" alt="Assembly opened in large design review mode" class="responsive">
+   <figcaption>Assembly opened in large design review mode</figcaption>
+   </a>
+</figure><p></p>
+<p>However this mode is not supported when opening documents from Windows File Explorer.</p>
+<p>The following guide explains how to enable Quick View mode directly from the Windows File Explorer.</p>
+<ul>
+<li>Create new folder which will contain the script to open the file in Quick View mode</li>
+<li>Create a text file with an extension of .vbs and name it <em>opener.vbs</em></li>
+<li>Paste the following code into this file</li>
+</ul>
+<p></p><div class="code-snippet-container">
+  <button class="snippet-btn" title="Edit Code Snippet" onclick="window.open(&#39;https://github.com/xarial/codestack/tree/master/solidworks-api/getting-started/scripts/vbscript/open-quick-view/opener.vbs&#39;,&#39;_blank&#39;)">
+    <img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/edit-icon.svg" alt="Edit Snippet" width="16px" height="16px">
+  </button>
+  <button class="snippet-btn copy-code-btn" title="Copy Code To Clipboard">
+    <img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/copy-code.svg" alt="Copy code to clipboard" width="16px" height="16px">
+  </button>
+  <pre class="code-snippet vbs "><span class="c13">Dim</span> swApp
+<span class="c13">Set</span> swApp = CreateObject(<span class="c11">"SldWorks.Application"</span>)
+swApp.Visible = <span class="c13">True</span>
+
+<span class="c13">Dim</span> filePath
+filePath = WScript.Arguments.Item(0)
+
+<span class="c13">If</span> filePath &lt;&gt; <span class="c11">""</span> <span class="c13">then</span>
+
+	<span class="c13">Dim</span> docSpec
+	<span class="c13">Set</span> docSpec = swApp.GetOpenDocSpec(filePath)
+	docSpec.ViewOnly = <span class="c13">True</span>
+
+	<span class="c13">Dim</span> swModel
+	<span class="c13">Set</span> swModel = swApp.OpenDoc7(docSpec)
+
+	<span class="c13">If</span> swModel <span class="c13">is</span> <span class="c13">Nothing</span> <span class="c13">Then</span>
+		MsgBox <span class="c11">"Failed to open document"</span>
+	<span class="c13">End</span> <span class="c13">If</span>
+	
+<span class="c13">Else</span>
+	MsgBox <span class="c11">"File path is not specified"</span>
+<span class="c13">End</span> <span class="c13">If</span>
+</pre>
+</div>
+
+<ul>
+<li>Create another text file and name it <em>install.cmd</em></li>
+<li>Add the following line into the <em>install.cmd</em> which will enable a Quick Mode for assemblies</li>
+</ul>
+<div class="code-snippet-container">
+  <button class="snippet-btn copy-code-btn" title="Copy Code To Clipboard">
+    <img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/copy-code.svg" alt="Copy code to clipboard" width="16px" height="16px">
+  </button>
+  <pre class="code-snippet bat ">reg add "HKCR\SldAssem.Document\shell\Quick View\command" /ve /d "wscript.exe """%~dp0opener.vbs""" ""%%1""" /f</pre>
+</div>
+<ul>
+<li>If you want to enable Quick View model for drawings, add the following line as well</li>
+</ul>
+<div class="code-snippet-container">
+  <button class="snippet-btn copy-code-btn" title="Copy Code To Clipboard">
+    <img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/copy-code.svg" alt="Copy code to clipboard" width="16px" height="16px">
+  </button>
+  <pre class="code-snippet bat ">reg add "HKCR\SldDraw.Document\shell\Quick View\command" /ve /d "wscript.exe """%~dp0opener.vbs""" ""%%1""" /f</pre>
+</div>
+<ul>
+<li>Save both files. It is important to keep those files in the same folder</li>
+</ul>
+<p></p><figure>
+   <a href="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/quick-view-files.png" imageanchor="1">
+   <img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/quick-view-files.png" width="250" alt="Files for enabling the quick mode from the Windows Explorer" class="responsive">
+   <figcaption>Files for enabling the quick mode from the Windows Explorer</figcaption>
+   </a>
+</figure><p></p>
+<ul>
+<li>Run <em>install.cmd</em>. You might need to run this as an administrator</li>
+</ul>
+<p>As the result the <em>Quick View</em> context menu command is added to the Windows File Explorer. Select any assembly and click right mouse button. Click Quick View and the file will be opened in the quick view mode in SOLIDWORKS:</p>
+<p></p><figure>
+   <a href="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/quick-view-context-menu.png" imageanchor="1">
+   <img src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/quick-view-context-menu.png" width="450" alt="Quick View context menu when assembly is selected" class="responsive">
+   <figcaption>Quick View context menu when assembly is selected</figcaption>
+   </a>
+</figure><p></p>
+<p>Watch <a href="https://youtu.be/9uZCecGg25I?t=12">video demonstration</a></p>
+            </div>
+            
+        </article>
+    </div>
+    <div class="layout-board">
+        <div class="notification-panel">
+<p class="notification-panel-title">Notifications</p>
+<div>
+<p>All articles and code at CodeStack are now open-source and hosted on <a href="https://github.com/xarial/codestack">GitHub</a>. If you want to contribute by modifying existing articles and code snippets, submitting new ones, reporting errors and bugs etc. please follow this <a href="https://blog.xarial.com/codestack-opensource/">blog post</a> for more information. We appreciate any contribution.</p>
+</div>
+</div>
+
+    </div>
+</div>
+
+<hr>
+<div class="foot">
+    <div class="foot-product">
+    <a href="https://xarial.com/"><img style="vertical-align:middle" src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/xarial-logo.svg" width="50px" alt="Product of Xarial"></a>
+    <span style="">Product of <a href="https://xarial.com/">Xarial</a></span>
+    </div>
+    <div class="foot-legal">
+        <center>
+            <div>
+    <div>© 2020 Xarial Pty Limited. All rights reserved.</div>
+    <span>
+            <a style="margin-left: 10px;margin-right: 10px;" href="https://www.codestack.net/terms-of-use/">Terms Of Use</a>
+            <a style="margin-left: 10px;margin-right: 10px;" href="https://www.codestack.net/privacy-policy/">Privacy</a>
+            <a style="margin-left: 10px;margin-right: 10px;" href="https://www.codestack.net/cookies-policy/">Cookies</a>
+    </span>
+</div>
+            <div style="margin-top: 10px;">Powered by <a href="https://docify.net/"><img style="vertical-align:middle" src="./Open SOLIDWORKS assembly in quick view mode from Windows file explorer_files/docify-icon.svg" height="20px" alt="Docify"></a></div>
+        </center>
+    </div>
+    <div class="foot-social">
+            <div class="social-links-list">
+            <a href="https://www.linkedin.com/company/xarial" title="LinkedIn">
+                <svg alt="LinkedIn" class="social-link" fill="#0077B5" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="/_assets/images/social-links.svg#linkedin"></use>
+                </svg>
+            </a>
+            <a href="https://github.com/xarial" title="GitHub">
+                <svg alt="GitHub" class="social-link" fill="#181717" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="/_assets/images/social-links.svg#github"></use>
+                </svg>
+            </a>
+            <a href="https://www.youtube.com/c/xarial" title="YouTube">
+                <svg alt="YouTube" class="social-link" fill="#FF0000" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="/_assets/images/social-links.svg#youtube"></use>
+                </svg>
+            </a>
+            <a href="https://www.nuget.org/profiles/Xarial" title="Nuget">
+                <svg alt="Nuget" class="social-link" fill="#004880" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="/_assets/images/social-links.svg#nuget"></use>
+                </svg>
+            </a>
+            <a href="https://www.codestack.net/feed.xml" title="RSS">
+                <svg alt="RSS" class="social-link" fill="#FFA500" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="/_assets/images/social-links.svg#rss"></use>
+                </svg>
+            </a>
+            <a href="mailto:info@xarial.com" title="e-mail">
+                <svg alt="e-mail" class="social-link" fill="#527dd5" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="/_assets/images/social-links.svg#email"></use>
+                </svg>
+            </a>
+    </div>
+    </div>
+</div>
+</body></html>

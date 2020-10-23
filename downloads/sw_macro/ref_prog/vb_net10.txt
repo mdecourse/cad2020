@@ -1,0 +1,15 @@
+‘Declare variables for the SOLIDWORKS application and the model in focus.
+Dim swApp As SldWorks.SldWorks
+Dim swModel As SldWorks.ModelDoc2
+
+Sub main()
+Set swApp = Application.SldWorks
+Set swModel = swApp.ActiveDoc
+
+‘Select the dimension.
+boolstatus = swModel.Extension.SelectByID2("D1@Sketch1", "swSelDIMENSIONS", 0, 0, 0, False, 0, Nothing, 0)
+
+‘Modify its value.
+swModel.Parameter("D1@Sketch1").SystemValue = "5"
+
+End Sub 

@@ -1,0 +1,11 @@
+Dim instance As ISldWorks
+Dim IncludeUnsaved As System.Boolean
+Dim value As System.Boolean
+ 
+value = instance.CloseAllDocuments(IncludeUnsaved)
+
+SwApp.RunMacro2("C:\MyMacro.swp", "Macro1", "main", SolidWorks.Interop.swconst.swRunMacroOption_e.swRunMacroDefault, err)
+
+Dim instance As ISldWorks
+ 
+instance.ExitApp()

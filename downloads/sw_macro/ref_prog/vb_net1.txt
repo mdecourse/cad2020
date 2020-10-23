@@ -1,0 +1,60 @@
+This example shows how to specify how to open an assembly document.
+
+'------------------------------------------------------
+' Preconditions: Verify that the specified assembly document
+' to open exists.
+'
+' Postconditions:
+' 1. If the Large Design Review dialog is displayed, click OK
+'    to close it.
+' 2. Opens the specified assembly document and loads
+'    and displays the specified component.
+' 3. Examine the graphics area.
+'
+' NOTE: Because the model is used elsewhere, do not save changes.
+'------------------------------------------------------
+Imports SolidWorks.Interop.sldworks
+Imports SolidWorks.Interop.swconst
+Imports System.Runtime.InteropServices
+Imports System
+ 
+Partial Class SolidWorksMacro
+ 
+    Public Sub main()
+        Dim swModel As ModelDoc2
+        Dim swDocSpecification As DocumentSpecification
+        Dim componentsArray(0) As String
+        Dim components() As Object
+        Dim name As String
+        Dim errors As Integer
+        Dim warnings As Integer
+ 
+        'Set the specifications
+        swDocSpecification = swApp.GetOpenDocSpec("C:\Users\Public\Documents\SOLIDWORKS\SOLIDWORKS 2017\tutorial\advdrawings\bowl and chute.sldasm")
+        componentsArray(0) = "food bowl-1@bowl and chute"
+        components = componentsArray
+        swDocSpecification.ComponentList = components
+        swDocSpecification.Selective = True
+        name = swDocSpecification.FileName
+        swDocSpecification.DocumentType = swDocumentTypes_e.swDocASSEMBLY
+        swDocSpecification.DisplayState = "Default_Display State-1"
+        swDocSpecification.UseLightWeightDefault = False
+        swDocSpecification.LightWeight = True
+        swDocSpecification.Silent = True
+        swDocSpecification.IgnoreHiddenComponents = True
+ 
+        'Open the assembly document as per the specifications
+        swModel = swApp.OpenDoc7(swDocSpecification)
+        errors = swDocSpecification.Error
+        warnings = swDocSpecification.Warning
+ 
+    End Sub
+ 
+ 
+    ''' <summary>
+    ''' The SldWorks swApp variable is pre-assigned for you.
+    ''' </summary>
+    Public swApp As SldWorks
+ 
+ 
+End Class

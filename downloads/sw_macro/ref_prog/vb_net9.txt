@@ -1,0 +1,173 @@
+This example shows how to copy components with mates in an assembly.
+
+'----------------------------------------------------------------------------
+' Preconditions:
+' 1. Open public_documents\samples\tutorial\driveworksxpress\mobile gantry.SLDASM.
+' 2. Inspect Leg<1> and Leg<2> in the assembly.
+'
+' Postconditions:
+' 1. Replaces Leg<1> with a copy of Leg<2>.
+' 2. Inspect Leg<2> and leg<3> in the assembly.
+'
+' NOTE: Because this assembly is used elsewhere, do not save changes.
+'----------------------------------------------------------------------------
+
+Imports SolidWorks.Interop.sldworks
+
+Imports System.Runtime.InteropServices
+
+ 
+
+Partial Class SolidWorksMacro
+
+ 
+
+    Sub main()
+
+ 
+
+        Dim swModel As ModelDoc2
+
+        Dim swModelDocExt As ModelDocExtension
+
+        Dim swSelMgr As SelectionMgr
+
+        Dim blRepeat(2) As Boolean
+
+        Dim blFlip(2) As Boolean
+
+        Dim SelectedComps As Object
+
+        Dim RepeatOptions As Object
+
+        Dim MateRefs As Object
+
+        Dim InpValues As Object
+
+        Dim FlipValues As Object
+
+        Dim swAssy As AssemblyDoc
+
+        Dim swItem As Component
+
+        Dim swFeature As Feature
+
+        Dim refPlane As RefPlane
+
+        Dim arrMateEntities(2) As Object
+
+        Dim arrCompsToCopy(0) As Object
+
+        Dim boolstatus As Boolean
+
+        Dim dValues(2) As Double
+
+ 
+
+        swModel = swApp.ActiveDoc
+
+        swAssy = swModel
+
+        swSelMgr = swModel.SelectionManager
+
+        swModelDocExt = swModel.Extension
+
+        boolstatus = swModelDocExt.SelectByID2("Leg-1@mobile gantry", "COMPONENT", 0, 0, 0, False, 0, Nothing, 0)
+
+        swModel.EditDelete()
+
+ 
+
+        swModel.ClearSelection2(True)
+
+ 
+
+        boolstatus = swModelDocExt.SelectByID2("Leg-2@mobile gantry", "COMPONENT", 0, 0, 0, False, 0, Nothing, 0)
+
+        swItem = CType(swSelMgr.GetSelectedObject6(1, -1), Component2)
+
+        arrCompsToCopy(0) = swItem
+
+        arrMateEntities(0) = Nothing
+
+        arrMateEntities(1) = Nothing
+
+        swModel.ClearSelection2(True)
+
+        boolstatus = swModelDocExt.SelectByID2("Left End@Universal Beam-1@mobile gantry", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
+
+        swFeature = CType(swSelMgr.GetSelectedObject6(1, -1), Feature)
+
+        refPlane = CType(swFeature.GetSpecificFeature2, RefPlane)
+
+        arrMateEntities(2) = refPlane
+
+ 
+
+        swModel.ClearSelection2(True)
+
+ 
+
+        blRepeat(0) = True
+
+        blRepeat(1) = True
+
+        blRepeat(2) = False
+
+        SelectedComps = arrCompsToCopy
+
+        RepeatOptions = blRepeat
+
+        MateRefs = arrMateEntities
+
+        dValues(0) = 0.0
+
+        dValues(1) = 0.0
+
+        dValues(2) = 0.0
+
+        InpValues = dValues
+
+        blFlip(0) = False
+
+        blFlip(1) = False
+
+        blFlip(2) = False
+
+        FlipValues = blFlip
+
+ 
+
+        Dim disparrCompsToCopy(0) As DispatchWrapper
+
+        disparrCompsToCopy(0) = New DispatchWrapper(arrCompsToCopy(0))
+
+ 
+
+        Dim dispMateRefs(2) As DispatchWrapper
+
+        dispMateRefs(0) = New DispatchWrapper(MateRefs(0))
+
+        dispMateRefs(1) = New DispatchWrapper(MateRefs(1))
+
+        dispMateRefs(2) = New DispatchWrapper(MateRefs(2))
+
+ 
+
+        'Repeat all mates except the coincident mate with "Right End@Universal Beam-1"
+
+        swAssy.CopyWithMates((disparrCompsToCopy), RepeatOptions, (dispMateRefs), InpValues, FlipValues)
+
+        swAssy.EditRebuild()
+
+ 
+
+    End Sub
+
+ 
+
+    Public swApp As SldWorks
+
+ 
+
+End Class
