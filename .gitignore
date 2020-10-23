@@ -5,7 +5,7 @@ __pycache__/
 # ignore SolidWorks temporary files
 ~$*.SLDPRT
 ~$*.SLDASM
-html/
+tmp_html/
 
 # C extensions
 *.so

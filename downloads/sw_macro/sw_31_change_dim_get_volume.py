@@ -122,7 +122,6 @@ html += "</table>"
 # save part.html
 with open("./html/part.html", "w", encoding="utf-8") as f:
      f.write(html)
-     
 
 app.ExitApp()
 
