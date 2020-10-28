@@ -1,0 +1,433 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CAD2020 Intro To Computer Aided Design</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CAD2020 電腦輔助設計實習</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CAD2020 電腦輔助設計實習</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='評分.html'>評分</a><li><a href='討論區.html'>討論區</a><li><a href='分組.html'>分組</a><li><a href='Python.html'>Python</a></li></ul><li class='has-children'><a href='Open Tech.html'>Open Tech</a><ul class='dropdown'><li class='has-children'><a href='Mechatronics.html'>Mechatronics</a><ul class='dropdown'><li><a href='PICsimlab.html'>PICsimlab</a><li><a href='UnoArduSim.html'>UnoArduSim</a></li></ul><li><a href='Cyber Tech.html'>Cyber Tech</a><li><a href='E-vehicle.html'>E-vehicle</a><li><a href='Composite Tech.html'>Composite Tech</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='Video.html'>Video</a><ul class='dropdown'><li><a href='W1Video.html'>W1Video</a><li><a href='W2Video.html'>W2Video</a><li><a href='W4Video.html'>W4Video</a><li><a href='W5Video.html'>W5Video</a><li><a href='W6Video.html'>W6Video</a></li></ul><li class='has-children'><a href='W1.html'>W1</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a><li><a href='HW1_API.html'>HW1_API</a></li></ul><li><a href='W2.html'>W2</a><li><a href='W3.html'>W3</a><li class='has-children'><a href='W4-W6.html'>W4-W6</a><ul class='dropdown'><li><a href='Engineering.html'>Engineering</a></li></ul><li class='has-children'><a href='W7-W9.html'>W7-W9</a><ul class='dropdown'><li><a href='HW2.html'>HW2</a><li><a href='W7.html'>W7</a><li><a href='HW3.html'>HW3</a></li></ul><li><a href='W10-W14.html'>W10-W14</a><li><a href='W15-W18.html'>W15-W18</a></li></ul><li class='has-children'><a href='CAD.html'>CAD</a><ul class='dropdown'><li class='has-children'><a href='設計創建.html'>設計創建</a><ul class='dropdown'><li><a href='Onshape.html'>Onshape</a><li><a href='Solidworks.html'>Solidworks</a><li><a href='Inventor.html'>Inventor</a><li><a href='NX.html'>NX</a></li></ul><li><a href='設計修改.html'>設計修改</a><li class='has-children'><a href='設計分析.html'>設計分析</a><ul class='dropdown'><li><a href='設計模擬.html'>設計模擬</a><li><a href='Sigmoid.html'>Sigmoid</a></li></ul><li><a href='設計最佳化.html'>設計最佳化</a></li></ul><li><a href='Solvespace.html'>Solvespace</a><li class='has-children'><a href='Projects.html'>Projects</a><ul class='dropdown'><li class='has-children'><a href='Robot.html'>Robot</a><ul class='dropdown'><li><a href='Simulator.html'>Simulator</a><li><a href='PyRep.html'>PyRep</a></li></ul><li class='has-children'><a href='Web.html'>Web</a><ul class='dropdown'><li><a href='Flutter-Flask.html'>Flutter-Flask</a></li></ul><li class='has-children'><a href='Glowscript.html'>Glowscript</a><ul class='dropdown'><li><a href='Rapydscript.html'>Rapydscript</a><li><a href='Atoms.html'>Atoms</a><li><a href='Samples.html'>Samples</a><li><a href='RLearning.html'>RLearning</a></li></ul><li><a href='Featurescript.html'>Featurescript</a><li class='has-children'><a href='Machine Learning.html'>Machine Learning</a><ul class='dropdown'><li><a href='Pytorch.html'>Pytorch</a><li><a href='Keras.html'>Keras</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">HW2 << <a href='HW2.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3<br /><h1>W7</h1>
+<p><span>準備進行電腦輔助設計分析主題練習.</span></p>
+<h4>利用 SciTE 編輯器類解譯 ANSI C 程式</h4>
+<p><a href="https://bellard.org/tcc/">https://bellard.org/tcc/</a> 是一個小型的 ANSI C 解譯器, 可以與隨身系統中的 SciTE 結合, 讓工程師利用 ANSI C 程式語言進行電腦輔助設計分析.</p>
+<p>進行步驟如下:</p>
+<p>1. 從 Tiny C 官方網站中的 <a href="http://download.savannah.gnu.org/releases/tinycc/">Download</a> 連結, 可以下載 <a href="http://download.savannah.gnu.org/releases/tinycc/tcc-0.9.27-win64-bin.zip">tcc-0.9.27-win64-bin.zip</a>, 解開壓縮檔案後的目錄為 tcc, 其中包含 tcc.exe, 可以用來編譯 ANSI C 程式, 這個目錄必須放在 y:\ 根目錄中.</p>
+<p>2. 接著必須將 y:\tcc\ 放入隨身系統中的 path 命令搜尋路徑中, 一旦啟動後就可以直接執行 tcc.exe, 也就是 start.bat 必須修改如下:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">set path_portablegit=%Disk%:\Portablegit\bin;
+set path_julia=%Disk%:\julia-1.5.2\bin;
+set path_tcc=%Disk%:\tcc\;
+
+path=%Disk%:;%path_python%;%path_portablegit%;%path_julia%;%path_tcc%;%path%;</pre>
+<p>在上面 start.bat 的設定中, 可以發現除了 portablegit 之外, 同時增加 path_julia 與 path_tcc 兩個批次檔變數的設定, 並且分別加到 path= 的設定中.</p>
+<p>完成後, 可以利用 stop.bat 關閉隨身系統後, 再使用 start.bat 重新啟動, 並在命令列中輸入 tcc, 若出現</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Tiny C Compiler 0.9.27 - Copyright (C) 2001-2006 Fabrice Bellard
+Usage: tcc [options...] [-o outfile] [-c] infile(s)...
+       tcc [options...] -run infile [arguments...]
+General options:
+  -c          compile only - generate an object file
+  -o outfile  set output filename
+  -run        run compiled source
+  -fflag      set or reset (with 'no-' prefix) 'flag' (see tcc -hh)
+  -Wwarning   set or reset (with 'no-' prefix) 'warning' (see tcc -hh)
+  -w          disable all warnings
+  -v -vv      show version, show search paths or loaded files
+  -h -hh      show this, show more help
+  -bench      show compilation statistics
+  -           use stdin pipe as infile
+  @listfile   read arguments from listfile
+Preprocessor options:
+  -Idir       add include path 'dir'
+  -Dsym[=val] define 'sym' with value 'val'
+  -Usym       undefine 'sym'
+  -E          preprocess only
+Linker options:
+  -Ldir       add library path 'dir'
+  -llib       link with dynamic or static library 'lib'
+  -r          generate (relocatable) object file
+  -shared     generate a shared library/dll
+  -rdynamic   export all global symbols to dynamic linker
+  -soname     set name for shared library to be used at runtime
+  -Wl,-opt[=val]  set linker option (see tcc -hh)
+Debugger options:
+  -g          generate runtime debug info
+  -b          compile with built-in memory and bounds checker (implies -g)
+  -bt N       show N callers in stack traces
+Misc. options:
+  -x[c|a|n]   specify type of the next infile
+  -nostdinc   do not use standard system include paths
+  -nostdlib   do not link with standard crt and libraries
+  -Bdir       set tcc's private include/library dir
+  -MD         generate dependency file for make
+  -MF file    specify dependency file name
+  -m32/64     defer to i386/x86_64 cross compiler
+Tools:
+  create library  : tcc -ar [rcsv] lib.a files
+  create def file : tcc -impdef lib.dll [-v] [-o lib.def]</pre>
+<p>表示啟動命令搜尋路徑已經包含 y:\tcc 目錄.</p>
+<p>3. 接下來必須修改 SciTE 編輯器中的 cpp.properties, 讓 Tools -&gt; Go 可以呼叫 tcc.exe 類解譯編輯器中副檔名為 .c 的 ANSI C 程式.</p>
+<p>作法為將滑鼠指向 SciTE 下拉式功能表 Options 往下點擊 Open cpp.properties 編輯設定檔案, 並且勾選 View -&gt; Line Number 在編輯器中顯示行號, 針對  476 行之後的設定修改如下:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ccopts=-pedantic -Os
+#cc=g++ $(ccopts) -c $(FileNameExt) -o $(FileName).o
+#ccc=gcc $(ccopts) -c $(FileNameExt) -o $(FileName).o
+cc=y:/tcc/tcc.exe -run
+ccc=y:/tcc/tcc.exe -run
+
+make.command=make
+command.compile.*.c=$(ccc) -std=c99
+command.build.*.c=$(make.command)
+command.build.*.h=$(make.command)
+command.clean.*.c=$(make.command) clean
+command.clean.*.h=$(make.command) clean
+command.go.*.c=$(cc) $(FileNameExt)
+#command.go.*.c=./$(FileName)
+# To make the Go command both compile (if needed) and execute, use this setting:</pre>
+<p><span>意即, 將原先 cc=g++ 與 ccc=gcc 改為利用 y:\tcc\tcc.exe -run 進行類解譯, 而且將原先必須經過編譯後以檔名執行的 command.go.*.c 設為直接利用 tcc.exe -run ex.c 的方式執行, 而 FileNameExt 就是帶有副檔名的程式名稱.</span></p>
+<p><span>4. 完成上述設定後, 可以在編輯器中納入 hello.c, 並且利用 Tools -&gt; Go 直接進行存檔並且執行.</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    printf("Hello, world!\n");
+    return 0;
+}</pre>
+<p>5. 接下來可以設法利用 ANSI C 練習一下 <a href="http://mde.tw/lab/content/Dart.html">http://mde.tw/lab/content/Dart.html</a> 中的數值分析運算, 利用 Runge-Kutta 解微分方程式. 為了能讓 C 解出的數值資料可以轉為圖檔, 並且允許加入中英文標註資料, 還必須下載 <a href="https://drive.google.com/file/d/1aKqP5F94XIVadTN-dwSKbKgyBoMuxNFm/view?usp=sharing">gnuplot.7z</a> 與 <a href="https://drive.google.com/file/d/1ZovnX2JmgjOLz90TscKHgmDJRQjMJSLp/view?usp=sharing">wqy-microhei.ttc</a>, 其中的 gunplot 目錄與 .ttc 中文字型檔案可以放在 y:\, 並且在 start.bat 加入 y:\gnuplot\bin 命令搜尋路徑, 而最新的 gnuplot 也可以從 <a href="http://www.gnuplot.info/">http://www.gnuplot.info/</a> 下載.</p>
+<p>6. 完成上述所有步驟設定後, 可以執行下列 ANSI C 程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Runge Kutta for a set of first order differential equations */
+ 
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+ 
+#define N 2 /* number of first order equations */
+#define dist 0.1 /* stepsize in t*/
+#define MAX 30.0 /* max for t */
+ 
+FILE *output; /* internal filename */
+FILE *output1; /* internal filename */
+// 利用 pipe 呼叫 gnuplot 繪圖
+FILE *pipe;
+ 
+void runge4(double x, double y[], double step); /* Runge-Kutta function */
+double f(double x, double y[], int i); /* function for derivatives */
+ 
+void main(){
+ 
+  double t, y[N];
+  int j;
+ 
+  output=fopen("osc.dat", "w"); /* external filename */
+  output1=fopen("osc1.dat", "w"); /* external filename */
+ 
+  y[0]=1.0; /* initial position */
+  y[1]=0.0; /* initial velocity */
+ 
+  //fprintf(output, "0\t%f\n", y[0]);
+ 
+  for (j=1; j*dist&lt;=MAX ;j++) /* time loop */{
+ 
+    t=j*dist;
+    runge4(t, y, dist);
+    fprintf(output, "%f\t%f\n", t, y[0]);
+    fprintf(output1, "%f\t%f\n", t, y[1]);
+  }
+ 
+  fclose(output);
+  fclose(output1);
+ 
+  pipe = popen("gnuplot -persist","w");
+  //fprintf(pipe,"set term png enhanced font \"v:/fireflysung.ttf\" 18 \n");
+  fprintf(pipe,"set term png enhanced font \"y:/wqy-microhei.ttc\" 18 \n");
+  //fprintf(pipe,"set yrange [68:70]\n");
+  fprintf(pipe,"set output \"test.png\"\n");
+  fprintf(pipe, "plot \"osc.dat\" title \"位移\" with lines, \"osc1.dat\" title \"速度\" with lines\n");
+  fprintf(pipe,"quit\n");
+
+  fprintf(pipe,"quit\n");
+  pclose(pipe);
+}
+ 
+void runge4(double x, double y[], double step){
+ 
+  double h=step/2.0, /* the midpoint */
+  t1[N], t2[N], t3[N], /* temporary storage arrays */
+  k1[N], k2[N], k3[N],k4[N]; /* for Runge-Kutta */
+  int i;
+ 
+  for (i=0;i&lt;N;i++){
+ 
+    t1[i]=y[i]+0.5*(k1[i]=step*f(x,y,i));
+  }
+ 
+  for (i=0;i&lt;N;i++){
+ 
+    t2[i]=y[i]+0.5*(k2[i]=step*f(x+h, t1, i));
+  }
+ 
+  for (i=0;i&lt;N;i++){
+ 
+    t3[i]=y[i]+ (k3[i]=step*f(x+h, t2, i));
+  }
+ 
+  for (i=0;i&lt;N;i++){
+ 
+    k4[i]= step*f(x+step, t3, i);
+  }
+ 
+  for (i=0;i&lt;N;i++){
+ 
+    y[i]+=(k1[i]+2*k2[i]+2*k3[i]+k4[i])/6.0;
+  }
+}
+ 
+double f(double x, double y[], int i){
+ 
+  if (i==0)
+    x=y[1]; /* derivative of first equation */
+  if (i==1)
+    x=-y[0]-0.5*y[1];
+  return x;
+}</pre>
+<p>上述所解的狀態方程式:</p>
+<p>質量為 1kg 物理, 以 k=1 彈簧與 b=0.5 阻尼器連接在固定牆壁, 起始拉開 1m, 速度為０ 時放開, 求放開質量後的運動模擬.</p>
+<p>$x(t)$ 表示質量拉開水平方向設為正向 x, 且為時間 t 的函式.</p>
+<p>$\ddot{x}+x+0.5*\dot{x}=0$</p>
+<p>$x(0)=1.0$</p>
+<p>$\dot{x}(0)=0$</p>
+<p>以下利用程式定義解題:</p>
+<p>$x=y[0]$</p>
+<p>$\dot{x}=y[1]$</p>
+<p>$\ddot{x}=-y[0]-0.5*y[1]$</p>
+<p>起始條件:</p>
+<p>$x(0)=1$</p>
+<p>$\dot{x}=0$</p>
+<p></p>
+<p>並產生數值運算結果:</p>
+<p><img alt="" class="add_border" height="450" src="./../images/w7_tcc_gnuplot_rk4_ex.png" width="600"/></p>
+<p>上述相同題目也可以 <a href="https://dartpad.github.io/?id=d5f46389a984bb511959c0f6b6d94d10">Dart 進行運算</a>.</p>
+<p>其他與 mass-spring-damper 動態分析有關議題請參考: <a href="http://www.sharetechnote.com/html/DE_Modeling_Example_SpringMass.html">http://www.sharetechnote.com/html/DE_Modeling_Example_SpringMass.html</a> </p>
+<p>上述各步驟完成後的所有新增設定與檔案:</p>
+<p><a href="https://drive.google.com/file/d/1BdAeRF8RmekFqeYp_4gVHV6Bmcej7buR/view?usp=sharing">cad2020_w7_tcc_gnuplot.7z</a></p>
+<p>接下來看看能否利用 Dart, Python 或 ANSI C 進行電腦輔助機構設計與分析.</p>
+<p><a href="/get_page/W7/mechanical_advantage_analysis.pdf">mechanical_advantage_analysis.pdf</a></p>
+<p><a href="./../downloads/2016_High_mechanical_advantage_design_of_six-bar_Stephe.pdf">2016_High_mechanical_advantage_design_of_six-bar_Stephe.pdf</a></p>
+<p><a href="./../downloads/2018_design_simulation_mechanism.pdf">2018_design_simulation_mechanism.pdf</a></p>
+<p>其他參考資料可以下載 <a href="https://drive.google.com/file/d/1uc8y1Kqb5NQ0kpJfoX6CcG1vEX9f18DE/view?usp=sharing">ANSI C, Python, V-rep, Robot and Mechanism.7z</a><span> </span>(for @gm users only) 後將 tcc 目錄放入 y:\tmp 中, 此檔案包含從 <a href="http://download.savannah.gnu.org/releases/tinycc/">http://download.savannah.gnu.org/releases/tinycc/</a> 下載的 Tiny C 程式原始碼, 可以利用下列 compile.bat 批次檔案, 利用舊版的 Tiny C 編譯出新版的 Tiny C 執行檔與程式庫.</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">echo Use TCC to compile TCC
+
+set /p VERSION= &lt; VERSION
+echo &gt; config.h #define TCC_VERSION "%VERSION%"
+
+ 
+echo Set CC=tcc
+ 
+set CC=tcc
+set target=-DTCC_TARGET_PE -DTCC_TARGET_X86_64
+set P=64
+ 
+echo tools: tiny_impdef.exe, tiny_libmaker.exe
+ 
+%CC% %target% win32/tools/tiny_impdef.c -o tiny_impdef.exe
+%CC% %target% win32/tools/tiny_libmaker.c -o tiny_libmaker.exe
+ 
+echo Compile libtcc.dll
+ 
+if not exist libtcc\nul mkdir libtcc
+%CC% %target% -w -shared -DLIBTCC_AS_DLL -DONE_SOURCE libtcc.c -o libtcc.dll
+tiny_impdef libtcc.dll -o libtcc/libtcc.def
+ 
+echo Compile tcc.exe
+ 
+%CC% %target% tcc.c -o tcc.exe -ltcc -Llibtcc
+ 
+echo Compile libcc1.a
+ 
+%CC% %target% -c lib/libtcc1.c
+%CC% %target% -c win32/lib/crt1.c
+%CC% %target% -c win32/lib/wincrt1.c
+%CC% %target% -c win32/lib/dllcrt1.c
+%CC% %target% -c win32/lib/dllmain.c
+%CC% %target% -c win32/lib/chkstk.S
+%CC% %target% -c lib/alloca86_64.S
+tiny_libmaker lib/libtcc1.a libtcc1.o alloca86_64.o crt1.o wincrt1.o dllcrt1.o dllmain.o chkstk.o</pre>
+<!-- 啟用 LaTeX equations 編輯 -->
+<script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$']]}
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><br />HW2 << <a href='HW2.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
