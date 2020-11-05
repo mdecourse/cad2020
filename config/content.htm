@@ -245,7 +245,12 @@ for i in range(10):
 <p><a href="https://drive.google.com/file/d/19QVaCumTfbYHrWR2zQQFxCiyyKfu3thv/view?usp=sharing">19aw7_how_to_self_compile_tinyC.mp4</a></p>
 <p style="padding-left: 30px;">說明只要從 <a href="http://download.savannah.gnu.org/releases/tinycc/">http://download.savannah.gnu.org/releases/tinycc/</a> 下載 tcc 原始碼, 並且在 win32 目錄下從 <a href="http://mde.tw/cad2020/downloads/tcc/win32/tools/tiny_impdef.c">http://mde.tw/cad2020/downloads/tcc/win32/tools/tiny_impdef.c</a> 與 <a href="http://mde.tw/cad2020/downloads/tcc/win32/tools/tiny_libmaker.c">http://mde.tw/cad2020/downloads/tcc/win32/tools/tiny_libmaker.c</a> 取下兩個 .c 並且放到 win32/tools 目錄下. (或從 <a href="https://github.com/LuaDist/tcc/tree/master/win32/tools">https://github.com/LuaDist/tcc/tree/master/win32/tools</a> 下載), 並且手動執行</p>
 <p style="padding-left: 30px;">tiny_impdef libtcc.dll -o libtcc.def</p>
-<p style="padding-left: 30px;">後將 libtcc.def 放入 libtcc 目錄中, 就可以順利以舊版的 Tiny C 編譯出新版的 Tiny C.</p><h2>W1</h2>
+<p style="padding-left: 30px;">後將 libtcc.def 放入 libtcc 目錄中, 就可以順利以舊版的 Tiny C 編譯出新版的 Tiny C.</p>
+<p><a href="https://drive.google.com/file/d/1vTBoZKsFcSQzTkIKX75PFzfGG00wFchz/view?usp=sharing">20aw8_tinyc_dll_pyslvs_altair_sympy_intro.mp4</a></p>
+<p style="padding-left: 30px;">說明如何利用 ANSI C 製作可以讓 Python 呼叫的動態程式庫, 分別接受整數輸入或浮點輸入版本</p>
+<p style="padding-left: 30px;">說明進行平面機構設計分析時, 可以利用 <a href="https://pyslvs.com">https://pyslvs.com</a> 中所提供的工具: <a href="https://github.com/KmolYuan/Pyslvs-UI">https://github.com/KmolYuan/Pyslvs-UI</a> </p>
+<p style="padding-left: 30px;">也可以透過 Sympy 模組解符號式或數值分析題目.</p>
+<p style="padding-left: 30px;">介紹 <a href="https://altairuniversity.com/free-altair-student-edition/,">https://altairuniversity.com/free-altair-student-edition/,</a> 可以透過學校配發的 @gm 帳號申請一年免費套件使用權限.</p><h2>W1</h2>
 <p>Notice: </p>
 <p style="padding-left: 30px;">四設二乙將在 <span>2020-09-25 (週五) </span></p>
 <p style="padding-left: 30px;"><span>下午4:20 – 下午7:10 </span>補 10/2 中秋節連假課程時段</p>
@@ -1188,6 +1193,16 @@ lib = ctypes.CDLL('.\multiply_float.dll')
 lib.multiply.restype = ctypes.c_float
 result = lib.multiply(ctypes.c_float(3.0), ctypes.c_float(2.0))
 print(result)</pre>
+<h4>平面機構設計分析:</h4>
+<p style="padding-left: 30px;"><a href="/downloads/DynamicsI.pdf">DynamicsI.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/DynamicsII.pdf">DynamicsII.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/2017_SOLVING MULTIBODY DYNAMICS PROBLEMS USING PYTHON.pdf">2017_SOLVING MULTIBODY DYNAMICS PROBLEMS USING PYTHON.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/2016_Bookmatter_FundamentalsOfMachineTheoryAnd.pdf">2016_Bookmatter_FundamentalsOfMachineTheoryAnd.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/Solvingaplanarfour-barlinkagesdesignproblem.pdf">Solvingaplanarfour-barlinkagesdesignproblem.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/A%20review of simple analytical methods for the kinematic synthesis of four-bar and slider-crank function generators for two and three prescribed finite positions.pdf">Fourbar_Lagrange_10.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/A%20review of simple analytical methods for the kinematic synthesis of four-bar and slider-crank function generators for two and three prescribed finite positions.pdf">A review of simple analytical methods for the kinematic synthesis of four-bar and slider-crank function generators for two and three prescribed finite positions.pdf</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/A%20review of simple analytical methods for the kinematic synthesis of four-bar and slider-crank function generators for two and three prescribed finite positions.pdf">https://www.moorepants.info/blog/npendulum.html </a></p>
+<p style="padding-left: 30px;"><a href="https://juliarobotics.org/RigidBodyDynamics.jl/dev/generated/3.%20Four-bar%20linkage/3.%20Four-bar%20linkage/">https://juliarobotics.org/RigidBodyDynamics.jl/dev/generated/3.%20Four-bar%20linkage/3.%20Four-bar%20linkage/</a> </p>
 <h4>Pyslvs_UI</h4>
 <p style="padding-left: 30px;"><a href="https://github.com/KmolYuan/Pyslvs-UI">https://github.com/KmolYuan/Pyslvs-UI</a> </p>
 <p style="padding-left: 30px;"><a href="http://www.pyslvs.com/">http://www.pyslvs.com/</a> </p>
@@ -1205,7 +1220,8 @@ print(result)</pre>
 <p style="padding-left: 30px;">以下為申請下載套件過程的系統回覆畫面:</p>
 <p style="padding-left: 30px;"><img alt="" class="add_border" src="/images/altair_student_ver2.png" width="600"/></p>
 <p style="padding-left: 30px;"><img alt="" class="add_border" src="/images/altair_student_ver3.png" width="600"/></p>
-<p style="padding-left: 30px;"><img alt="" class="add_border" src="/images/altair_student_ver4.png" width="600"/></p><h3>HW3</h3>
+<p style="padding-left: 30px;"><img alt="" class="add_border" src="/images/altair_student_ver4.png" width="600"/></p>
+<p style="padding-left: 30px;"><a href="https://altairuniversity.com/free-altair-student-edition/">https://altairuniversity.com/free-altair-student-edition/</a> </p><h3>HW3</h3>
 <p>請登入 @gm 帳號後下載 <a href="https://drive.google.com/file/d/1J-4l-NNlfPPZSuf2hBKadunYv36IkYQj/view?usp=sharing">cad2020_hw3.7z</a> (100MB)</p>
 <p>其中包含已經完成零組件繪圖的 <a href="https://www.robots.com/robots/kuka-kr-16">KUKA KR-16 Robot</a>:</p>
 <p><img caption="false" height="376" src="/images/sw_kuka_kr-16_robot.png" width="600"/></p>
