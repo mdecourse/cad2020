@@ -134,6 +134,49 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">W7 << <a href='W7.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3<br /><h1>W8</h1>
+<h4>利用 ANSI C 進行設計分析:</h4>
+<p style="padding-left: 30px;"><a href="./../downloads/ctutor.pdf">ctutor.pdf</a> (C Tutorial)</p>
+<p style="padding-left: 30px;"><a href="https://www.programiz.com/c-programming/examples/">https://www.programiz.com/c-programming/examples/</a> (C 程式範例)</p>
+<p style="padding-left: 30px;"><a href="http://mde.tw/cp2020/content/HW3.html">http://mde.tw/cp2020/content/HW3.html</a> (嘗試利用 Python, C 或 Dart 解題)</p>
+<h4>C 建立動態連結程式庫, 並與 Python 結合應用:</h4>
+<p>以整數資料結構串接 C 與 Python:</p>
+<p>tcc -w -shared -DLIBTCC_AS_DLL -DONE_SOURCE multiply.c -o multiply.dll</p>
+<p>multiply.c</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int multiply(int, int);
+ 
+__declspec(dllexport) int
+multiply(int num1, int num2)
+{
+return num1 * num2;
+}</pre>
+<p>multiply.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import ctypes
+ 
+lib = ctypes.CDLL('./multiply.dll')
+result = lib.multiply(3, 2)
+print(result)</pre>
+<p>以浮點數資料結構串接 C 與 Python:</p>
+<p>tcc -w -shared -DLIBTCC_AS_DLL -DONE_SOURCE multiply_float.c -o multiply_float.dll</p>
+<p>multiply_float.c</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+float multiply(float, float);
+ 
+__declspec(dllexport) float
+multiply(float num1, float num2)
+{
+return num1 * num2;
+}</pre>
+<p>multiply_float.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import ctypes
+
+lib = ctypes.CDLL('.\multiply_float.dll')
+# By default functions are assumed to return the C int type. Other return types can be specified by setting the restype attribute of the function object.
+lib.multiply.restype = ctypes.c_float
+result = lib.multiply(ctypes.c_float(3.0), ctypes.c_float(2.0))
+print(result)</pre>
 <h4>Pyslvs_UI</h4>
 <p style="padding-left: 30px;"><a href="https://github.com/KmolYuan/Pyslvs-UI">https://github.com/KmolYuan/Pyslvs-UI</a> </p>
 <p style="padding-left: 30px;"><a href="http://www.pyslvs.com/">http://www.pyslvs.com/</a> </p>
@@ -143,7 +186,15 @@ img.add_border {
 <p style="padding-left: 30px; text-align: center;"><img caption="false" class="add_border" height="291" src="./../images/planar_mechanism_ex1.png" width="300"/></p>
 <p style="padding-left: 30px;"><img alt="" height="434" src="./../images/planar_mechanism_ex1.gif" width="600"/></p>
 <p style="padding-left: 30px;"><a href="./../downloads/pyslvs_examples/one_slider_block_one_pin.pyslvs">one_slider_block_one_pin.pyslvs</a> (Pyslvs-UI V 20.10.0)</p>
-<p><a href="./../downloads/2018_Optimal Synthesis of Four-Bar Linkage Path Generation throughEvolutionary Computation with a Novel ConstraintHandling Technique.pdf">2018_Optimal Synthesis of Four-Bar Linkage Path Generation throughEvolutionary Computation with a Novel ConstraintHandling Technique.pdf</a></p><br />W7 << <a href='W7.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
+<p><a href="./../downloads/2018_Optimal Synthesis of Four-Bar Linkage Path Generation throughEvolutionary Computation with a Novel ConstraintHandling Technique.pdf">2018_Optimal Synthesis of Four-Bar Linkage Path Generation throughEvolutionary Computation with a Novel ConstraintHandling Technique.pdf</a></p>
+<h4>Altair Hyperworks student edition:</h4>
+<p style="padding-left: 30px;"><a href="https://altairuniversity.com/free-altair-student-edition/">https://altairuniversity.com/free-altair-student-edition/</a> </p>
+<p style="padding-left: 30px;">使用 @gm 進行註冊, 並提供電腦的網路卡 MAC Address 後, 可以取得一年免費的 Hyperworks 相關的程式套件安裝許可.</p>
+<p style="padding-left: 30px;">學生版免費 Altair 套件限制: <a href="https://altairuniversity.com/altair-student-edition-limitations/">https://altairuniversity.com/altair-student-edition-limitations/</a> </p>
+<p style="padding-left: 30px;">以下為申請下載套件過程的系統回覆畫面:</p>
+<p style="padding-left: 30px;"><img alt="" class="add_border" src="./../images/altair_student_ver2.png" width="600"/></p>
+<p style="padding-left: 30px;"><img alt="" class="add_border" src="./../images/altair_student_ver3.png" width="600"/></p>
+<p style="padding-left: 30px;"><img alt="" class="add_border" src="./../images/altair_student_ver4.png" width="600"/></p><br />W7 << <a href='W7.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
         
     <!-- footer -->
       <div class="container">
