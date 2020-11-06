@@ -133,11 +133,23 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Pytorch << <a href='Pytorch.html'>Previous</a> <br /><h1>Keras</h1>
-<p>Deep Learning Projects Using TensorFlow 2</p>
-<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-5802-6">https://link.springer.com/book/10.1007/978-1-4842-5802-6</a> </p>
-<p></p>
-<p></p><br />Pytorch << <a href='Pytorch.html'>Previous</a> </div>
+    <div id="tipue_search_content">Solvespace << <a href='Solvespace.html'>Previous</a> <a href='Extend Solvespace.html'>Next</a> >> Extend Solvespace<br /><h1>Compile Solvespace</h1>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/OHyeZz6XE8A" width="560"></iframe></p>
+<p>上列影片採用 <a href="https://www.msys2.org/">https://www.msys2.org/</a> 編譯 <a href="https://github.com/solvespace/solvespace">https://github.com/solvespace/solvespace</a> 原始碼.</p>
+<p>套件名稱帶有 mingw-w64-x86_64 表示用於 MinGW 64 bit 操作系統</p>
+<p>更新系統核心組件:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pacman -Syu</pre>
+<p>安裝基本 C/C++ 編譯與開發工具:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pacman -S mingw-w64-x86_64-toolchain</pre>
+<p>安裝 CMake</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pacman -S mingw-w64-x86_64-cmake</pre>
+<p><span class="style-scope yt-formatted-string" dir="auto">編譯之前必須 rename Y:\msys64\usr\bin\sh.exe</span></p>
+<p><span class="style-scope yt-formatted-string" dir="auto">接著就是 build solvespace.exe<br/><br/>可以將 y:\msys64\mingw64\binmingw32-make.exe 複製一份, 命名為 make.exe</span></p>
+<p><span class="style-scope yt-formatted-string" dir="auto">以 git clone --reucrse-submodules <a href="https://github.com/solvespace/solvespace.git">https://github.com/solvespace/solvespace.git</a> 取下原始碼與子模組.</span></p>
+<p><span class="style-scope yt-formatted-string" dir="auto">接下來進入倉儲後執行編譯:<br/><br/>編譯結束後, need libwinpthread-1.dll to execute solvespace.exe, <a href="https://drive.google.com/file/d/14Tl6uKOz6NS3gxXnoQeyyJ8GfW8bPwvn/view?usp=sharing">下載 solvespace_bin_kmol.7z</a><br/></span></p>
+<h4><span class="style-scope yt-formatted-string" dir="auto">編譯程式下載:</span></h4>
+<p><span class="style-scope yt-formatted-string" dir="auto">只下載 <a href="https://drive.google.com/file/d/18a8yJmn4T0wFbKRuHIzQrAlGA-y-eLEm/view?usp=sharing">msys64.7z</a></span></p>
+<p><span class="style-scope yt-formatted-string" dir="auto">下載 <a href="https://drive.google.com/file/d/1OoE87AzR0tAC05I9PJ0wwQ5hQl6qOhyj/view?usp=sharing">fall2020_v3.7z</a> (包含 Python 3.8 與 Msys2, 以及 Solvespace 原始碼)</span></p><br />Solvespace << <a href='Solvespace.html'>Previous</a> <a href='Extend Solvespace.html'>Next</a> >> Extend Solvespace</div>
         
     <!-- footer -->
       <div class="container">

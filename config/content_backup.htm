@@ -2941,10 +2941,11 @@ volume.run(1000, 50)</pre>
 <p>Parametric Dimension:</p>
 <p style="padding-left: 30px;"><a href="https://github.com/mdecourse/solvespace-w-var-dimension">https://github.com/mdecourse/solvespace-w-var-dimension</a> </p>
 <h4>Reference</h4>
-<p style="padding-left: 30px;"><a href="https://github.com/KmolYuan/Pyslvs-UI">https://github.com/KmolYuan/Pyslvs-UI</a></p>
-<h2>Compile Solvespace</h2>
+<p style="padding-left: 30px;"><a href="https://solvespace.com/tutorial.pl">https://solvespace.com/tutorial.pl</a> </p>
+<p style="padding-left: 30px;"><a href="http://www.farwire.net/SolveSpace-LearningGuide.htm">http://www.farwire.net/SolveSpace-LearningGuide.htm</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/KmolYuan/Pyslvs-UI">https://github.com/KmolYuan/Pyslvs-UI</a></p><h2>Compile Solvespace</h2>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/OHyeZz6XE8A" width="560"></iframe></p>
-<p><a href="https://www.msys2.org/">https://www.msys2.org/</a></p>
+<p>上列影片採用 <a href="https://www.msys2.org/">https://www.msys2.org/</a> 編譯 <a href="https://github.com/solvespace/solvespace">https://github.com/solvespace/solvespace</a> 原始碼.</p>
 <p>套件名稱帶有 mingw-w64-x86_64 表示用於 MinGW 64 bit 操作系統</p>
 <p>更新系統核心組件:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pacman -Syu</pre>
@@ -2953,15 +2954,11 @@ volume.run(1000, 50)</pre>
 <p>安裝 CMake</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pacman -S mingw-w64-x86_64-cmake</pre>
 <p><span class="style-scope yt-formatted-string" dir="auto">編譯之前必須 rename Y:\msys64\usr\bin\sh.exe</span></p>
-<p><span class="style-scope yt-formatted-string" dir="auto">接著就是 build solvespace.exe<br/><br/>use mingw64.exe<br/><br/>以 git clone --reucrse-submodules https://github.com/solvespace/solvesp... 取下原始碼與子模組.<br/>接下來進入倉儲後執行編譯:<br/></span></p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">cd solvespace
-mkdir build
-cd build
-cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
-make</pre>
-<p><span class="style-scope yt-formatted-string" dir="auto"><br/><br/><br/>編譯結束後, need libwinpthread-1.dll to execute solvespace.exe</span></p><h2>Extend Solvespace</h2>
-<p><a href="https://solvespace.com/forum.pl?action=viewthread&amp;parent=3248&amp;tt=1603186165">https://solvespace.com/forum.pl?action=viewthread&amp;parent=3248&amp;tt=1603186165</a> </p>
-<p><a href="https://github.com/solvespace/solvespace/blob/master/developer_docs/Solver_Transforms.txt">https://github.com/solvespace/solvespace/blob/master/developer_docs/Solver_Transforms.txt</a> </p><h1>Projects</h1>
+<p><span class="style-scope yt-formatted-string" dir="auto">接著就是 build solvespace.exe<br/><br/>可以將 y:\msys64\mingw64\binmingw32-make.exe 複製一份, 命名為 make.exe</span></p>
+<p><span class="style-scope yt-formatted-string" dir="auto">以 git clone --reucrse-submodules <a href="https://github.com/solvespace/solvespace.git">https://github.com/solvespace/solvespace.git</a> 取下原始碼與子模組.</span></p>
+<p><span class="style-scope yt-formatted-string" dir="auto">接下來進入倉儲後執行編譯:<br/><br/>編譯結束後, need libwinpthread-1.dll to execute solvespace.exe, <a href="https://drive.google.com/file/d/14Tl6uKOz6NS3gxXnoQeyyJ8GfW8bPwvn/view?usp=sharing">下載 solvespace_bin_kmol.7z</a><br/></span></p><h2>Extend Solvespace</h2>
+<p><a href="https://solvespace.com/forum.pl?action=viewthread&amp;parent=3248&amp;tt=1603186165">https://solvespace.com/forum.pl?action=viewthread&amp;parent=3248&amp;tt=1603186165</a></p>
+<p><a href="https://github.com/solvespace/solvespace/blob/master/developer_docs/Solver_Transforms.txt">https://github.com/solvespace/solvespace/blob/master/developer_docs/Solver_Transforms.txt</a></p><h1>Projects</h1>
 <p>各班分為四組, 每一組所完成的<a href="https://github.com/CoppeliaRobotics/models">虛擬機電資系統</a>所屬零組件, 必須分別利用 <a href="https://www.onshape.com/">Onshape</a>, <a href="https://blogs.sw.siemens.com/nx-design/">NX</a>12 與 <a href="https://www.solidworks.com/">Solidworks</a> 2017 建立後, 轉檔進入 <a href="https://www.coppeliarobotics.com/">CoppeliaSim </a>虛擬環境中, 並以部署在 <a href="https://www.heroku.com/">Heroku </a>中的網際 <a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">Python Remote API</a> 程式與 <a href="https://flutter.dev/">Flutter </a>手機程式進行控制.</p>
 <p>各分組的 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 系統模擬可在電腦輔助設計室中執行.</p>
 <h4>技術分組</h4>
