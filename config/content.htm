@@ -1097,6 +1097,48 @@ double f(double x, double y[], int i){
 <p></p>
 <p>並產生數值運算結果:</p>
 <p><img alt="" class="add_border" height="450" src="/images/w7_tcc_gnuplot_rk4_ex.png" width="600"/></p>
+<p>上述相同問題採 <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html">scipy.integrate.odeint</a> 解題:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+    
+def massspring(X, t):
+    x = X[0]
+    y = X[1]
+    dxdt = y
+    dydt = -x - 0.5*y
+    return [dxdt, dydt]
+
+# initial condition
+X0 = [1.0, 0.0]
+
+# time points
+t = np.linspace(0, 30, 200)
+
+# solve ODE
+sol = odeint(massspring, X0, t)
+
+# plot results
+x = sol[:, 0]
+y = sol[:, 1]
+
+plt.plot(t,x, t, y)
+plt.xlabel('t')
+plt.legend(('x', 'y'))
+plt.show()
+plt.savefig('massspring.png')
+
+# phase portrait
+plt.figure()
+plt.plot(x,y)
+plt.plot(x[0], y[0], 'ro')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+plt.savefig('massspring2.png')</pre>
+<p>結果如下:</p>
+<p><img alt="" class="add_border" height="450" src="/images/massspring.png" width="600"/></p>
+<p><img alt="" class="add_border" height="450" src="/images/massspring2.png" width="600"/></p>
 <p>上述相同題目也可以 <a href="https://dartpad.github.io/?id=d5f46389a984bb511959c0f6b6d94d10">Dart 進行運算</a> 或者使用 <a href="https://github.com/mdecourse/pydgq">https://github.com/mdecourse/pydgq</a> 程式庫解題.</p>
 <p>其他與 mass-spring-damper 動態分析有關議題請參考: <a href="http://www.sharetechnote.com/html/DE_Modeling_Example_SpringMass.html">http://www.sharetechnote.com/html/DE_Modeling_Example_SpringMass.html</a> </p>
 <p>上述各步驟完成後的所有新增設定與檔案:</p>
@@ -1145,7 +1187,7 @@ echo Compile libcc1.a
 tiny_libmaker lib/libtcc1.a libtcc1.o alloca86_64.o crt1.o wincrt1.o dllcrt1.o dllmain.o chkstk.o</pre>
 <!-- 啟用 LaTeX equations 編輯 -->
 <script>
-  MathJax = {
+MathJax = {
     tex: {inlineMath: [['$', '$']]}
   };
 </script>
