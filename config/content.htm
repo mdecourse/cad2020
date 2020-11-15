@@ -903,6 +903,7 @@ App.ActiveDocument.removeObject(helix.Name)</pre>
 <p style="padding-left: 30px;"><a href="/downloads/2006_textbook_intro_applied_digital_control.pdf">2006_textbook_intro_applied_digital_control.pdf</a></p>
 <p style="padding-left: 30px;"><a href="/downloads/2006_WAM_UsersGuide_AE-00.pdf">2006_WAM_UsersGuide_AE-00.pdf</a> (<a href="https://medical.barrett.com/about-1">https://medical.barrett.com/about-1</a>)</p>
 <p style="padding-left: 30px;"><a href="/downloads/matlab_tutorial.pdf">matlab_tutorial.pdf</a> (for the past) vs. <a href="/get_page/HW2/Julia_tutorialpdf">Julia_tutorialpdf</a>, <a href="/downloads/Julia-intro2.pdf">Julia-intro2.pdf</a>, <a href="/downloads/Julia_numerial_computing.pdf">Julia_numerial_computing.pdf</a> (for now and the future)</p><h3>W7</h3>
+<p>有關利用<a href="http://www.stochasticlifestyle.com/comparison-differential-equation-solver-suites-matlab-r-julia-python-c-fortran/">各種數值分析方法解微分方程式的比較</a>.</p>
 <p><span>準備進行電腦輔助設計分析主題練習.</span></p>
 <h4>利用 SciTE 編輯器類解譯 ANSI C 程式</h4>
 <p><a href="https://bellard.org/tcc/">https://bellard.org/tcc/</a> 是一個小型的 ANSI C 解譯器, 可以與隨身系統中的 SciTE 結合, 讓工程師利用 ANSI C 程式語言進行電腦輔助設計分析.</p>
@@ -1097,7 +1098,49 @@ double f(double x, double y[], int i){
 <p></p>
 <p>並產生數值運算結果:</p>
 <p><img alt="" class="add_border" height="450" src="/images/w7_tcc_gnuplot_rk4_ex.png" width="600"/></p>
-<p>上述相同題目也可以 <a href="https://dartpad.github.io/?id=d5f46389a984bb511959c0f6b6d94d10">Dart 進行運算</a>.</p>
+<p>上述相同問題採 <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html">scipy.integrate.odeint</a> 解題:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+    
+def massspring(X, t):
+    x = X[0]
+    y = X[1]
+    dxdt = y
+    dydt = -x - 0.5*y
+    return [dxdt, dydt]
+
+# initial condition
+X0 = [1.0, 0.0]
+
+# time points
+t = np.linspace(0, 30, 200)
+
+# solve ODE
+sol = odeint(massspring, X0, t)
+
+# plot results
+x = sol[:, 0]
+y = sol[:, 1]
+
+plt.plot(t,x, t, y)
+plt.xlabel('t')
+plt.legend(('x', 'y'))
+plt.show()
+plt.savefig('massspring.png')
+
+# phase portrait
+plt.figure()
+plt.plot(x,y)
+plt.plot(x[0], y[0], 'ro')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+plt.savefig('massspring2.png')</pre>
+<p>結果如下:</p>
+<p><img alt="" class="add_border" height="450" src="/images/massspring.png" width="600"/></p>
+<p><img alt="" class="add_border" height="450" src="/images/massspring2.png" width="600"/></p>
+<p>上述相同題目也可以 <a href="https://dartpad.github.io/?id=d5f46389a984bb511959c0f6b6d94d10">Dart 進行運算</a> 或者使用 <a href="https://github.com/mdecourse/pydgq">https://github.com/mdecourse/pydgq</a> 程式庫解題.</p>
 <p>其他與 mass-spring-damper 動態分析有關議題請參考: <a href="http://www.sharetechnote.com/html/DE_Modeling_Example_SpringMass.html">http://www.sharetechnote.com/html/DE_Modeling_Example_SpringMass.html</a> </p>
 <p>上述各步驟完成後的所有新增設定與檔案:</p>
 <p><a href="https://drive.google.com/file/d/1BdAeRF8RmekFqeYp_4gVHV6Bmcej7buR/view?usp=sharing">cad2020_w7_tcc_gnuplot.7z</a></p>
@@ -1145,7 +1188,7 @@ echo Compile libcc1.a
 tiny_libmaker lib/libtcc1.a libtcc1.o alloca86_64.o crt1.o wincrt1.o dllcrt1.o dllmain.o chkstk.o</pre>
 <!-- 啟用 LaTeX equations 編輯 -->
 <script>
-  MathJax = {
+MathJax = {
     tex: {inlineMath: [['$', '$']]}
   };
 </script>
