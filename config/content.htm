@@ -577,7 +577,7 @@ print(oDoc.ComponentDefinition.MassProperties.Volume)
 <h3>HW1_NX</h3>
 <p>針對 HW1 使用 NX12.0.2 教育版繪零件圖者, 可以利用下列 Python 程式修改零件參數, 取零件影像圖並計算零件體積:</p>
 <p>參考零件: <a href="/downloads/nx12/journal/block.part">block.part</a></p>
-<p><a href="http://c.kmol.info/index.html">NX12.0.2 NXOpen Python API Reference</a> (<a href="/downloads/nxopen_python_ref.7z">下載 nxopen_python_ref.7z</a>)</p>
+<p><a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html">NX12 NXOpen Python API Reference</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># nx_open_part.py
 # 導入 NXOpen
 import NXOpen
@@ -587,6 +587,7 @@ def main():
     # 取得目前開啟的工作階段
     theSession = NXOpen.Session.GetSession()
     theUfSession = NXOpen.UF.UFSession.GetUFSession()
+    
     # 建立 ListingWindow
     listWin= theSession.ListingWindow
     # 開啟零件檔案
@@ -608,10 +609,24 @@ def main():
     # initialize list to hold bodies
     theBodyTags = []
  
-    for x in theSession.Parts.Work.Bodies:
+    for x in workPart.Bodies:
         if x.IsSolidBody:
             theBodyTags.append(x.Tag)
- 
+    
+    # 準備輸出 ASCII 格式 STL 零件檔案
+    sTLCreator1 = theSession.DexManager.CreateStlCreator()
+    sTLCreator1.AutoNormalGen = True
+    sTLCreator1.ChordalTol = 0.08
+    sTLCreator1.AdjacencyTol = 0.08
+    sTLCreator1.OutputFile = "C:\\tmp\\block_ascii.stl"
+    # Binary STL: NXOpen.STLCreatorOutputTypeEnum.Binary
+    sTLCreator1.OutputType = NXOpen.STLCreatorOutputTypeEnum.Text
+    # 已知 body1 命名
+    body1 = workPart.Bodies.FindObject("EXTRUDE(2)")
+    added1 = sTLCreator1.ExportSelectionBlock.Add(body1)
+    nXObject1 = sTLCreator1.Commit()
+    sTLCreator1.Destroy()
+
     # 開啟所建立的 ListingWindow
     listWin.Open()
     listWin.WriteLine("number of solid bodies: " + str(len(theBodyTags)))
@@ -620,78 +635,13 @@ def main():
     listWin.WriteLine("units: kg, mm")
     listWin.WriteLine("surface area: " + str(massProps[0]))
     listWin.WriteLine("volume: " + str(massProps[1]*1E9))
-    '''
-    listWin.WriteLine(str(NXOpen.MeasureBodies.Volume))
-    myMeasure = theSession.Parts.Display.MeasureManager
-    massUnits1 = theSession.Parts.Display.UnitCollection.GetBase("Area")
-    massUnits2 = theSession.Parts.Display.UnitCollection.GetBase("Volume")
-    massUnits3 = theSession.Parts.Display.UnitCollection.GetBase("Mass")
-    massUnits4 = theSession.Parts.Display.UnitCollection.GetBase("Length")
-    massUnits = [massUnits1, massUnits2, massUnits3, massUnits4]
-    mb = myMeasure.NewMassProperties(massUnits, 0.99, theSession.Parts.Work.Bodies)
-    mb.InformationUnit = NXOpen.MeasureBodies.AnalysisUnit.KILOGRAMMILLIMETER 
-
-    listWin.WriteLine("volume: " + str(mb.Volume) + " mm^3")
-    '''
     # 在 ListingWindow 中寫入字串
     listWin.WriteLine("Hello, NXOpen")
     listWin.Close()
     
 if __name__ == "__main__":
     main()
-    
-'''
-https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/ugopen_doc/uf_modl/global.html#UF_MODL_ask_mass_props_3d
-import NXOpen
-import NXOpen.UF
- 
-theSession = NXOpen.Session.GetSession()
-theLw = theSession.ListingWindow
-theUfSession = NXOpen.UF.UFSession.GetUFSession()    
- 
-def main(): 
- 
-    workPart = theSession.Parts.Work
-    displayPart = theSession.Parts.Display
- 
-    markId1 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "mass props 3D")
-    theLw.Open()
- 
-    # initialize list to hold bodies
-    theBodyTags = []
- 
-    for x in theSession.Parts.Work.Bodies:
-        if x.IsSolidBody:
-            theBodyTags.append(x.Tag)
- 
-    # debug
-    theLw.WriteLine("number of solid bodies: " + str(len(theBodyTags)))
- 
-    #units: pound inch
-    (massProps, Stats) = theUfSession.Modeling.AskMassProps3d(theBodyTags, len(theBodyTags), 1, 1, .03, 1, [0.99,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0])
-    theLw.WriteLine("units: pound, inch")
-    theLw.WriteLine("surface area: " + str(massProps[0]))
-    theLw.WriteLine("volume: " + str(massProps[1]))
-    theLw.WriteLine("mass: " + str(massProps[2]))
-    theLw.WriteLine("center of mass (WCS): " + str(massProps[3]) + ", " + str(massProps[4]) + ", " + str(massProps[5]))
-    theLw.WriteLine("first moments (centroidal): " + str(massProps[6]) + ", " + str(massProps[7]) + ", " + str(massProps[8]))
-    theLw.WriteLine("moments of inertia (WCS): " + str(massProps[9]) + ", " + str(massProps[10]) + ", " + str(massProps[11]))
-    theLw.WriteLine("moments of inertia (centroidal): " + str(massProps[12]) + ", " + str(massProps[13]) + ", " + str(massProps[14]))
-    theLw.WriteLine("spherical moment of inertia: " + str(massProps[15]))
-    theLw.WriteLine("inertia products (WCS): " + str(massProps[16]) + ", " + str(massProps[17]) + ", " + str(massProps[18]))
-    theLw.WriteLine("inertia products (centroidal): " + str(massProps[19]) + ", " + str(massProps[20]) + ", " + str(massProps[21]))
-    theLw.WriteLine("prinicpal axes (WCS): [" + str(massProps[22]) + ", " + str(massProps[23]) + ", " + str(massProps[24]) + "] [" + str(massProps[25]) + ", " + str(massProps[26]) + ", " + str(massProps[27]) + "] [" + str(massProps[28]) + ", " + str(massProps[29]) + ", " + str(massProps[30]) + "]")
-    theLw.WriteLine("principal moments (centroidal): " + str(massProps[31]) + ", " + str(massProps[32]) + ", " + str(massProps[33]))
-    theLw.WriteLine("radii of gyration (WCS): " + str(massProps[34]) + ", " + str(massProps[35]) + ", " + str(massProps[36]))
-    theLw.WriteLine("radii of gyration (centroidal): " + str(massProps[37]) + ", " + str(massProps[38]) + ", " + str(massProps[39]))
-    theLw.WriteLine("spherical radius of gyration: " + str(massProps[40]))
-    theLw.WriteLine("density: " + str(massProps[46]))
- 
-    theLw.Close()
- 
-if __name__ == '__main__':
-    main()
-'''</pre>
+</pre>
 <p></p><h2>W2</h2>
 <p>所有學員各自利用 @gm 電子郵箱建立<span> </span><a href="https://github.com/">Github</a>,<span> </span><a href="https://gitlab.com">Gitlab,</a><span> </span><a href="https://www.heroku.com/">Heroku</a>,<span> </span><a href="https://www.onshape.com/">Onshape</a><span> </span>與<span> </span><a href="https://www.authorea.com/">Authorea</a><span> </span>帳號</p>
 <p style="padding-left: 30px;">Github: 各學員在學號帳號下建立 cad2020 倉儲.</p>
