@@ -135,18 +135,19 @@ img.add_border {
         </header>
     <div id="tipue_search_content">HW1_INV << <a href='HW1_INV.html'>Previous</a> <a href='W2.html'>Next</a> >> W2<br /><h1>HW1_NX</h1>
 <p>針對 HW1 使用 NX12.0.2 教育版繪零件圖者, 可以利用下列 Python 程式修改零件參數, 取零件影像圖並計算零件體積:</p>
-<p>參考零件: <a href="./../downloads/nx12/journal/block.part">block.part</a></p>
+<p>參考零件: <a href="./../downloads/nx12/journal/block.prt">block.prt</a></p>
 <p><a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/nxopen_python_ref/index.html">NX12 NXOpen Python API Reference</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># nx_open_part.py
 # 導入 NXOpen
 import NXOpen
 import NXOpen.UF
- 
+import NXOpen.Gateway
+  
 def main():
     # 取得目前開啟的工作階段
     theSession = NXOpen.Session.GetSession()
     theUfSession = NXOpen.UF.UFSession.GetUFSession()
-    
+     
     # 建立 ListingWindow
     listWin= theSession.ListingWindow
     # 開啟零件檔案
@@ -167,11 +168,11 @@ def main():
     #saveStatus1.Dispose()
     # initialize list to hold bodies
     theBodyTags = []
- 
+  
     for x in workPart.Bodies:
         if x.IsSolidBody:
             theBodyTags.append(x.Tag)
-    
+     
     # 準備輸出 ASCII 格式 STL 零件檔案
     sTLCreator1 = theSession.DexManager.CreateStlCreator()
     sTLCreator1.AutoNormalGen = True
@@ -185,11 +186,11 @@ def main():
     added1 = sTLCreator1.ExportSelectionBlock.Add(body1)
     nXObject1 = sTLCreator1.Commit()
     sTLCreator1.Destroy()
-
+ 
     # 開啟所建立的 ListingWindow
     listWin.Open()
     listWin.WriteLine("number of solid bodies: " + str(len(theBodyTags)))
- 
+  
     (massProps, Stats) = theUfSession.Modeling.AskMassProps3d(theBodyTags, len(theBodyTags), 1, 4, .03, 1, [0.99,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0])
     listWin.WriteLine("units: kg, mm")
     listWin.WriteLine("surface area: " + str(massProps[0]))
@@ -198,9 +199,31 @@ def main():
     listWin.WriteLine("Hello, NXOpen")
     listWin.Close()
     
+    # 將零件檔案 fit 之後, export 出 png 檔案
+    theUI = NXOpen.UI.GetUI()
+    imageExportBuilder1 = theUI.CreateImageExportBuilder()
+
+    custombackgroundcolor1 = [None] * 3 
+    custombackgroundcolor1[0] = 1.0
+    custombackgroundcolor1[1] = 1.0
+    custombackgroundcolor1[2] = 1.0
+
+    imageExportBuilder1.SetCustomBackgroundColor(custombackgroundcolor1)
+    imageExportBuilder1.FileFormat = NXOpen.Gateway.ImageExportBuilder.FileFormats.Png
+    imageExportBuilder1.FileName = "c:\\tmp\\block.png"
+
+    imageExportBuilder1.BackgroundOption = NXOpen.Gateway.ImageExportBuilder.BackgroundOptions.Original
+
+    imageExportBuilder1.EnhanceEdges = False
+    imageExportBuilder1.RegionMode = False
+    # fit view 後 commit export png
+    workPart.ModelingViews.WorkView.Fit()
+    nXObject6 = imageExportBuilder1.Commit()
+
+    imageExportBuilder1.Destroy()
+     
 if __name__ == "__main__":
-    main()
-</pre>
+    main()</pre>
 <p></p><br />HW1_INV << <a href='HW1_INV.html'>Previous</a> <a href='W2.html'>Next</a> >> W2</div>
         
     <!-- footer -->
