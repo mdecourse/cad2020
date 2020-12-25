@@ -1,0 +1,282 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CAD2020 Intro To Computer Aided Design</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CAD2020 電腦輔助設計實習</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CAD2020 電腦輔助設計實習</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='評分.html'>評分</a><li><a href='討論區.html'>討論區</a><li><a href='分組.html'>分組</a><li><a href='Python.html'>Python</a></li></ul><li class='has-children'><a href='Open Tech.html'>Open Tech</a><ul class='dropdown'><li class='has-children'><a href='Mechatronics.html'>Mechatronics</a><ul class='dropdown'><li><a href='PICsimlab.html'>PICsimlab</a><li><a href='UnoArduSim.html'>UnoArduSim</a></li></ul><li><a href='Cyber Tech.html'>Cyber Tech</a><li><a href='E-vehicle.html'>E-vehicle</a><li><a href='Composite Tech.html'>Composite Tech</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='Video.html'>Video</a><ul class='dropdown'><li><a href='W1Video.html'>W1Video</a><li><a href='W2Video.html'>W2Video</a><li><a href='W4Video.html'>W4Video</a><li><a href='W5Video.html'>W5Video</a><li><a href='W6Video.html'>W6Video</a><li><a href='W7Video.html'>W7Video</a><li><a href='W10Video.html'>W10Video</a><li><a href='W11Video.html'>W11Video</a><li><a href='W12Video.html'>W12Video</a><li><a href='W13Video.html'>W13Video</a></li></ul><li class='has-children'><a href='W1.html'>W1</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a><li><a href='HW1_SW.html'>HW1_SW</a><li><a href='HW1_INV.html'>HW1_INV</a><li><a href='HW1_NX.html'>HW1_NX</a></li></ul><li><a href='W2.html'>W2</a><li><a href='W3.html'>W3</a><li class='has-children'><a href='W4-W6.html'>W4-W6</a><ul class='dropdown'><li><a href='Engineering.html'>Engineering</a></li></ul><li class='has-children'><a href='W7-W9.html'>W7-W9</a><ul class='dropdown'><li><a href='HW2.html'>HW2</a><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a><li><a href='HW3.html'>HW3</a></li></ul><li class='has-children'><a href='W10-W14.html'>W10-W14</a><ul class='dropdown'><li><a href='CAD Project.html'>CAD Project</a><li><a href='Project Plan.html'>Project Plan</a><li><a href='CoppeliaSim.html'>CoppeliaSim</a></li></ul><li><a href='解救菜英文.html'>解救菜英文</a><li><a href='W15-W18.html'>W15-W18</a></li></ul><li class='has-children'><a href='CAD.html'>CAD</a><ul class='dropdown'><li class='has-children'><a href='設計創建.html'>設計創建</a><ul class='dropdown'><li><a href='Onshape.html'>Onshape</a><li><a href='Solidworks.html'>Solidworks</a><li><a href='Inventor.html'>Inventor</a><li><a href='NX.html'>NX</a></li></ul><li><a href='設計修改.html'>設計修改</a><li class='has-children'><a href='設計分析.html'>設計分析</a><ul class='dropdown'><li><a href='設計模擬.html'>設計模擬</a><li><a href='Sigmoid.html'>Sigmoid</a></li></ul><li><a href='設計最佳化.html'>設計最佳化</a></li></ul><li class='has-children'><a href='Solvespace.html'>Solvespace</a><ul class='dropdown'><li><a href='Solvespace Tutorial.html'>Solvespace Tutorial</a><li><a href='Compile Solvespace.html'>Compile Solvespace</a><li><a href='Extend Solvespace.html'>Extend Solvespace</a></li></ul><li class='has-children'><a href='FEM.html'>FEM</a><ul class='dropdown'><li class='has-children'><a href='Range3.html'>Range3</a><ul class='dropdown'><li><a href='Compile Range3.html'>Compile Range3</a></li></ul><li><a href='NGSolve.html'>NGSolve</a></li></ul><li class='has-children'><a href='Projects.html'>Projects</a><ul class='dropdown'><li class='has-children'><a href='Robot.html'>Robot</a><ul class='dropdown'><li><a href='Simulator.html'>Simulator</a><li><a href='PyRep.html'>PyRep</a></li></ul><li class='has-children'><a href='Web.html'>Web</a><ul class='dropdown'><li><a href='Flutter-Flask.html'>Flutter-Flask</a></li></ul><li class='has-children'><a href='Glowscript.html'>Glowscript</a><ul class='dropdown'><li><a href='Rapydscript.html'>Rapydscript</a><li><a href='Atoms.html'>Atoms</a><li><a href='Samples.html'>Samples</a><li><a href='RLearning.html'>RLearning</a></li></ul><li><a href='Featurescript.html'>Featurescript</a><li class='has-children'><a href='Machine Learning.html'>Machine Learning</a><ul class='dropdown'><li><a href='Pytorch.html'>Pytorch</a><li><a href='Keras.html'>Keras</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">設計模擬 << <a href='設計模擬.html'>Previous</a> <a href='設計最佳化.html'>Next</a> >> 設計最佳化<br /><h1>Sigmoid</h1>
+<p>A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve. A common example of a sigmoid function is the logistic function defined by the formula:</p>
+<p><a href="https://en.wikipedia.org/wiki/Logistic_function">Logistic Function</a>(邏輯函式):</p>
+<p>${ \large S(x) = \LARGE \frac{\mathrm{1}} {\mathrm{1} + e^{-x}}} $</p>
+<p>${\large \begin{align} \dfrac{d}{dx} S(x) &amp;= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] \\ &amp;= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} \\ &amp;= -(1 + e^{-x})^{-2}(-e^{-x}) \\ &amp;= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}} \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) \\ &amp;= S(x) \cdot (1 - S(x)) \end{align}}$</p>
+<p>另外一種對 Logistic function 微分的推導法:<br/> 因為 ${\Large f(x)=\dfrac{1}{S(x)} = 1+e^{-x} }$ <br/> 先對左邊的表示式微分可以得到:<br/> ${\Large f'(x) = \frac{d}{dx} \biggl( \frac{1}{S(x)} \biggr) = -\frac{S'(x)}{S(x)^2} }$ <br/> 接著再對右邊的表示式微分可以得到: <br/> ${\Large f'(x) = \frac{d}{dx} \bigl( 1+e^{-x} \bigr) = -e^{-x} = 1-f(x) = 1 - \frac{1}{S(x)} = \frac{S(x)-1}{S(x)} }$<br/>最後再將兩個式子合併整理一下, 就可以得到:</p>
+<p>${\large S'(x) = \dfrac{d}{dx} S(x) = S(x) \cdot (1 - S(x))}$</p>
+<p>假如使用 sympy 以符號式運算求 Logistic function 的微分式:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sympy
+
+x = sympy.Symbol('x')
+
+def f(x):
+    return 1/(1+sympy.exp(-x))
+
+def d(x):
+    return sympy.diff(f(x), x)
+
+print(d(x))
+
+# d(x) = exp(-x)/(1 + exp(-x))**2</pre>
+<p>已知從<a href="https://gist.github.com/Will-777/ad278c345639d24efb9d4cd275addbd2">這裡</a>可以利用 Python 加上 Matplotlib 畫出 Logistic function, 程式如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#import section
+from matplotlib import pylab
+import pylab as plt
+import numpy as np
+
+#sigmoid = lambda x: 1 / (1 + np.exp(-x))
+def sigmoid(x):
+    return (1 / (1 + np.exp(-x)))
+
+# generate an Array with value ???
+# linespace generate an array from start and stop value
+# with requested number of elements. Example 10 elements or 100 elements.
+# 
+x = plt.linspace(-10,10,10)
+y = plt.linspace(-10,10,100)
+
+# prepare the plot, associate the color r(ed) or b(lue) and the label 
+plt.plot(x, sigmoid(x), 'r', label='linspace(-10,10,10)')
+plt.plot(y, sigmoid(y), 'b', label='linspace(-10,10,100)')
+
+# Draw the grid line in background.
+plt.grid()
+
+# Title &amp; Subtitle
+plt.title('Sigmoid Function')
+plt.suptitle('Sigmoid')
+
+# place the legen boc in bottom right of the graph
+plt.legend(loc='lower right')
+
+# write the Sigmoid formula
+plt.text(4, 0.8, r'$\sigma(x)=\frac{1}{1+e^{-x}}$', fontsize=15)
+
+#resize the X and Y axes
+plt.gca().xaxis.set_major_locator(plt.MultipleLocator(1))
+plt.gca().yaxis.set_major_locator(plt.MultipleLocator(0.1))
+ 
+
+# plt.plot(x)
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+
+# create the graph
+plt.show()</pre>
+<p><img alt="" height="340" src="./../images/sigmoid_logical_function_plot.png" width="400"/></p>
+<p>利用 matplotlib 畫出上述手動推導與 Sympy 推導的 Logistic 函式與微分式圖:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import matplotlib.pyplot as plt
+import numpy as np
+
+def sigmoid(x):
+    s=1/(1+np.exp(-x))
+    #ds=s*(1-s)  
+    ds = np.exp(-x)/(1 + np.exp(-x))**2
+    return s,ds
+
+x=np.arange(-6,6,0.01)
+
+plt.plot(x,sigmoid(x)[0], color="#307EC7", linewidth=3, label="sigmoid")
+plt.plot(x,sigmoid(x)[1], color="#9621E2", linewidth=3, label="derivative")
+plt.legend(loc="center right", frameon=False)
+plt.show()</pre>
+<p><img alt="" height="340" src="./../images/logical_function_and_derivative.png" width="400"/></p>
+<p>以下可以直接利用 Javascript 或 <a href="https://brython.info/">Brython</a> 以 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Html5 Canvas</a> 直接在網頁中繪出 Logistic 函式圖?</p>
+<p><!-- 啟用 LaTeX equations 編輯 -->
+<script>
+MathJax = {
+    tex: {inlineMath: [['$', '$']]}
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</p>
+<p><a href="https://math.stackexchange.com/questions/78575/derivative-of-sigmoid-function-sigma-x-frac11e-x">參考資料</a></p>
+<p style="padding-left: 30px;"><a href="http://matt.might.net/articles/rendering-mathematical-functions-in-javascript-with-canvas-html/">http://matt.might.net/articles/rendering-mathematical-functions-in-javascript-with-canvas-html/</a> </p>
+<p style="padding-left: 30px;"><a href="https://eloquentjavascript.net/17_canvas.html">https://eloquentjavascript.net/17_canvas.html</a> </p>
+<p style="padding-left: 30px;"><a href="https://www.datasciencearth.com/en/symbolic-mathematics-operations-with-sympy/">https://www.datasciencearth.com/en/symbolic-mathematics-operations-with-sympy/</a> </p><br />設計模擬 << <a href='設計模擬.html'>Previous</a> <a href='設計最佳化.html'>Next</a> >> 設計最佳化</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

@@ -1,0 +1,341 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CAD2020 Intro To Computer Aided Design</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CAD2020 電腦輔助設計實習</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CAD2020 電腦輔助設計實習</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='評分.html'>評分</a><li><a href='討論區.html'>討論區</a><li><a href='分組.html'>分組</a><li><a href='Python.html'>Python</a></li></ul><li class='has-children'><a href='Open Tech.html'>Open Tech</a><ul class='dropdown'><li class='has-children'><a href='Mechatronics.html'>Mechatronics</a><ul class='dropdown'><li><a href='PICsimlab.html'>PICsimlab</a><li><a href='UnoArduSim.html'>UnoArduSim</a></li></ul><li><a href='Cyber Tech.html'>Cyber Tech</a><li><a href='E-vehicle.html'>E-vehicle</a><li><a href='Composite Tech.html'>Composite Tech</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='Video.html'>Video</a><ul class='dropdown'><li><a href='W1Video.html'>W1Video</a><li><a href='W2Video.html'>W2Video</a><li><a href='W4Video.html'>W4Video</a><li><a href='W5Video.html'>W5Video</a><li><a href='W6Video.html'>W6Video</a><li><a href='W7Video.html'>W7Video</a><li><a href='W10Video.html'>W10Video</a><li><a href='W11Video.html'>W11Video</a><li><a href='W12Video.html'>W12Video</a><li><a href='W13Video.html'>W13Video</a></li></ul><li class='has-children'><a href='W1.html'>W1</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a><li><a href='HW1_SW.html'>HW1_SW</a><li><a href='HW1_INV.html'>HW1_INV</a><li><a href='HW1_NX.html'>HW1_NX</a></li></ul><li><a href='W2.html'>W2</a><li><a href='W3.html'>W3</a><li class='has-children'><a href='W4-W6.html'>W4-W6</a><ul class='dropdown'><li><a href='Engineering.html'>Engineering</a></li></ul><li class='has-children'><a href='W7-W9.html'>W7-W9</a><ul class='dropdown'><li><a href='HW2.html'>HW2</a><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a><li><a href='HW3.html'>HW3</a></li></ul><li class='has-children'><a href='W10-W14.html'>W10-W14</a><ul class='dropdown'><li><a href='CAD Project.html'>CAD Project</a><li><a href='Project Plan.html'>Project Plan</a><li><a href='CoppeliaSim.html'>CoppeliaSim</a></li></ul><li><a href='解救菜英文.html'>解救菜英文</a><li><a href='W15-W18.html'>W15-W18</a></li></ul><li class='has-children'><a href='CAD.html'>CAD</a><ul class='dropdown'><li class='has-children'><a href='設計創建.html'>設計創建</a><ul class='dropdown'><li><a href='Onshape.html'>Onshape</a><li><a href='Solidworks.html'>Solidworks</a><li><a href='Inventor.html'>Inventor</a><li><a href='NX.html'>NX</a></li></ul><li><a href='設計修改.html'>設計修改</a><li class='has-children'><a href='設計分析.html'>設計分析</a><ul class='dropdown'><li><a href='設計模擬.html'>設計模擬</a><li><a href='Sigmoid.html'>Sigmoid</a></li></ul><li><a href='設計最佳化.html'>設計最佳化</a></li></ul><li class='has-children'><a href='Solvespace.html'>Solvespace</a><ul class='dropdown'><li><a href='Solvespace Tutorial.html'>Solvespace Tutorial</a><li><a href='Compile Solvespace.html'>Compile Solvespace</a><li><a href='Extend Solvespace.html'>Extend Solvespace</a></li></ul><li class='has-children'><a href='FEM.html'>FEM</a><ul class='dropdown'><li class='has-children'><a href='Range3.html'>Range3</a><ul class='dropdown'><li><a href='Compile Range3.html'>Compile Range3</a></li></ul><li><a href='NGSolve.html'>NGSolve</a></li></ul><li class='has-children'><a href='Projects.html'>Projects</a><ul class='dropdown'><li class='has-children'><a href='Robot.html'>Robot</a><ul class='dropdown'><li><a href='Simulator.html'>Simulator</a><li><a href='PyRep.html'>PyRep</a></li></ul><li class='has-children'><a href='Web.html'>Web</a><ul class='dropdown'><li><a href='Flutter-Flask.html'>Flutter-Flask</a></li></ul><li class='has-children'><a href='Glowscript.html'>Glowscript</a><ul class='dropdown'><li><a href='Rapydscript.html'>Rapydscript</a><li><a href='Atoms.html'>Atoms</a><li><a href='Samples.html'>Samples</a><li><a href='RLearning.html'>RLearning</a></li></ul><li><a href='Featurescript.html'>Featurescript</a><li class='has-children'><a href='Machine Learning.html'>Machine Learning</a><ul class='dropdown'><li><a href='Pytorch.html'>Pytorch</a><li><a href='Keras.html'>Keras</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">W3 << <a href='W3.html'>Previous</a> <a href='Engineering.html'>Next</a> >> Engineering<br /><h1>W4-W6</h1>
+<p>個人網站參考: <a href="https://sookrajcreations.weebly.com/">https://sookrajcreations.weebly.com/</a> </p>
+<p><a href="https://drive.google.com/file/d/1BriLqVdlevBRRpGvJA23UsoCWjFSDOr5/view?usp=sharing">2018_Robot_Design_for_Everyone.pdf</a></p>
+<p><a href="./../downloads/Kinematic analysis and synthesis of four-bar mechanisms for straight line coupler curves.pdf">Kinematic analysis and synthesis of four-bar mechanisms for straight line coupler curves.pdf</a></p>
+<p><span>利用</span><span><span> </span></span><a href="https://www.debugmode.com/wink/">Wink3</a><span><span> </span>建立電腦操作流程導引影片. 下載</span><span><span> </span></span><a href="https://drive.google.com/file/d/1JI4i_gtMiMbALBZhiGVqqe9VM4cHt8U7/view?usp=sharing">Wink3.7z</a></p>
+<p><a href="./../downloads/NX_for_Mechanical_Design.pdf">NX_for_Mechanical_Design.pdf</a></p>
+<p><a href="./../downloads/2013_web_based_customized Design.pdf">2013 Web based Customized Design.pdf</a></p>
+<p><a href="./../downloads/2014_Automatic Offline Program Generation for a Robotic Spot Welding Assembly Line.pdf">2014_Automatic Offline Program Generation for a Robotic Spot Welding Assembly Line.pdf</a></p>
+<p><a href="./../downloads/2019_Custom Design and Analysis of Modular High Voltage DC Generator.pdf">2019_Custom Design and Analysis of Modular High Voltage DC Generator.pdf</a> (<a href="https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2623213">來源</a>)</p>
+<p><a href="./../downloads/2020_Design of a KBE system for automatic weld path definition in CAD.pdf">2020_Design of a KBE system for automatic weld path definition in CAD.pdf</a></p>
+<p>登入 @gm 擷取 <a href="https://drive.google.com/drive/folders/1XToLcxBbWmdClSDMmbCj6oDjhec5kQM_?usp=sharing">NX Tutorial Video</a></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/cL8RSB-dvxU" width="560"></iframe></p>
+<p style="padding-left: 30px;">說明之後的版本都將稱為 NX 不會有 NX13</p>
+<p style="padding-left: 30px;">之後每個月都會有更新, 每半年會有一個大更新, 類似 Windows 10</p>
+<p style="padding-left: 30px;">當採特定 Schema 大更新之後所建立的零組件將無法用先前的舊版本開啟</p>
+<p style="padding-left: 30px;">零組件可以透過 nx12\NXBIN\part_security.exe 設定密碼保護</p>
+<p style="padding-left: 60px;">part_security -encrypt -p=test safe.txt safe.psf</p>
+<p style="padding-left: 90px;">將 safe.txt 以 test 密碼保護存為 safe.psf</p>
+<p style="padding-left: 60px;">part_security -genkeys -public=NX_public.key -private=NX_private.key</p>
+<p style="padding-left: 90px;">建立公鑰與私鑰</p>
+<p style="padding-left: 60px;">part_security -recover -private=NX_private.key -part=model1.part</p>
+<p style="padding-left: 30px;">利用新版 NX 開啟舊零組件後, 可以使用 renew feature 重建特徵</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/_RVVpawiWzY" width="560"></iframe></p>
+<p style="padding-left: 30px;">N12 功能介紹:</p>
+<p style="padding-left: 60px;">Variable offset face</p>
+<p style="padding-left: 60px;">Combine</p>
+<p style="padding-left: 60px;">Flattening and Forming</p>
+<p style="padding-left: 60px;">Latitce enhancements</p>
+<p style="padding-left: 60px;">Delete child features enhancements</p>
+<p style="padding-left: 60px;">Analyze pocket/Blend pocket enhancements</p>
+<p style="padding-left: 60px;">Sheet metal Tab/Flange enhancements</p>
+<p style="padding-left: 60px;">Layout/Animation Designer</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/l9Lq3D4AMAQ" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/0ZITvDSfKac" width="560"></iframe></p>
+<p><a href="https://github.com/mdecourse/Siemens-NXOpen-API">https://github.com/mdecourse/Siemens-NXOpen-API</a> </p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/jS9nY9rHLMk" width="560"></iframe></p>
+<p style="padding-left: 30px;"><a href="https://github.com/williamhunter/topy">https://github.com/williamhunter/topy</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/ISosnovik/top">https://github.com/ISosnovik/top</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/zfergus/topopt">https://github.com/zfergus/topopt</a> </p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/8_qayHIfn-I" width="560"></iframe></p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/Siemens-NXOpen-API">https://github.com/mdecourse/Siemens-NXOpen-API</a> </p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/HSZ0kjAF-NU" width="560"></iframe></p>
+<p><a href="./../downloads/Synthesis and Analysis of a Novel Linkage Mechanism with the Helical Motion of the End-Effector.pdf">Synthesis and Analysis of a Novel Linkage Mechanism with the Helical Motion of the End-Effector.pdf</a></p>
+<p><a href="./../downloads/The A-Design Invention Machine.pdf">The A-Design Invention Machine.pdf</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/BondGraphTools">https://github.com/mdecourse/BondGraphTools</a></p>
+<p style="padding-left: 60px;"><a href="https://bondgraphtools.readthedocs.io/">https://bondgraphtools.readthedocs.io/</a> </p>
+<p style="padding-left: 30px;"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=4140745">Bond Graph Modeling</a></p>
+<p style="padding-left: 30px;"><a href="https://www.gawthrop.net/Books/GawSmi96.pdf">Metamodeling.pdf</a></p>
+<p style="padding-left: 30px;"><a href="./../downloads/2017_BOND_GRAPH_ANALYSIS_IN_ROBUST_ENGINEERING_DESIGN.pdf">2017_BOND_GRAPH_ANALYSIS_IN_ROBUST_ENGINEERING_DESIGN.pdf</a></p>
+<p style="padding-left: 30px;"><a href="./../downloads/2014_A Bond Graph Approach for Modelling Systems of Rigid Bodies in Spatial Motion.pdf">2014_A Bond Graph Approach for Modelling Systems of Rigid Bodies in Spatial Motion.pdf</a></p>
+<p style="padding-left: 30px;"><a href="https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/ompython.html">https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/ompython.html</a> </p>
+<p style="padding-left: 60px;"><a href="https://github.com/pymoca/pymoca">https://github.com/pymoca/pymoca</a> </p>
+<p><a href="https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/computational_physics/docs/computational_physics.pdf">Computational Physics - problem solving with computer.pdf</a></p>
+<p><a href="http://www.fizika.unios.hr/rf/wp-content/uploads/sites/67/2011/02/CPwP.pdf">Computational Physics with Python.pdf</a></p>
+<p><span><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> on <a href="https://www.heroku.com/">Heroku</a> 與 <a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">CoppeliaSim Remote API</a> 程式編寫</span></p>
+<p style="padding-left: 30px;">製作可攜 CoppeliaSim for Windows 10 (登入 @gm 下載 <a href="https://drive.google.com/file/d/1sXn_SwXLc9ZHp_TWC2KxoxFiXy7d75t4/view?usp=sharing">CoppeliaSim 4.1.0 rev1.7z</a>)</p>
+<p style="padding-left: 30px;">假如要在 Ubuntu 20.04 實體伺服器上執行, 則必須使用 <a href="https://drive.google.com/file/d/1kQrPpvmjXWl_BAUNBWwqNOIOdiPKTPwH/view?usp=sharing">V-REP_PRO_EDU_3.6.1.7z</a> (Windows 10 64 位元版), <a href="https://drive.google.com/file/d/14xyOXc157XIOtQoxxtu5VKd_JnY1_1nm/view?usp=sharing">V-REP_PRO_EDU_V3_6_1_Ubuntu18_04.tar.xz</a> (for @gm users only)</p>
+<p style="padding-left: 30px;"><a href="./../downloads/introduction_to_vrep.pdf">Introduction to V-rep.pdf</a></p>
+<p style="padding-left: 30px;"><a href="https://www.tutorialspoint.com/essentials_of_unix_operating_system/index.asp">Linux 教學影片</a></p>
+<p style="padding-left: 30px;">登入 @gm<span> </span><a href="https://drive.google.com/file/d/1itKaIPSdIRZQ-qiLkUpxEPOLzSpP3eNY/view?usp=sharing">下載 Heroku cli 可攜.7z</a>, 解開壓縮檔案後, 在 start.bat 中將 Heroku bin 設定指令搜尋路徑, 重新啟動後, 以 heroku version 確定指令可以正常執行後, heroku login 成功後, 登入帳號密碼會存入 home/_netrc 中. 之後便可直接透過 heroku cli 指令直接對遠端主機下命令.</p>
+<p><a href="./../downloads/web_vrep2">web_vrep2.7z</a> (Flask 網際程式控制 CoppeliaSim 中的二輪車)</p>
+<p><a href="https://www.coppeliarobotics.com/helpFiles/">https://www.coppeliarobotics.com/helpFiles/</a> </p>
+<p><a href="https://www.twblogs.net/u/5d3f8d75bd9eee51fbf9311d">https://www.twblogs.net/u/5d3f8d75bd9eee51fbf9311d</a> </p>
+<p><a href="https://github.com/mdecourse/good_robot">https://github.com/mdecourse/good_robot</a> </p>
+<p><a href="https://github.com/mdecourse/BaxterHello_V-REP">https://github.com/mdecourse/BaxterHello_V-REP</a> </p>
+<p><a href="https://github.com/mdecourse/v-rep-robotics">https://github.com/mdecourse/v-rep-robotics</a> </p>
+<p><a href="https://github.com/mdecourse/DDPG_Grasping">https://github.com/mdecourse/DDPG_Grasping</a> </p>
+<p><a href="https://github.com/mdecourse/vrep-raven2">https://github.com/mdecourse/vrep-raven2</a> </p>
+<p><a href="https://github.com/mdecourse/arm-suction-sim">https://github.com/mdecourse/arm-suction-sim</a> </p>
+<p><a href="https://github.com/mdecourse/mc907-mobile-robotics">https://github.com/mdecourse/mc907-mobile-robotics</a> </p>
+<p><a href="https://github.com/mdecourse/vrep-example">https://github.com/mdecourse/vrep-example</a> (C++)</p>
+<h4>FreeCAD: </h4>
+<p style="padding-left: 30px;">登入 @gm 後<a href="https://drive.google.com/file/d/1-4B06Dm6qW8w8Cz-3h7t2pf3dOctqgD9/view?usp=sharing">下載 FreeCAD_0.18.4_portable.7z</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/FreeCAD/FreeCAD">https://github.com/FreeCAD/FreeCAD</a> </p>
+<p style="padding-left: 30px;">參考: <a href="https://github.com/mdecourse/wcms2018/issues/9">https://github.com/mdecourse/wcms2018/issues/9</a> </p>
+<p style="padding-left: 30px;"><a href="./../downloads/2020_Interactive Programming for Parametric CAD.pdf">2020_Interactive Programming for Parametric CAD.pdf</a></p>
+<p style="padding-left: 30px;"><a href="https://gist.github.com/EvoYash">https://gist.github.com/EvoYash</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/Retr3d">https://github.com/mdecourse/Retr3d</a> (需要更新為 Python3 與 FreeCAD 0.18.4 相容)</p>
+<p style="padding-left: 30px;"><a href="https://python.hotexamples.com/examples/-/FreeCAD/-/python-freecad-class-examples.html">其他參考程式</a></p>
+<p style="padding-left: 30px;">開啟 Freecad, File -&gt; New 開啟一個空檔案, 之後以下拉式功能表 View -&gt; Panels -&gt; Python Console 開啟程式輸入視窗, 然後在 Python Console 區貼入下列程式碼後按下 Enter, 可以在工作視窗中建立一個實體模型, 同時按下滑鼠中鍵與右鍵可以旋轉視窗畫面:</p>
+<p style="padding-left: 30px;">Desk:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import FreeCAD, Part, PartGui
+from FreeCAD import Base
+
+ac_doc = FreeCAD.ActiveDocument
+
+def make_box(name,length,width,height,base_vector,base_rotation):
+    ac_doc = FreeCAD.ActiveDocument
+    ac_doc.addObject("Part::Box",name)
+    getattr(ac_doc, name).Length = length
+    getattr(ac_doc, name).Width = width
+    getattr(ac_doc, name).Height= height
+    getattr(ac_doc, name).Placement=Base.Placement(Base.Vector(base_vector[0],base_vector[1],base_vector[2]),Base.Rotation(base_rotation[0],base_rotation[1],base_rotation[2],base_rotation[3]))
+
+def make_cylinder(name,radius,height,base_vector,base_rotation):
+    ac_doc = FreeCAD.ActiveDocument
+    ac_doc.addObject("Part::Cylinder",name)
+    getattr(ac_doc, name).Radius = radius
+    getattr(ac_doc, name).Height= height
+    getattr(ac_doc, name).Placement=Base.Placement(Base.Vector(base_vector[0],base_vector[1],base_vector[2]),Base.Rotation(base_rotation[0],base_rotation[1],base_rotation[2],base_rotation[3]))
+
+make_box("Cube",100,100,10,[0,0,1],[0.00,0.00,0.00,1.00])
+
+make_cylinder("cylinder",2,100,[3,3,-90],[0.00,0.00,0.00,1.00])
+
+make_cylinder("cylinder1",2,100,[97,97,-90],[0.00,0.00,0.00,1.00])
+
+make_cylinder("cylinder2",2,100,[3,97,-90],[0.00,0.00,0.00,1.00])
+
+make_cylinder("cylinder3",2,100,[97,3,-90],[0.00,0.00,0.00,1.00])
+
+FreeCAD.Gui.SendMsgToActiveView("ViewFit")
+FreeCAD.Gui.activeDocument().activeView().viewAxometric()</pre>
+<p style="padding-left: 30px;">Helix Gear:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import Part, FreeCAD, PartGui, FreeCADGui
+import InvoluteGearFeature
+from fcgear import involute, fcgear
+from math import pi, tan
+
+numTeeth = 20
+height = 20 #mm
+module = 3.5 #mm
+pressureAngle = 25.0 # degrees
+helixAngle = 25 # degrees
+highPrecision = False
+
+# First, draw an involute gear profile
+w = fcgear.FCWireBuilder()
+involute.CreateExternalGear(w, module, numTeeth, pressureAngle, highPrecision)
+invBaseWire = Part.Wire([o.toShape() for o in w.wire])
+
+# Make a helix to serve as the rotation vector
+helix = App.ActiveDocument.addObject("Part::Helix", "Helix")
+helix.Pitch = numTeeth * pi * module / tan(helixAngle * pi / 180.0)
+helix.Height = height
+helix.LocalCoord = 1 # 0 = "right handed", 1 = "Left Handed"
+helix.Style = 1
+
+# Path for axis of gear
+centralEdge = Part.makeLine((0, 0, 0), (0, 0, height))
+centralWire = Part.Wire([centralEdge])
+
+# Extrude+twist to make helix
+shell = Part.BRepOffsetAPI.MakePipeShell(centralWire)
+shell.setAuxiliarySpine(helix.Shape, True, False)
+shell.add(invBaseWire)
+shell.build()
+shell.makeSolid()
+
+# Add gear to document
+rotorObject = App.ActiveDocument.addObject("Part::Feature", "Helical Spur Gear")
+rotorObject.Shape = shell.shape()
+
+# Cleanup - TODO: Don't call addObject to make the helix in the first place
+App.ActiveDocument.removeObject(helix.Name)</pre>
+<p style="padding-left: 30px;"></p><br />W3 << <a href='W3.html'>Previous</a> <a href='Engineering.html'>Next</a> >> Engineering</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

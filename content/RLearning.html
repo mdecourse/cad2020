@@ -1,0 +1,1124 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CAD2020 Intro To Computer Aided Design</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CAD2020 電腦輔助設計實習</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CAD2020 電腦輔助設計實習</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='評分.html'>評分</a><li><a href='討論區.html'>討論區</a><li><a href='分組.html'>分組</a><li><a href='Python.html'>Python</a></li></ul><li class='has-children'><a href='Open Tech.html'>Open Tech</a><ul class='dropdown'><li class='has-children'><a href='Mechatronics.html'>Mechatronics</a><ul class='dropdown'><li><a href='PICsimlab.html'>PICsimlab</a><li><a href='UnoArduSim.html'>UnoArduSim</a></li></ul><li><a href='Cyber Tech.html'>Cyber Tech</a><li><a href='E-vehicle.html'>E-vehicle</a><li><a href='Composite Tech.html'>Composite Tech</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='Video.html'>Video</a><ul class='dropdown'><li><a href='W1Video.html'>W1Video</a><li><a href='W2Video.html'>W2Video</a><li><a href='W4Video.html'>W4Video</a><li><a href='W5Video.html'>W5Video</a><li><a href='W6Video.html'>W6Video</a><li><a href='W7Video.html'>W7Video</a><li><a href='W10Video.html'>W10Video</a><li><a href='W11Video.html'>W11Video</a><li><a href='W12Video.html'>W12Video</a><li><a href='W13Video.html'>W13Video</a></li></ul><li class='has-children'><a href='W1.html'>W1</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a><li><a href='HW1_SW.html'>HW1_SW</a><li><a href='HW1_INV.html'>HW1_INV</a><li><a href='HW1_NX.html'>HW1_NX</a></li></ul><li><a href='W2.html'>W2</a><li><a href='W3.html'>W3</a><li class='has-children'><a href='W4-W6.html'>W4-W6</a><ul class='dropdown'><li><a href='Engineering.html'>Engineering</a></li></ul><li class='has-children'><a href='W7-W9.html'>W7-W9</a><ul class='dropdown'><li><a href='HW2.html'>HW2</a><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a><li><a href='HW3.html'>HW3</a></li></ul><li class='has-children'><a href='W10-W14.html'>W10-W14</a><ul class='dropdown'><li><a href='CAD Project.html'>CAD Project</a><li><a href='Project Plan.html'>Project Plan</a><li><a href='CoppeliaSim.html'>CoppeliaSim</a></li></ul><li><a href='解救菜英文.html'>解救菜英文</a><li><a href='W15-W18.html'>W15-W18</a></li></ul><li class='has-children'><a href='CAD.html'>CAD</a><ul class='dropdown'><li class='has-children'><a href='設計創建.html'>設計創建</a><ul class='dropdown'><li><a href='Onshape.html'>Onshape</a><li><a href='Solidworks.html'>Solidworks</a><li><a href='Inventor.html'>Inventor</a><li><a href='NX.html'>NX</a></li></ul><li><a href='設計修改.html'>設計修改</a><li class='has-children'><a href='設計分析.html'>設計分析</a><ul class='dropdown'><li><a href='設計模擬.html'>設計模擬</a><li><a href='Sigmoid.html'>Sigmoid</a></li></ul><li><a href='設計最佳化.html'>設計最佳化</a></li></ul><li class='has-children'><a href='Solvespace.html'>Solvespace</a><ul class='dropdown'><li><a href='Solvespace Tutorial.html'>Solvespace Tutorial</a><li><a href='Compile Solvespace.html'>Compile Solvespace</a><li><a href='Extend Solvespace.html'>Extend Solvespace</a></li></ul><li class='has-children'><a href='FEM.html'>FEM</a><ul class='dropdown'><li class='has-children'><a href='Range3.html'>Range3</a><ul class='dropdown'><li><a href='Compile Range3.html'>Compile Range3</a></li></ul><li><a href='NGSolve.html'>NGSolve</a></li></ul><li class='has-children'><a href='Projects.html'>Projects</a><ul class='dropdown'><li class='has-children'><a href='Robot.html'>Robot</a><ul class='dropdown'><li><a href='Simulator.html'>Simulator</a><li><a href='PyRep.html'>PyRep</a></li></ul><li class='has-children'><a href='Web.html'>Web</a><ul class='dropdown'><li><a href='Flutter-Flask.html'>Flutter-Flask</a></li></ul><li class='has-children'><a href='Glowscript.html'>Glowscript</a><ul class='dropdown'><li><a href='Rapydscript.html'>Rapydscript</a><li><a href='Atoms.html'>Atoms</a><li><a href='Samples.html'>Samples</a><li><a href='RLearning.html'>RLearning</a></li></ul><li><a href='Featurescript.html'>Featurescript</a><li class='has-children'><a href='Machine Learning.html'>Machine Learning</a><ul class='dropdown'><li><a href='Pytorch.html'>Pytorch</a><li><a href='Keras.html'>Keras</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Samples << <a href='Samples.html'>Previous</a> <a href='Featurescript.html'>Next</a> >> Featurescript<br /><h1>RLearning</h1>
+<p>Train a model to balance a pole on a cart using reinforcement learning.</p>
+<p>Description</p>
+<p>This example illustrates how to use TensorFlow.js to perform simple <a href="https://en.wikipedia.org/wiki/Reinforcement_learning">reinforcement learning</a> (RL). Specifically, it showcases an implementation of the policy-gradient method in TensorFlow.js. This implementation is used to solve the classic <a href="https://en.wikipedia.org/wiki/Inverted_pendulum">cart-pole control problem.</a></p>
+<p>Through <span>self play</span> the agent will learn to balance the pole for as many <span>steps</span> as it can.</p>
+<p>Instructions</p>
+<p></p>
+<ul>
+<li>Choose a hidden layer size and click "Create Model".</li>
+<li>Select training parameters and then click "Train".</li>
+<li>Note that while the model is training it periodically saves a copy of itself to local browser storage, this mean you can refresh the page and continue training from the last save point. If at any point you want to start training from scratch, click "Delete stored Model".</li>
+<li>Once the model has finished training you can click "Test" to see how many 'steps' the agent can balance the pole for. You can also click 'Stop' to pause the training after the current iteration ends if you want to test the model sooner.</li>
+<li>During training and testing a small simulation of the agent behaviour will be rendered.</li>
+</ul>
+<p>Status</p>
+<div><span id="app-status">Standing by.</span></div>
+<div>
+<p>Initialize Model</p>
+<div>
+<div>
+<div><label>Hidden layer size(s) (e.g.: "256", "32,64"):</label> <input id="hidden-layer-sizes" type="text" value="128"/></div>
+<button disabled="disabled" id="create-model">Create model</button></div>
+<div>
+<div><label>Locally-stored model</label> <input disabled="disabled" id="stored-model-status" readonly="readonly" type="text" value="N/A"/></div>
+<button disabled="disabled" id="delete-stored-model">Delete stored model</button></div>
+</div>
+<p>Training Parameters</p>
+<div>
+<div><label>Number of iterations:</label> <input id="num-iterations" type="text" value="20"/></div>
+<div><label>Games per iteration:</label> <input id="games-per-iteration" type="text" value="20"/></div>
+<div><label>Max. steps per game:</label> <input id="max-steps-per-game" type="text" value="500"/></div>
+<div><label>Reward discount rate:</label> <input id="discount-rate" type="text" value="0.95"/></div>
+<div><label>Learning rate:</label> <input id="learning-rate" type="text" value="0.05"/></div>
+<div><label>Render during training:</label> <input id="render-during-training" type="checkbox"/> <span>Uncheck me to speed up training.</span></div>
+<div><button disabled="disabled" id="train">Train</button> <button disabled="disabled" id="test">Test</button></div>
+</div>
+</div>
+<p>Training Progress</p>
+<div>
+<div><label id="train-status">Iteration #:</label> <progress id="train-progress" max="100" value="0"></progress></div>
+<div><label id="iteration-status">Game #:</label> <progress id="iteration-progress" max="100" value="0"></progress></div>
+<div><label>Training speed:</label> <span id="train-speed"></span></div>
+<div id="steps-container"></div>
+</div>
+<p>Simulation</p>
+<div><canvas height="150px" id="cart-pole-canvas" width="500px"></canvas></div>
+<script type="text/javascript">
+//--><![CDATA[//><!--
+
+tf.setBackend('cpu');
+console.log(tf.getBackend());
+var b,c
+
+class CartPole {
+  constructor() {
+    // Constants that characterize the system.
+    this.gravity = 9.8;
+    this.massCart = 1.0;
+    this.massPole = 0.1;
+    this.totalMass = this.massCart + this.massPole;
+    this.cartWidth = 0.2;
+    this.cartHeight = 0.1;
+    this.length = 0.5;
+    this.poleMoment = this.massPole * this.length;
+    this.forceMag = 10.0;
+    this.tau = 0.02;  // Seconds between state updates.
+
+    // Threshold values, beyond which a simulation will be marked as failed.
+    this.xThreshold = 2.4;
+    this.thetaThreshold = 12 / 360 * 2 * Math.PI;
+
+    this.setRandomState();
+  }
+
+  setRandomState() {
+    // The control-theory state variables of the cart-pole system.
+    // Cart position, meters.
+    this.x = Math.random() - 0.5;
+    // Cart velocity.
+    this.xDot = (Math.random() - 0.5) * 1;
+    // Pole angle, radians.
+    this.theta = (Math.random() - 0.5) * 2 * (6 / 360 * 2 * Math.PI);
+    // Pole angle velocity.
+    this.thetaDot =  (Math.random() - 0.5) * 0.5;
+  }
+
+  getStateTensor() {
+    return tf.tensor2d([[this.x, this.xDot, this.theta, this.thetaDot]]);
+  }
+
+  update(action) {
+    const force = action > 0 ? this.forceMag : -this.forceMag;
+
+    const cosTheta = Math.cos(this.theta);
+    const sinTheta = Math.sin(this.theta);
+
+    const temp =
+        (force + this.poleMoment * this.thetaDot * this.thetaDot * sinTheta) /
+        this.totalMass;
+    const thetaAcc = (this.gravity * sinTheta - cosTheta * temp) /
+        (this.length *
+         (4 / 3 - this.massPole * cosTheta * cosTheta / this.totalMass));
+    const xAcc = temp - this.poleMoment * thetaAcc * cosTheta / this.totalMass;
+
+    // Update the four state variables, using Euler's metohd.
+    this.x += this.tau * this.xDot;
+    this.xDot += this.tau * xAcc;
+    this.theta += this.tau * this.thetaDot;
+    this.thetaDot += this.tau * thetaAcc;
+
+    return this.isDone();
+  }
+
+
+  isDone() {
+    return this.x < -this.xThreshold || this.x > this.xThreshold ||
+        this.theta < -this.thetaThreshold || this.theta > this.thetaThreshold;
+  }
+}
+
+
+//--><!
+</script>
+<script type="text/javascript">
+//--><![CDATA[//><!--
+
+/**
+ * Calculate the mean of an Array of numbers.
+ *
+ * @param {number[]} xs
+ * @returns {number} The arithmetic mean of `xs`
+ */
+function mean(xs) {
+  return sum(xs) / xs.length;
+}
+
+/**
+ * Calculate the sum of an Array of numbers.
+ *
+ * @param {number[]} xs
+ * @returns {number} The sum of `xs`.
+ * @throws Error if `xs` is empty.
+ */
+function sum(xs) {
+  if (xs.length === 0) {
+    throw new Error('Expected xs to be a non-empty Array.');
+  } else {
+    return xs.reduce((x, prev) => prev + x);
+  }
+}
+//--><!
+</script>
+<script type="text/javascript">
+//--><![CDATA[//><!--
+
+const appStatus = document.getElementById('app-status');
+const storedModelStatusInput = document.getElementById('stored-model-status');
+const hiddenLayerSizesInput = document.getElementById('hidden-layer-sizes');
+const createModelButton = document.getElementById('create-model');
+const deleteStoredModelButton = document.getElementById('delete-stored-model');
+const cartPoleCanvas = document.getElementById('cart-pole-canvas');
+
+const numIterationsInput = document.getElementById('num-iterations');
+const gamesPerIterationInput = document.getElementById('games-per-iteration');
+const discountRateInput = document.getElementById('discount-rate');
+const maxStepsPerGameInput = document.getElementById('max-steps-per-game');
+const learningRateInput = document.getElementById('learning-rate');
+const renderDuringTrainingCheckbox =
+    document.getElementById('render-during-training');
+
+const trainButton = document.getElementById('train');
+const testButton = document.getElementById('test');
+const iterationStatus = document.getElementById('iteration-status');
+const iterationProgress = document.getElementById('iteration-progress');
+const trainStatus = document.getElementById('train-status');
+const trainSpeed = document.getElementById('train-speed');
+const trainProgress = document.getElementById('train-progress');
+
+const stepsContainer = document.getElementById('steps-container');
+
+// Module-global instance of policy network.
+let policyNet;
+let stopRequested = false;
+
+/**
+ * Display a message to the info div.
+ *
+ * @param {string} message The message to be displayed.
+ */
+function logStatus(message) {
+  appStatus.textContent = message;
+}
+
+// Objects and functions to support display of cart pole status during training.
+let renderDuringTraining = true;
+async function maybeRenderDuringTraining(cartPole) {
+  if (renderDuringTraining) {
+    renderCartPole(cartPole, cartPoleCanvas);
+    await tf.nextFrame();  // Unblock UI thread.
+  }
+}
+
+/**
+ * A function invoked at the end of every game during training.
+ *
+ * @param {number} gameCount A count of how many games has completed so far in
+ *   the current iteration of training.
+ * @param {number} totalGames Total number of games to complete in the current
+ *   iteration of training.
+ */
+function onGameEnd(gameCount, totalGames) {
+  iterationStatus.textContent = `Game ${gameCount} of ${totalGames}`;
+  iterationProgress.value = gameCount / totalGames * 100;
+  if (gameCount === totalGames) {
+    iterationStatus.textContent = 'Updating weights...';
+  }
+}
+
+/**
+ * A function invokved at the end of a training iteration.
+ *
+ * @param {number} iterationCount A count of how many iterations has completed
+ *   so far in the current round of training.
+ * @param {*} totalIterations Total number of iterations to complete in the
+ *   current round of training.
+ */
+function onIterationEnd(iterationCount, totalIterations) {
+  trainStatus.textContent = `Iteration ${iterationCount} of ${totalIterations}`;
+  trainProgress.value = iterationCount / totalIterations * 100;
+}
+
+// Objects and function to support the plotting of game steps during training.
+let meanStepValues = [];
+function plotSteps() {
+  tfvis.render.linechart(stepsContainer, {values: meanStepValues}, {
+    xLabel: 'Training Iteration',
+    yLabel: 'Mean Steps Per Game',
+    width: 400,
+    height: 300,
+  });
+}
+
+function disableModelControls() {
+  trainButton.textContent = 'Stop';
+  testButton.disabled = true;
+  deleteStoredModelButton.disabled = true;
+}
+
+function enableModelControls() {
+  trainButton.textContent = 'Train';
+  testButton.disabled = false;
+  deleteStoredModelButton.disabled = false;
+}
+
+/**
+ * Render the current state of the system on an HTML canvas.
+ *
+ * @param {CartPole} cartPole The instance of cart-pole system to render.
+ * @param {HTMLCanvasElement} canvas The instance of HTMLCanvasElement on which
+ *   the rendering will happen.
+ */
+function renderCartPole(cartPole, canvas) {
+  if (!canvas.style.display) {
+    canvas.style.display = 'block';
+  }
+  const X_MIN = -cartPole.xThreshold;
+  const X_MAX = cartPole.xThreshold;
+  const xRange = X_MAX - X_MIN;
+  const scale = canvas.width / xRange;
+
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  const halfW = canvas.width / 2;
+
+  // Draw the cart.
+  const railY = canvas.height * 0.8;
+  const cartW = cartPole.cartWidth * scale;
+  const cartH = cartPole.cartHeight * scale;
+
+  const cartX = cartPole.x * scale + halfW;
+
+  context.beginPath();
+  context.strokeStyle = '#000000';
+  context.lineWidth = 2;
+  context.rect(cartX - cartW / 2, railY - cartH / 2, cartW, cartH);
+  context.stroke();
+
+  // Draw the wheels under the cart.
+  const wheelRadius = cartH / 4;
+  for (const offsetX of [-1, 1]) {
+    context.beginPath();
+    context.lineWidth = 2;
+    context.arc(
+        cartX - cartW / 4 * offsetX, railY + cartH / 2 + wheelRadius,
+        wheelRadius, 0, 2 * Math.PI);
+    context.stroke();
+  }
+
+  // Draw the pole.
+  const angle = cartPole.theta + Math.PI / 2;
+  const poleTopX =
+      halfW + scale * (cartPole.x + Math.cos(angle) * cartPole.length);
+  const poleTopY = railY -
+      scale * (cartPole.cartHeight / 2 + Math.sin(angle) * cartPole.length);
+  context.beginPath();
+  context.strokeStyle = '#ffa500';
+  context.lineWidth = 6;
+  context.moveTo(cartX, railY - cartH / 2);
+  context.lineTo(poleTopX, poleTopY);
+  context.stroke();
+
+  // Draw the ground.
+  const groundY = railY + cartH / 2 + wheelRadius * 2;
+  context.beginPath();
+  context.strokeStyle = '#000000';
+  context.lineWidth = 1;
+  context.moveTo(0, groundY);
+  context.lineTo(canvas.width, groundY);
+  context.stroke();
+
+  const nDivisions = 40;
+  for (let i = 0; i < nDivisions; ++i) {
+    const x0 = canvas.width / nDivisions * i;
+    const x1 = x0 + canvas.width / nDivisions / 2;
+    const y0 = groundY + canvas.width / nDivisions / 2;
+    const y1 = groundY;
+    context.beginPath();
+    context.moveTo(x0, y0);
+    context.lineTo(x1, y1);
+    context.stroke();
+  }
+
+  // Draw the left and right limits.
+  const limitTopY = groundY - canvas.height / 2;
+  context.beginPath();
+  context.strokeStyle = '#ff0000';
+  context.lineWidth = 2;
+  context.moveTo(1, groundY);
+  context.lineTo(1, limitTopY);
+  context.stroke();
+  context.beginPath();
+  context.moveTo(canvas.width - 1, groundY);
+  context.lineTo(canvas.width - 1, limitTopY);
+  context.stroke();
+}
+
+async function updateUIControlState() {
+  const modelInfo = await SaveablePolicyNetwork.checkStoredModelStatus();
+  if (modelInfo == null) {
+    storedModelStatusInput.value = 'No stored model.';
+    deleteStoredModelButton.disabled = true;
+
+  } else {
+    storedModelStatusInput.value = `Saved@${modelInfo.dateSaved.toISOString()}`;
+    deleteStoredModelButton.disabled = false;
+    createModelButton.disabled = true;
+  }
+  createModelButton.disabled = policyNet != null;
+  hiddenLayerSizesInput.disabled = policyNet != null;
+  trainButton.disabled = policyNet == null;
+  testButton.disabled = policyNet == null;
+  renderDuringTrainingCheckbox.checked = renderDuringTraining;
+}
+
+async function setUpUI() {
+  const cartPole = new CartPole(true);
+
+  if (await SaveablePolicyNetwork.checkStoredModelStatus() != null) {
+    policyNet = await SaveablePolicyNetwork.loadModel();
+    logStatus('Loaded policy network from IndexedDB.');
+    hiddenLayerSizesInput.value = policyNet.hiddenLayerSizes();
+  }
+  await updateUIControlState();
+
+  renderDuringTrainingCheckbox.addEventListener('change', () => {
+    renderDuringTraining = renderDuringTrainingCheckbox.checked;
+  });
+
+  createModelButton.addEventListener('click', async () => {
+    try {
+      const hiddenLayerSizes =
+          hiddenLayerSizesInput.value.trim().split(',').map(v => {
+            const num = Number.parseInt(v.trim());
+            if (!(num > 0)) {
+              throw new Error(
+                  `Invalid hidden layer sizes string: ` +
+                  `${hiddenLayerSizesInput.value}`);
+            }
+            return num;
+          });
+      policyNet = new SaveablePolicyNetwork(hiddenLayerSizes);
+      console.log('DONE constructing new instance of SaveablePolicyNetwork');
+      await updateUIControlState();
+    } catch (err) {
+      logStatus(`ERROR: ${err.message}`);
+    }
+  });
+
+  deleteStoredModelButton.addEventListener('click', async () => {
+    if (confirm(`Are you sure you want to delete the locally-stored model?`)) {
+      await policyNet.removeModel();
+      policyNet = null;
+      await updateUIControlState();
+    }
+  });
+
+  trainButton.addEventListener('click', async () => {
+    if (trainButton.textContent === 'Stop') {
+      stopRequested = true;
+    } else {
+      disableModelControls();
+
+      try {
+        const trainIterations = Number.parseInt(numIterationsInput.value);
+        if (!(trainIterations > 0)) {
+          throw new Error(`Invalid number of iterations: ${trainIterations}`);
+        }
+        const gamesPerIteration = Number.parseInt(gamesPerIterationInput.value);
+        if (!(gamesPerIteration > 0)) {
+          throw new Error(
+              `Invalid # of games per iterations: ${gamesPerIteration}`);
+        }
+        const maxStepsPerGame = Number.parseInt(maxStepsPerGameInput.value);
+        if (!(maxStepsPerGame > 1)) {
+          throw new Error(`Invalid max. steps per game: ${maxStepsPerGame}`);
+        }
+        const discountRate = Number.parseFloat(discountRateInput.value);
+        if (!(discountRate > 0 && discountRate < 1)) {
+          throw new Error(`Invalid discount rate: ${discountRate}`);
+        }
+        const learningRate = Number.parseFloat(learningRateInput.value);
+
+        logStatus(
+            'Training policy network... Please wait. ' +
+            'Network is saved to IndexedDB at the end of each iteration.');
+        const optimizer = tf.train.adam(learningRate);
+
+        meanStepValues = [];
+        onIterationEnd(0, trainIterations);
+        let t0 = new Date().getTime();
+        stopRequested = false;
+        for (let i = 0; i < trainIterations; ++i) {
+          const gameSteps = await policyNet.train(
+              cartPole, optimizer, discountRate, gamesPerIteration,
+              maxStepsPerGame);
+          const t1 = new Date().getTime();
+          const stepsPerSecond = sum(gameSteps) / ((t1 - t0) / 1e3);
+          t0 = t1;
+          trainSpeed.textContent = `${stepsPerSecond.toFixed(1)} steps/s`
+          meanStepValues.push({x: i + 1, y: mean(gameSteps)});
+          console.log(`# of tensors: ${tf.memory().numTensors}`);
+          plotSteps();
+          onIterationEnd(i + 1, trainIterations);
+          await tf.nextFrame();  // Unblock UI thread.
+          await policyNet.saveModel();
+          await updateUIControlState();
+
+          if (stopRequested) {
+            logStatus('Training stopped by user.');
+            break;
+          }
+        }
+        if (!stopRequested) {
+          logStatus('Training completed.');
+        }
+      } catch (err) {
+        logStatus(`ERROR: ${err.message}`);
+      }
+      enableModelControls();
+    }
+  });
+
+  testButton.addEventListener('click', async () => {
+    disableModelControls();
+    let isDone = false;
+    const cartPole = new CartPole(true);
+    cartPole.setRandomState();
+    let steps = 0;
+    stopRequested = false;
+    let a = 0;
+    while (!isDone) {
+      steps++;
+      tf.tidy(() => {
+        const action = policyNet.getActions(cartPole.getStateTensor())[0];
+        logStatus(
+            `Test in progress. ` +
+            `Action: ${action === 1 ? '<--' : ' -->'} (Step ${steps})`);
+        isDone = cartPole.update(action);
+        if (typeof c !== "undefined"){
+          c.pos.x = b.pos.x = cartPole.x
+          c.rotate({angle:-a, axis:vec(0,0,1)})
+          a = cartPole.theta
+          c.rotate({angle:a, axis:vec(0,0,1)})
+        }
+        renderCartPole(cartPole, cartPoleCanvas);
+      });
+      await tf.nextFrame();  // Unblock UI thread.
+      if (stopRequested) {
+        break;
+      }
+    }
+    if (stopRequested) {
+      logStatus(`Test stopped by user after ${steps} step(s).`);
+    } else {
+      logStatus(`Test finished. Survived ${steps} step(s).`);
+    }
+    console.log(`# of tensors: ${tf.memory().numTensors}`);
+    enableModelControls();
+  });
+}
+//--><!
+</script>
+<script type="text/javascript">
+//--><![CDATA[//><!--
+
+/**
+ * Policy network for controlling the cart-pole system.
+ *
+ * The role of the policy network is to select an action based on the observed
+ * state of the system. In this case, the action is the leftward or rightward
+ * force and the observed system state is a four-dimensional vector, consisting
+ * of cart position, cart velocity, pole angle and pole angular velocity.
+ *
+ */
+class PolicyNetwork {
+  /**
+   * Constructor of PolicyNetwork.
+   *
+   * @param {number | number[] | tf.LayersModel} hiddenLayerSizes
+   *   Can be any of the following
+   *   - Size of the hidden layer, as a single number (for a single hidden
+   *     layer)
+   *   - An Array of numbers (for any number of hidden layers).
+   *   - An instance of tf.LayersModel.
+   */
+  constructor(hiddenLayerSizesOrModel) {
+    if (hiddenLayerSizesOrModel instanceof tf.LayersModel) {
+      this.policyNet = hiddenLayerSizesOrModel;
+    } else {
+      this.createPolicyNetwork(hiddenLayerSizesOrModel);
+    }
+  }
+
+  /**
+   * Create the underlying model of this policy network.
+   *
+   * @param {number | number[]} hiddenLayerSizes Size of the hidden layer, as
+   *   a single number (for a single hidden layer) or an Array of numbers (for
+   *   any number of hidden layers).
+   */
+  createPolicyNetwork(hiddenLayerSizes) {
+    if (!Array.isArray(hiddenLayerSizes)) {
+      hiddenLayerSizes = [hiddenLayerSizes];
+    }
+    this.policyNet = tf.sequential();
+    hiddenLayerSizes.forEach((hiddenLayerSize, i) => {
+      this.policyNet.add(tf.layers.dense({
+        units: hiddenLayerSize,
+        activation: 'elu',
+        // `inputShape` is required only for the first layer.
+        inputShape: i === 0 ? [4] : undefined
+      }));
+    });
+    // The last layer has only one unit. The single output number will be
+    // converted to a probability of selecting the leftward-force action.
+    this.policyNet.add(tf.layers.dense({units: 1}));
+  }
+
+  /**
+   * Train the policy network's model.
+   *
+   * @param {CartPole} cartPoleSystem The cart-pole system object to use during
+   *   training.
+   * @param {tf.train.Optimizer} optimizer An instance of TensorFlow.js
+   *   Optimizer to use for training.
+   * @param {number} discountRate Reward discounting rate: a number between 0
+   *   and 1.
+   * @param {number} numGames Number of game to play for each model parameter
+   *   update.
+   * @param {number} maxStepsPerGame Maximum number of steps to perform during
+   *   a game. If this number is reached, the game will end immediately.
+   * @returns {number[]} The number of steps completed in the `numGames` games
+   *   in this round of training.
+   */
+  async train(
+      cartPoleSystem, optimizer, discountRate, numGames, maxStepsPerGame) {
+    const allGradients = [];
+    const allRewards = [];
+    const gameSteps = [];
+    let a = 0;
+    onGameEnd(0, numGames);
+    for (let i = 0; i < numGames; ++i) {
+      // Randomly initialize the state of the cart-pole system at the beginning
+      // of every game.
+      cartPoleSystem.setRandomState();
+      c.visible = false;
+      c = cylinder({pos:vec( 0, 0, 0), axis:vec(0,0.8,0),  radius: 0.03, color : color.cyan})
+      a = 0
+      const gameRewards = [];
+      const gameGradients = [];
+      for (let j = 0; j < maxStepsPerGame; ++j) {
+        // For every step of the game, remember gradients of the policy
+        // network's weights with respect to the probability of the action
+        // choice that lead to the reward.
+        const gradients = tf.tidy(() => {
+          const inputTensor = cartPoleSystem.getStateTensor();
+          return this.getGradientsAndSaveActions(inputTensor).grads;
+        });
+
+        this.pushGradients(gameGradients, gradients);
+        const action = this.currentActions_[0];
+        const isDone = cartPoleSystem.update(action)
+        if (typeof c !== "undefined"){
+          c.pos.x = b.pos.x = cartPoleSystem.x
+          c.rotate({angle:-a, axis:vec(0,0,1)})
+          a = cartPoleSystem.theta
+          c.rotate({angle:a, axis:vec(0,0,1)})
+        }
+
+        await maybeRenderDuringTraining(cartPoleSystem);
+
+        if (isDone) {
+          // When the game ends before max step count is reached, a reward of
+          // 0 is given.
+          gameRewards.push(0);
+          break;
+        } else {
+          // As long as the game doesn't end, each step leads to a reward of 1.
+          // These reward values will later be "discounted", leading to
+          // higher reward values for longer-lasting games.
+          gameRewards.push(1);
+        }
+      }
+      onGameEnd(i + 1, numGames);
+      gameSteps.push(gameRewards.length);
+      this.pushGradients(allGradients, gameGradients);
+      allRewards.push(gameRewards);
+      await tf.nextFrame();
+    }
+
+    tf.tidy(() => {
+      // The following line does three things:
+      // 1. Performs reward discounting, i.e., make recent rewards count more
+      //    than rewards from the further past. The effect is that the reward
+      //    values from a game with many steps become larger than the values
+      //    from a game with fewer steps.
+      // 2. Normalize the rewards, i.e., subtract the global mean value of the
+      //    rewards and divide the result by the global standard deviation of
+      //    the rewards. Together with step 1, this makes the rewards from
+      //    long-lasting games positive and rewards from short-lasting
+      //    negative.
+      // 3. Scale the gradients with the normalized reward values.
+      const normalizedRewards =
+          discountAndNormalizeRewards(allRewards, discountRate);
+      // Add the scaled gradients to the weights of the policy network. This
+      // step makes the policy network more likely to make choices that lead
+      // to long-lasting games in the future (i.e., the crux of this RL
+      // algorithm.)
+      optimizer.applyGradients(
+          scaleAndAverageGradients(allGradients, normalizedRewards));
+    });
+    tf.dispose(allGradients);
+    return gameSteps;
+  }
+
+  getGradientsAndSaveActions(inputTensor) {
+    const f = () => tf.tidy(() => {
+      const [logits, actions] = this.getLogitsAndActions(inputTensor);
+      this.currentActions_ = actions.dataSync();
+      const labels =
+          tf.sub(1, tf.tensor2d(this.currentActions_, actions.shape));
+      return tf.losses.sigmoidCrossEntropy(labels, logits).asScalar();
+    });
+    return tf.variableGrads(f);
+  }
+
+  getCurrentActions() {
+    return this.currentActions_;
+  }
+
+  /**
+   * Get policy-network logits and the action based on state-tensor inputs.
+   *
+   * @param {tf.Tensor} inputs A tf.Tensor instance of shape `[batchSize, 4]`.
+   * @returns {[tf.Tensor, tf.Tensor]}
+   *   1. The logits tensor, of shape `[batchSize, 1]`.
+   *   2. The actions tensor, of shape `[batchSize, 1]`.
+   */
+  getLogitsAndActions(inputs) {
+    return tf.tidy(() => {
+      const logits = this.policyNet.predict(inputs);
+
+      // Get the probability of the leftward action.
+      const leftProb = tf.sigmoid(logits);
+      // Probabilites of the left and right actions.
+      const leftRightProbs = tf.concat([leftProb, tf.sub(1, leftProb)], 1);
+      const actions = tf.multinomial(leftRightProbs, 1, null, true);
+      return [logits, actions];
+    });
+  }
+
+  /**
+   * Get actions based on a state-tensor input.
+   *
+   * @param {tf.Tensor} inputs A tf.Tensor instance of shape `[batchSize, 4]`.
+   * @param {Float32Array} inputs The actions for the inputs, with length
+   *   `batchSize`.
+   */
+  getActions(inputs) {
+    return this.getLogitsAndActions(inputs)[1].dataSync();
+  }
+
+  /**
+   * Push a new dictionary of gradients into records.
+   *
+   * @param {{[varName: string]: tf.Tensor[]}} record The record of variable
+   *   gradient: a map from variable name to the Array of gradient values for
+   *   the variable.
+   * @param {{[varName: string]: tf.Tensor}} gradients The new gradients to push
+   *   into `record`: a map from variable name to the gradient Tensor.
+   */
+  pushGradients(record, gradients) {
+    for (const key in gradients) {
+      if (key in record) {
+        record[key].push(gradients[key]);
+      } else {
+        record[key] = [gradients[key]];
+      }
+    }
+  }
+}
+
+// The IndexedDB path where the model of the policy network will be saved.
+const MODEL_SAVE_PATH_ = 'indexeddb://cart-pole-v1';
+
+/**
+ * A subclass of PolicyNetwork that supports saving and loading.
+ */
+class SaveablePolicyNetwork extends PolicyNetwork {
+  /**
+   * Constructor of SaveablePolicyNetwork
+   *
+   * @param {number | number[]} hiddenLayerSizesOrModel
+   */
+  constructor(hiddenLayerSizesOrModel) {
+    super(hiddenLayerSizesOrModel);
+  }
+
+  /**
+   * Save the model to IndexedDB.
+   */
+  async saveModel() {
+    return await this.policyNet.save(MODEL_SAVE_PATH_);
+  }
+
+  /**
+   * Load the model fom IndexedDB.
+   *
+   * @returns {SaveablePolicyNetwork} The instance of loaded
+   *   `SaveablePolicyNetwork`.
+   * @throws {Error} If no model can be found in IndexedDB.
+   */
+  static async loadModel() {
+    const modelsInfo = await tf.io.listModels();
+    if (MODEL_SAVE_PATH_ in modelsInfo) {
+      console.log(`Loading existing model...`);
+      const model = await tf.loadLayersModel(MODEL_SAVE_PATH_);
+      console.log(`Loaded model from ${MODEL_SAVE_PATH_}`);
+      return new SaveablePolicyNetwork(model);
+    } else {
+      throw new Error(`Cannot find model at ${MODEL_SAVE_PATH_}.`);
+    }
+  }
+
+  /**
+   * Check the status of locally saved model.
+   *
+   * @returns If the locally saved model exists, the model info as a JSON
+   *   object. Else, `undefined`.
+   */
+  static async checkStoredModelStatus() {
+    const modelsInfo = await tf.io.listModels();
+    return modelsInfo[MODEL_SAVE_PATH_];
+  }
+
+  /**
+   * Remove the locally saved model from IndexedDB.
+   */
+  async removeModel() {
+    return await tf.io.removeModel(MODEL_SAVE_PATH_);
+  }
+
+  /**
+   * Get the sizes of the hidden layers.
+   *
+   * @returns {number | number[]} If the model has only one hidden layer,
+   *   return the size of the layer as a single number. If the model has
+   *   multiple hidden layers, return the sizes as an Array of numbers.
+   */
+  hiddenLayerSizes() {
+    const sizes = [];
+    for (let i = 0; i < this.policyNet.layers.length - 1; ++i) {
+      sizes.push(this.policyNet.layers[i].units);
+    }
+    return sizes.length === 1 ? sizes[0] : sizes;
+  }
+}
+
+/**
+ * Discount the reward values.
+ *
+ * @param {number[]} rewards The reward values to be discounted.
+ * @param {number} discountRate Discount rate: a number between 0 and 1, e.g.,
+ *   0.95.
+ * @returns {tf.Tensor} The discounted reward values as a 1D tf.Tensor.
+ */
+function discountRewards(rewards, discountRate) {
+  const discountedBuffer = tf.buffer([rewards.length]);
+  let prev = 0;
+  for (let i = rewards.length - 1; i >= 0; --i) {
+    const current = discountRate * prev + rewards[i];
+    discountedBuffer.set(current, i);
+    prev = current;
+  }
+  return discountedBuffer.toTensor();
+}
+
+/**
+ * Discount and normalize reward values.
+ *
+ * This function performs two steps:
+ *
+ * 1. Discounts the reward values using `discountRate`.
+ * 2. Normalize the reward values with the global reward mean and standard
+ *    deviation.
+ *
+ * @param {number[][]} rewardSequences Sequences of reward values.
+ * @param {number} discountRate Discount rate: a number between 0 and 1, e.g.,
+ *   0.95.
+ * @returns {tf.Tensor[]} The discounted and normalize reward values as an
+ *   Array of tf.Tensor.
+ */
+function discountAndNormalizeRewards(rewardSequences, discountRate) {
+  return tf.tidy(() => {
+    const discounted = [];
+    for (const sequence of rewardSequences) {
+      discounted.push(discountRewards(sequence, discountRate))
+    }
+    // Compute the overall mean and stddev.
+    const concatenated = tf.concat(discounted);
+    const mean = tf.mean(concatenated);
+    const std = tf.sqrt(tf.mean(tf.square(concatenated.sub(mean))));
+    // Normalize the reward sequences using the mean and std.
+    const normalized = discounted.map(rs => rs.sub(mean).div(std));
+    return normalized;
+  });
+}
+
+/**
+ * Scale the gradient values using normalized reward values and compute average.
+ *
+ * The gradient values are scaled by the normalized reward values. Then they
+ * are averaged across all games and all steps.
+ *
+ * @param {{[varName: string]: tf.Tensor[][]}} allGradients A map from variable
+ *   name to all the gradient values for the variable across all games and all
+ *   steps.
+ * @param {tf.Tensor[]} normalizedRewards An Array of normalized reward values
+ *   for all the games. Each element of the Array is a 1D tf.Tensor of which
+ *   the length equals the number of steps in the game.
+ * @returns {{[varName: string]: tf.Tensor}} Scaled and averaged gradients
+ *   for the variables.
+ */
+function scaleAndAverageGradients(allGradients, normalizedRewards) {
+  return tf.tidy(() => {
+    const gradients = {};
+    for (const varName in allGradients) {
+      gradients[varName] = tf.tidy(() => {
+        // Stack gradients together.
+        const varGradients = allGradients[varName].map(
+            varGameGradients => tf.stack(varGameGradients));
+        // Expand dimensions of reward tensors to prepare for multiplication
+        // with broadcasting.
+        const expandedDims = [];
+        for (let i = 0; i < varGradients[0].rank - 1; ++i) {
+          expandedDims.push(1);
+        }
+        const reshapedNormalizedRewards = normalizedRewards.map(
+            rs => rs.reshape(rs.shape.concat(expandedDims)));
+        for (let g = 0; g < varGradients.length; ++g) {
+          // This mul() call uses broadcasting.
+          varGradients[g] = varGradients[g].mul(reshapedNormalizedRewards[g]);
+        }
+        // Concatenate the scaled gradients together, then average them across
+        // all the steps of all the games.
+        return tf.mean(tf.concat(varGradients, 0), 0);
+      });
+    }
+    return gradients;
+  });
+}
+
+setUpUI();
+</script>
+<div class="glowscript" id="glowscript">
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+<!-- Import tfjs-vis -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.4.0/dist/tfjs-vis.umd.min.js"></script>
+<script src="https://s3.amazonaws.com/glowscript/lib/jquery/2.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://s3.amazonaws.com/glowscript/lib/jquery/2.1/jquery-ui.custom.min.js" type="text/javascript"></script>
+<script src="https://s3.amazonaws.com/glowscript/package/glow.3.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+var b, c
+;(function() {;
+async function __main__() {
+"use strict";
+
+var version = ["3.0", "glowscript"];
+Array.prototype.toString = function() { return __parsearray(this) };
+var scene = canvas();
+var vector = vec;
+
+scene = canvas({range: 1.5})
+b = box({pos:vec( 0, 0.0["-u"](), 0),  color : color.green, size:vec(0.25,0.1,0.2)})
+c = cylinder({pos:vec( 0, 0, 0), axis:vec(0,0.8,0),  radius: 0.03, color : color.cyan})
+var wire = cylinder({pos:vec( 10["-u"](), 0.0["-u"](), 0), axis:vec(20,0,0),  radius: 0.01, color : color.white})
+
+}
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+
+// END JAVASCRIPT
+
+//--><!
+</script>
+</div>
+<br />Samples << <a href='Samples.html'>Previous</a> <a href='Featurescript.html'>Next</a> >> Featurescript</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
